@@ -4,7 +4,7 @@ Welcome to the EpochOS user documentation. EpochOS is a comprehensive operations
 
 ## Who is EpochOS for?
 
-EpochOS is designed for mortgage brokerages, lenders, and financial services firms that need a centralized platform to manage:
+EpochOS is designed for mortgage brokerage and non-delegated correspondent firms that need a centralized platform to manage:
 
 - **Loan pipelines** from application intake through funding
 - **Commission structures** with complex, rule-based calculations
