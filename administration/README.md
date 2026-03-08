@@ -1,6 +1,6 @@
 # Administration
 
-The Administration section covers platform-level management features that operate above any single company. These capabilities are reserved for super administrators who need to create, configure, and manage the multi-tenant environment that EpochOS provides.
+The Administration section covers platform-level management features that operate above any single company. These capabilities are reserved for super administrators who need to create, configure, and manage the multi-tenant environment that Keystone provides.
 
 ## In this section
 

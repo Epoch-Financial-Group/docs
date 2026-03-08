@@ -1,17 +1,17 @@
 # Recurring Tasks
 
-Recurring task schedules automatically generate tasks on a defined cadence. This ensures that repeating obligations -- monthly reports, quarterly reviews, annual license renewals -- are never forgotten. EpochOS creates tasks ahead of time based on a configurable lead-time window, giving assignees advance notice before the work is due.
+Recurring task schedules automatically generate tasks on a defined cadence. This ensures that repeating obligations -- monthly reports, quarterly reviews, annual license renewals -- are never forgotten. Keystone creates tasks ahead of time based on a configurable lead-time window, giving assignees advance notice before the work is due.
 
 ---
 
 ## How recurring tasks work
 
-A recurring schedule is a configuration that tells EpochOS to automatically create a new task at regular intervals. Each time the schedule triggers, a new standalone task is created with the schedule's title, description, priority, and assignee. The generated tasks appear in the main task table like any other task.
+A recurring schedule is a configuration that tells Keystone to automatically create a new task at regular intervals. Each time the schedule triggers, a new standalone task is created with the schedule's title, description, priority, and assignee. The generated tasks appear in the main task table like any other task.
 
 ### Lifecycle
 
 1. You create a recurring schedule with a frequency, start date, and other settings.
-2. EpochOS checks active schedules and, based on the **lead days** setting, creates tasks in advance of each occurrence.
+2. Keystone checks active schedules and, based on the **lead days** setting, creates tasks in advance of each occurrence.
 3. The generated task has a due date calculated from the occurrence date plus the **due-days-after** offset.
 4. The schedule records the last date it generated a task so it does not create duplicates.
 5. The cycle continues until the schedule is deactivated or its end date is reached.
@@ -164,7 +164,7 @@ Deleting a schedule is permanent. Tasks that were already generated from the sch
 
 ## Generated tasks
 
-Tasks created by recurring schedules are standard EpochOS tasks. They appear in the main task table and can be:
+Tasks created by recurring schedules are standard Keystone tasks. They appear in the main task table and can be:
 
 - Edited (change title, description, assignee, priority, due date)
 - Completed, cancelled, or deleted

@@ -16,7 +16,7 @@ Pay periods are the core unit of the commission process. Loans are assigned to p
 
 ## Pay Period Frequency
 
-The frequency of pay periods is configured in the company's payroll settings. EpochOS supports four options:
+The frequency of pay periods is configured in the company's payroll settings. Keystone supports four options:
 
 | Frequency | Description | Typical Date Ranges |
 |-----------|-------------|---------------------|

@@ -1,6 +1,6 @@
 # Bulk Upload
 
-EpochOS supports importing loans in bulk via CSV file upload. This is the fastest way to onboard an existing pipeline, sync data from your Loan Origination System (LOS), or do periodic pipeline updates.
+Keystone supports importing loans in bulk via CSV file upload. This is the fastest way to onboard an existing pipeline, sync data from your Loan Origination System (LOS), or do periodic pipeline updates.
 
 ## Getting to the upload page
 
@@ -44,7 +44,7 @@ After choosing an upload type, select your CSV file by either:
 
 ## Preview and column mapping
 
-After selecting a file, EpochOS parses it and shows a preview:
+After selecting a file, Keystone parses it and shows a preview:
 
 1. **Column mapping summary** -- Shows which CSV columns were recognized and mapped to loan fields. Recognized columns appear as colored pills.
 2. **Ignored columns** -- Collapsible section showing CSV columns that were not recognized. These columns are skipped during import.
@@ -203,7 +203,7 @@ Loan officers, LOAs, and processors are matched by:
 1. **Email** (exact match, case-insensitive) -- checked first
 2. **Full name** (exact match, case-insensitive) -- checked second
 
-If no match is found and the CSV includes a name, EpochOS **auto-creates** the employee with the appropriate role. The upload result summary lists any auto-created employees.
+If no match is found and the CSV includes a name, Keystone **auto-creates** the employee with the appropriate role. The upload result summary lists any auto-created employees.
 
 ### Lender matching
 

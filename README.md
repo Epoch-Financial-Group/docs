@@ -1,10 +1,10 @@
-# EpochOS Documentation
+# Keystone Documentation
 
-Welcome to the EpochOS user documentation. EpochOS is a comprehensive operations platform built for mortgage lending companies to manage their entire business — from loan origination through commission management, accounting, recruiting, quality control, and more.
+Welcome to the Keystone user documentation. Keystone is a comprehensive operations platform built for mortgage lending companies to manage their entire business — from loan origination through commission management, accounting, recruiting, quality control, and more.
 
-## Who is EpochOS for?
+## Who is Keystone for?
 
-EpochOS is designed for mortgage brokerages, lenders, and financial services firms that need a centralized platform to manage:
+Keystone is designed for mortgage brokerages, lenders, and financial services firms that need a centralized platform to manage:
 
 - **Loan pipelines** from application intake through funding
 - **Commission structures** with complex, rule-based calculations
@@ -15,7 +15,7 @@ EpochOS is designed for mortgage brokerages, lenders, and financial services fir
 
 ## Documentation Overview
 
-This documentation covers every aspect of the EpochOS platform:
+This documentation covers every aspect of the Keystone platform:
 
 | Section | Description |
 |---------|-------------|
@@ -34,4 +34,4 @@ This documentation covers every aspect of the EpochOS platform:
 
 ## Getting Help
 
-If you need additional help or have questions not covered in this documentation, please contact your EpochOS administrator.
+If you need additional help or have questions not covered in this documentation, please contact your Keystone administrator.

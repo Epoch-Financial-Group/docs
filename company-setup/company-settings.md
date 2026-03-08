@@ -1,6 +1,6 @@
 # Company Settings
 
-Company Settings is the central configuration page for your EpochOS account. Here you define your company identity, select your Loan Origination System, enter your NMLS number, and configure payroll schedules that drive commission and draw calculations across the platform.
+Company Settings is the central configuration page for your Keystone account. Here you define your company identity, select your Loan Origination System, enter your NMLS number, and configure payroll schedules that drive commission and draw calculations across the platform.
 
 ## Accessing Company Settings
 
@@ -15,7 +15,7 @@ This takes you to the settings page at `/{your-company}/settings`.
 
 ## Company name
 
-The company name appears throughout EpochOS -- in headers, reports, and exported documents.
+The company name appears throughout Keystone -- in headers, reports, and exported documents.
 
 ### To change your company name
 
@@ -41,7 +41,7 @@ Your company-level NMLS (Nationwide Multistate Licensing System) number is store
 
 ## Loan Origination System (LOS)
 
-EpochOS integrates with several popular Loan Origination Systems. Selecting your LOS helps the platform tailor import behavior and field mappings when you upload loan data.
+Keystone integrates with several popular Loan Origination Systems. Selecting your LOS helps the platform tailor import behavior and field mappings when you upload loan data.
 
 ### Supported systems
 
@@ -66,7 +66,7 @@ EpochOS integrates with several popular Loan Origination Systems. Selecting your
 
 ## Payroll settings
 
-Payroll settings control how EpochOS calculates pay periods, commission schedules, and draws for your employees. The configuration is stored as flexible JSON, which means it can accommodate a wide range of payroll structures.
+Payroll settings control how Keystone calculates pay periods, commission schedules, and draws for your employees. The configuration is stored as flexible JSON, which means it can accommodate a wide range of payroll structures.
 
 ### Commission schedule
 

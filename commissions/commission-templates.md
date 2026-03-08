@@ -192,7 +192,7 @@ Once a template is saved, you assign it to employees with the matching role.
 
 ### What Happens During Assignment
 
-When employees are assigned to a template, EpochOS creates **commission rules** bound to each employee:
+When employees are assigned to a template, Keystone creates **commission rules** bound to each employee:
 
 1. A **base rule** is created using the template's base commission settings, linked to the employee as both the loan officer (for LO templates) and the recipient.
 2. For each **override rule** on the template (rules with filters), an employee-bound copy is created with the same filters and commission settings.

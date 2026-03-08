@@ -1,12 +1,12 @@
 # Navigation
 
-This guide explains how to navigate EpochOS, covering the sidebar layout, every navigation item, the company switcher, responsive behavior, and how active pages are highlighted.
+This guide explains how to navigate Keystone, covering the sidebar layout, every navigation item, the company switcher, responsive behavior, and how active pages are highlighted.
 
 ---
 
 ## Overview
 
-EpochOS uses a **persistent sidebar** on the left side of the screen as the primary navigation mechanism. The sidebar is always visible while you are working inside a company workspace and provides access to every major section of the application.
+Keystone uses a **persistent sidebar** on the left side of the screen as the primary navigation mechanism. The sidebar is always visible while you are working inside a company workspace and provides access to every major section of the application.
 
 The main content area fills the rest of the screen to the right of the sidebar.
 
@@ -123,7 +123,7 @@ Company-wide settings and configuration.
 
 ## How Active Pages Are Highlighted
 
-EpochOS visually indicates which page you are currently viewing:
+Keystone visually indicates which page you are currently viewing:
 
 ### Direct Links
 
@@ -201,7 +201,7 @@ When you switch companies, the entire URL structure changes to reflect the new c
 
 ## Mobile and Responsive Behavior
 
-EpochOS is built with responsive design principles using a modern CSS framework (Tailwind CSS):
+Keystone is built with responsive design principles using a modern CSS framework (Tailwind CSS):
 
 - **Desktop (large screens)** -- The sidebar is fully visible alongside the main content area. Both direct links and collapsible groups display their full labels and icons.
 - **Tablet (medium screens)** -- The sidebar may automatically collapse to icon-only mode to preserve horizontal space for the main content. Tooltips provide access to labels on hover.

@@ -1,10 +1,10 @@
 # Accounting Overview
 
-EpochOS includes a built-in accounting system tailored for mortgage brokerages and lending companies. This page explains the core concepts and how the pieces fit together.
+Keystone includes a built-in accounting system tailored for mortgage brokerages and lending companies. This page explains the core concepts and how the pieces fit together.
 
-## Why accounting in EpochOS?
+## Why accounting in Keystone?
 
-Mortgage companies deal with a specific set of financial events that repeat on every loan: funding disbursements, check receipts from lenders, commission payouts to loan officers, draw repayments, and various fee collections. Rather than re-entering these transactions in a separate accounting system, EpochOS can generate journal entries automatically as loans move through your pipeline.
+Mortgage companies deal with a specific set of financial events that repeat on every loan: funding disbursements, check receipts from lenders, commission payouts to loan officers, draw repayments, and various fee collections. Rather than re-entering these transactions in a separate accounting system, Keystone can generate journal entries automatically as loans move through your pipeline.
 
 This means:
 
@@ -15,7 +15,7 @@ This means:
 
 ## Double-entry bookkeeping basics
 
-EpochOS uses **double-entry bookkeeping**, the standard accounting method used worldwide. The fundamental rule is simple: every financial transaction must have **equal debits and credits**.
+Keystone uses **double-entry bookkeeping**, the standard accounting method used worldwide. The fundamental rule is simple: every financial transaction must have **equal debits and credits**.
 
 ### The accounting equation
 
@@ -78,7 +78,7 @@ Bank Accounts + Transactions
 Bank Reconciliation <----> Journal Entries
 ```
 
-1. **Chart of Accounts** -- You define the accounts your company uses (cash, receivables, revenue, expenses, etc.). EpochOS provides a default chart of accounts you can initialize with one click, or you can build your own from scratch.
+1. **Chart of Accounts** -- You define the accounts your company uses (cash, receivables, revenue, expenses, etc.). Keystone provides a default chart of accounts you can initialize with one click, or you can build your own from scratch.
 
 2. **Account Mappings** -- You configure which accounts should be debited and credited for each type of loan event (funding, check receipt, commission payment, etc.). This is a one-time setup.
 
@@ -88,7 +88,7 @@ Bank Reconciliation <----> Journal Entries
 
 5. **Financial Reports** -- The Trial Balance, Balance Sheet, and Income Statement are generated on demand from posted journal entries. They provide point-in-time and period-based views of your company's financial position.
 
-6. **Bank Accounts and Reconciliation** -- Bank accounts in EpochOS are linked to chart of accounts entries. Bank transactions can be imported and matched against journal entries through the reconciliation workflow.
+6. **Bank Accounts and Reconciliation** -- Bank accounts in Keystone are linked to chart of accounts entries. Bank transactions can be imported and matched against journal entries through the reconciliation workflow.
 
 ## Accounting workflow for a typical loan
 
@@ -108,7 +108,7 @@ Each of these steps is handled by the account mapping system, so once your mappi
 
 ## Getting started
 
-If you are setting up accounting in EpochOS for the first time:
+If you are setting up accounting in Keystone for the first time:
 
 1. **Initialize or create your Chart of Accounts** -- Navigate to Accounting > Chart of Accounts and either click "Initialize Chart of Accounts" for a mortgage-industry default set, or add accounts manually.
 

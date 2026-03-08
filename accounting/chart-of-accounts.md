@@ -90,7 +90,7 @@ Every account has a **normal balance** -- the side (debit or credit) that increa
 - **Debit-normal accounts**: Asset and Expense accounts. A debit increases the balance; a credit decreases it.
 - **Credit-normal accounts**: Liability, Equity, and Revenue accounts. A credit increases the balance; a debit decreases it.
 
-When creating an account, EpochOS automatically suggests the normal balance based on the account type. You can override this if needed, but in most cases the default is correct.
+When creating an account, Keystone automatically suggests the normal balance based on the account type. You can override this if needed, but in most cases the default is correct.
 
 ## Account codes and naming conventions
 
@@ -138,9 +138,9 @@ When you create or edit an account, the **Parent Account** dropdown lets you sel
 
 ## System accounts vs user-created accounts
 
-EpochOS distinguishes between two kinds of accounts:
+Keystone distinguishes between two kinds of accounts:
 
-- **System accounts** are created by EpochOS when you initialize the default chart of accounts. They are tagged with a "System" badge in the account tree. System accounts support the built-in accounting automation (account mappings, automatic journal entries).
+- **System accounts** are created by Keystone when you initialize the default chart of accounts. They are tagged with a "System" badge in the account tree. System accounts support the built-in accounting automation (account mappings, automatic journal entries).
 
 - **User-created accounts** are accounts you add manually. They work identically to system accounts but are not tagged as system accounts.
 
@@ -155,7 +155,7 @@ If your chart of accounts is empty, the Chart of Accounts page displays an optio
 1. Navigate to **Accounting > Chart of Accounts**.
 2. If no accounts exist, you will see a message: "No accounts found. Initialize a default chart of accounts to get started."
 3. Click **Initialize Chart of Accounts**.
-4. EpochOS creates a standard set of accounts covering the typical needs of a mortgage brokerage (cash, receivables, revenue, commission expenses, etc.).
+4. Keystone creates a standard set of accounts covering the typical needs of a mortgage brokerage (cash, receivables, revenue, commission expenses, etc.).
 
 > **Screenshot placeholder:** *Empty Chart of Accounts page with the "Initialize Chart of Accounts" button.*
 
@@ -208,7 +208,7 @@ To toggle an account's active status, use the account management options. This i
 
 ## Best practices for mortgage company charts of accounts
 
-1. **Start with the default chart** -- EpochOS's initialization provides a solid starting point. Customize from there rather than building from scratch.
+1. **Start with the default chart** -- Keystone's initialization provides a solid starting point. Customize from there rather than building from scratch.
 
 2. **Use meaningful account numbers** -- A consistent numbering scheme makes it easier to find accounts in dropdowns and on reports. Reserve ranges for each account type.
 

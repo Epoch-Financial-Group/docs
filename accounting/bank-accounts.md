@@ -1,10 +1,10 @@
 # Bank Accounts
 
-The Bank Accounts section in EpochOS lets you track your company's real-world bank accounts alongside your chart of accounts. Each bank account is linked to a corresponding general ledger account, keeping your internal books and external bank records connected.
+The Bank Accounts section in Keystone lets you track your company's real-world bank accounts alongside your chart of accounts. Each bank account is linked to a corresponding general ledger account, keeping your internal books and external bank records connected.
 
-## What are bank accounts in EpochOS?
+## What are bank accounts in Keystone?
 
-A bank account in EpochOS represents a real financial account at a bank or financial institution. It stores:
+A bank account in Keystone represents a real financial account at a bank or financial institution. It stores:
 
 - The account name and institution
 - The last 4 digits of the account number (mask)
@@ -117,7 +117,7 @@ Matched transactions have been verified against your internal records through th
 
 ## Future Plaid integration
 
-EpochOS includes infrastructure for a future **Plaid** integration that will enable:
+Keystone includes infrastructure for a future **Plaid** integration that will enable:
 
 - **Automatic bank connection** -- Link your bank accounts via Plaid's secure connection flow instead of manually entering account details
 - **Automatic transaction import** -- Bank transactions are pulled automatically from your bank, eliminating manual data entry

@@ -1,16 +1,16 @@
 # Policy Management Overview
 
-Policy management in EpochOS provides a built-in document authoring and distribution system designed for mortgage lending companies. It replaces shared drives, email attachments, and disconnected wikis with a single, searchable policy library that tracks every change and controls exactly who can see what.
+Policy management in Keystone provides a built-in document authoring and distribution system designed for mortgage lending companies. It replaces shared drives, email attachments, and disconnected wikis with a single, searchable policy library that tracks every change and controls exactly who can see what.
 
 ---
 
 ## Why policy management matters in mortgage lending
 
-Mortgage companies operate under a web of federal, state, and investor regulations. Maintaining up-to-date, accessible policies is not optional -- it is a compliance requirement. Common pain points that EpochOS addresses:
+Mortgage companies operate under a web of federal, state, and investor regulations. Maintaining up-to-date, accessible policies is not optional -- it is a compliance requirement. Common pain points that Keystone addresses:
 
-- **Regulatory audits** -- Examiners expect you to produce current policies on demand. EpochOS keeps every policy versioned and timestamped so you can demonstrate exactly what was in effect at any point in time.
+- **Regulatory audits** -- Examiners expect you to produce current policies on demand. Keystone keeps every policy versioned and timestamped so you can demonstrate exactly what was in effect at any point in time.
 - **Distributed teams** -- Loan officers, processors, and branch managers need access to the same procedures regardless of location. A centralized library ensures everyone works from the same playbook.
-- **Stale documents** -- When policies live in shared drives, outdated versions linger. EpochOS status management (Draft, Published, Archived) makes it clear which version is authoritative.
+- **Stale documents** -- When policies live in shared drives, outdated versions linger. Keystone status management (Draft, Published, Archived) makes it clear which version is authoritative.
 - **Access control** -- Not every employee should see every policy. Compensation structures, disciplinary procedures, and executive-level documents can be restricted to specific people or roles.
 
 ---
@@ -34,7 +34,7 @@ Folders provide hierarchical organization for your policy library. Folders can b
 
 ### Versions
 
-Every time a policy is published, EpochOS automatically captures a version snapshot. Versions are sequentially numbered and include the content at that point in time, a change note describing what was modified, and a record of who created the version. You can view any previous version and restore it if needed.
+Every time a policy is published, Keystone automatically captures a version snapshot. Versions are sequentially numbered and include the content at that point in time, a change note describing what was modified, and a record of who created the version. You can view any previous version and restore it if needed.
 
 ### Permissions
 
@@ -50,11 +50,11 @@ Permissions can be assigned to individual employees or to employee roles (such a
 
 ### Document upload
 
-If you already have policies in PDF or Word format, you can upload them directly. EpochOS extracts the text content and converts it into the rich text editor format so you can continue editing in-browser. The original file is preserved and linked to the policy for reference.
+If you already have policies in PDF or Word format, you can upload them directly. Keystone extracts the text content and converts it into the rich text editor format so you can continue editing in-browser. The original file is preserved and linked to the policy for reference.
 
 ### Export
 
-Any policy can be exported back to PDF or DOCX format for distribution outside of EpochOS -- for example, when providing documents to regulators or printing physical copies for a branch office.
+Any policy can be exported back to PDF or DOCX format for distribution outside of Keystone -- for example, when providing documents to regulators or printing physical copies for a branch office.
 
 ---
 

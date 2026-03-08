@@ -1,6 +1,6 @@
 # Commissions
 
-The commission system in EpochOS handles compensation calculations for mortgage lending employees -- loan officers, processors, loan officer assistants, and branch managers. It supports flexible commission structures with rule-based overrides, special case logic, and performance-based bonuses.
+The commission system in Keystone handles compensation calculations for mortgage lending employees -- loan officers, processors, loan officer assistants, and branch managers. It supports flexible commission structures with rule-based overrides, special case logic, and performance-based bonuses.
 
 ## Documentation
 

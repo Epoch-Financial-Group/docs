@@ -1,6 +1,6 @@
 # Loan Pipeline
 
-The Loan Pipeline is the operational core of EpochOS. It tracks every mortgage loan from initial application through funding and commission payout, giving your team full visibility into deal flow, revenue, and team workload.
+The Loan Pipeline is the operational core of Keystone. It tracks every mortgage loan from initial application through funding and commission payout, giving your team full visibility into deal flow, revenue, and team workload.
 
 ## In this section
 

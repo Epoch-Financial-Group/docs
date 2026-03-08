@@ -144,7 +144,7 @@ Categories help you organize and filter tasks by function or department. They ar
 
 ### Default categories
 
-EpochOS provides a set of default categories out of the box:
+Keystone provides a set of default categories out of the box:
 
 - Compliance
 - Onboarding

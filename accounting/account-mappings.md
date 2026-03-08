@@ -1,6 +1,6 @@
 # Account Mappings
 
-Account mappings are the configuration layer that connects your loan pipeline to your accounting system. They define which accounts should be debited and credited when specific financial events occur -- enabling EpochOS to generate journal entries automatically instead of requiring manual data entry for every transaction.
+Account mappings are the configuration layer that connects your loan pipeline to your accounting system. They define which accounts should be debited and credited when specific financial events occur -- enabling Keystone to generate journal entries automatically instead of requiring manual data entry for every transaction.
 
 ## What are account mappings?
 
@@ -10,7 +10,7 @@ An account mapping is a rule that says: "When *this event* happens, debit *this 
 2. **Mapping Key** -- The specific event within that category (e.g., "brokerCompensation," "loanOfficer")
 3. **Debit Account / Credit Account** -- The chart of accounts entries to use for the journal entry
 
-When the mapped event occurs (for example, a loan is funded), EpochOS looks up the corresponding mapping and creates a journal entry using the specified debit and credit accounts.
+When the mapped event occurs (for example, a loan is funded), Keystone looks up the corresponding mapping and creates a journal entry using the specified debit and credit accounts.
 
 ## Navigating to account mappings
 
@@ -25,7 +25,7 @@ Without account mappings, every financial event would require someone to manuall
 The automation flow works as follows:
 
 1. A loan event occurs (e.g., loan funded, check received, commission calculated).
-2. EpochOS checks whether an account mapping exists for that event.
+2. Keystone checks whether an account mapping exists for that event.
 3. If a mapping is found, the system creates a journal entry using the mapped debit and credit accounts.
 4. The entry is created as a **Draft**, so it can be reviewed before posting.
 5. The entry is linked to the source loan for traceability.

@@ -21,7 +21,7 @@ This page walks through creating a new policy, using the rich text editor to for
 
 ## The rich text editor
 
-EpochOS includes a full-featured rich text editor powered by TipTap. The editor toolbar appears at the top of the content area and provides formatting controls organized into logical groups.
+Keystone includes a full-featured rich text editor powered by TipTap. The editor toolbar appears at the top of the content area and provides formatting controls organized into logical groups.
 
 > **Screenshot placeholder:** *Rich text editor toolbar showing all formatting buttons.*
 

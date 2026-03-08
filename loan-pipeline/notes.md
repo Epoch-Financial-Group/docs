@@ -60,7 +60,7 @@ To delete a note, click the **X** button on the right side of the note card. The
 
 ## How notes are organized
 
-Notes in EpochOS use a polymorphic model, meaning the same `Note` table is used across different parts of the system. For loans, each note is linked to a specific loan via the `loanId` field.
+Notes in Keystone use a polymorphic model, meaning the same `Note` table is used across different parts of the system. For loans, each note is linked to a specific loan via the `loanId` field.
 
 Key characteristics:
 

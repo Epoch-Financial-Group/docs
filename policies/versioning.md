@@ -1,6 +1,6 @@
 # Versioning
 
-Every time a policy is published in EpochOS, a version snapshot is automatically created. This provides a complete history of changes over the life of the policy -- essential for regulatory compliance, internal audits, and accountability.
+Every time a policy is published in Keystone, a version snapshot is automatically created. This provides a complete history of changes over the life of the policy -- essential for regulatory compliance, internal audits, and accountability.
 
 ---
 
@@ -12,7 +12,7 @@ Versions are created automatically when you **publish** a policy. You do not nee
 
 1. Edit a policy (it moves to Draft status if it was previously Published).
 2. Click **Publish** when you are satisfied with the changes.
-3. EpochOS prompts you for an optional **change note** describing what was modified.
+3. Keystone prompts you for an optional **change note** describing what was modified.
 4. A new version is created containing:
    - A sequential **version number** (1, 2, 3, ...).
    - The **title** of the policy at that point in time.

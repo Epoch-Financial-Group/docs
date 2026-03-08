@@ -1,6 +1,6 @@
 # Policies
 
-Policy Management in EpochOS gives your mortgage company a centralized place to author, organize, version, and distribute internal policies and procedures. From compliance handbooks to operational guides, every document lives in one searchable library with full version history and granular access controls.
+Policy Management in Keystone gives your mortgage company a centralized place to author, organize, version, and distribute internal policies and procedures. From compliance handbooks to operational guides, every document lives in one searchable library with full version history and granular access controls.
 
 ## In this section
 

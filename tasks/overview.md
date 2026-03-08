@@ -1,6 +1,6 @@
 # Task Management Overview
 
-Task management in EpochOS gives your mortgage company a structured way to track work items, assign responsibility, enforce deadlines, and automate repeating obligations. It integrates with the rest of the platform so that compliance tasks, onboarding checklists, licensing renewals, and day-to-day operational work all live in one place.
+Task management in Keystone gives your mortgage company a structured way to track work items, assign responsibility, enforce deadlines, and automate repeating obligations. It integrates with the rest of the platform so that compliance tasks, onboarding checklists, licensing renewals, and day-to-day operational work all live in one place.
 
 ---
 
@@ -15,7 +15,7 @@ Mortgage companies juggle a constant stream of operational, compliance, and admi
 - **IT and HR** -- Equipment requests, benefits enrollment, performance reviews.
 - **Recurring audits** -- Monthly QC file reviews, branch compliance checks, investor document audits.
 
-Without a centralized system, these tasks scatter across email threads, spreadsheets, and sticky notes. EpochOS consolidates them into a single dashboard with clear ownership, priority, and due dates.
+Without a centralized system, these tasks scatter across email threads, spreadsheets, and sticky notes. Keystone consolidates them into a single dashboard with clear ownership, priority, and due dates.
 
 ---
 
@@ -39,7 +39,7 @@ A task is a single unit of work with a title, description, and a set of properti
 
 ### Categories
 
-Categories are labels that group tasks by function or department. EpochOS ships with a set of default categories:
+Categories are labels that group tasks by function or department. Keystone ships with a set of default categories:
 
 - Compliance
 - Onboarding
@@ -57,11 +57,11 @@ Templates are reusable blueprints for sets of tasks that you perform repeatedly.
 
 ### Checklists
 
-A checklist is a specific instance of a template. When you instantiate a template, EpochOS creates a checklist containing individual tasks for each template item. Checklists track completion progress -- how many items are done out of the total -- and can be assigned to a specific employee.
+A checklist is a specific instance of a template. When you instantiate a template, Keystone creates a checklist containing individual tasks for each template item. Checklists track completion progress -- how many items are done out of the total -- and can be assigned to a specific employee.
 
 ### Recurring schedules
 
-Recurring schedules automatically generate tasks on a defined cadence. You configure the frequency (Daily, Weekly, Monthly, Quarterly, or Annually), the assignee, the priority, and optionally a start and end date. EpochOS creates tasks ahead of time based on a configurable lead-time window, so assignees have advance notice.
+Recurring schedules automatically generate tasks on a defined cadence. You configure the frequency (Daily, Weekly, Monthly, Quarterly, or Annually), the assignee, the priority, and optionally a start and end date. Keystone creates tasks ahead of time based on a configurable lead-time window, so assignees have advance notice.
 
 ---
 
@@ -95,7 +95,7 @@ Tasks move through a lifecycle represented by four statuses:
 
 ### Status transitions
 
-You can change a task's status at any time by editing the task or using quick-action controls. When a task is marked as Completed, EpochOS records the completion timestamp. If the status is changed back to To Do or In Progress, the completion timestamp is cleared.
+You can change a task's status at any time by editing the task or using quick-action controls. When a task is marked as Completed, Keystone records the completion timestamp. If the status is changed back to To Do or In Progress, the completion timestamp is cleared.
 
 ---
 

@@ -1,6 +1,6 @@
 # Adding Loans
 
-You can add a loan to EpochOS either manually through the loan form or in bulk via CSV upload (see [Bulk Upload](bulk-upload.md)). This page covers the manual creation process.
+You can add a loan to Keystone either manually through the loan form or in bulk via CSV upload (see [Bulk Upload](bulk-upload.md)). This page covers the manual creation process.
 
 ## Getting to the form
 
@@ -29,7 +29,7 @@ The loan creation form is organized into four sections:
 
 | Field | Required | Description |
 |-------|----------|-------------|
-| **Broker Loan Number** | Yes | Your internal loan number. Must be unique within your company. This is the primary identifier used throughout EpochOS and is searchable in the pipeline. |
+| **Broker Loan Number** | Yes | Your internal loan number. Must be unique within your company. This is the primary identifier used throughout Keystone and is searchable in the pipeline. |
 | **Lender Loan Number** | No | The loan number assigned by the lender/investor. Useful for cross-referencing with lender systems. |
 | **Loan Officer** | Yes | The originating loan officer. Select from a dropdown of active employees with the Loan Officer role. This assignment drives commission calculations. |
 | **Lender** | No | The lender or investor for this loan. Select from your company's lender list. If the lender does not appear, add it first in the Lenders settings. |

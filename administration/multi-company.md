@@ -1,12 +1,12 @@
 # Multi-Company Management
 
-EpochOS is built as a multi-tenant platform, meaning a single deployment can serve multiple independent companies. Each company has its own data, employees, loans, settings, and configurations. This page explains how multi-tenancy works, how to create and manage companies, and how data isolation is maintained.
+Keystone is built as a multi-tenant platform, meaning a single deployment can serve multiple independent companies. Each company has its own data, employees, loans, settings, and configurations. This page explains how multi-tenancy works, how to create and manage companies, and how data isolation is maintained.
 
 ## How multi-tenancy works
 
 ### The company model
 
-Every piece of data in EpochOS belongs to a company. The Company record is the root entity that all other records reference:
+Every piece of data in Keystone belongs to a company. The Company record is the root entity that all other records reference:
 
 | Field | Description |
 |-------|-------------|
@@ -23,7 +23,7 @@ Every piece of data in EpochOS belongs to a company. The Company record is the r
 
 ### Company slugs and routing
 
-The company slug is a critical part of how EpochOS routes requests. All company-scoped pages use the slug in the URL:
+The company slug is a critical part of how Keystone routes requests. All company-scoped pages use the slug in the URL:
 
 ```
 /{companySlug}/loans
@@ -154,11 +154,11 @@ Deactivating a company prevents its employees from accessing the platform. The c
 
 ## Stripe integration
 
-EpochOS includes Stripe integration fields for billing and subscription management:
+Keystone includes Stripe integration fields for billing and subscription management:
 
 | Field | Description |
 |-------|-------------|
-| **Stripe Customer ID** | A unique identifier in Stripe that links the EpochOS company to a Stripe customer record. Used for billing, invoicing, and subscription management. |
+| **Stripe Customer ID** | A unique identifier in Stripe that links the Keystone company to a Stripe customer record. Used for billing, invoicing, and subscription management. |
 | **Stripe Session ID** | The checkout session identifier from Stripe, used during the initial signup or subscription change process. |
 
 These fields are managed automatically by the platform's billing system. Super admins can view them on the company detail page but typically do not need to modify them directly.
@@ -167,7 +167,7 @@ These fields are managed automatically by the platform's billing system. Super a
 
 The typical billing workflow is:
 
-1. A company is created in EpochOS.
+1. A company is created in Keystone.
 2. When the company subscribes, a Stripe customer record is created and the `stripeCustomerId` is saved.
 3. Stripe handles recurring billing and payment processing.
 4. If payment lapses, the super admin can deactivate the company until billing is resolved.

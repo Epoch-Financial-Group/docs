@@ -4,7 +4,7 @@ The lender directory is your centralized record of every wholesale lender and co
 
 ## What the lender directory is
 
-In mortgage brokerage and correspondent lending, you work with many different wholesale lenders -- each with their own programs, underwriting guidelines, contacts, and portal systems. The EpochOS lender directory keeps all of this information in one place so that your team can quickly reference it and so that the platform can associate loans with the correct lender for commission calculations and reporting.
+In mortgage brokerage and correspondent lending, you work with many different wholesale lenders -- each with their own programs, underwriting guidelines, contacts, and portal systems. The Keystone lender directory keeps all of this information in one place so that your team can quickly reference it and so that the platform can associate loans with the correct lender for commission calculations and reporting.
 
 ---
 
@@ -147,7 +147,7 @@ Deleting a contact is immediate and cannot be undone. Make sure you no longer ne
 
 ### Loans
 
-Every loan in EpochOS is associated with a lender. The lender determines which program IDs and insurance clauses apply, and it appears in loan-level reporting and analytics.
+Every loan in Keystone is associated with a lender. The lender determines which program IDs and insurance clauses apply, and it appears in loan-level reporting and analytics.
 
 ### Commission rules
 

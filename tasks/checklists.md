@@ -1,6 +1,6 @@
 # Checklists
 
-Checklists are specific instances of task templates. When you instantiate a template, EpochOS creates a checklist containing individual tasks for each template item, with due dates calculated from the start date you provide. Checklists give you a structured way to track multi-step processes from start to finish.
+Checklists are specific instances of task templates. When you instantiate a template, Keystone creates a checklist containing individual tasks for each template item, with due dates calculated from the start date you provide. Checklists give you a structured way to track multi-step processes from start to finish.
 
 ---
 
@@ -34,7 +34,7 @@ A checklist consists of:
    - **Start Date** (required) -- The reference date used to calculate due dates. Each task's due date is calculated as: start date + the item's due-days offset.
 4. Click **Create**.
 
-EpochOS creates the checklist and generates a task for each item in the template. You are redirected to the checklist detail page.
+Keystone creates the checklist and generates a task for each item in the template. You are redirected to the checklist detail page.
 
 > **Screenshot placeholder:** *New checklist form showing template selector, name field, subject employee dropdown, assignee dropdown, and start date picker.*
 
@@ -86,7 +86,7 @@ The detail view shows:
 
 ## Working with checklist tasks
 
-Tasks within a checklist are standard EpochOS tasks. You can:
+Tasks within a checklist are standard Keystone tasks. You can:
 
 - **Change status** -- Mark individual tasks as In Progress, Completed, or Cancelled directly from the checklist view.
 - **Assign tasks** -- Assign individual tasks to different employees if the work is distributed across a team.

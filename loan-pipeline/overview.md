@@ -1,6 +1,6 @@
 # Pipeline Overview
 
-The Loan Pipeline is EpochOS's central workspace for tracking mortgage loans from application intake through funding and commission payout. It provides a real-time view of every active deal in your brokerage, along with filtering, sorting, and search tools to help you focus on what matters.
+The Loan Pipeline is Keystone's central workspace for tracking mortgage loans from application intake through funding and commission payout. It provides a real-time view of every active deal in your brokerage, along with filtering, sorting, and search tools to help you focus on what matters.
 
 ## What the pipeline shows
 

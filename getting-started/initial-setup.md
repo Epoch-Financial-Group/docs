@@ -1,6 +1,6 @@
 # Initial Setup
 
-This guide walks company administrators through the essential configuration steps after your first login to EpochOS. Following this sequence will ensure your team can begin using the platform effectively.
+This guide walks company administrators through the essential configuration steps after your first login to Keystone. Following this sequence will ensure your team can begin using the platform effectively.
 
 ---
 
@@ -35,7 +35,7 @@ Company Settings is where you define core information about your organization. T
 
 ### Loan Origination System (LOS)
 
-Select the loan origination system your company uses. EpochOS supports integration awareness for the following systems:
+Select the loan origination system your company uses. Keystone supports integration awareness for the following systems:
 
 | LOS | Description |
 |-----|-------------|
@@ -45,7 +45,7 @@ Select the loan origination system your company uses. EpochOS supports integrati
 | **BytePro** | Byte Software BytePro |
 | **Other** | Any other LOS not listed above |
 
-This setting helps EpochOS tailor certain features and data mappings to your specific LOS.
+This setting helps Keystone tailor certain features and data mappings to your specific LOS.
 
 ### Payroll Settings
 
@@ -116,7 +116,7 @@ From the Branches list, you can:
 
 Navigate to **Directories > People** in the sidebar.
 
-Employees are the core user records in EpochOS. Every person in your organization -- loan officers, processors, assistants, branch managers, and contractors -- is represented as an employee.
+Employees are the core user records in Keystone. Every person in your organization -- loan officers, processors, assistants, branch managers, and contractors -- is represented as an employee.
 
 ### Adding an Employee
 
@@ -159,14 +159,14 @@ Employees are the core user records in EpochOS. Every person in your organizatio
 
 ### Linking Employees to Login Accounts
 
-For an employee to log in to EpochOS, two things must be true:
+For an employee to log in to Keystone, two things must be true:
 
 1. The employee record must have an **email address** set.
 2. A Supabase Auth account must exist with **that exact email address**.
 
-When someone signs up for EpochOS (or is invited), the system automatically links their Auth account to any employee record that shares the same email. Once linked, the employee can log in and access the company workspace.
+When someone signs up for Keystone (or is invited), the system automatically links their Auth account to any employee record that shares the same email. Once linked, the employee can log in and access the company workspace.
 
-> **Note:** If an employee does not need to log in to EpochOS (for example, if they are a contractor whose data you track but who does not use the platform), you can leave the email field blank or simply not create a login for them.
+> **Note:** If an employee does not need to log in to Keystone (for example, if they are a contractor whose data you track but who does not use the platform), you can leave the email field blank or simply not create a login for them.
 
 ### State Licenses
 
@@ -298,7 +298,7 @@ The Chart of Accounts is the foundation of your accounting system. It defines th
 
 ### Initializing Default Accounts
 
-EpochOS can automatically generate a default chart of accounts tailored for mortgage lending operations. On the Chart of Accounts page:
+Keystone can automatically generate a default chart of accounts tailored for mortgage lending operations. On the Chart of Accounts page:
 
 1. If no accounts exist yet, you will see an option to **Initialize Default Accounts**.
 2. Click this button to seed your chart of accounts with a standard set of accounts commonly used in mortgage lending.
@@ -445,7 +445,7 @@ Use this checklist to track your progress through initial setup:
 
 ## Next Steps
 
-Once your initial setup is complete, you are ready to start using EpochOS for day-to-day operations:
+Once your initial setup is complete, you are ready to start using Keystone for day-to-day operations:
 
 - **Import or create loans** in the [Loan Pipeline](../loan-pipeline.md).
 - **Run commissions** from the Commission section.

@@ -1,6 +1,6 @@
 # Onboarding
 
-Onboarding is the process of converting an accepted candidate into a fully operational employee. EpochOS provides a guided conversion workflow that creates the employee record, transfers data from the candidate profile, and optionally generates an onboarding checklist with tasks to complete before the new hire is ready to work.
+Onboarding is the process of converting an accepted candidate into a fully operational employee. Keystone provides a guided conversion workflow that creates the employee record, transfers data from the candidate profile, and optionally generates an onboarding checklist with tasks to complete before the new hire is ready to work.
 
 ## The conversion workflow
 

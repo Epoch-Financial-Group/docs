@@ -15,7 +15,7 @@ Bank reconciliation systematically resolves these differences by matching each b
 
 ## Reconciliation statuses
 
-Each bank transaction in EpochOS has a reconciliation status that tracks where it stands in the matching process:
+Each bank transaction in Keystone has a reconciliation status that tracks where it stands in the matching process:
 
 ### Unreconciled
 
@@ -43,7 +43,7 @@ The transaction has been **intentionally excluded from reconciliation**. Use thi
 
 ## Matching bank transactions to journal entries
 
-Matching is the core action of reconciliation. A **BankTransactionMatch** record links a bank transaction to a journal entry. This allows EpochOS to track which bank transactions have been accounted for and which are still outstanding.
+Matching is the core action of reconciliation. A **BankTransactionMatch** record links a bank transaction to a journal entry. This allows Keystone to track which bank transactions have been accounted for and which are still outstanding.
 
 ### How matching works
 

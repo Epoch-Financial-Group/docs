@@ -1,14 +1,14 @@
 # Lead Sources
 
-Lead sources track where your loans originate from. Each loan in EpochOS can be tagged with a lead source, giving you visibility into which marketing channels, referral partners, and business development efforts are driving your pipeline and revenue.
+Lead sources track where your loans originate from. Each loan in Keystone can be tagged with a lead source, giving you visibility into which marketing channels, referral partners, and business development efforts are driving your pipeline and revenue.
 
 ## What lead sources are
 
-A lead source is a simple named record -- for example, "Zillow," "Realtor Referral," "Past Client," "Builder Partnership," or "Company Website." When a loan is entered or imported into EpochOS, it can be associated with one of these lead sources.
+A lead source is a simple named record -- for example, "Zillow," "Realtor Referral," "Past Client," "Builder Partnership," or "Company Website." When a loan is entered or imported into Keystone, it can be associated with one of these lead sources.
 
 Lead sources serve two main purposes:
 
-1. **Tracking and analytics** -- Understand which channels produce the most volume, the highest close rates, and the best revenue. EpochOS includes lead source analytics dashboards that break down performance by source.
+1. **Tracking and analytics** -- Understand which channels produce the most volume, the highest close rates, and the best revenue. Keystone includes lead source analytics dashboards that break down performance by source.
 2. **Commission rules** -- Commission templates can include rules that vary by lead source. For example, you might pay a lower commission split on company-provided leads (where the company spent marketing dollars) versus self-generated leads (where the loan officer sourced the business themselves).
 
 ---
@@ -107,7 +107,7 @@ Each lead source is a simple record:
 |-------|-------------|
 | **Name** | The display name of the lead source (unique per company, 1--100 characters) |
 
-Lead sources are scoped to your company -- each company in EpochOS maintains its own list. The name must be unique within your company.
+Lead sources are scoped to your company -- each company in Keystone maintains its own list. The name must be unique within your company.
 
 ---
 

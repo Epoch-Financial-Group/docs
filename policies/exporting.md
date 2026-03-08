@@ -1,6 +1,6 @@
 # Exporting Policies
 
-EpochOS allows you to export any policy to PDF or DOCX format. This is useful when you need to distribute policies outside of the platform, provide documents to regulators, or produce printed copies.
+Keystone allows you to export any policy to PDF or DOCX format. This is useful when you need to distribute policies outside of the platform, provide documents to regulators, or produce printed copies.
 
 ---
 
@@ -9,7 +9,7 @@ EpochOS allows you to export any policy to PDF or DOCX format. This is useful wh
 | Format | Description | Best for |
 |--------|-------------|----------|
 | **PDF** | Portable Document Format | Sharing read-only copies, regulatory submissions, printing |
-| **DOCX** | Microsoft Word format | Further editing in Word, collaboration with external parties who do not use EpochOS |
+| **DOCX** | Microsoft Word format | Further editing in Word, collaboration with external parties who do not use Keystone |
 
 ---
 
@@ -59,7 +59,7 @@ For branch offices that maintain physical policy binders, export policies as PDF
 
 ### External collaboration
 
-When working with legal counsel, investors, or other external parties who do not have access to EpochOS, export the relevant policies as DOCX files for review and redlining.
+When working with legal counsel, investors, or other external parties who do not have access to Keystone, export the relevant policies as DOCX files for review and redlining.
 
 ### Onboarding packets
 

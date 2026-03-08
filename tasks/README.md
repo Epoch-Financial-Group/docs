@@ -1,6 +1,6 @@
 # Tasks
 
-Task Management in EpochOS provides a centralized system for tracking, assigning, and automating work across your mortgage operations. From one-off compliance follow-ups to repeating monthly audits, the task system helps your team stay on top of deadlines and accountability.
+Task Management in Keystone provides a centralized system for tracking, assigning, and automating work across your mortgage operations. From one-off compliance follow-ups to repeating monthly audits, the task system helps your team stay on top of deadlines and accountability.
 
 ## In this section
 

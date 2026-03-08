@@ -1,6 +1,6 @@
 # Commission System Overview
 
-The EpochOS commission system automates compensation calculations for mortgage lending teams. It handles the full lifecycle from defining how employees are paid, to calculating commissions on funded loans, to finalizing pay periods and generating reports.
+The Keystone commission system automates compensation calculations for mortgage lending teams. It handles the full lifecycle from defining how employees are paid, to calculating commissions on funded loans, to finalizing pay periods and generating reports.
 
 ## The Commission Lifecycle
 
@@ -33,7 +33,7 @@ When a template is updated, assignments can be synced so all employees under tha
 
 ### Stage 3: Loans Enter Pay Periods
 
-When loans are funded, they are automatically grouped into **pay periods** based on the company's payroll schedule. EpochOS supports four pay period frequencies:
+When loans are funded, they are automatically grouped into **pay periods** based on the company's payroll schedule. Keystone supports four pay period frequencies:
 
 - **Weekly** -- 7-day periods
 - **Biweekly** -- 14-day periods
@@ -146,7 +146,7 @@ The commission engine processes each loan for multiple roles:
 
 ## Draw Balance System
 
-Many mortgage companies pay loan officers a guaranteed minimum (a "draw") each pay period. The draw system in EpochOS tracks:
+Many mortgage companies pay loan officers a guaranteed minimum (a "draw") each pay period. The draw system in Keystone tracks:
 
 - **Wage paid**: The guaranteed minimum payment (calculated from hourly rate or flat draw amount)
 - **Previous draw balance**: Any accumulated deficit from prior periods

@@ -4,7 +4,7 @@
 
 Recruiting talented Loan Officers, Processors, and support staff is one of the most impactful activities a mortgage company undertakes. Every new originator directly affects volume and revenue, and every new operations team member affects the quality and speed of loan processing. Yet many brokerages manage recruiting through spreadsheets, email threads, and disconnected tools.
 
-The EpochOS Recruiting module brings the hiring process into the same platform where your team already manages loans, commissions, and operations. This creates a seamless path from "we found a great candidate" to "they just closed their first loan."
+The Keystone Recruiting module brings the hiring process into the same platform where your team already manages loans, commissions, and operations. This creates a seamless path from "we found a great candidate" to "they just closed their first loan."
 
 ## What the recruiting module provides
 

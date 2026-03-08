@@ -1,6 +1,6 @@
 # Journal Entries
 
-Journal entries are the fundamental unit of record-keeping in EpochOS's accounting system. Every financial transaction -- whether it is a lender check deposit, a commission payment, or a manual adjustment -- is recorded as a journal entry with balanced debit and credit lines.
+Journal entries are the fundamental unit of record-keeping in Keystone's accounting system. Every financial transaction -- whether it is a lender check deposit, a commission payment, or a manual adjustment -- is recorded as a journal entry with balanced debit and credit lines.
 
 ## What is a journal entry?
 
@@ -96,7 +96,7 @@ The source badge appears on the journal entry list and detail pages, making it e
 
 ## Automatic journal entries from loan events
 
-When account mappings are configured (see [Account Mappings](account-mappings.md)), EpochOS automatically creates journal entries as loans progress through key stages. These entries:
+When account mappings are configured (see [Account Mappings](account-mappings.md)), Keystone automatically creates journal entries as loans progress through key stages. These entries:
 
 - Are linked to the source loan via the **Linked Loan** field
 - Use the source type corresponding to the event (e.g., `LoanFunded`)

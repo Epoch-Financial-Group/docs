@@ -1,6 +1,6 @@
 # Company Setup
 
-Before you can begin tracking loans, running commissions, or generating reports in EpochOS, you need to configure the foundational data that the rest of the platform depends on. This section walks through every piece of that initial setup.
+Before you can begin tracking loans, running commissions, or generating reports in Keystone, you need to configure the foundational data that the rest of the platform depends on. This section walks through every piece of that initial setup.
 
 ## What you will configure
 

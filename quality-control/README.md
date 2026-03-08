@@ -1,6 +1,6 @@
 # Quality Control
 
-Quality Control (QC) is EpochOS's built-in loan review system. It enables mortgage companies to systematically audit closed and funded loans for regulatory compliance, documentation accuracy, and adherence to internal policies. Whether you are meeting investor requirements, preparing for agency audits, or simply maintaining best practices, the QC module provides the structure to do it consistently.
+Quality Control (QC) is Keystone's built-in loan review system. It enables mortgage companies to systematically audit closed and funded loans for regulatory compliance, documentation accuracy, and adherence to internal policies. Whether you are meeting investor requirements, preparing for agency audits, or simply maintaining best practices, the QC module provides the structure to do it consistently.
 
 ## In this section
 

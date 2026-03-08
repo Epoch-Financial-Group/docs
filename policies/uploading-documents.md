@@ -1,6 +1,6 @@
 # Uploading Documents
 
-If your company already has policies in PDF or Word format, you can upload them directly into EpochOS. The system automatically extracts the text content and converts it into the rich text editor format, allowing you to continue editing and managing the document within the platform.
+If your company already has policies in PDF or Word format, you can upload them directly into Keystone. The system automatically extracts the text content and converts it into the rich text editor format, allowing you to continue editing and managing the document within the platform.
 
 ---
 
@@ -22,7 +22,7 @@ The maximum file size is **20 MB**.
 2. Click **New Policy** to open the policy creation form.
 3. In the upload section, click **Upload Document** or drag and drop a file onto the upload area.
 4. Select a PDF or Word file from your computer.
-5. EpochOS processes the file:
+5. Keystone processes the file:
    - The text content is extracted from the document.
    - The extracted content is converted into the rich text editor format.
    - The content appears in the editor, ready for review and editing.
@@ -55,7 +55,7 @@ Extracted content is converted into the TipTap JSON format used by the rich text
 - Review the extracted content in the editor for accuracy.
 - Fix any formatting issues that may have occurred during conversion.
 - Add headings, tables, or other formatting as needed.
-- The policy is now a native EpochOS document and can be edited, versioned, and managed like any other policy.
+- The policy is now a native Keystone document and can be edited, versioned, and managed like any other policy.
 
 ---
 

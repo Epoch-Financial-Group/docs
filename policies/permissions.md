@@ -1,6 +1,6 @@
 # Permissions
 
-EpochOS provides granular access controls for policies and folders. You can restrict who can view, edit, or administer specific policies or entire folders, using either individual employee assignments or role-based rules.
+Keystone provides granular access controls for policies and folders. You can restrict who can view, edit, or administer specific policies or entire folders, using either individual employee assignments or role-based rules.
 
 ---
 
@@ -75,10 +75,10 @@ A permission applied to a folder affects all policies within that folder. This i
 
 ## How permissions cascade
 
-When determining a user's effective access to a policy, EpochOS evaluates permissions in the following order:
+When determining a user's effective access to a policy, Keystone evaluates permissions in the following order:
 
 1. **Policy-level permissions** -- If the user (or their role) has an explicit permission on the specific policy, that permission applies.
-2. **Folder-level permissions** -- If no policy-level permission exists, EpochOS checks the folder the policy belongs to. If the user (or their role) has a permission on the folder, that permission applies.
+2. **Folder-level permissions** -- If no policy-level permission exists, Keystone checks the folder the policy belongs to. If the user (or their role) has a permission on the folder, that permission applies.
 3. **Default company permissions** -- If no specific permissions are set at either the policy or folder level, default company access rules apply.
 
 > **Important:** Policy-level permissions take precedence over folder-level permissions. If a user has Viewer access at the folder level but Editor access on a specific policy within that folder, they will have Editor access to that policy.

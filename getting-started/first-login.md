@@ -1,16 +1,16 @@
 # First Login
 
-This page walks you through creating your account, signing in to EpochOS, and understanding what you see when you first land in the application.
+This page walks you through creating your account, signing in to Keystone, and understanding what you see when you first land in the application.
 
 ---
 
 ## Creating Your Account
 
-There are two ways to get an EpochOS account:
+There are two ways to get an Keystone account:
 
 ### Option A: Self-Registration
 
-1. Navigate to the EpochOS application in your browser.
+1. Navigate to the Keystone application in your browser.
 2. On the login page, click the **"create a new account"** link beneath the sign-in form.
 3. Fill in the registration form:
    - **Full name** -- Your first and last name (e.g., "Jane Smith").
@@ -23,19 +23,19 @@ There are two ways to get an EpochOS account:
 
 ### Option B: Receiving an Invitation
 
-Your company administrator may create an employee record for you inside EpochOS and associate it with your email address. In this case:
+Your company administrator may create an employee record for you inside Keystone and associate it with your email address. In this case:
 
 1. You will receive instructions (via email or from your administrator directly) to create an account using your work email address.
 2. Follow the self-registration steps above using the **exact email address** your administrator used when adding you.
 3. Once your Supabase Auth account is linked to your employee record, you will automatically gain access to your company when you log in.
 
-> **Note:** Your email address in EpochOS must exactly match the email your administrator entered when creating your employee record. If you sign up with a different email, your account will not be linked to any company.
+> **Note:** Your email address in Keystone must exactly match the email your administrator entered when creating your employee record. If you sign up with a different email, your account will not be linked to any company.
 
 ---
 
 ## Signing In
 
-1. Navigate to the EpochOS login page.
+1. Navigate to the Keystone login page.
 2. Enter your **email address** and **password**.
 3. Click **Sign in**.
 
@@ -43,13 +43,13 @@ Your company administrator may create an employee record for you inside EpochOS 
 
 If your credentials are incorrect, an error message will appear at the top of the form. Double-check your email and password, and try again.
 
-> **Note:** EpochOS uses Supabase Auth for authentication. Your password is securely hashed and never stored in plain text.
+> **Note:** Keystone uses Supabase Auth for authentication. Your password is securely hashed and never stored in plain text.
 
 ---
 
 ## Selecting Your Company
 
-After signing in, EpochOS determines which companies your account is associated with:
+After signing in, Keystone determines which companies your account is associated with:
 
 ### Single Company
 
@@ -83,7 +83,7 @@ The interface is divided into two main areas:
 
 ### The Sidebar (Left)
 
-A persistent navigation sidebar appears on the left side of the screen. It contains links and collapsible groups for every major section of EpochOS: Dashboard, Data Analytics, Loan Pipeline, Policies, Tasks, Quality Control, Recruiting, Commission, Accounting, Directories, and Administration. See the [Navigation](navigation.md) guide for a full breakdown.
+A persistent navigation sidebar appears on the left side of the screen. It contains links and collapsible groups for every major section of Keystone: Dashboard, Data Analytics, Loan Pipeline, Policies, Tasks, Quality Control, Recruiting, Commission, Accounting, Directories, and Administration. See the [Navigation](navigation.md) guide for a full breakdown.
 
 ### The Main Content Area (Right)
 
@@ -95,7 +95,7 @@ The majority of the screen is dedicated to the page content. On the Dashboard, t
 
 ## Signing Out
 
-To sign out of EpochOS:
+To sign out of Keystone:
 
 1. If you are on the company selection page, click the **Sign out** button in the top-right corner.
 2. If you are inside a company workspace, use the sign-out option available in the application header or sidebar.
@@ -107,4 +107,4 @@ You will be returned to the login page.
 ## Next Steps
 
 - **Company Administrators:** Proceed to [Initial Setup](initial-setup.md) to configure your company, add branches and employees, set up lenders, and create commission templates.
-- **All Users:** Review the [Navigation](navigation.md) guide to learn how to find every feature in EpochOS.
+- **All Users:** Review the [Navigation](navigation.md) guide to learn how to find every feature in Keystone.

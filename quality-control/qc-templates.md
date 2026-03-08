@@ -76,7 +76,7 @@ Each template contains one or more checklist items (questions). These are the sp
 
 ### Standard categories
 
-EpochOS includes the following standard categories for organizing QC items. You are free to create your own categories as well.
+Keystone includes the following standard categories for organizing QC items. You are free to create your own categories as well.
 
 | Category | Typical focus areas |
 |----------|-------------------|
@@ -138,7 +138,7 @@ Deleting a template does not delete existing QC reviews that were created from i
 
 ## Using the default template
 
-EpochOS can seed a **Standard QC Checklist** template with approximately 55 industry-standard items. To create it:
+Keystone can seed a **Standard QC Checklist** template with approximately 55 industry-standard items. To create it:
 
 1. Navigate to `/{company}/settings` and scroll to the Quality Control section.
 2. Click **Create Default QC Template**.

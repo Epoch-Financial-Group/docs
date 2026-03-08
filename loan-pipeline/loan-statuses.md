@@ -1,6 +1,6 @@
 # Loan Statuses
 
-Every loan in EpochOS has a status that indicates where it stands in the mortgage origination lifecycle. There are 16 statuses organized across four phases: origination, underwriting, closing, and post-closing.
+Every loan in Keystone has a status that indicates where it stands in the mortgage origination lifecycle. There are 16 statuses organized across four phases: origination, underwriting, closing, and post-closing.
 
 ## Status overview
 
@@ -113,7 +113,7 @@ Each status is displayed with a color-coded badge throughout the application:
 
 Changing a loan's status can trigger automated actions:
 
-- **Moving to Funded:** When a loan's status changes to `Funded`, EpochOS automatically generates accounting journal entries to record the loan revenue. This only happens the first time the loan moves to Funded.
+- **Moving to Funded:** When a loan's status changes to `Funded`, Keystone automatically generates accounting journal entries to record the loan revenue. This only happens the first time the loan moves to Funded.
 
 - **Setting the Funded Date:** On the Dates tab, setting the `fundedDate` for the first time also triggers funded journal entries, independently of the status field.
 

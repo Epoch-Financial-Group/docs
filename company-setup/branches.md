@@ -1,6 +1,6 @@
 # Branches
 
-Branches represent the physical locations or organizational units within your mortgage company. Every employee can be assigned to a branch, and branch-level groupings are used throughout EpochOS for reporting, analytics, and commission rule scoping.
+Branches represent the physical locations or organizational units within your mortgage company. Every employee can be assigned to a branch, and branch-level groupings are used throughout Keystone for reporting, analytics, and commission rule scoping.
 
 ## Why branches matter
 

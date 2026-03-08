@@ -1,6 +1,6 @@
 # Employees
 
-The employee directory is the central record of everyone involved in your lending operations -- loan officers, processors, assistants, contractors, and branch managers. Employee records drive loan assignments, commission calculations, draw payments, and reporting throughout EpochOS.
+The employee directory is the central record of everyone involved in your lending operations -- loan officers, processors, assistants, contractors, and branch managers. Employee records drive loan assignments, commission calculations, draw payments, and reporting throughout Keystone.
 
 ## The employee directory
 
@@ -129,7 +129,7 @@ The following fields are managed on the employee data model but may be edited th
 
 ## State licensing
 
-Loan officers and other NMLS-licensed employees need state-level licenses to originate loans. EpochOS tracks these per employee.
+Loan officers and other NMLS-licensed employees need state-level licenses to originate loans. Keystone tracks these per employee.
 
 Each state license record includes:
 

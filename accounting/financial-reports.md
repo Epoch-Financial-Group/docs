@@ -1,6 +1,6 @@
 # Financial Reports
 
-EpochOS provides three standard financial reports that summarize your company's financial position and performance: the Trial Balance, Balance Sheet, and Income Statement. All reports are generated on demand from posted journal entries and can be exported to CSV and PDF.
+Keystone provides three standard financial reports that summarize your company's financial position and performance: the Trial Balance, Balance Sheet, and Income Statement. All reports are generated on demand from posted journal entries and can be exported to CSV and PDF.
 
 ## Navigating to reports
 
@@ -18,7 +18,7 @@ Click any card to navigate to that report.
 
 ## Fiscal year configuration
 
-Before generating reports, you may want to verify your fiscal year configuration. The fiscal year determines the reporting periods used by EpochOS.
+Before generating reports, you may want to verify your fiscal year configuration. The fiscal year determines the reporting periods used by Keystone.
 
 - **Default**: January 1 (calendar year)
 - **Custom**: Set any start month and day in the Settings area
@@ -69,7 +69,7 @@ If the totals are equal, your books are in balance. If they are not equal, a war
 
 ### What to do if the trial balance is out of balance
 
-An out-of-balance trial balance means that somewhere in your journal entries, debits do not equal credits. This should not happen if all entries were created through EpochOS (which enforces balance), but can occur if:
+An out-of-balance trial balance means that somewhere in your journal entries, debits do not equal credits. This should not happen if all entries were created through Keystone (which enforces balance), but can occur if:
 
 - Data was imported incorrectly
 - A database-level change was made outside the application

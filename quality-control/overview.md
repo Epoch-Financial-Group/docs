@@ -12,7 +12,7 @@ A strong QC program helps your company:
 - **Identify training opportunities** when the same issues appear repeatedly
 - **Document due diligence** with a clear audit trail
 
-## How QC works in EpochOS
+## How QC works in Keystone
 
 The QC module has three core components that work together:
 

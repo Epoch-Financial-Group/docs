@@ -1,6 +1,6 @@
 # Super Admin
 
-Super admin is the highest level of access in EpochOS. While regular users operate within the context of a single company, super admins have platform-wide visibility and the ability to create and manage all companies in the system.
+Super admin is the highest level of access in Keystone. While regular users operate within the context of a single company, super admins have platform-wide visibility and the ability to create and manage all companies in the system.
 
 ## What is a super admin?
 

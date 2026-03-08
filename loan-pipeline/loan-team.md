@@ -1,6 +1,6 @@
 # Loan Team
 
-Every loan in EpochOS has a team responsible for originating and processing it. The team consists of a Loan Officer, optional Loan Officer Assistants (LOAs), and optional Processors. Team assignments are managed from the **Team** card on the loan detail page's **Overview** tab.
+Every loan in Keystone has a team responsible for originating and processing it. The team consists of a Loan Officer, optional Loan Officer Assistants (LOAs), and optional Processors. Team assignments are managed from the **Team** card on the loan detail page's **Overview** tab.
 
 ## Team roles
 
@@ -75,7 +75,7 @@ Click the **X** button next to the processor's name. The removal takes effect im
 
 ## How team assignments affect commissions
 
-Team assignments are directly tied to EpochOS's commission engine. Each team member's commission is calculated based on their individual commission plan:
+Team assignments are directly tied to Keystone's commission engine. Each team member's commission is calculated based on their individual commission plan:
 
 - **Loan Officer:** Their commission plan defines their percentage or flat-rate split of the broker compensation or loan amount. Commission plans can be based on either `LoanAmount` or `BrokerCompensation`.
 - **LOAs and Processors:** Each can have their own commission deduction from the loan officer's commission. Their deduction basis can be `LoanAmount`, `LoanRevenue`, `NetCommission`, or `GrossCommission`.
@@ -96,4 +96,4 @@ When uploading loans via CSV, you can assign team members by including columns f
 - `Primary Loan Processor Name` / `Email` -- up to 3 processor slots
 - `Loan Officer #2 Name` / `Email` and `Loan Officer #3 Name` / `Email` -- secondary and tertiary LOs (added as assistants)
 
-If an employee name or email is included in the CSV but does not match an existing employee, EpochOS will auto-create the employee record for you. See [Bulk Upload](bulk-upload.md) for details.
+If an employee name or email is included in the CSV but does not match an existing employee, Keystone will auto-create the employee record for you. See [Bulk Upload](bulk-upload.md) for details.

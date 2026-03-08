@@ -1,6 +1,6 @@
 # Getting Started
 
-Welcome to EpochOS -- the all-in-one operations platform for mortgage lending companies. EpochOS helps you manage your loan pipeline, track commissions, run quality control, handle accounting, recruit new talent, and much more, all from a single web application.
+Welcome to Keystone -- the all-in-one operations platform for mortgage lending companies. Keystone helps you manage your loan pipeline, track commissions, run quality control, handle accounting, recruit new talent, and much more, all from a single web application.
 
 This guide will walk you through everything you need to know to go from zero to fully operational.
 
@@ -18,8 +18,8 @@ This guide will walk you through everything you need to know to go from zero to 
 
 ## Who Is This For?
 
-- **Company Administrators** -- If you are setting up EpochOS for your mortgage company for the first time, start with [First Login](first-login.md) and then proceed to [Initial Setup](initial-setup.md).
-- **Branch Managers and Employees** -- If you have received an invitation to join an existing company on EpochOS, read [First Login](first-login.md) to learn how to access the platform, then review [Navigation](navigation.md) to orient yourself.
+- **Company Administrators** -- If you are setting up Keystone for your mortgage company for the first time, start with [First Login](first-login.md) and then proceed to [Initial Setup](initial-setup.md).
+- **Branch Managers and Employees** -- If you have received an invitation to join an existing company on Keystone, read [First Login](first-login.md) to learn how to access the platform, then review [Navigation](navigation.md) to orient yourself.
 - **All Users** -- The [Navigation](navigation.md) guide is a useful reference for understanding where every feature lives inside the application.
 
 ---
@@ -30,10 +30,10 @@ Before you begin, make sure you have:
 
 - A modern web browser (Chrome, Firefox, Safari, or Edge).
 - An email address for account creation or an invitation link from your company administrator.
-- Internet access -- EpochOS is a cloud-hosted application.
+- Internet access -- Keystone is a cloud-hosted application.
 
 ---
 
 ## Need Help?
 
-If you run into issues during setup or have questions that are not covered in this guide, contact your company administrator or reach out to EpochOS support.
+If you run into issues during setup or have questions that are not covered in this guide, contact your company administrator or reach out to Keystone support.

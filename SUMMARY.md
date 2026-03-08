@@ -7,7 +7,7 @@
 * [Overview](getting-started/README.md)
 * [First Login](getting-started/first-login.md)
 * [Initial Setup](getting-started/initial-setup.md)
-* [Navigating EpochOS](getting-started/navigation.md)
+* [Navigating Keystone](getting-started/navigation.md)
 
 ## Company Setup
 
@@ -44,7 +44,7 @@
 ## Accounting
 
 * [Overview](accounting/README.md)
-* [Accounting in EpochOS](accounting/overview.md)
+* [Accounting in Keystone](accounting/overview.md)
 * [Chart of Accounts](accounting/chart-of-accounts.md)
 * [Journal Entries](accounting/journal-entries.md)
 * [General Ledger](accounting/general-ledger.md)

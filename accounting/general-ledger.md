@@ -4,7 +4,7 @@ The General Ledger is the detailed, transaction-by-transaction record of activit
 
 ## What is the general ledger?
 
-In accounting, the general ledger is the complete set of accounts and their transactions. In EpochOS, the General Ledger page provides a focused view: you select a single account and a date range, and the system shows every posted journal entry line that touched that account, along with a running balance.
+In accounting, the general ledger is the complete set of accounts and their transactions. In Keystone, the General Ledger page provides a focused view: you select a single account and a date range, and the system shows every posted journal entry line that touched that account, along with a running balance.
 
 Think of it as a bank statement for any account in your chart of accounts -- not just bank accounts, but also receivables, revenue, expenses, and any other account.
 
