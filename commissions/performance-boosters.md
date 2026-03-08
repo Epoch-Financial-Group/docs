@@ -1,0 +1,254 @@
+# Performance Boosters
+
+Performance boosters add bonus commissions when an employee meets production thresholds over a defined time period. They incentivize loan officers to hit volume or unit count targets by rewarding higher production with additional compensation.
+
+## What Is a Performance Booster?
+
+A **CommissionPerformanceBooster** is attached to a commission template and defines:
+
+- **Measurement type**: What metric to measure (dollar volume or loan count)
+- **Time window**: The period over which production is measured
+- **Threshold conditions**: Tiered levels of production, each with a bonus amount
+
+When the commission engine processes a loan, it checks whether the loan officer's production (measured over the configured time window) meets any of the booster's threshold conditions. If so, a bonus is added to the commission for that loan.
+
+```
+Loan Officer closes loan
+  |
+  +--> Engine finds matching commission rule
+  |
+  +--> Rule linked to a performance condition?
+  |      |
+  |      +--> Look up the booster for that condition
+  |      +--> Calculate the time window (e.g., "last 1 month")
+  |      +--> Query the LO's production stats in that window
+  |      +--> Check if stats meet the condition's threshold
+  |      |
+  |      +--> Threshold met? --> Add bonus to commission
+  |      +--> Not met? --> No bonus
+  |
+  +--> Continue with normal commission calculation
+```
+
+## Creating a Performance Booster
+
+Each commission template can have one performance booster (with multiple threshold tiers).
+
+### Step 1: Open the Template Editor
+
+1. Navigate to **Commission Templates** and click on a template.
+2. Click **Edit**.
+3. Switch to the **Performance Booster** tab (or scroll to the Performance Booster section).
+
+<!-- Screenshot placeholder: Performance booster section in template editor -->
+> **[Screenshot]** The Performance Booster section with measurement type, time window, and condition tiers.
+
+### Step 2: Enable the Booster
+
+Toggle the **Active** switch to enable the performance booster.
+
+### Step 3: Configure Measurement Type
+
+Choose what production metric to track:
+
+| Measurement Type | Description | Example |
+|-----------------|-------------|---------|
+| **Volume ($)** | Total funded loan dollar amount | $5,000,000 in funded volume |
+| **Units (# loans)** | Count of funded loans | 10 funded loans |
+
+### Step 4: Configure the Time Window
+
+The time window defines the lookback period for measuring production. It consists of three settings:
+
+#### Duration Type
+
+| Duration Type | Description |
+|---------------|-------------|
+| **In the last** | A rolling window relative to the loan's funded date |
+| **Since beginning of** | From the start of the current period to the funded date |
+| **All time** | All production since the beginning of records |
+
+#### Period Type
+
+| Period Type | Description |
+|-------------|-------------|
+| **Week** | Weekly period |
+| **Month** | Monthly period |
+| **Quarter** | Quarterly period (3 months) |
+| **Year** | Annual period |
+
+#### Period Value
+
+A multiplier for the period type (used with "In the last" duration). For example:
+- "In the last **1 Month**" = the 30 days prior to the funded date
+- "In the last **3 Months**" = the 90 days prior to the funded date
+- "In the last **1 Quarter**" = the 3 months prior to the funded date
+
+#### Time Window Examples
+
+| Duration Type | Period Type | Period Value | Resulting Window |
+|---------------|-------------|--------------|------------------|
+| In the last | Month | 1 | From 1 month before the funded date to the funded date |
+| In the last | Quarter | 1 | From 3 months before the funded date to the funded date |
+| In the last | Year | 1 | From 1 year before the funded date to the funded date |
+| Since beginning of | Month | -- | From the 1st of the current month to the funded date |
+| Since beginning of | Quarter | -- | From the start of the current quarter to the funded date |
+| Since beginning of | Year | -- | From January 1 of the current year to the funded date |
+| All time | -- | -- | From the beginning of records to the funded date |
+
+### Step 5: Add Threshold Conditions
+
+Each condition defines a production tier with a bonus amount:
+
+| Field | Description |
+|-------|-------------|
+| **Threshold** | The production level that must be met (e.g., 5000000 for $5M volume, or 10 for 10 units) |
+| **Bonus Amount** | The bonus to add when this threshold is met |
+| **Bonus Type** | How the bonus is expressed: Percentage (%), Flat ($), or Basis Points (bps) |
+
+Add multiple conditions to create a tiered bonus structure. The engine evaluates conditions from the **highest threshold down** and uses the first one the employee qualifies for.
+
+<!-- Screenshot placeholder: Performance condition rows -->
+> **[Screenshot]** Threshold condition rows showing threshold value, bonus amount, and bonus type for each tier.
+
+#### How Thresholds Are Evaluated
+
+The engine:
+1. Sorts all conditions by threshold in descending order (highest first).
+2. Compares the employee's production metric against each threshold.
+3. The first condition where the employee's metric is **greater than or equal to** the threshold is selected.
+4. That condition's bonus is applied.
+
+This means the highest qualifying tier always wins.
+
+## How the Bonus Is Calculated
+
+Once a qualifying condition is found, the bonus is calculated based on the condition's bonus type and amount:
+
+| Bonus Type | Calculation |
+|------------|-------------|
+| **Flat ($)** | Bonus = flat amount (e.g., $200) |
+| **Percentage (%)** | Bonus = gross commission x bonus percentage / 100 |
+| **Basis Points (bps)** | Bonus = gross commission x bonus bps / 10000 |
+
+The bonus is added to the loan officer's commission for that loan. It appears as a separate `performanceBonus` line item in the commission results.
+
+## Linking Boosters to Rules
+
+Performance boosters work through their conditions. Each condition can be linked to one or more commission rules. When a rule with a linked performance condition is matched for a loan, the engine:
+
+1. Finds the booster that contains the linked condition.
+2. Calculates the time window based on the booster's settings and the loan's funded date.
+3. Queries the loan officer's production (volume or units) within that window.
+4. Checks if the employee qualifies for the linked condition.
+5. If qualified AND the qualifying condition matches the linked one, the bonus is applied.
+
+This design allows different rules to reference different tiers of the same booster, or you can have a single rule that references a specific tier.
+
+## Worked Examples
+
+### Example 1: Monthly Volume Bonus
+
+**Scenario**: A loan officer earns a bonus on each loan if their rolling monthly funded volume exceeds certain thresholds.
+
+**Booster Configuration**:
+- Measurement Type: Volume ($)
+- Duration Type: In the last
+- Period Type: Month
+- Period Value: 1
+
+**Conditions**:
+
+| Tier | Threshold | Bonus Amount | Bonus Type |
+|------|-----------|--------------|------------|
+| Gold | $10,000,000 | 15 | Basis Points |
+| Silver | $5,000,000 | 10 | Basis Points |
+| Bronze | $2,000,000 | 5 | Basis Points |
+
+**Scenario**: A loan officer closes a $400,000 loan. Their funded volume in the last month (including this loan) is $6,200,000.
+
+1. Engine checks Gold tier: $6.2M >= $10M? No.
+2. Engine checks Silver tier: $6.2M >= $5M? Yes.
+3. Silver tier qualifies. Bonus = 10 bps.
+
+If the LO's gross commission on this loan is $2,000 (50 bps on $400K):
+- Bonus = $2,000 x 10 / 10,000 = **$2.00** (10 bps of gross commission)
+
+Wait -- that seems low. Let's reconsider. The bonus is 10 bps applied to the **gross commission**, not the loan amount. If the intent is 10 bps on the loan amount, the bonus would need to be configured differently.
+
+More commonly, the bonus is a **flat amount** or a **percentage of the gross commission**:
+
+**Alternative Conditions (Flat Bonus)**:
+
+| Tier | Threshold | Bonus Amount | Bonus Type |
+|------|-----------|--------------|------------|
+| Gold | $10,000,000 | $500 | Flat |
+| Silver | $5,000,000 | $250 | Flat |
+| Bronze | $2,000,000 | $100 | Flat |
+
+With the Silver tier qualifying:
+- Bonus = **$250** added to the commission on this loan.
+
+**Alternative Conditions (Percentage of Gross)**:
+
+| Tier | Threshold | Bonus Amount | Bonus Type |
+|------|-----------|--------------|------------|
+| Gold | $10,000,000 | 15% | Percentage |
+| Silver | $5,000,000 | 10% | Percentage |
+| Bronze | $2,000,000 | 5% | Percentage |
+
+With the Silver tier qualifying and a $2,000 gross commission:
+- Bonus = $2,000 x 10 / 100 = **$200** added to the commission.
+
+### Example 2: Quarterly Unit Count Bonus
+
+**Scenario**: Loan officers who close more than 15 loans in a quarter earn a flat $300 bonus per loan.
+
+**Booster Configuration**:
+- Measurement Type: Units (# loans)
+- Duration Type: Since beginning of
+- Period Type: Quarter
+- Period Value: 1
+
+**Conditions**:
+
+| Tier | Threshold | Bonus Amount | Bonus Type |
+|------|-----------|--------------|------------|
+| 1 | 15 | $300 | Flat |
+
+**Scenario**: A loan officer closes their 18th loan of the quarter.
+
+1. Engine checks: 18 >= 15? Yes.
+2. Bonus = **$300** added to this loan's commission.
+
+### Example 3: Annual Volume Tiers
+
+**Scenario**: Tiered annual bonuses based on cumulative funded volume.
+
+**Booster Configuration**:
+- Measurement Type: Volume ($)
+- Duration Type: Since beginning of
+- Period Type: Year
+- Period Value: 1
+
+**Conditions**:
+
+| Tier | Threshold | Bonus Amount | Bonus Type |
+|------|-----------|--------------|------------|
+| Platinum | $50,000,000 | 20% | Percentage |
+| Gold | $25,000,000 | 15% | Percentage |
+| Silver | $10,000,000 | 10% | Percentage |
+
+**Scenario**: A loan officer has funded $28,000,000 year-to-date and closes a loan with a $3,000 gross commission.
+
+1. Engine checks Platinum: $28M >= $50M? No.
+2. Engine checks Gold: $28M >= $25M? Yes.
+3. Bonus = $3,000 x 15 / 100 = **$450** added to this loan's commission.
+
+## Important Notes
+
+- Each template can have **one** performance booster, but that booster can have **many** threshold conditions (tiers).
+- The booster must be set to **Active** to be evaluated. Deactivating the booster disables all performance bonuses without deleting the configuration.
+- Production stats are calculated by querying all funded loans for the loan officer within the time window. This includes loans across all pay periods.
+- The performance bonus is calculated per loan. Each loan in a pay period is independently evaluated against the booster thresholds.
+- If an employee's production does not meet any threshold, no bonus is added -- the base or rule commission stands as-is.

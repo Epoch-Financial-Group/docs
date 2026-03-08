@@ -1,0 +1,120 @@
+# Task Templates
+
+Task templates are reusable blueprints for sets of tasks that your company performs repeatedly. Instead of manually creating the same list of tasks every time you onboard a new employee, conduct a quarterly audit, or process a licensing renewal, you define the template once and instantiate it as needed.
+
+---
+
+## What a template contains
+
+A template consists of:
+
+| Property | Description |
+|----------|-------------|
+| **Name** | A descriptive name for the template (e.g., "New Hire Onboarding", "Quarterly HMDA Review") |
+| **Description** | Optional explanation of when and how to use the template |
+| **Category** | Optional category assignment (e.g., Onboarding, Compliance) |
+| **Items** | An ordered list of task definitions, each with a title, description, sort order, and due-date offset |
+
+### Template items
+
+Each item in a template represents a task that will be created when the template is instantiated. Items have:
+
+| Property | Description |
+|----------|-------------|
+| **Title** | The task title (e.g., "Verify NMLS license") |
+| **Description** | Optional detailed instructions for the task |
+| **Sort Order** | Controls the display order of items within the template |
+| **Due Days Offset** | Number of days after the checklist start date when this task is due. A value of 0 means due on the start date; a value of 7 means due one week after the start date. |
+
+> **Screenshot placeholder:** *Template detail view showing the template name, description, category, and a list of ordered items with due-day offsets.*
+
+---
+
+## Creating a template
+
+1. Navigate to **Tasks > Templates** in the sidebar, or go to `/{company}/tasks/templates`.
+2. Click **New Template**.
+3. Fill in the template details:
+   - **Name** (required) -- A descriptive name.
+   - **Description** -- Optional context about when to use this template.
+   - **Category** -- Optionally assign to a category.
+4. Add template items:
+   - Click **Add Item**.
+   - Enter the **Title** for the item.
+   - Optionally add a **Description** with detailed instructions.
+   - Set the **Sort Order** to control display position. Items are sorted by this value in ascending order.
+   - Set the **Due Days Offset** -- the number of days after the checklist start date when this item should be due.
+   - Repeat for each item in the template.
+5. Click **Save**.
+
+> **Screenshot placeholder:** *New template form with name, description, category selector, and an item list with add/remove controls.*
+
+---
+
+## Example templates
+
+### New hire onboarding
+
+| # | Item | Due Days Offset | Description |
+|---|------|----------------|-------------|
+| 1 | Verify NMLS license | 0 | Check NMLS Consumer Access for active license status |
+| 2 | Create email account | 0 | IT sets up company email |
+| 3 | Grant LOS access | 1 | Provision account in Encompass/LendingPad |
+| 4 | Assign to branch | 1 | Update employee record with branch assignment |
+| 5 | Complete compliance training | 7 | Ensure all required training modules are finished |
+| 6 | Review company policies | 7 | Employee reads and acknowledges key policies |
+| 7 | First-week check-in | 7 | Manager meets with new hire to review progress |
+| 8 | 30-day review | 30 | Manager conducts 30-day performance check-in |
+
+### Quarterly compliance review
+
+| # | Item | Due Days Offset | Description |
+|---|------|----------------|-------------|
+| 1 | Pull HMDA data extract | 0 | Export HMDA LAR data for the quarter |
+| 2 | Validate data accuracy | 3 | Cross-reference against loan records |
+| 3 | Review fair lending metrics | 5 | Analyze approval/denial rates by demographic |
+| 4 | Update compliance report | 10 | Document findings in quarterly report |
+| 5 | Submit to management | 14 | Send report to compliance officer for review |
+
+---
+
+## Editing a template
+
+1. Navigate to **Tasks > Templates**.
+2. Click the template you want to edit.
+3. Click **Edit**.
+4. Modify the template name, description, category, or items.
+5. When editing items:
+   - Change titles, descriptions, sort orders, or due-day offsets.
+   - Add new items or remove existing ones.
+   - Reorder items by changing their sort order values.
+6. Click **Save**.
+
+> **Important:** Editing a template does not affect checklists that have already been created from it. Changes only apply to new checklists instantiated after the edit.
+
+---
+
+## Deleting a template
+
+1. Navigate to **Tasks > Templates**.
+2. Click the template you want to delete.
+3. Click **Delete**.
+4. Confirm the deletion.
+
+Deleting a template is a soft delete -- it is archived rather than permanently removed. Existing checklists created from the template are not affected.
+
+---
+
+## Using templates
+
+Templates are used by **instantiating** them into checklists. See [Checklists](checklists.md) for the full guide on how to create a checklist from a template, assign it to an employee, set a start date, and track progress.
+
+---
+
+## Best practices
+
+- **One template per process** -- Create a separate template for each repeatable process (onboarding, offboarding, quarterly review, license renewal) rather than combining multiple processes into one.
+- **Use due-day offsets intentionally** -- Set offsets that reflect realistic timelines. A compliance review might need 14 days spread across multiple items, while equipment setup might need just 1-2 days.
+- **Add descriptions to complex items** -- Brief titles are good for scanning, but detailed descriptions in each item help the assignee understand exactly what is expected.
+- **Assign a category** -- This carries over to the instantiated tasks, making filtering and reporting easier.
+- **Review templates periodically** -- As processes evolve, update your templates to reflect current procedures.

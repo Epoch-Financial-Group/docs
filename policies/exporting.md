@@ -1,0 +1,74 @@
+# Exporting Policies
+
+EpochOS allows you to export any policy to PDF or DOCX format. This is useful when you need to distribute policies outside of the platform, provide documents to regulators, or produce printed copies.
+
+---
+
+## Supported export formats
+
+| Format | Description | Best for |
+|--------|-------------|----------|
+| **PDF** | Portable Document Format | Sharing read-only copies, regulatory submissions, printing |
+| **DOCX** | Microsoft Word format | Further editing in Word, collaboration with external parties who do not use EpochOS |
+
+---
+
+## How to export a policy
+
+1. Open the policy you want to export.
+2. Click the **Export** button in the policy toolbar or detail view. This opens the export menu.
+3. Select **Export as PDF** or **Export as DOCX**.
+4. The file is generated and downloaded to your browser's default download location.
+
+> **Screenshot placeholder:** *Export menu dropdown showing "Export as PDF" and "Export as DOCX" options.*
+
+---
+
+## What is included in the export
+
+The exported file contains:
+
+- The **policy title** as the document heading.
+- The **company name** in the document header or metadata.
+- The **full policy content**, including all text formatting, headings, lists, tables, and other structured content.
+
+The export renders the current saved content of the policy. If you have unsaved changes in the editor, save before exporting.
+
+---
+
+## Export and version history
+
+Exports are generated from the **current content** of the policy, not from a specific version. If you need to export a previous version:
+
+1. View the version you want to export (see [Versioning](versioning.md)).
+2. Restore that version to make it the current content.
+3. Export the policy.
+4. If you do not want to keep the restored version as the current content, restore the latest version or re-edit as needed.
+
+---
+
+## Use cases
+
+### Regulatory examinations
+
+When examiners request copies of your compliance policies, export them as PDFs to provide clean, formatted documents with your company name and policy title.
+
+### Branch distribution
+
+For branch offices that maintain physical policy binders, export policies as PDFs for printing. Export as DOCX if the branch needs to annotate or customize a local copy.
+
+### External collaboration
+
+When working with legal counsel, investors, or other external parties who do not have access to EpochOS, export the relevant policies as DOCX files for review and redlining.
+
+### Onboarding packets
+
+Export key policies (Employee Handbook, Code of Conduct, Compliance Overview) as PDFs to include in new hire onboarding materials.
+
+---
+
+## Limitations
+
+- Exported files reflect the current content at the time of export. They are not automatically updated if the policy changes later.
+- Images referenced by URL in the policy content are included in the export as long as the URLs are accessible at export time.
+- Very large policies with many images or tables may take a few seconds to generate.

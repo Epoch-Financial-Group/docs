@@ -1,0 +1,177 @@
+# Lenders
+
+The lender directory is your centralized record of every wholesale lender and correspondent partner your company submits loans to. Lender records store contact details, program identifiers, supported product types, insurance clauses, and more. This data flows into loan tracking, analytics, and commission rules.
+
+## What the lender directory is
+
+In mortgage brokerage and correspondent lending, you work with many different wholesale lenders -- each with their own programs, underwriting guidelines, contacts, and portal systems. The EpochOS lender directory keeps all of this information in one place so that your team can quickly reference it and so that the platform can associate loans with the correct lender for commission calculations and reporting.
+
+---
+
+## Viewing lenders
+
+1. In the sidebar, expand **Directories**.
+2. Click **Lenders**.
+
+This takes you to `/{your-company}/lenders`, which displays a list of all lenders. Each lender shows:
+
+- **Name** and optional display name
+- **NMLS number**
+- **Rating** (if one has been set)
+- **Product types** they support
+
+> ![Screenshot: Lender directory showing lender list with ratings](screenshots/lender-list.png)
+
+---
+
+## Adding a new lender
+
+1. Navigate to **Directories > Lenders**.
+2. Click **Add Lender**.
+3. Complete the form sections described below.
+4. Click **Create Lender**.
+
+The lender form is organized into four sections.
+
+### Lender Information
+
+| Field | Required | Description |
+|-------|----------|-------------|
+| **Lender Name** | Yes | The full legal or commonly used name (e.g., "United Wholesale Mortgage") |
+| **Display Name** | No | A shorter name for display in tables and dropdowns (e.g., "UWM") |
+| **NMLS #** | No | The lender's NMLS number |
+| **Logo URL** | No | A URL pointing to the lender's logo image |
+| **Corporate Address** | No | The lender's main corporate address |
+| **Portal Link** | No | URL to the lender's broker/correspondent portal for quick access |
+
+> ![Screenshot: Lender Information section of the lender form](screenshots/lender-form-info.png)
+
+### Program IDs
+
+These are the identification numbers your company uses when submitting loans to this lender. They vary by loan program.
+
+| Field | Description |
+|-------|-------------|
+| **Client ID** | Your company's client/broker identifier with this lender |
+| **FHA ID** | Your FHA lender identification number for this lender's FHA program |
+| **VA ID** | Your VA lender identification number for this lender's VA program |
+| **EPO** | Early Payoff identifier or terms reference |
+
+> ![Screenshot: Program IDs section with four fields](screenshots/lender-form-program-ids.png)
+
+### Product Types
+
+Select all loan product types that this lender offers. This helps your team know which lenders to consider for a given loan scenario.
+
+| Product Type | Description |
+|-------------|-------------|
+| **Conventional** | Conforming and non-conforming conventional loans |
+| **FHA** | Federal Housing Administration insured loans |
+| **VA** | Veterans Affairs guaranteed loans |
+| **USDA** | US Department of Agriculture rural development loans |
+| **Non-QM** | Non-Qualified Mortgage products (bank statements, asset depletion, DSCR, etc.) |
+| **Reverse Mortgage** | Home Equity Conversion Mortgages (HECMs) and proprietary reverse products |
+| **HELOC** | Home Equity Line of Credit products |
+| **Commercial** | Commercial and multifamily lending |
+| **HELOAN** | Home Equity Loan (fixed-rate second lien) products |
+
+Product types are selected via checkboxes. You can select as many as apply.
+
+> ![Screenshot: Product Types section with checkboxes for each loan type](screenshots/lender-form-product-types.png)
+
+### Insurance Clauses
+
+Lenders require specific language for insurance policies. Store these clauses here so your team can easily reference them when ordering insurance.
+
+| Field | Description |
+|-------|-------------|
+| **Hazard Insurance Mortgagee Clause** | The exact text required by the lender to appear on homeowner's insurance policies |
+| **Title Insurance Mortgagee Clause** | The exact text required by the lender to appear on title insurance policies |
+| **Notes** | General notes about this lender (underwriting quirks, special guidelines, contact preferences, etc.) |
+
+> ![Screenshot: Insurance Clauses section with text areas](screenshots/lender-form-insurance.png)
+
+---
+
+## Managing lender contacts
+
+Each lender can have multiple contacts -- account executives, underwriters, closers, and other representatives. Contacts are managed from the lender detail/edit page.
+
+### Contact fields
+
+| Field | Required | Description |
+|-------|----------|-------------|
+| **Name** | Yes | Full name of the contact |
+| **Title / Role** | No | The contact's role at the lender (e.g., "Account Executive," "Underwriting Manager") |
+| **Email** | No | Contact email address |
+| **Phone** | No | Contact phone number |
+| **Primary** | No | Check this to designate the contact as the primary point of contact for this lender. The primary contact is highlighted with a badge in the contact list. |
+
+### To add a contact
+
+1. Navigate to the lender's detail or edit page.
+2. In the **Contacts** card, click **Add Contact**.
+3. Fill in the contact fields.
+4. Click **Add Contact** to save.
+
+### To edit a contact
+
+1. On the lender page, find the contact in the list.
+2. Click the pencil (edit) icon.
+3. Update the fields.
+4. Click **Save**.
+
+### To delete a contact
+
+1. Click the trash icon next to the contact.
+2. The contact is removed immediately.
+
+> ![Screenshot: Lender contacts list showing primary and secondary contacts](screenshots/lender-contacts.png)
+
+{% hint style="warning" %}
+Deleting a contact is immediate and cannot be undone. Make sure you no longer need the contact record before removing it.
+{% endhint %}
+
+---
+
+## Editing a lender
+
+1. Navigate to **Directories > Lenders**.
+2. Click the lender you want to edit, or navigate directly to `/{your-company}/lenders/{id}/edit`.
+3. Update any fields across the four form sections.
+4. Click **Save Changes**.
+
+---
+
+## How lenders relate to other data
+
+### Loans
+
+Every loan in EpochOS is associated with a lender. The lender determines which program IDs and insurance clauses apply, and it appears in loan-level reporting and analytics.
+
+### Commission rules
+
+Commission templates can include rules that are scoped to specific lenders. For example, you might have a higher or lower commission split for loans submitted to a particular wholesale lender.
+
+### Analytics
+
+The analytics dashboard includes lender-level breakdowns, allowing you to see volume, units, and revenue by lender over time.
+
+---
+
+## Routes reference
+
+| Route | Description |
+|-------|-------------|
+| `/{company}/lenders` | Lender directory (list view) |
+| `/{company}/lenders/add` | Add a new lender |
+| `/{company}/lenders/{id}` | Lender detail view (info + contacts) |
+| `/{company}/lenders/{id}/edit` | Edit an existing lender |
+
+---
+
+## Related pages
+
+- [Employees](employees.md) -- employees originate loans with lenders
+- [Lead Sources](lead-sources.md) -- lead sources and lenders are both used in commission rule scoping
+- [Company Settings](company-settings.md) -- company-level LOS configuration affects how loan data flows from lenders

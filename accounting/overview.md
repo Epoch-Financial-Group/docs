@@ -1,0 +1,123 @@
+# Accounting Overview
+
+EpochOS includes a built-in accounting system tailored for mortgage brokerages and lending companies. This page explains the core concepts and how the pieces fit together.
+
+## Why accounting in EpochOS?
+
+Mortgage companies deal with a specific set of financial events that repeat on every loan: funding disbursements, check receipts from lenders, commission payouts to loan officers, draw repayments, and various fee collections. Rather than re-entering these transactions in a separate accounting system, EpochOS can generate journal entries automatically as loans move through your pipeline.
+
+This means:
+
+- Your books stay current with your operations in real time
+- Manual data entry errors are reduced
+- Financial reports reflect the latest loan activity without delay
+- You have a single source of truth for both operations and accounting
+
+## Double-entry bookkeeping basics
+
+EpochOS uses **double-entry bookkeeping**, the standard accounting method used worldwide. The fundamental rule is simple: every financial transaction must have **equal debits and credits**.
+
+### The accounting equation
+
+```
+Assets = Liabilities + Equity
+```
+
+Every transaction preserves this equation. When your company receives a check from a lender, your Cash account (an asset) increases via a debit, and a revenue or receivable account changes via a credit -- the equation stays balanced.
+
+### Debits and credits
+
+The terms "debit" and "credit" do not mean "good" or "bad." They are simply the two sides of every transaction:
+
+| Account Type | Debit Increases | Credit Increases |
+|-------------|-----------------|------------------|
+| **Asset** | Yes | No (decreases) |
+| **Expense** | Yes | No (decreases) |
+| **Liability** | No (decreases) | Yes |
+| **Equity** | No (decreases) | Yes |
+| **Revenue** | No (decreases) | Yes |
+
+Each account has a **normal balance** -- the side (debit or credit) that increases it. Assets and expenses normally carry debit balances. Liabilities, equity, and revenue normally carry credit balances.
+
+### Example: Lender check received
+
+When your brokerage receives a $5,000 check from a lender for a funded loan:
+
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Cash - Operating (Asset) | $5,000 | |
+| Broker Compensation Revenue (Revenue) | | $5,000 |
+
+Total debits ($5,000) equal total credits ($5,000). The entry is balanced.
+
+## How it all fits together
+
+The accounting module is organized into several interconnected parts:
+
+```
+Chart of Accounts
+       |
+       v
+Account Mappings -----> Automatic Journal Entries
+       |                         |
+       v                         v
+Manual Journal Entries    Journal Entries (all)
+                                 |
+                                 v
+                          General Ledger
+                                 |
+                                 v
+                        Financial Reports
+                        (Trial Balance,
+                         Balance Sheet,
+                         Income Statement)
+
+Bank Accounts + Transactions
+       |
+       v
+Bank Reconciliation <----> Journal Entries
+```
+
+1. **Chart of Accounts** -- You define the accounts your company uses (cash, receivables, revenue, expenses, etc.). EpochOS provides a default chart of accounts you can initialize with one click, or you can build your own from scratch.
+
+2. **Account Mappings** -- You configure which accounts should be debited and credited for each type of loan event (funding, check receipt, commission payment, etc.). This is a one-time setup.
+
+3. **Journal Entries** -- Financial transactions are recorded as journal entries. They can be created manually for one-off transactions, or generated automatically by the system when loan events trigger mapped accounts. Every entry starts as a Draft and must be Posted to affect your books.
+
+4. **General Ledger** -- The general ledger shows the full transaction history for any account over a date range, including a running balance. This is your detailed audit trail.
+
+5. **Financial Reports** -- The Trial Balance, Balance Sheet, and Income Statement are generated on demand from posted journal entries. They provide point-in-time and period-based views of your company's financial position.
+
+6. **Bank Accounts and Reconciliation** -- Bank accounts in EpochOS are linked to chart of accounts entries. Bank transactions can be imported and matched against journal entries through the reconciliation workflow.
+
+## Accounting workflow for a typical loan
+
+Here is a simplified view of the accounting events that occur over the life of a mortgage loan:
+
+1. **Loan Funded** -- When a loan reaches the "Funded" status, an automatic journal entry debits Accounts Receivable and credits Deferred Revenue (or similar accounts per your mappings).
+
+2. **Check Received** -- When the lender's check arrives and the loan moves to "Check Received," a journal entry debits Cash and credits Accounts Receivable, clearing the receivable.
+
+3. **Commission Accrual** -- Commission obligations to loan officers and other team members are accrued based on the commission engine's calculations.
+
+4. **Commission Payment** -- When commissions are paid out, a journal entry debits Commission Expense and credits Cash (or a payable account).
+
+5. **Adjustments** -- Loan-level adjustments (reimbursements, fee corrections, etc.) generate their own journal entries using the configured account mappings.
+
+Each of these steps is handled by the account mapping system, so once your mappings are configured, the journal entries flow automatically as loans progress.
+
+## Getting started
+
+If you are setting up accounting in EpochOS for the first time:
+
+1. **Initialize or create your Chart of Accounts** -- Navigate to Accounting > Chart of Accounts and either click "Initialize Chart of Accounts" for a mortgage-industry default set, or add accounts manually.
+
+2. **Configure Account Mappings** -- Set up the debit and credit accounts for each loan event type so that automatic journal entries are created correctly.
+
+3. **Set your Fiscal Year** -- If your fiscal year does not start on January 1, configure the start month and day in Settings.
+
+4. **Connect Bank Accounts** -- Add your bank accounts and link them to the corresponding chart of accounts entries.
+
+5. **Start recording transactions** -- As loans flow through the pipeline, journal entries will be generated automatically. Use manual journal entries for anything not covered by mappings.
+
+6. **Reconcile and report** -- Periodically reconcile your bank accounts and generate financial reports to review your company's financial health.

@@ -1,0 +1,78 @@
+# Uploading Documents
+
+If your company already has policies in PDF or Word format, you can upload them directly into EpochOS. The system automatically extracts the text content and converts it into the rich text editor format, allowing you to continue editing and managing the document within the platform.
+
+---
+
+## Supported file types
+
+| Format | MIME Type | Extension |
+|--------|-----------|-----------|
+| PDF | `application/pdf` | `.pdf` |
+| Word (DOCX) | `application/vnd.openxmlformats-officedocument.wordprocessingml.document` | `.docx` |
+| Word (DOC) | `application/msword` | `.doc` |
+
+The maximum file size is **20 MB**.
+
+---
+
+## How to upload a document
+
+1. Navigate to **Policies** in the sidebar.
+2. Click **New Policy** to open the policy creation form.
+3. In the upload section, click **Upload Document** or drag and drop a file onto the upload area.
+4. Select a PDF or Word file from your computer.
+5. EpochOS processes the file:
+   - The text content is extracted from the document.
+   - The extracted content is converted into the rich text editor format.
+   - The content appears in the editor, ready for review and editing.
+6. Fill in the policy **Title**, select a **Folder** if desired, and add any **Tags**.
+7. Click **Save** to create the policy.
+
+> **Screenshot placeholder:** *Upload form showing the drag-and-drop area and a file being processed.*
+
+---
+
+## What happens during upload
+
+### Text extraction
+
+- **PDF files** -- Text is extracted from the PDF using server-side parsing. The system reads the text layer of the PDF and converts it into structured editor content. Scanned PDFs without a text layer may result in empty or incomplete extraction.
+- **Word files** -- DOCX files are parsed to extract formatted text, headings, lists, and other structured content. The formatting is mapped to the corresponding rich text editor features where possible.
+
+### Original file storage
+
+The original uploaded file is stored in secure cloud storage (Supabase Storage) and linked to the policy record. This means:
+
+- The original file is always available for reference or download.
+- The policy record stores the original file name and a link to the stored file.
+- Even if you edit the extracted content extensively, the original document is preserved.
+
+### Content conversion
+
+Extracted content is converted into the TipTap JSON format used by the rich text editor. After upload:
+
+- Review the extracted content in the editor for accuracy.
+- Fix any formatting issues that may have occurred during conversion.
+- Add headings, tables, or other formatting as needed.
+- The policy is now a native EpochOS document and can be edited, versioned, and managed like any other policy.
+
+---
+
+## After uploading
+
+Once a document is uploaded and saved:
+
+- The policy starts in **Draft** status. Review the extracted content and make any corrections before publishing.
+- You can continue editing the content using the full rich text editor.
+- The original file remains linked -- you can reference it at any time from the policy detail view.
+- Publish the policy when you are satisfied with the content to make it available to your team.
+
+---
+
+## Limitations
+
+- **Scanned PDFs** -- PDFs that are scanned images without embedded text will not extract meaningful content. Consider using OCR software to add a text layer before uploading.
+- **Complex formatting** -- Some advanced Word formatting (e.g., multi-column layouts, embedded charts, form fields) may not convert perfectly. Review and adjust the content after upload.
+- **Images in documents** -- Images embedded in PDF or Word files are not automatically extracted and inserted into the editor. You will need to add images manually using the editor's image tool.
+- **File size** -- Files larger than 20 MB are rejected. If your document exceeds this limit, consider splitting it into multiple policies or reducing the file size.

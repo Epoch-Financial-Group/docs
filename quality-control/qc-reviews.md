@@ -1,0 +1,225 @@
+# QC Reviews
+
+A QC review is the audit of a specific loan against a QC template's checklist. Each review tracks the reviewer, the review status, individual item results (Pass, Fail, N/A), notes, and summary counts. This page covers every aspect of creating, conducting, and completing QC reviews.
+
+## QC review dashboard
+
+The QC review dashboard is located at `/{company}/qc`. It displays a paginated table of all reviews with the following columns:
+
+| Column | Description |
+|--------|-------------|
+| **Loan #** | The broker loan number (links to the loan detail page) |
+| **Borrower** | Borrower last name |
+| **Template** | The QC template used for this review |
+| **Reviewer** | The employee assigned to conduct the review |
+| **Status** | Current review status displayed as a color-coded badge |
+| **Selection** | The month the loan was selected for review |
+| **Pass / Fail / N/A** | Summary counts of item results |
+| **Created** | When the review was created |
+
+> ![Screenshot: QC Review dashboard table showing review rows with status badges and result counts](screenshots/qc-review-dashboard.png)
+
+### Filtering reviews
+
+You can filter the review dashboard by:
+
+| Filter | Options |
+|--------|---------|
+| **Status** | Pending, In Progress, Completed, Waived |
+| **Selection Month** | Any month that has reviews (format: YYYY-MM) |
+
+### Pagination
+
+Reviews are displayed 20 per page with standard pagination controls.
+
+## Selecting loans for QC review
+
+There are three ways to create QC reviews:
+
+### Random selection
+
+Random selection is the primary method for building a compliant QC sample. It uses your QC settings to determine how many loans to select and which loans are eligible.
+
+**How to run a random selection:**
+
+1. Navigate to `/{company}/qc`.
+2. Click **Run Selection** in the toolbar.
+3. Select the target **month** (defaults to the current month).
+4. Optionally enter a **target count** to override the percentage-based calculation.
+5. Click **Run Selection**.
+
+> ![Screenshot: QC Selection dialog with month picker, target count field, and results summary](screenshots/qc-selection-dialog.png)
+
+**How random selection works:**
+
+1. The system identifies all loans that reached an eligible status (e.g., Funded or Closed) during the selected month.
+2. Loans that already have a QC review are excluded.
+3. The remaining loans are shuffled using a randomization algorithm.
+4. The system selects a number of loans based on your configured selection percentage (default: 10%) or the override target count.
+5. For each selected loan, a QC review is created with the appropriate template matched automatically.
+6. All reviews are created with status **Pending** and selection method **Random**.
+
+The dialog shows a summary after the selection completes, indicating how many loans were selected out of the total eligible pool.
+
+### Manual selection
+
+Manual selection lets you create a QC review for a specific loan.
+
+**How to manually create a review:**
+
+1. Navigate to the loan detail page at `/{company}/loans/{id}`.
+2. Click the **QC** tab.
+3. If no review exists, click **Create QC Review**.
+4. The system automatically matches the loan to the most appropriate active template based on the loan's type, purpose, channel, and property state.
+5. The review is created with status **Pending** and selection method **Manual**.
+
+Only one QC review can exist per loan. If a review already exists, the QC tab displays the existing review instead of offering to create a new one.
+
+### Targeted selection
+
+Targeted selection works the same as manual selection but records a different selection method. Use targeted selection when a loan is being reviewed due to a specific concern, such as:
+
+- An investor audit request
+- A borrower complaint
+- A suspicious pattern identified in another review
+- A regulatory inquiry
+
+The selection method is recorded on the review for audit trail purposes.
+
+## Review statuses
+
+Every QC review progresses through a defined set of statuses:
+
+| Status | Description |
+|--------|-------------|
+| **Pending** | Review has been created but no items have been evaluated yet |
+| **In Progress** | At least one item has been marked Pass, Fail, or N/A. Status changes automatically when the first item is reviewed. |
+| **Completed** | All items have been evaluated and the reviewer has finalized the review |
+| **Waived** | The review has been waived (skipped) with an optional reason |
+
+Status transitions happen as follows:
+
+```
+Pending  -->  In Progress  -->  Completed
+                  |
+                  v
+               Waived
+```
+
+The transition from Pending to In Progress is automatic -- it occurs when the first review item receives a result other than Pending.
+
+## Conducting a review
+
+Once a review exists, a reviewer works through each checklist item.
+
+### Opening a review
+
+1. Navigate to `/{company}/qc`.
+2. Click on a review row to open the review detail page.
+3. The review detail page shows loan information at the top and the checklist below.
+
+> ![Screenshot: QC Review detail page showing loan summary header and checklist items organized by category](screenshots/qc-review-detail.png)
+
+### Marking items
+
+For each checklist item, the reviewer selects one of four results:
+
+| Result | Meaning | When to use |
+|--------|---------|-------------|
+| **Pass** | The item meets requirements | Documentation is present, accurate, and compliant |
+| **Fail** | The item does not meet requirements | Documentation is missing, inaccurate, or non-compliant |
+| **N/A** | The item does not apply to this loan | The question is not relevant (e.g., VA-specific question on a Conventional loan) |
+| **Pending** | The item has not been reviewed yet | Default state -- no action taken |
+
+**Step by step:**
+
+1. Locate the item in the checklist (items are grouped by category and sorted by sort order).
+2. Select the appropriate result: **Pass**, **Fail**, or **N/A**.
+3. The result is saved immediately.
+4. The review's pass, fail, and N/A counts update in real time.
+
+> ![Screenshot: Individual checklist item with Pass/Fail/NA buttons and notes field](screenshots/qc-review-item.png)
+
+### Adding notes to items
+
+Each item has an optional notes field where the reviewer can provide detail:
+
+- **For failures:** Document what was wrong, what is missing, or what regulation was violated.
+- **For passes:** Optionally note anything noteworthy about the documentation.
+- **For N/A:** Optionally explain why the item does not apply.
+
+Notes are saved when the item result is updated.
+
+### Review summary counts
+
+As items are marked, the review header updates with real-time counts:
+
+| Count | Description |
+|-------|-------------|
+| **Total Items** | The total number of checklist items on this review |
+| **Pass** | Number of items marked Pass |
+| **Fail** | Number of items marked Fail |
+| **N/A** | Number of items marked N/A |
+
+These counts are stored on the review record for reporting purposes and do not need to be recalculated when viewing the review later.
+
+> ![Screenshot: QC Review summary showing pass/fail/NA counts in the review header](screenshots/qc-review-summary.png)
+
+## Completing a review
+
+When all items have been evaluated (no items remain in Pending status), the review can be completed.
+
+**How to complete a review:**
+
+1. Ensure all items have a result of Pass, Fail, or N/A.
+2. Click **Complete Review**.
+3. Optionally add **overall notes** summarizing the review findings.
+4. The review status changes to **Completed** and a `completedAt` timestamp is recorded.
+
+If any items still have a Pending result, the system will prevent completion and display the number of items that still need to be reviewed.
+
+### Overall notes
+
+The overall notes field is for the reviewer's summary assessment of the loan. Common uses include:
+
+- Summarizing any failures and their severity
+- Noting patterns or training needs identified during the review
+- Recording follow-up actions required
+- Documenting the overall quality of the file
+
+## Waiving a review
+
+In some cases, a QC review may need to be waived rather than completed. This could happen if:
+
+- The loan was paid off or rescinded before the review could be conducted
+- The review was created in error
+- An exception was approved by management
+
+**How to waive a review:**
+
+1. Open the review detail page.
+2. Click **Waive Review**.
+3. Optionally provide a **reason** for waiving (stored in the overall notes field).
+4. The review status changes to **Waived** and a `completedAt` timestamp is recorded.
+
+A waived review retains any item results that were recorded before the waiver. The waiver reason provides an audit trail for why the review was not fully completed.
+
+## Viewing QC results on a loan
+
+QC review information is also accessible from the individual loan detail page:
+
+1. Navigate to `/{company}/loans/{id}`.
+2. Click the **QC** tab.
+3. If a review exists, you will see the review status, summary counts, reviewer, and the full checklist with results.
+4. If no review exists, you will see an option to create one.
+
+> ![Screenshot: QC tab on the loan detail page showing the review checklist and summary](screenshots/qc-loan-tab.png)
+
+## QC selection history
+
+To see which months have had QC selections run and how many loans were selected:
+
+1. Navigate to `/{company}/qc`.
+2. The selection history is available in the filter panel, showing each month with its loan count.
+
+This helps you verify that QC selections are being run consistently and that the sample sizes meet your policy requirements.

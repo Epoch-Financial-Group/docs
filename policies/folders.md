@@ -1,0 +1,128 @@
+# Folders
+
+Folders let you organize your policy library into a hierarchical structure that mirrors your company's compliance and operational categories. Policies can be assigned to folders, and folders can be nested inside other folders to create a multi-level tree.
+
+---
+
+## Folder concepts
+
+### Hierarchy
+
+Folders support parent-child nesting. A folder can contain both policies and child folders. For example:
+
+```
+Compliance
+  TRID
+    Disclosure Procedures
+    Tolerance Tracking
+  Fair Lending
+  HMDA
+Operations
+  Loan Processing
+  Underwriting
+  Closing
+HR
+  Employee Handbook
+  Compensation
+```
+
+There is no enforced limit on nesting depth, but keeping the hierarchy to two or three levels is recommended for usability.
+
+### Root level
+
+Policies and folders that are not assigned to a parent folder appear at the root level of the library. The root level is the default view when you open the Policies section.
+
+### Sort order
+
+Folders have a configurable sort order that determines their display position within the same level. Folders are sorted first by sort order (ascending), then alphabetically by name.
+
+### Icons
+
+Each folder can optionally have an icon to help visually distinguish it in the sidebar and library view.
+
+---
+
+## Creating a folder
+
+1. Navigate to **Policies** in the sidebar.
+2. In the folder sidebar (left panel), click the **New Folder** button.
+3. Enter the folder details:
+   - **Name** (required) -- The display name of the folder. A URL-friendly slug is generated automatically.
+   - **Parent Folder** -- To create a nested folder, select an existing folder as the parent. Leave empty to create a root-level folder.
+   - **Icon** -- Optionally select an icon for the folder.
+4. Click **Create**.
+
+> **Screenshot placeholder:** *New folder dialog showing name, parent folder selector, and icon picker.*
+
+The new folder appears immediately in the sidebar tree and is ready to receive policies.
+
+---
+
+## Organizing policies into folders
+
+### Assigning a policy to a folder during creation
+
+When creating a new policy, use the **Folder** dropdown in the policy metadata form to select a folder. The policy will be placed in that folder when saved.
+
+### Moving a policy to a different folder
+
+1. Open the policy you want to move.
+2. Click **Edit** to enter edit mode.
+3. Change the **Folder** selection in the metadata form.
+4. Save the policy. It now appears in the new folder.
+
+### Removing a policy from a folder
+
+To move a policy back to the root level, edit the policy and clear the folder selection.
+
+---
+
+## Editing a folder
+
+1. In the folder sidebar, locate the folder you want to edit.
+2. Click the folder's context menu (three dots or right-click).
+3. Select **Edit**.
+4. Update the folder name, parent, icon, or sort order.
+5. Save your changes.
+
+### Renaming a folder
+
+When you rename a folder, its slug is automatically regenerated to match the new name. Any bookmarks or links using the old slug will need to be updated.
+
+### Moving a folder
+
+To move a folder to a different location in the hierarchy, change its **Parent Folder**. All policies and child folders within the moved folder travel with it.
+
+### Changing sort order
+
+Adjust the **Sort Order** value to control where the folder appears relative to its siblings. Lower numbers appear first.
+
+---
+
+## Deleting a folder
+
+1. In the folder sidebar, click the context menu on the folder you want to delete.
+2. Select **Delete**.
+3. Confirm the deletion.
+
+When a folder is deleted:
+
+- **Policies** in the deleted folder are moved to the root level (they are not deleted).
+- **Child folders** are moved up to the deleted folder's parent. If the deleted folder was at the root level, its children become root-level folders.
+
+> **Important:** Deleting a folder does not delete any policies or child folders. It only removes the folder itself and reassigns its contents.
+
+---
+
+## Folder permissions
+
+Permissions can be set at the folder level. When you assign a permission to a folder, it applies to all policies within that folder. See [Permissions](permissions.md) for full details on how folder-level permissions work and how they interact with policy-level permissions.
+
+---
+
+## Best practices
+
+- **Mirror your compliance structure** -- Create top-level folders for major regulatory areas (TRID, Fair Lending, HMDA, BSA/AML) and operational functions (Processing, Underwriting, Closing).
+- **Keep it shallow** -- Two or three levels of nesting keeps the library navigable. Deeply nested folders make policies harder to find.
+- **Use consistent naming** -- Establish a naming convention (e.g., "Category - Topic") so folders sort logically.
+- **Set folder-level permissions** when an entire category of policies should be restricted. This is more maintainable than setting permissions on each individual policy.

@@ -1,0 +1,100 @@
+# Tracking Expenses
+
+This guide covers how to add, view, filter, and manage one-time expenses in Keystone.
+
+## Overview
+
+Expenses represent costs associated with individual employees -- things like technology fees, marketing spend, licensing costs, or any other deduction that should be tracked against an employee's profitability. Each expense belongs to exactly one employee and carries an amount, an optional date, and an optional note.
+
+## Adding an Expense
+
+Navigate to **Expenses** from the sidebar, then click **Add Expense** to open the expense form.
+
+> ![Screenshot: Add expense form](screenshots/add-expense-form.png)
+
+### Required Fields
+
+| Field | Description |
+|-------|-------------|
+| **Employee** | Select the employee this expense belongs to from the dropdown. Only active (non-archived) employees appear in the list. |
+| **Amount** | The dollar amount of the expense. Enter as a decimal value (e.g., `150.00`). |
+
+### Optional Fields
+
+| Field | Description |
+|-------|-------------|
+| **Date** | The date the expense was incurred. If left blank, the expense will not be tied to a specific date. |
+| **Note** | A free-text description of the expense (e.g., "CRM subscription - March" or "Marketing flyers"). |
+
+After filling in the fields, click **Add Expense**. You will be redirected back to the expense list.
+
+## Viewing the Expense List
+
+The main Expenses page displays all expenses for your company in a paginated table, sorted by date in descending order (most recent first).
+
+> ![Screenshot: Expense list table](screenshots/expense-list.png)
+
+The table shows the following columns:
+
+| Column | Description |
+|--------|-------------|
+| **Employee** | The employee's full name |
+| **Amount** | The expense amount, formatted as currency |
+| **Date** | The date of the expense, or a dash if no date was set |
+| **Note** | The expense note, truncated if it exceeds the column width |
+| **Actions** | A delete button to remove the expense |
+
+### Pagination
+
+Results are paginated with a default page size of 25 items. The page size can range from 10 to 100. Use the pagination controls at the bottom of the table to navigate between pages.
+
+## Filtering Expenses
+
+Use the filter controls above the expense table to narrow down the list.
+
+> ![Screenshot: Expense filters](screenshots/expense-filters.png)
+
+### Available Filters
+
+| Filter | Description |
+|--------|-------------|
+| **Employee** | Select a specific employee to view only their expenses, or choose "All Employees" to see everything. |
+| **Date From** | Show only expenses on or after this date. |
+| **Date To** | Show only expenses on or before this date. |
+
+Filters are applied via URL parameters, so filtered views can be bookmarked or shared. Changing any filter resets the page back to page 1. Click **Clear Filters** to remove all active filters.
+
+## Deleting an Expense
+
+Click the trash icon on any expense row to delete it. A confirmation dialog will appear asking you to confirm, since deletion cannot be undone.
+
+> ![Screenshot: Delete confirmation dialog](screenshots/delete-expense-confirm.png)
+
+## Expenses and Pay Periods
+
+Expenses can be associated with pay periods, which ties them into commission run calculations. When an expense is linked to a pay period:
+
+- It appears in the **Expenses** tab during commission runs.
+- It is included in payroll summaries alongside commission payouts.
+- It is factored into profitability calculations for that period.
+
+### Viewing Expenses in a Pay Period
+
+During a commission run, the Expenses tab shows all expenses assigned to that pay period in a table with columns for Date, Employee, Note, and Amount. A total row at the bottom sums all expense amounts.
+
+> ![Screenshot: Expenses tab in commission run](screenshots/expenses-in-pay-period.png)
+
+### Manually Unassigning Expenses
+
+If an expense was incorrectly associated with a pay period, it can be manually unassigned. When an expense is unassigned, the `isManuallyUnassigned` flag is set to `true`, which prevents the system from automatically re-assigning it to the same pay period.
+
+## Expenses in Analytics
+
+Expenses feed into the **Analytics > Profitability** module, where they are combined with commission payouts and loan revenue to calculate:
+
+- **Total Expenses** -- Sum of all expenses in the selected period.
+- **Net Profit** -- Revenue minus commissions minus expenses.
+- **Profit Margin** -- Net profit as a percentage of revenue.
+- **Cost Per Loan** -- Total costs (commissions + expenses) divided by loan count.
+- **Monthly P&L** -- Month-by-month breakdown of revenue, commissions, expenses, and net profit.
+- **By LO / By Branch** -- Profitability breakdowns that include expense allocations per loan officer and branch.

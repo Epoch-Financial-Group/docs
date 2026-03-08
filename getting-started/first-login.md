@@ -1,0 +1,110 @@
+# First Login
+
+This page walks you through creating your account, signing in to EpochOS, and understanding what you see when you first land in the application.
+
+---
+
+## Creating Your Account
+
+There are two ways to get an EpochOS account:
+
+### Option A: Self-Registration
+
+1. Navigate to the EpochOS application in your browser.
+2. On the login page, click the **"create a new account"** link beneath the sign-in form.
+3. Fill in the registration form:
+   - **Full name** -- Your first and last name (e.g., "Jane Smith").
+   - **Email address** -- The email you will use to log in.
+   - **Password** -- Choose a strong password (minimum 6 characters).
+4. Click **Create account**.
+5. You will be redirected to the company selection page. If your administrator has not yet linked your account to a company, you will see a message indicating that no companies are available. Contact your administrator to be added.
+
+> ![Screenshot: Signup page](screenshots/signup-page.png)
+
+### Option B: Receiving an Invitation
+
+Your company administrator may create an employee record for you inside EpochOS and associate it with your email address. In this case:
+
+1. You will receive instructions (via email or from your administrator directly) to create an account using your work email address.
+2. Follow the self-registration steps above using the **exact email address** your administrator used when adding you.
+3. Once your Supabase Auth account is linked to your employee record, you will automatically gain access to your company when you log in.
+
+> **Note:** Your email address in EpochOS must exactly match the email your administrator entered when creating your employee record. If you sign up with a different email, your account will not be linked to any company.
+
+---
+
+## Signing In
+
+1. Navigate to the EpochOS login page.
+2. Enter your **email address** and **password**.
+3. Click **Sign in**.
+
+> ![Screenshot: Login page](screenshots/login-page.png)
+
+If your credentials are incorrect, an error message will appear at the top of the form. Double-check your email and password, and try again.
+
+> **Note:** EpochOS uses Supabase Auth for authentication. Your password is securely hashed and never stored in plain text.
+
+---
+
+## Selecting Your Company
+
+After signing in, EpochOS determines which companies your account is associated with:
+
+### Single Company
+
+If your account is linked to exactly **one** company, you are automatically redirected to that company's dashboard. No manual selection is necessary.
+
+### Multiple Companies
+
+If you belong to **more than one** company (for example, if you work across multiple branches under different corporate entities), you will see the **"Your Companies"** page. This page displays a card for each company showing:
+
+- The company name
+- Your role(s) within that company (e.g., "LoanOfficer", "BranchManager")
+
+Click on any company card to enter that company's workspace.
+
+> ![Screenshot: Company selection page](screenshots/company-selection.png)
+
+### No Companies
+
+If your account is not linked to any company, you will see a message stating **"No companies yet"** with instructions to contact your administrator. This typically means:
+
+- Your administrator has not yet created an employee record for you, or
+- The email on your employee record does not match the email you used to sign up.
+
+---
+
+## What You See on First Login
+
+Once you enter a company, you land on the **Dashboard** -- the home page for your company workspace. The dashboard provides an at-a-glance overview of your lending operations.
+
+The interface is divided into two main areas:
+
+### The Sidebar (Left)
+
+A persistent navigation sidebar appears on the left side of the screen. It contains links and collapsible groups for every major section of EpochOS: Dashboard, Data Analytics, Loan Pipeline, Policies, Tasks, Quality Control, Recruiting, Commission, Accounting, Directories, and Administration. See the [Navigation](navigation.md) guide for a full breakdown.
+
+### The Main Content Area (Right)
+
+The majority of the screen is dedicated to the page content. On the Dashboard, this typically includes summary metrics, recent activity, and quick-access widgets relevant to your role.
+
+> ![Screenshot: Dashboard after first login](screenshots/dashboard-first-login.png)
+
+---
+
+## Signing Out
+
+To sign out of EpochOS:
+
+1. If you are on the company selection page, click the **Sign out** button in the top-right corner.
+2. If you are inside a company workspace, use the sign-out option available in the application header or sidebar.
+
+You will be returned to the login page.
+
+---
+
+## Next Steps
+
+- **Company Administrators:** Proceed to [Initial Setup](initial-setup.md) to configure your company, add branches and employees, set up lenders, and create commission templates.
+- **All Users:** Review the [Navigation](navigation.md) guide to learn how to find every feature in EpochOS.
