@@ -1,0 +1,138 @@
+---
+title: "Bank Accounts"
+description: "The Bank Accounts section in Keystone lets you track your company's real-world bank accounts alongside your chart of accounts. Each bank account is linked to a corresponding general ledger account,..."
+---
+
+The Bank Accounts section in Keystone lets you track your company's real-world bank accounts alongside your chart of accounts. Each bank account is linked to a corresponding general ledger account, keeping your internal books and external bank records connected.
+
+## What are bank accounts in Keystone?
+
+A bank account in Keystone represents a real financial account at a bank or financial institution. It stores:
+
+- The account name and institution
+- The last 4 digits of the account number (mask)
+- The current balance
+- A list of bank transactions
+- A link to the corresponding account in your chart of accounts
+
+Bank accounts are distinct from chart of accounts entries. The chart of accounts has a general ledger account (e.g., "1010 - Cash - Operating") that tracks the balance according to your books. The bank account represents the same account from the bank's perspective. Reconciliation (see [Bank Reconciliation](/accounting/bank-reconciliation)) is the process of verifying these two views agree.
+
+## Navigating to bank accounts
+
+The Bank Accounts page is located at **Accounting > Bank Accounts**. You can also reach it from the Accounting dashboard by clicking the "Bank Accounts" card.
+
+> **Screenshot placeholder:** *Bank Accounts page showing a table of bank accounts with columns for name, institution, linked account, balance, and transaction count.*
+
+## Bank account list
+
+The bank accounts page displays a table with the following columns:
+
+| Column | Description |
+|--------|-------------|
+| **Name** | The name you gave the bank account (clickable link to the detail page) |
+| **Institution** | The financial institution name (e.g., "Chase," "Wells Fargo") |
+| **Linked Account** | The chart of accounts entry this bank account is linked to, shown as a badge (e.g., "1010 - Cash - Operating") |
+| **Balance** | The current balance of the bank account, formatted as currency |
+| **Transactions** | The number of bank transactions recorded |
+
+If no bank accounts have been configured, the page displays an empty state with a bank icon and a message indicating no accounts are set up yet.
+
+## Adding a bank account
+
+**Step-by-step:**
+
+1. Navigate to **Accounting > Bank Accounts**.
+2. Initiate the process to add a new bank account.
+3. Fill in the required fields:
+
+| Field | Required | Description |
+|-------|----------|-------------|
+| **Name** | Yes | A descriptive name (e.g., "Chase Business Checking") |
+| **Account ID** | Yes | The chart of accounts entry to link this bank account to. Select from the dropdown of existing accounts. |
+| **Institution Name** | No | The bank or financial institution name |
+| **Mask** | No | The last 4 digits of the account number (for identification) |
+
+4. Save the bank account.
+5. The new bank account appears in the bank accounts table, linked to the selected chart of accounts entry.
+
+The link between a bank account and a chart of accounts entry is one-to-one: each bank account is linked to exactly one general ledger account, and each general ledger account can have at most one bank account linked to it.
+
+## Bank account types
+
+Bank accounts are linked to chart of accounts entries, and the "type" of bank account is determined by the linked account's subtype. Common configurations:
+
+| Bank Account Purpose | Linked Account Subtype | Example |
+|---------------------|----------------------|---------|
+| **Checking** | Cash and Bank | "1010 - Cash - Operating" |
+| **Savings** | Cash and Bank | "1020 - Cash - Savings" |
+| **Credit Card** | Credit Card | "2100 - Company Credit Card" |
+| **Other** | Other Current Asset or Other Current Liability | Varies |
+
+## Linking to the chart of accounts
+
+The link between a bank account and a chart of accounts entry is critical for reconciliation. When you add a bank account, you select which general ledger account it corresponds to. This means:
+
+- The general ledger account tracks the balance **according to your books** (from journal entries)
+- The bank account tracks the balance **according to the bank** (from imported transactions)
+- Reconciliation compares these two balances to find discrepancies
+
+On the bank accounts list, the linked account is shown as a badge. If a bank account is not linked to a chart of accounts entry, it shows "Unlinked."
+
+## Viewing bank account details
+
+Click on a bank account name in the list to open its detail page. The detail page shows:
+
+### Summary cards
+
+Three stat cards at the top display:
+
+- **Current Balance** -- The bank's reported balance
+- **Account Number** -- The last 4 digits (mask) of the account number, or "N/A" if not set
+- **Transactions** -- The total number of imported bank transactions
+
+### Linked account badge
+
+The page header shows the linked chart of accounts entry as a badge (e.g., "1010 - Cash - Operating").
+
+### Transaction table
+
+Below the summary cards, a table lists the most recent bank transactions (up to 50):
+
+| Column | Description |
+|--------|-------------|
+| **Date** | The transaction date |
+| **Description** | The bank's description of the transaction |
+| **Amount** | The transaction amount, formatted as currency |
+| **Status** | "Matched" (green badge) if the transaction has been matched to a journal entry, or "Unmatched" (gray badge) if not |
+
+> **Screenshot placeholder:** *Bank Account detail page showing the summary cards, linked account badge, and transaction table with matched/unmatched status badges.*
+
+## Viewing bank transactions
+
+Each bank transaction in the detail view shows:
+
+- The **date** of the transaction
+- The **description** provided by the bank
+- The **amount** (positive or negative)
+- The **match status** -- whether it has been matched to one or more journal entries
+
+Matched transactions have been verified against your internal records through the reconciliation process. Unmatched transactions need to be reviewed -- they may represent transactions that have not yet been recorded as journal entries, or they may need to be excluded.
+
+## Future Plaid integration
+
+Keystone includes infrastructure for a future **Plaid** integration that will enable:
+
+- **Automatic bank connection** -- Link your bank accounts via Plaid's secure connection flow instead of manually entering account details
+- **Automatic transaction import** -- Bank transactions are pulled automatically from your bank, eliminating manual data entry
+- **Real-time balance updates** -- Account balances are synced periodically with your bank
+
+The data model already supports Plaid fields (`plaidItemId`, `plaidAccessToken`, `plaidAccountId`, `lastSyncedAt`) on bank accounts, and `plaidTransactionId` on bank transactions. When enabled, the Plaid integration will populate these fields automatically.
+
+Until Plaid is enabled, bank transactions can be entered manually or imported from other sources.
+
+## Tips
+
+- **Create the chart of accounts entry first** -- Before adding a bank account, make sure the corresponding general ledger account exists in your chart of accounts (e.g., "Cash - Operating" with the Cash and Bank subtype).
+- **Use descriptive names** -- Name your bank accounts clearly (e.g., "Chase Business Checking - 4521") so they are easy to identify in the list.
+- **One bank account per GL account** -- Each bank account links to one general ledger account. If you have multiple bank accounts, create a separate chart of accounts entry for each.
+- **Review transaction matches regularly** -- Check the bank account detail page periodically to identify unmatched transactions that need to be reconciled.

@@ -1,0 +1,106 @@
+---
+title: "Adjustments"
+description: "Loan adjustments let you add or subtract amounts from a loan's revenue and commission calculations. They handle scenarios like processing fee credits, lender concessions, one-off deductions, or ove..."
+---
+
+Loan adjustments let you add or subtract amounts from a loan's revenue and commission calculations. They handle scenarios like processing fee credits, lender concessions, one-off deductions, or overrides that do not fit neatly into the standard line item structure.
+
+## What adjustments are
+
+An adjustment is a named amount attached to a loan that modifies its financial calculations. Each adjustment has:
+
+| Field | Description |
+|-------|-------------|
+| **Description** | A free-text description of the adjustment (e.g., "Processing fee credit", "Lender concession") |
+| **Amount** | The numeric value of the adjustment |
+| **Amount Type** | Either **Flat ($)** for a dollar amount or **Percentage (%)** for a percentage-based adjustment |
+| **Applies to Commission** | Whether this adjustment affects commission calculations |
+| **Applies to Revenue** | Whether this adjustment affects revenue calculations |
+| **Commission Basis** | (Optional) When the adjustment applies to commissions, what it is based on: **Loan Amount** or **Broker Compensation** |
+
+## Where adjustments appear
+
+Adjustments are managed from the **Revenue** tab on the loan detail page, below the revenue line items section.
+
+> **Screenshot placeholder:** *Adjustments section on the Revenue tab showing a list of adjustments with an Add Adjustment button.*
+
+---
+
+## Adding an adjustment
+
+1. Navigate to the loan detail page.
+2. Go to the **Revenue** tab.
+3. Scroll down to the **Adjustments** section.
+4. Click **Add Adjustment**.
+5. A dialog opens with the following fields:
+
+| Field | Required | Description |
+|-------|----------|-------------|
+| **Description** | Yes | A descriptive name for the adjustment |
+| **Amount** | Yes | The dollar amount or percentage value |
+| **Type** | Yes | Select **Flat ($)** for a fixed dollar amount, or **Percentage (%)** for a percentage |
+| **Applies to Commission** | No | Check this box if the adjustment should affect commission calculations |
+| **Applies to Revenue** | No | Check this box if the adjustment should affect revenue calculations |
+| **Commission Basis** | No | If applicable, choose whether the percentage is based on **Loan Amount** or **Broker Compensation**. Leave as "None" for flat-amount adjustments or if not applicable. |
+
+6. Click **Add Adjustment** to save.
+
+> **Screenshot placeholder:** *Add Adjustment dialog showing all fields filled in.*
+
+---
+
+## Removing an adjustment
+
+Click the **X** button on the right side of any adjustment row. The removal takes effect immediately.
+
+---
+
+## How adjustments affect calculations
+
+### Revenue impact
+
+On the Revenue tab, the **Total Adjustments** summary card shows the sum of all flat-dollar adjustments on the loan. This total feeds into the Net Revenue calculation:
+
+```
+Net Revenue = Gross Revenue + Total Line Items + Total Adjustments
+```
+
+Percentage-based adjustments are excluded from the simple sum display and are calculated dynamically based on their basis.
+
+### Commission impact
+
+When an adjustment has **Applies to Commission** checked, it modifies the commission calculation for the loan. The impact depends on the amount type:
+
+- **Flat adjustments:** The dollar amount is added to or subtracted from the commission base.
+- **Percentage adjustments:** The percentage is applied to the specified **Commission Basis** (Loan Amount or Broker Compensation) to compute a dollar amount, which is then applied to commissions.
+
+Adjustments with **Applies to Revenue** checked modify the revenue figures visible on the Revenue tab and in reporting.
+
+---
+
+## Common adjustment examples
+
+| Description | Amount | Type | Commission | Revenue | Notes |
+|-------------|--------|------|------------|---------|-------|
+| Processing fee credit | -250.00 | Flat | Yes | Yes | Credit given to borrower, reduces revenue and commission base |
+| Lender pricing concession | 500.00 | Flat | No | Yes | Extra revenue from lender, does not affect LO commission |
+| Branch override | 0.10 | Percentage | Yes | No | Branch manager gets 10bps, deducted from LO commission |
+| Referral fee | -500.00 | Flat | Yes | Yes | Payment to a referral partner |
+| Bonus compensation | 250.00 | Flat | Yes | Yes | Additional comp for a specific deal |
+
+---
+
+## Adjustments from CSV uploads
+
+Adjustments cannot be imported directly via CSV upload. They must be added manually on the loan detail page. If you have recurring adjustments that apply to many loans, consider adding them individually after the initial upload.
+
+## Viewing adjustments
+
+The adjustment list shows:
+
+- The adjustment name (from the named adjustment catalog or the description field)
+- A badge indicating whether the amount is flat ($) or percentage (%)
+- The amount, formatted as currency or percentage
+- A remove button
+
+If no adjustments have been added, the section displays "No adjustments."

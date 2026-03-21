@@ -1,0 +1,116 @@
+---
+title: "Profitability"
+description: "The Profitability module combines loan revenue, commission payouts, and operating expenses to give you a complete picture of your financial performance. It calculates net profit, margins, and per-l..."
+---
+
+The Profitability module combines loan revenue, commission payouts, and operating expenses to give you a complete picture of your financial performance. It calculates net profit, margins, and per-loan economics, with breakdowns by loan officer, branch, and month.
+
+## Overview
+
+Profitability answers the fundamental question: "After paying commissions and covering expenses, how much money are we actually making?" It pulls data from three sources:
+
+- **Revenue** -- Broker compensation from funded loans
+- **Commissions** -- Wages paid through pay period records
+- **Expenses** -- Operating costs tracked in the Expenses module
+
+> <img alt="Screenshot: Profitability overview" src="screenshots/profitability-overview.png" />
+
+## Summary KPIs
+
+The top of the dashboard shows eight key financial metrics:
+
+| Metric | Description |
+|--------|-------------|
+| **Total Revenue** | Sum of broker compensation for all funded loans in the period |
+| **Total Expenses** | Sum of all expenses in the period |
+| **Total Commissions** | Sum of all wages paid through pay periods overlapping the selected date range |
+| **Net Profit** | Revenue - Commissions - Expenses |
+| **Profit Margin** | Net Profit / Revenue x 100 (as a percentage) |
+| **Revenue Per Loan** | Total Revenue / Number of Funded Loans |
+| **Cost Per Loan** | (Commissions + Expenses) / Number of Funded Loans |
+| **Net Profit Per Loan** | Net Profit / Number of Funded Loans |
+
+### Period-over-Period Comparison
+
+When a date range is set, the system calculates the prior period and shows percentage change for:
+- Total Revenue
+- Net Profit
+- Profit Margin
+
+> <img alt="Screenshot: Profitability KPI cards with comparisons" src="screenshots/profitability-kpis.png" />
+
+## By Loan Officer
+
+The LO breakdown shows each loan officer's individual profitability:
+
+> <img alt="Screenshot: Profitability by loan officer" src="screenshots/profitability-by-lo.png" />
+
+| Column | Description |
+|--------|-------------|
+| **Name** | Loan officer's full name |
+| **Revenue** | Broker compensation from their funded loans |
+| **Commissions** | Wages paid to them through pay periods |
+| **Expenses** | Expenses attributed to them |
+| **Net Profit** | Revenue - Commissions - Expenses |
+| **Margin** | Net Profit / Revenue as a percentage |
+
+This view is sorted by revenue (highest first) and helps identify which LOs are the most profitable -- not just the highest producing, but those who generate the best margin after accounting for their costs.
+
+## By Branch
+
+The branch breakdown aggregates the same profitability metrics by branch location:
+
+> <img alt="Screenshot: Profitability by branch" src="screenshots/profitability-by-branch.png" />
+
+| Column | Description |
+|--------|-------------|
+| **Branch** | Branch name (or "Unassigned" for employees without a branch) |
+| **Revenue** | Total broker compensation from that branch's LOs |
+| **Commissions** | Total wages paid to branch employees |
+| **Expenses** | Total expenses for branch employees |
+| **Net Profit** | Revenue - Commissions - Expenses |
+| **Margin** | Net Profit / Revenue as a percentage |
+
+## Monthly P&L
+
+The monthly profit-and-loss view breaks down financial performance by calendar month, providing a time-series view of profitability.
+
+> <img alt="Screenshot: Monthly P&L chart" src="screenshots/monthly-pl.png" />
+
+| Column | Description |
+|--------|-------------|
+| **Month** | Calendar month (Jan through Dec) |
+| **Revenue** | Broker compensation from loans funded that month |
+| **Expenses** | Expenses dated to that month |
+| **Commissions** | Wages from pay periods starting in that month |
+| **Net Profit** | Revenue - Commissions - Expenses |
+
+The monthly P&L is useful for identifying seasonal trends in profitability, spotting months where costs spiked, and tracking the trajectory of margins over time.
+
+## How Costs Are Attributed
+
+Understanding how costs are assigned to people and branches is important for interpreting profitability data:
+
+### Revenue Attribution
+Revenue is attributed based on the **loan officer** assigned to each funded loan. The loan officer's branch determines the branch attribution.
+
+### Commission Attribution
+Commissions are attributed based on the **employee** on each pay period record. The employee's branch determines the branch attribution.
+
+### Expense Attribution
+Expenses are attributed based on the **employee** the expense is assigned to. The employee's branch determines the branch attribution.
+
+This means a loan officer's profitability reflects:
+- Revenue from loans they originated
+- Commissions paid to them
+- Expenses charged to them
+
+## Filtering
+
+Profitability analytics support the following filters:
+
+| Filter | Description |
+|--------|-------------|
+| **Date Range** | Scope the analysis period. Revenue uses funded date; expenses use expense date; commissions use pay period overlap. |
+| **Loan Officer** | Filter to a specific LO's profitability |
+| **Branch** | Filter to a specific branch. Applies to loans (via LO's branch), payroll (via employee's branch), and expenses (via employee's branch). |

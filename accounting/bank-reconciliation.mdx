@@ -1,0 +1,150 @@
+---
+title: "Bank Reconciliation"
+description: "Bank reconciliation is the process of comparing your internal accounting records (journal entries) against your bank's records (bank transactions) to ensure they agree. It is one of the most import..."
+---
+
+Bank reconciliation is the process of comparing your internal accounting records (journal entries) against your bank's records (bank transactions) to ensure they agree. It is one of the most important internal controls in accounting, helping you catch errors, identify missing transactions, and maintain confidence in your financial data.
+
+## What is bank reconciliation?
+
+Every time you record a journal entry that affects a cash account, your internal books change. Every time money moves in or out of your real bank account, the bank's records change. These two records should match -- but in practice, they often diverge due to:
+
+- **Timing differences** -- A check you wrote may not have cleared the bank yet, or a deposit may be in transit.
+- **Missing entries** -- A bank fee was charged but not yet recorded in your books.
+- **Errors** -- A journal entry amount may not match the actual bank transaction.
+- **Duplicate entries** -- The same transaction may have been recorded twice.
+
+Bank reconciliation systematically resolves these differences by matching each bank transaction to its corresponding journal entry.
+
+## Reconciliation statuses
+
+Each bank transaction in Keystone has a reconciliation status that tracks where it stands in the matching process:
+
+### Unreconciled
+
+The transaction has **not been matched** to any journal entry. This is the default status for newly imported bank transactions. Unreconciled transactions need to be reviewed -- they may represent:
+
+- Transactions that have not yet been recorded as journal entries
+- Transactions that are in transit and will clear soon
+- Errors or duplicates
+
+### Matched
+
+The transaction has been **linked to one or more journal entries** but has not been formally reconciled yet. Matching is the first step: it connects a bank transaction to the journal entry that recorded the same event. A matched transaction shows a green "Matched" badge on the bank account detail page.
+
+### Reconciled
+
+The transaction has been **verified and formally reconciled**. Reconciled transactions are confirmed as correct -- the bank record and the internal record agree. Reconciled transactions are considered closed and should not normally be changed.
+
+### Excluded
+
+The transaction has been **intentionally excluded from reconciliation**. Use this status for:
+
+- Bank fees that are handled separately
+- Internal bank transfers between your own accounts (where only one side needs to be reconciled)
+- Transactions that do not correspond to any activity in your books
+
+## Matching bank transactions to journal entries
+
+Matching is the core action of reconciliation. A **BankTransactionMatch** record links a bank transaction to a journal entry. This allows Keystone to track which bank transactions have been accounted for and which are still outstanding.
+
+### How matching works
+
+1. A bank transaction appears on the bank account detail page with an "Unmatched" badge.
+2. You identify the corresponding journal entry in your books -- the one that records the same financial event (e.g., a $5,000 deposit that corresponds to a $5,000 debit to Cash in JE-38).
+3. You create a match between the bank transaction and the journal entry.
+4. The bank transaction status changes from "Unmatched" to "Matched."
+
+A single bank transaction can be matched to one or more journal entries (for example, if a single bank deposit covers multiple journal entries). Similarly, a single journal entry can be matched to multiple bank transactions.
+
+## The reconciliation workflow
+
+A complete bank reconciliation follows this general process:
+
+### 1. Gather bank transactions
+
+Start by ensuring your bank transactions are up to date:
+
+- If using Plaid (future feature), transactions are imported automatically.
+- Otherwise, review the bank account detail page for the latest transactions.
+
+### 2. Compare to the general ledger
+
+Open the general ledger for the corresponding cash account and compare it to the bank transaction list:
+
+- Look for transactions that appear in both the bank and the general ledger.
+- Note any transactions that appear in one but not the other.
+
+### 3. Match transactions
+
+For each bank transaction that has a corresponding journal entry:
+
+- Match the bank transaction to the journal entry.
+- The transaction status moves to "Matched."
+
+### 4. Investigate unmatched items
+
+For bank transactions that do not have a corresponding journal entry:
+
+- **Missing journal entry** -- Create a journal entry to record the transaction (e.g., a bank fee you had not recorded). Then match it.
+- **Timing difference** -- The transaction may correspond to a journal entry from a different date. Look at the general ledger for nearby dates.
+- **Exclude if appropriate** -- If the transaction does not belong in your books (e.g., an internal transfer already recorded elsewhere), mark it as Excluded.
+
+For journal entries that do not have a corresponding bank transaction:
+
+- **Outstanding check or transfer** -- The bank has not yet processed the transaction. It will appear in a future period.
+- **Error** -- The journal entry may be incorrect and need to be voided or reversed.
+
+### 5. Verify the balances
+
+Once all transactions are matched, reconciled, or excluded:
+
+- The general ledger balance for the cash account should match the bank's reported balance (adjusted for outstanding items).
+- Any remaining difference indicates unresolved items that need further investigation.
+
+### 6. Mark as reconciled
+
+Once you are satisfied that the bank and book balances agree (after accounting for outstanding items), update the matched transactions to "Reconciled" status to close out the reconciliation period.
+
+## Best practices
+
+### Reconcile frequently
+
+Monthly reconciliation is the minimum standard. For high-volume mortgage companies with many daily transactions, consider reconciling weekly or even daily. The more frequently you reconcile, the easier it is to identify and resolve discrepancies.
+
+### Start from the bank statement
+
+Always start with the bank's records and work toward your books, not the other way around. The bank statement is the objective external record.
+
+### Investigate every difference
+
+Do not ignore small discrepancies. A $0.50 bank fee may seem trivial, but unexplained differences compound over time and can mask larger issues.
+
+### Use the general ledger as your reference
+
+The general ledger for the linked cash account shows the same transactions from your books' perspective. Compare it side-by-side with the bank transaction list to identify matches and discrepancies.
+
+### Keep a reconciliation rhythm
+
+Establish a routine:
+
+1. Import or review bank transactions (daily or weekly)
+2. Match transactions to journal entries
+3. Create missing journal entries for unrecorded bank activity
+4. Investigate and resolve discrepancies
+5. Formally reconcile at period end (monthly)
+
+### Document adjustments
+
+When you create journal entries to resolve reconciliation differences, use clear memos (e.g., "Bank fee - March 2024" or "Reconciliation adjustment - rounding difference"). This makes future audits easier.
+
+## Relationship to other accounting features
+
+Bank reconciliation connects several parts of the accounting module:
+
+- **Bank Accounts** provide the bank-side transaction data
+- **Journal Entries** provide the book-side transaction data
+- **General Ledger** shows the book-side transactions for a specific cash account
+- **Trial Balance and Balance Sheet** reflect the reconciled account balances
+
+When reconciliation is complete and all transactions are matched, the Cash balance on the Balance Sheet should agree with the bank's reported balance (plus or minus any known outstanding items).

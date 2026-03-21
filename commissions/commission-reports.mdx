@@ -1,0 +1,199 @@
+---
+title: "Commission Reports"
+description: "The Reports section provides a read-only view of commission calculations for any pay period. Reports are available for both draft and finalized pay periods, though finalized periods represent the o..."
+---
+
+The Reports section provides a read-only view of commission calculations for any pay period. Reports are available for both draft and finalized pay periods, though finalized periods represent the official, locked-in commission data.
+
+## Accessing Commission Reports
+
+1. From the sidebar, click **Reports**.
+2. The Reports page opens with a **pay period selector** at the top.
+3. Select a pay period from the dropdown to view its report. The most recent pay period is selected by default.
+
+{/* Screenshot placeholder: Reports page with pay period selector */}
+> **[Screenshot]** The Reports page showing the pay period selector dropdown and the report view below.
+
+## Report Overview
+
+When a pay period is selected, the report displays two main sections:
+
+### Employee Summary Table
+
+The top section shows a summary row for each employee who earned commissions in the selected pay period:
+
+| Column | Description |
+|--------|-------------|
+| **Employee Name** | Full name of the employee |
+| **Loan Count** | Number of loans the employee earned commissions on |
+| **Volume** | Total loan amount for the employee's loans (LO only) |
+| **Total Commission** | Gross commission earned across all loans |
+| **File Fees** | Total file fee deductions |
+| **Expenses** | Total expenses charged to the employee in this period |
+| **Draw Data** | Previous balance, payment, and carry-over |
+| **Net Pay** | Final payable amount after all deductions and draw adjustments |
+
+Click on an employee's name to navigate to their **individual report detail** page.
+
+{/* Screenshot placeholder: Employee summary table */}
+> **[Screenshot]** The employee summary table showing each employee's commission totals for the selected pay period.
+
+### Loan Breakdown Table
+
+Below the employee summary, the report shows a per-loan breakdown:
+
+| Column | Description |
+|--------|-------------|
+| **Loan Number** | The broker loan number |
+| **Borrower** | Borrower's full name |
+| **Loan Officer** | The loan officer on the loan |
+| **Funded Date** | When the loan was funded |
+| **Loan Amount** | The total loan amount |
+| **Broker Compensation** | The brokerage fee earned |
+| **Gross Commission** | The commission before deductions |
+| **File Fee** | The file fee deducted |
+| **Adjustments** | Net adjustment amount from loan-level adjustments |
+| **Net Commission** | The final commission amount for the loan officer |
+
+{/* Screenshot placeholder: Loan breakdown table */}
+> **[Screenshot]** The loan breakdown table showing individual loan details and their commission calculations.
+
+## Per-Employee Report Detail
+
+Clicking on an employee name in the summary table opens their individual report for the selected pay period.
+
+### Navigating to the Employee Report
+
+1. From the Reports page, click on an employee's name in the summary table.
+2. The employee report detail page opens, showing the same pay period selector so you can switch periods.
+
+{/* Screenshot placeholder: Employee report detail page */}
+> **[Screenshot]** The employee report detail page with the employee's name, pay period selector, and commission line items.
+
+### What the Employee Report Shows
+
+The employee report detail includes:
+
+#### Commission Line Items
+
+Each line item represents a commission earned on a specific loan, grouped by the employee's role:
+
+| Column | Description |
+|--------|-------------|
+| **Role** | The capacity in which the commission was earned (Loan Officer, LOA, Processor, Branch Manager) |
+| **Loan Number** | The broker loan number |
+| **Borrower** | Borrower name |
+| **Loan Officer** | The loan's originating LO (relevant when the employee is a processor or LOA on someone else's loan) |
+| **Funded Date** | When the loan funded |
+| **Loan Amount** | The total loan amount |
+| **Broker Comp** | Broker compensation on the loan |
+| **Lender** | The lender on the loan |
+| **Lead Source** | Where the loan originated from |
+| **Payer Type** | Who pays the broker compensation |
+| **Loan Type** | Product type (Conventional, FHA, VA, etc.) |
+| **Loan Purpose** | Purchase or Refinance |
+| **Gross Commission** | Commission before deductions |
+| **File Fee** | File fee deducted |
+| **Adjustments** | Loan-level adjustments (for LO role only) |
+| **Net Commission** | Final commission for this line item |
+
+#### Adjustment Detail
+
+For loan officer commission items, each loan's adjustments that apply to commissions are listed individually:
+- Adjustment description (or name)
+- Adjustment amount
+
+#### Totals by Role
+
+If the employee earns commissions in multiple roles (e.g., as a Loan Officer on their own loans and as a Branch Manager on branch loans), the report breaks down totals by role.
+
+#### Summary Section
+
+The bottom of the report shows overall totals:
+
+| Field | Description |
+|-------|-------------|
+| **Total Commission** | Sum of all net commission line items |
+| **Total Expenses** | Sum of expenses charged to this employee |
+| **Total Reimbursements** | Sum of any reimbursements |
+| **Previous Draw Balance** | Draw balance carried in from prior periods |
+| **Draw Balance Carried Over** | Draw balance going to the next period |
+| **Commission Payable** | The final amount payable to the employee (net pay) |
+
+#### Expenses
+
+If the employee has expenses in this period, they are listed:
+- Date
+- Amount
+- Notes
+
+## Exporting Reports
+
+### From the Reports Page
+
+On the Reports page, an **Export CSV** button is available in the header when a pay period is selected. This exports the same data available through the Run Commissions CSV exports:
+
+- **Detail export**: One row per commission result across all employees and loans
+- **Summary export**: One row per employee with aggregated totals
+
+### From the Pay Period Detail
+
+On the Run Commissions pay period detail page (Step 3: Finalize), you can also export:
+- **Export Detail** -- Full line-by-line commission data
+- **Export Summary** -- Per-employee summary
+
+Both exports produce CSV files that can be opened in Excel or imported into payroll systems.
+
+## Draft vs. Finalized Reports
+
+Reports are available for both draft and finalized pay periods:
+
+| Aspect | Draft Period | Finalized Period |
+|--------|-------------|-----------------|
+| **Data** | Calculated on-the-fly from current rules and loan data | Calculated on-the-fly but reflects the locked state |
+| **Draw balances** | Preview only; not saved to employee records | Saved and reflected in subsequent periods |
+| **Stability** | May change as loans are added/removed or rules are updated | Locked; the calculation is consistent |
+| **Use case** | Previewing upcoming commissions | Official commission records |
+
+> **Note**: Even finalized period reports re-run the commission engine when viewed. The draw balance data is snapshotted in `PayPeriodEmployee` records at finalization time, but commission line items are calculated from the current rule set. If rules are changed after finalization and the period is unfinalized/re-finalized, results may differ.
+
+## Historical Pay Periods
+
+All pay periods are retained and accessible through the pay period selector dropdown. This provides a full history of commission calculations over time.
+
+To review a historical period:
+1. Open the **Reports** page.
+2. Use the pay period selector to choose an older period.
+3. The report loads with the selected period's data.
+
+There is no limit to how far back you can view. All finalized and draft periods are available.
+
+## Common Report Scenarios
+
+### Reviewing an Employee's Monthly Earnings
+
+1. Go to **Reports**.
+2. Select the pay period for the month in question.
+3. Click on the employee's name to see their detailed breakdown.
+4. Review each loan's commission, file fees, adjustments, and the final net pay.
+
+### Comparing Periods
+
+1. Open **Reports** and note the employee summaries for one period.
+2. Switch the pay period selector to a different period.
+3. Compare loan counts, volumes, and net pay between periods.
+
+### Investigating a Commission Discrepancy
+
+1. Go to the employee's report detail for the period in question.
+2. Review each commission line item -- check the role, gross commission, file fee, and adjustments.
+3. Note the loan details (type, lender, lead source) to understand which rule was applied.
+4. Cross-reference with the commission template's rules to verify the correct rule matched.
+5. If the wrong rule was applied, check the template's rule filters and precedence order (see [Commission Rules](/commissions/commission-rules)).
+
+### Preparing Payroll
+
+1. Open **Reports** for the finalized pay period.
+2. Review all employee summaries and net pay amounts.
+3. Click **Export CSV** to download the summary export.
+4. Import the CSV into your payroll system or use the data to prepare paychecks.

@@ -1,0 +1,151 @@
+---
+title: "Permissions"
+description: "Keystone provides granular access controls for policies and folders. You can restrict who can view, edit, or administer specific policies or entire folders, using either individual employee assignm..."
+---
+
+Keystone provides granular access controls for policies and folders. You can restrict who can view, edit, or administer specific policies or entire folders, using either individual employee assignments or role-based rules.
+
+---
+
+## Permission levels
+
+There are three permission levels, each building on the one below it:
+
+| Level | Can View | Can Edit | Can Publish / Delete | Can Manage Permissions |
+|-------|----------|----------|----------------------|------------------------|
+| **Viewer** | Yes | No | No | No |
+| **Editor** | Yes | Yes | No | No |
+| **Admin** | Yes | Yes | Yes | Yes |
+
+### Viewer
+
+Viewers can read the policy content and view its version history. They cannot make any changes.
+
+### Editor
+
+Editors can read the policy and modify its content. They can save drafts and make changes, but they cannot publish, archive, or delete the policy.
+
+### Admin
+
+Admins have full control over the policy. They can edit content, publish and archive the policy, delete it, and manage who has access to it. Admins are also the only users who can add or remove permissions on a policy or folder.
+
+---
+
+## Permission targets
+
+Permissions can be assigned to two types of targets:
+
+### Per-employee permissions
+
+Assign a permission directly to a specific employee. This is useful when:
+
+- A particular person needs access to a sensitive policy that most employees should not see.
+- You want to give one employee Editor access to a policy they are responsible for maintaining.
+
+### Per-role permissions
+
+Assign a permission to an **employee role** (such as Loan Officer, Processor, Branch Manager, etc.). Every employee with that role automatically receives the specified permission level. This is useful when:
+
+- All Loan Officers need to view your pricing and compensation policies.
+- All Branch Managers need Editor access to their branch's operational procedures.
+- All Processors need to view processing guidelines.
+
+Available employee roles for permission assignment include:
+
+- Loan Officer
+- Loan Officer Assistant
+- Processor
+- Contractor
+- Branch Manager
+
+---
+
+## Permission scopes
+
+Permissions can be applied at two levels:
+
+### Policy-level permissions
+
+A permission applied to a specific policy affects only that policy. Use policy-level permissions when you need fine-grained control over individual documents.
+
+### Folder-level permissions
+
+A permission applied to a folder affects all policies within that folder. This is the more efficient approach when an entire category of policies should share the same access rules.
+
+> **Screenshot placeholder:** *Permission manager panel showing a mix of employee and role-based permissions with their permission levels.*
+
+---
+
+## How permissions cascade
+
+When determining a user's effective access to a policy, Keystone evaluates permissions in the following order:
+
+1. **Policy-level permissions** -- If the user (or their role) has an explicit permission on the specific policy, that permission applies.
+2. **Folder-level permissions** -- If no policy-level permission exists, Keystone checks the folder the policy belongs to. If the user (or their role) has a permission on the folder, that permission applies.
+3. **Default company permissions** -- If no specific permissions are set at either the policy or folder level, default company access rules apply.
+
+> **Important:** Policy-level permissions take precedence over folder-level permissions. If a user has Viewer access at the folder level but Editor access on a specific policy within that folder, they will have Editor access to that policy.
+
+---
+
+## Managing permissions
+
+### Adding a permission
+
+1. Open the policy or folder whose permissions you want to manage.
+2. Navigate to the **Permissions** section (typically in a sidebar panel or tab).
+3. Click **Add Permission**.
+4. Choose the target type:
+   - **Employee** -- Select a specific employee from the dropdown.
+   - **Employee Role** -- Select a role from the dropdown.
+5. Choose the **permission level**: Viewer, Editor, or Admin.
+6. Click **Save**.
+
+> **Screenshot placeholder:** *Add permission dialog showing the target type selector, employee/role dropdown, and permission level selector.*
+
+### Changing a permission level
+
+If you add a permission for a target that already has an existing permission, the permission level is updated to the new value. You do not need to remove the old permission first.
+
+### Removing a permission
+
+1. In the permissions list, find the permission entry you want to remove.
+2. Click the **delete** button (trash icon) next to the entry.
+3. The permission is removed immediately.
+
+When a permission is removed, the user's access reverts to whatever the next applicable permission provides (folder-level, or default company permissions).
+
+---
+
+## Who can manage permissions
+
+Only users with **Admin** permission on the policy or folder can add, change, or remove permissions. This includes:
+
+- Users explicitly granted Admin permission on the resource.
+- Super admins, who have unrestricted access to all resources.
+
+If you do not see the Permissions panel or the Add Permission button, you do not have Admin access to the resource.
+
+---
+
+## Viewing current permissions
+
+The permissions panel displays all current permission entries for a policy or folder. Each entry shows:
+
+- The **target** -- either the employee's name or the role name (displayed in italics with a "Role:" prefix).
+- The **permission level** -- shown as a color-coded badge:
+  - Admin -- Red badge
+  - Editor -- Blue badge
+  - Viewer -- Gray badge
+
+If no specific permissions are set, a message reads "No specific permissions set. Default company permissions apply."
+
+---
+
+## Best practices
+
+- **Use folder-level permissions** as your primary access control mechanism. Set permissions on top-level folders (e.g., "HR Policies -- Admin: HR team, Viewer: All staff") and rely on cascading for the policies within.
+- **Use policy-level permissions** sparingly, for exceptions -- a single sensitive document within an otherwise open folder, or a policy that one specific person needs elevated access to.
+- **Use role-based permissions** whenever possible. They are automatically maintained as employees join, change roles, or leave -- you do not need to update individual policy permissions.
+- **Review permissions periodically**. When employees change roles or leave the company, role-based permissions adjust automatically, but individual employee permissions should be audited.
+- **Do not leave sensitive policies without permissions.** If default company access is broad, make sure sensitive policies have explicit Viewer/Editor restrictions.

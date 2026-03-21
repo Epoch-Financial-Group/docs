@@ -1,0 +1,5 @@
+.agents/
+node_modules/
+README.md
+SUMMARY.md
+skills-lock.json

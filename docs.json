@@ -1,0 +1,172 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Keystone Documentation",
+  "colors": {
+    "primary": "#C84B0F",
+    "light": "#C84B0F",
+    "dark": "#15803D"
+  },
+  "favicon": "/favicon.svg",
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Getting started",
+            "pages": [
+              "index",
+              "getting-started/index",
+              "getting-started/first-login",
+              "getting-started/initial-setup",
+              "getting-started/navigation"
+            ]
+          },
+          {
+            "group": "Company setup",
+            "pages": [
+              "company-setup/index",
+              "company-setup/company-settings",
+              "company-setup/branches",
+              "company-setup/employees",
+              "company-setup/lenders",
+              "company-setup/lead-sources"
+            ]
+          },
+          {
+            "group": "Loan pipeline",
+            "pages": [
+              "loan-pipeline/index",
+              "loan-pipeline/overview",
+              "loan-pipeline/adding-loans",
+              "loan-pipeline/loan-statuses",
+              "loan-pipeline/editing-loans",
+              "loan-pipeline/loan-team",
+              "loan-pipeline/adjustments",
+              "loan-pipeline/bulk-upload",
+              "loan-pipeline/notes"
+            ]
+          },
+          {
+            "group": "Commissions",
+            "pages": [
+              "commissions/index",
+              "commissions/overview",
+              "commissions/commission-templates",
+              "commissions/commission-rules",
+              "commissions/special-cases",
+              "commissions/performance-boosters",
+              "commissions/running-commissions",
+              "commissions/commission-reports"
+            ]
+          },
+          {
+            "group": "Accounting",
+            "pages": [
+              "accounting/index",
+              "accounting/overview",
+              "accounting/chart-of-accounts",
+              "accounting/journal-entries",
+              "accounting/general-ledger",
+              "accounting/account-mappings",
+              "accounting/bank-accounts",
+              "accounting/bank-reconciliation",
+              "accounting/financial-reports"
+            ]
+          },
+          {
+            "group": "Expenses",
+            "pages": [
+              "expenses/index",
+              "expenses/tracking-expenses",
+              "expenses/recurring-expenses"
+            ]
+          },
+          {
+            "group": "Analytics",
+            "pages": [
+              "analytics/index",
+              "analytics/pipeline-analytics",
+              "analytics/projections",
+              "analytics/funded-loans",
+              "analytics/performance",
+              "analytics/operations",
+              "analytics/planning",
+              "analytics/profitability",
+              "analytics/custom-metrics",
+              "analytics/sales-ledger"
+            ]
+          },
+          {
+            "group": "Policies",
+            "pages": [
+              "policies/index",
+              "policies/overview",
+              "policies/creating-policies",
+              "policies/uploading-documents",
+              "policies/folders",
+              "policies/versioning",
+              "policies/permissions",
+              "policies/exporting"
+            ]
+          },
+          {
+            "group": "Tasks",
+            "pages": [
+              "tasks/index",
+              "tasks/overview",
+              "tasks/creating-tasks",
+              "tasks/templates",
+              "tasks/checklists",
+              "tasks/recurring-tasks"
+            ]
+          },
+          {
+            "group": "Quality control",
+            "pages": [
+              "quality-control/index",
+              "quality-control/overview",
+              "quality-control/qc-templates",
+              "quality-control/qc-reviews"
+            ]
+          },
+          {
+            "group": "Recruiting",
+            "pages": [
+              "recruiting/index",
+              "recruiting/overview",
+              "recruiting/candidate-pipeline",
+              "recruiting/comp-estimator",
+              "recruiting/onboarding",
+              "recruiting/candidate-management"
+            ]
+          },
+          {
+            "group": "Administration",
+            "pages": [
+              "administration/index",
+              "administration/super-admin",
+              "administration/multi-company"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Support",
+        "href": "mailto:support@epochfinancialgroup.com"
+      }
+    ]
+  },
+  "footer": {
+    "socials": {}
+  }
+}

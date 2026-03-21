@@ -1,0 +1,115 @@
+---
+title: "Planning"
+description: "The Planning module lets you set production goals for your company or individual loan officers and track progress against those targets in real time. Goals can target volume, units, or revenue over..."
+---
+
+The Planning module lets you set production goals for your company or individual loan officers and track progress against those targets in real time. Goals can target volume, units, or revenue over monthly, quarterly, or yearly periods.
+
+## Overview
+
+Planning bridges the gap between targets and results. You define what you want to achieve -- a certain funded volume, a number of closed loans, or a revenue target -- and the system tracks actual production against those goals, showing progress percentages and pace indicators.
+
+> <img alt="Screenshot: Planning overview with goal cards" src="screenshots/planning-overview.png" />
+
+## Goal Types
+
+### Metric Types
+
+Goals can track one of three metrics:
+
+| Metric Type | What It Measures | Example |
+|-------------|-----------------|---------|
+| **Volume** | Total funded loan amounts | "$10,000,000 in funded volume this quarter" |
+| **Units** | Number of funded loans | "15 funded loans this month" |
+| **Revenue** | Total broker compensation | "$200,000 in revenue this year" |
+
+### Period Types
+
+Goals operate over one of three period types:
+
+| Period Type | Description |
+|-------------|-------------|
+| **Monthly** | A single calendar month |
+| **Quarterly** | A three-month quarter |
+| **Yearly** | A full calendar year |
+
+Each goal has explicit start and end dates, so you can define goals for any custom period within these types.
+
+## Creating a Goal
+
+To create a goal, navigate to **Analytics > Planning** and click the button to add a new goal.
+
+> <img alt="Screenshot: Create goal form" src="screenshots/create-goal.png" />
+
+### Goal Fields
+
+| Field | Description |
+|-------|-------------|
+| **Employee** | Optional. If set, the goal tracks a specific loan officer's production. If left blank, the goal tracks company-wide production. |
+| **Metric Type** | Volume, Units, or Revenue |
+| **Target Value** | The numeric target (e.g., 10000000 for $10M volume) |
+| **Period Type** | Monthly, Quarterly, or Yearly |
+| **Period Start** | The start date of the goal period |
+| **Period End** | The end date of the goal period |
+| **Active** | Whether the goal is currently active. Only active goals appear in the progress dashboard. |
+
+## Tracking Progress
+
+Active goals display progress tracking with the following information:
+
+> <img alt="Screenshot: Goal progress cards" src="screenshots/goal-progress.png" />
+
+### Progress Metrics
+
+| Metric | Description |
+|--------|-------------|
+| **Employee Name** | The loan officer's name, or blank for company-wide goals |
+| **Metric Type** | Volume, Units, or Revenue |
+| **Target Value** | The goal target |
+| **Current Value** | Actual production so far (funded loans within the goal's date range) |
+| **Progress %** | Current value as a percentage of the target |
+| **Period** | The goal's start and end dates |
+| **Pace** | Whether the team/LO is ahead, on track, or behind |
+
+### How Current Value Is Calculated
+
+The system queries all funded loans within the goal's period and for the specified employee (if set):
+
+- **Volume goals** -- Sum of `loanAmount` for all funded loans in the period
+- **Units goals** -- Count of funded loans in the period
+- **Revenue goals** -- Sum of `brokerCompensation` for all funded loans in the period
+
+### Pace Indicator
+
+The pace indicator compares progress against the calendar:
+
+| Pace | Condition | Meaning |
+|------|-----------|---------|
+| **Ahead** | Progress % is more than 5 percentage points above the elapsed time % | Production is ahead of schedule |
+| **On Track** | Progress % is within 5 percentage points of the elapsed time % | Production is roughly on pace |
+| **Behind** | Progress % is more than 5 percentage points below the elapsed time % | Production is falling behind schedule |
+
+For example, if 50% of the goal period has elapsed and progress is at 60%, the pace is "ahead." If progress is at 40%, the pace is "behind."
+
+## Managing Goals
+
+### Editing Goals
+
+Goals can be updated at any time. You can adjust the target value, change the period, or reassign to a different employee.
+
+### Deleting Goals
+
+Goals can be deleted when they are no longer relevant. This permanently removes the goal and its tracking data.
+
+### Activating and Deactivating
+
+Set a goal's `isActive` flag to control whether it appears in the progress dashboard. Deactivating a goal hides it from the main view without deleting it, which is useful for completed or paused goals.
+
+## Common Goal Configurations
+
+| Scenario | Configuration |
+|----------|--------------|
+| Company quarterly volume target | No employee, Volume, Quarterly, target = $25,000,000 |
+| Monthly units target for a specific LO | Employee = the LO, Units, Monthly, target = 8 |
+| Annual revenue goal for the company | No employee, Revenue, Yearly, target = $2,000,000 |
+| Monthly volume target for all LOs | Create individual goals per LO, Volume, Monthly |

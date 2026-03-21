@@ -1,0 +1,232 @@
+---
+title: "Journal Entries"
+description: "Journal entries are the fundamental unit of record-keeping in Keystone's accounting system. Every financial transaction -- whether it is a lender check deposit, a commission payment, or a manual ad..."
+---
+
+Journal entries are the fundamental unit of record-keeping in Keystone's accounting system. Every financial transaction -- whether it is a lender check deposit, a commission payment, or a manual adjustment -- is recorded as a journal entry with balanced debit and credit lines.
+
+## What is a journal entry?
+
+A journal entry is a record of a financial transaction. In double-entry bookkeeping, every journal entry consists of two or more lines, where:
+
+- At least one line records a **debit** to an account
+- At least one line records a **credit** to an account
+- **Total debits must equal total credits** -- the entry must be balanced
+
+For example, depositing a $10,000 lender check would be recorded as:
+
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Cash - Operating | $10,000 | |
+| Accounts Receivable - Lender | | $10,000 |
+
+This single entry affects two accounts: Cash goes up (debit to an asset) and the receivable goes down (credit to an asset).
+
+## Navigating to journal entries
+
+The Journal Entries page is located at **Accounting > Journal Entries**. You can also access it from the Accounting dashboard by clicking "View All" under Recent Journal Entries.
+
+> **Screenshot placeholder:** *Journal Entries list page showing a table of entries with entry number, date, memo, source, status, and total amount columns.*
+
+## Journal entry fields
+
+Each journal entry has the following header fields:
+
+| Field | Description |
+|-------|-------------|
+| **Entry Number** | Auto-assigned sequential number (e.g., JE-1, JE-2). Cannot be changed. |
+| **Date** | The date of the transaction. Required. |
+| **Memo** | An optional description of the transaction. |
+| **Status** | Draft, Posted, or Voided. |
+| **Source** | How the entry was created (Manual, LoanFunded, etc.). |
+
+### Entry line fields
+
+Each line within a journal entry has:
+
+| Field | Description |
+|-------|-------------|
+| **Account** | The chart of accounts entry this line affects. Required. |
+| **Description** | Optional line-level description. |
+| **Debit** | The debit amount for this line (0.00 if this is a credit line). |
+| **Credit** | The credit amount for this line (0.00 if this is a debit line). |
+
+Each line can only have a debit or a credit, not both. When you enter a value in the debit field, the credit field is automatically cleared, and vice versa.
+
+## Entry statuses
+
+Journal entries move through a lifecycle of three statuses:
+
+### Draft
+
+- The entry has been created but **has not yet affected account balances or reports**.
+- Drafts can be freely edited or deleted.
+- All manually created entries start as Drafts.
+- A Draft entry must be explicitly Posted to take effect.
+
+### Posted
+
+- The entry is **finalized and affects account balances and financial reports**.
+- Posted entries cannot be edited or deleted.
+- The `postedAt` timestamp records when the entry was posted.
+- If you need to correct a posted entry, you can **Void** it or create a **Reversal**.
+
+### Voided
+
+- The entry has been **canceled and no longer affects account balances**.
+- The `voidedAt` timestamp records when the entry was voided.
+- Voided entries remain visible in the journal entry list for audit purposes.
+- Voiding is a one-way action -- a voided entry cannot be un-voided.
+
+## Entry sources
+
+The **source** field indicates how a journal entry was created. This helps you distinguish manual entries from system-generated ones:
+
+| Source | Description |
+|--------|-------------|
+| **Manual** | Created by a user through the journal entry form |
+| **LoanFunded** | Automatically generated when a loan reaches the "Funded" status |
+| **LoanCheckReceived** | Automatically generated when a lender check is recorded |
+| **LoanAdjustment** | Generated for loan-level adjustments (reimbursements, fee corrections) |
+| **RevenueLineItem** | Generated for revenue line items on a loan |
+| **CommissionAccrual** | Generated when commissions are calculated and accrued |
+| **CommissionPayment** | Generated when commissions are paid out |
+| **DrawPayment** | Generated when a draw payment is issued to an employee |
+| **Reversal** | Created as the opposite of an existing entry (debits and credits swapped) |
+| **BankImport** | Generated from imported bank transaction data |
+
+The source badge appears on the journal entry list and detail pages, making it easy to identify the origin of each entry.
+
+## Automatic journal entries from loan events
+
+When account mappings are configured (see [Account Mappings](/accounting/account-mappings)), Keystone automatically creates journal entries as loans progress through key stages. These entries:
+
+- Are linked to the source loan via the **Linked Loan** field
+- Use the source type corresponding to the event (e.g., `LoanFunded`)
+- Follow the debit/credit accounts specified in the mapping configuration
+- Are created as **Drafts** by default, so you can review them before posting
+
+For example, when a loan is funded and an account mapping exists for the "LoanFunded" event, the system creates a journal entry debiting and crediting the mapped accounts for the loan amount or broker compensation.
+
+## Creating a manual journal entry
+
+**Step-by-step:**
+
+1. Navigate to **Accounting > Journal Entries**.
+2. Click the **New Journal Entry** button.
+3. Fill in the header fields:
+   - **Date** -- Select the transaction date (defaults to today).
+   - **Memo** -- Enter an optional description (e.g., "Monthly rent payment").
+4. Add journal entry lines:
+   - The form starts with two blank lines.
+   - For each line, select an **Account** from the dropdown, enter a **Debit** or **Credit** amount, and optionally add a **Description**.
+   - Click **Add Line** to add more lines as needed.
+   - Click the trash icon to remove a line (minimum two lines required).
+5. Verify the entry is balanced:
+   - The footer row shows **total debits** and **total credits**.
+   - If the entry is out of balance, the difference is displayed in red and the Save button is disabled.
+6. Click **Save as Draft**.
+7. You are redirected to the Journal Entries list. The new entry appears with "Draft" status.
+
+> **Screenshot placeholder:** *New Journal Entry form with two lines filled in -- a debit to Commission Expense and a credit to Cash - Operating -- showing balanced totals in the footer.*
+
+## Viewing a journal entry
+
+Click any entry in the journal entry list (or click "View") to open the detail page. The detail page shows:
+
+- **Header**: Entry number, status badge, source badge, date, and memo
+- **Metadata**: Created date, posted date (if posted), voided date (if voided), linked loan (if any), and reversal relationships
+- **Lines table**: All debit and credit lines with account numbers, names, descriptions, and amounts
+- **Totals**: Sum of all debits and credits in the footer
+
+> **Screenshot placeholder:** *Journal Entry detail page showing JE-42 in Posted status with four line items and metadata fields.*
+
+## Posting a journal entry
+
+Posting finalizes a draft entry so it affects account balances and financial reports.
+
+1. Open the journal entry detail page for a Draft entry.
+2. Click the **Post** button.
+3. Confirm the action in the dialog. You will see: "Are you sure you want to post this journal entry? This action cannot be undone."
+4. The entry status changes to "Posted" and the `postedAt` date is recorded.
+
+Once posted, the entry's debits and credits are reflected in:
+- The **General Ledger** for each affected account
+- The **Trial Balance**
+- The **Balance Sheet** (for Asset, Liability, and Equity accounts)
+- The **Income Statement** (for Revenue and Expense accounts)
+
+## Voiding a journal entry
+
+Voiding cancels a posted entry so it no longer affects account balances.
+
+1. Open the journal entry detail page for a Posted entry.
+2. Click the **Void** button.
+3. Confirm the action. You will see: "Are you sure you want to void this journal entry? This will reverse all account balances."
+4. The entry status changes to "Voided" and the `voidedAt` date is recorded.
+
+The voided entry remains in the journal entry list for audit trail purposes but its amounts are excluded from reports.
+
+## Reversing a journal entry
+
+Reversing creates a new journal entry that is the exact opposite of an existing posted entry -- all debits become credits and all credits become debits.
+
+1. Open the journal entry detail page for a Posted entry.
+2. Click the **Reverse** button.
+3. Confirm the action. You will see: "Create a reversing entry? This will create a new journal entry with opposite debits and credits."
+4. A new Draft entry is created with:
+   - A memo like "Reversal of JE-42: [original memo]"
+   - Source set to "Reversal"
+   - Debits and credits swapped from the original
+   - A link back to the original entry
+5. You are redirected to the journal entries list. The new reversal entry can be reviewed and posted.
+
+The original entry and the reversal entry are linked to each other. The original entry's detail page shows a "Reversed By" link, and the reversal's detail page shows a "Reversal Of" link.
+
+## Deleting a draft entry
+
+Only Draft entries can be deleted. Posted and Voided entries are permanent records.
+
+1. Open the journal entry detail page for a Draft entry.
+2. Click the **Delete** button.
+3. Confirm the action.
+4. The entry is permanently removed.
+
+## Filtering the journal entry list
+
+The journal entries list page supports filtering by:
+
+| Filter | Options |
+|--------|---------|
+| **Status** | Draft, Posted, Voided, or all |
+| **Source** | Any of the entry source types |
+| **Date Range** | Start date and end date |
+
+The list is paginated (25 entries per page) and sorted by date, newest first. Use the Previous/Next buttons to navigate between pages.
+
+## Linked loan entries
+
+Journal entries generated from loan events include a link to the source loan. On the entry detail page, the "Linked Loan" field shows the broker loan number as a clickable link that navigates to the loan detail page.
+
+Conversely, on a loan's detail page, you can view all journal entries associated with that loan.
+
+## Step-by-step walkthrough: Recording a lender check
+
+Here is a complete walkthrough of recording a lender check manually:
+
+1. Navigate to **Accounting > Journal Entries** and click **New Journal Entry**.
+2. Set the **Date** to the date the check was received.
+3. Set the **Memo** to something descriptive, like "Lender check - Loan #2024-0145 - Smith."
+4. On the first line:
+   - Select **Cash - Operating** as the account.
+   - Enter **$8,500.00** in the Debit field.
+   - Optionally add a description: "Check deposit."
+5. On the second line:
+   - Select **Accounts Receivable - Lender** as the account.
+   - Enter **$8,500.00** in the Credit field.
+   - Optionally add a description: "Clear AR for loan #2024-0145."
+6. Verify the footer shows equal totals: $8,500.00 in both Debit and Credit.
+7. Click **Save as Draft**.
+8. Open the newly created entry and click **Post** to finalize it.
+
+The Cash account balance increases by $8,500 and the Accounts Receivable balance decreases by $8,500 on all reports.

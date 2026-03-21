@@ -1,0 +1,107 @@
+---
+title: "Projections"
+description: "The Projections module provides forward-looking funding forecasts based on your active pipeline. It estimates when loans are likely to fund, groups them by confidence level, and tracks projection a..."
+---
+
+The Projections module provides forward-looking funding forecasts based on your active pipeline. It estimates when loans are likely to fund, groups them by confidence level, and tracks projection accuracy against actual funded volume.
+
+## Overview
+
+Projections analyze every active loan in your pipeline (excluding Funded, CommissionPaid, and Adverse statuses) and estimate when each loan will fund based on its current status. Loans are assigned a confidence level, then aggregated into weekly and monthly views.
+
+> <img alt="Screenshot: Projections overview" src="screenshots/projections-overview.png" />
+
+## Confidence Scoring
+
+Each pipeline loan is assigned a confidence level based on how far along it is in the process:
+
+| Confidence | Statuses | Rationale |
+|------------|----------|-----------|
+| **High** | Clear to Close, Docs Out, Closed | These loans are very likely to fund -- they have cleared underwriting and are in final stages. |
+| **Medium** | Approved with Conditions, Resubmitted | These loans have underwriting approval but still have conditions or are being resubmitted. |
+| **Low** | All earlier statuses (App Intake through Submitted to UW) | These loans are still early in the process and have more uncertainty. |
+
+### Estimated Funding Dates
+
+If a loan has an `estimatedFundingDate` set, that date is used. Otherwise, the system assigns a default estimate based on confidence:
+
+| Confidence | Default Estimate |
+|------------|-----------------|
+| High | 1 week from today |
+| Medium | 4 weeks from today |
+| Low | 7 weeks from today |
+
+If a loan's estimated date is in the past, it is shifted to today.
+
+## Weekly Projections
+
+The weekly view shows funding projections for the next **8 weeks**, broken down by confidence level.
+
+> <img alt="Screenshot: Weekly projections chart" src="screenshots/weekly-projections.png" />
+
+Each week displays:
+
+| Metric | Description |
+|--------|-------------|
+| **Week Range** | The date range for the week (e.g., "3/3 - 3/9") |
+| **High Confidence** | Units, volume, and estimated revenue from high-confidence loans |
+| **Medium Confidence** | Units, volume, and estimated revenue from medium-confidence loans |
+| **Low Confidence** | Units, volume, and estimated revenue from low-confidence loans |
+
+This lets you see not just the total expected volume, but how much of it is highly likely versus speculative.
+
+## Monthly Projections
+
+The monthly view aggregates projected fundings by calendar month, providing a higher-level view of expected production.
+
+> <img alt="Screenshot: Monthly projections chart" src="screenshots/monthly-projections.png" />
+
+Each month shows:
+- **Units** -- Number of loans projected to fund
+- **Volume** -- Total dollar amount
+- **Revenue** -- Estimated broker compensation (uses actual broker compensation if available, otherwise estimates at 2% of loan amount)
+
+## 30-Day Projection Summary
+
+A summary card shows the total projected fundings for the next 30 days:
+
+| Metric | Description |
+|--------|-------------|
+| **Units** | Total loans expected to fund in the next 30 days |
+| **Volume** | Total dollar volume |
+| **Revenue** | Total estimated revenue |
+
+## Upcoming Loans
+
+A detailed table lists every active pipeline loan with its projected funding information.
+
+> <img alt="Screenshot: Upcoming loans table" src="screenshots/upcoming-loans.png" />
+
+| Column | Description |
+|--------|-------------|
+| **Loan Number** | Broker loan number |
+| **Borrower** | Borrower's full name |
+| **Loan Officer** | Assigned LO |
+| **Loan Amount** | Dollar amount |
+| **Estimated Revenue** | Projected broker compensation |
+| **Est. Funding Date** | The estimated funding date, if set |
+| **Status** | Current pipeline status |
+| **Confidence** | High, Medium, or Low |
+
+The table is sorted by confidence level (high first), then by estimated funding date.
+
+## Accuracy Tracking
+
+The accuracy section compares projected volume against actual funded volume for the last 3 months. This helps you calibrate how reliable your projections are over time.
+
+> <img alt="Screenshot: Projection accuracy chart" src="screenshots/projection-accuracy.png" />
+
+Each month shows:
+- **Projected** -- What was projected for that month
+- **Actual** -- What actually funded
+
+As the system accumulates historical projection data, accuracy tracking becomes increasingly valuable for forecasting.
+
+## Filtering
+
+Projections can be filtered by **Loan Officer** to focus on a specific LO's pipeline and expected fundings.

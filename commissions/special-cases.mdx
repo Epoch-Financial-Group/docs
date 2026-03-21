@@ -1,0 +1,234 @@
+---
+title: "Special Cases"
+description: "Special case groups provide an additional layer of conditional logic for commission rules. While regular commission rule filters match on a single attribute at a time (one lender, one loan type, et..."
+---
+
+Special case groups provide an additional layer of conditional logic for commission rules. While regular commission rule filters match on a single attribute at a time (one lender, one loan type, etc.), special case groups let you define multi-condition checks that must be satisfied before a rule applies.
+
+## What Are Special Case Groups?
+
+A **CommissionSpecialCaseGroup** is a named collection of criteria (conditions) attached to a commission template. Each group contains one or more **CommissionSpecialCase** items -- individual conditions that are evaluated against a loan's attributes.
+
+When a commission rule is linked to a special case group, the rule only applies if the group's criteria evaluate to `true` for the loan being processed.
+
+```
+Commission Rule
+  |
+  +--> Standard filter checks (lender, loan type, state, etc.)
+  |
+  +--> Special case group check
+  |      |
+  |      +--> Criterion 1: Loan Type = FHA        --> true
+  |      +--> Criterion 2: Loan Amount >= 300000   --> true
+  |      +--> Criterion 3: Property State = Texas   --> true
+  |      |
+  |      +--> All criteria met (AND) --> Group passes
+  |
+  +--> Rule applies --> Use rule's commission
+```
+
+## When to Use Special Cases vs. Regular Rules
+
+| Scenario | Use |
+|----------|-----|
+| Different commission for FHA loans | Regular rule with Loan Type filter |
+| Different commission for a specific lender | Regular rule with Lender filter |
+| Different commission for FHA loans over $300,000 in Texas | Special case group (multiple conditions on different attributes) |
+| Different commission when broker comp is below a threshold | Special case group (supports numeric comparisons) |
+| Different commission when loan amount is in a specific range | Special case group (min/max numeric conditions) |
+
+In short: use regular rule filters for single-attribute matching, and special case groups when you need to combine conditions that go beyond what filters alone can express -- especially numeric thresholds on loan amount or broker compensation.
+
+## Creating a Special Case Group
+
+Special case groups are configured within a commission template.
+
+### Step 1: Open the Template Editor
+
+1. Navigate to **Commission Templates** and click on a template.
+2. Click **Edit**.
+
+### Step 2: Add a Special Case Group
+
+1. In the template editor, find the **Special Cases** section.
+2. Click **Add Special Case Group**.
+
+{/* Screenshot placeholder: Special case group section in template editor */}
+> **[Screenshot]** The Special Cases section showing an empty group ready for criteria to be added.
+
+### Step 3: Add Criteria to the Group
+
+Each criterion checks a single property of the loan:
+
+1. Click **Add Condition** within the group.
+2. Select the **Filter Type** (what loan attribute to check).
+3. Set the **Value** (what to compare against).
+4. Choose the **Operator** (AND or OR) to control how this criterion combines with others.
+
+### Step 4: Link a Commission Rule to the Group
+
+After creating the group, create or edit a commission rule and select this special case group. The rule's commission will only apply when the group's criteria are satisfied.
+
+## Condition Fields
+
+Each special case criterion checks one of the following fields:
+
+| Filter Type | Description | Value Type |
+|-------------|-------------|------------|
+| **LoanType** | The loan product type | Text (e.g., "FHA", "VA", "Conventional") |
+| **LoanPurpose** | Purchase or Refinance | Text ("Purchase" or "Refinance") |
+| **PayerType** | Who pays the broker compensation | Text ("Lender", "Borrower", "Investor", "Seller") |
+| **PropertyState** | The state where the property is located | Text (state code, e.g., "TX", "CA") |
+| **Lender** | The lender/investor on the loan | Text (lender ID) |
+| **LeadSource** | Where the loan originated from | Text (lead source ID) |
+| **LoanAmountMin** | Loan amount is at or above a threshold | Number (e.g., 300000) |
+| **LoanAmountMax** | Loan amount is at or below a threshold | Number (e.g., 500000) |
+| **BrokerCompMin** | Broker compensation is at or above a threshold | Number (e.g., 3000) |
+| **BrokerCompMax** | Broker compensation is at or below a threshold | Number (e.g., 10000) |
+
+## Operators: AND vs. OR
+
+Each criterion after the first has an **operator** that determines how it combines with the previous result:
+
+- **AND** (operator = true): Both the accumulated result and this criterion must be true.
+- **OR** (operator = false): Either the accumulated result or this criterion must be true.
+
+Criteria are evaluated in order, left to right, with the operator applied sequentially:
+
+```
+Result = Criterion1
+Result = Result AND/OR Criterion2
+Result = Result AND/OR Criterion3
+...
+```
+
+> **Note**: There is no grouping or parentheses. Operators are applied strictly in sequence. If you need complex boolean logic, consider breaking it into separate special case groups, each linked to its own rule.
+
+### Example: AND Logic
+
+A group with criteria:
+1. LoanType = FHA
+2. AND LoanAmountMin = 300000
+3. AND PropertyState = TX
+
+This matches FHA loans in Texas with a loan amount of $300,000 or more. All three must be true.
+
+### Example: OR Logic
+
+A group with criteria:
+1. LoanType = FHA
+2. OR LoanType = VA
+
+This matches either FHA or VA loans.
+
+### Example: Mixed Logic
+
+A group with criteria:
+1. LoanType = FHA
+2. AND LoanAmountMin = 300000
+3. OR PropertyState = CA
+
+Evaluated as:
+```
+Step 1: result = (LoanType == FHA)           --> true/false
+Step 2: result = result AND (Amount >= 300k)  --> true/false
+Step 3: result = result OR (State == CA)      --> true/false
+```
+
+This matches: (FHA loans over $300k) OR (any loan in California).
+
+## How Special Cases Are Evaluated
+
+When the commission engine processes a loan and encounters a rule linked to a special case group:
+
+1. The engine first checks the rule's standard filters (lender, loan type, etc.).
+2. If the standard filters pass, the engine evaluates the special case group.
+3. Each criterion in the group is evaluated against the loan's properties.
+4. The criteria are combined using their operators (AND/OR) in sequence.
+5. If the final result is `true`, the rule applies.
+6. If `false`, the engine continues to the next rule.
+
+If a special case group has **no criteria**, it always evaluates to `true` (the rule applies unconditionally, subject to its standard filters).
+
+## Worked Examples
+
+### Example 1: High-Value FHA Bonus
+
+**Scenario**: Pay an extra 10 bps on FHA loans with a loan amount of $400,000 or more.
+
+**Special Case Group**:
+| # | Filter Type | Value | Operator |
+|---|-------------|-------|----------|
+| 1 | LoanType | FHA | -- |
+| 2 | LoanAmountMin | 400000 | AND |
+
+**Linked Rule**:
+- Amount Type: Basis Points
+- Amount: 60 (instead of the base 50)
+- Commission Basis: Loan Amount
+
+**Result**: A $450,000 FHA loan earns 60 bps ($2,700) instead of the base 50 bps ($2,250).
+
+### Example 2: Low Broker Comp Override
+
+**Scenario**: On loans where broker compensation is less than $2,500, pay a flat $500 minimum to ensure the employee still earns a reasonable commission.
+
+**Special Case Group**:
+| # | Filter Type | Value | Operator |
+|---|-------------|-------|----------|
+| 1 | BrokerCompMax | 2500 | -- |
+
+**Linked Rule**:
+- Amount Type: Flat ($)
+- Amount: 500
+- Commission Basis: Loan Amount
+
+**Result**: A loan with $2,000 broker compensation earns a flat $500 instead of the percentage-based commission.
+
+### Example 3: State-Specific Loan Type Override
+
+**Scenario**: VA loans in Texas earn 45 bps, while VA loans elsewhere earn 40 bps.
+
+**Special Case Group A** (VA in Texas):
+| # | Filter Type | Value | Operator |
+|---|-------------|-------|----------|
+| 1 | LoanType | VA | -- |
+| 2 | PropertyState | TX | AND |
+
+**Linked Rule A**: 45 bps
+
+**Special Case Group B** (VA not in Texas):
+This can be handled with a regular rule: Loan Type = VA (no special case needed), set to 40 bps. Since Rule A with its special case is more specific, it will match first for Texas VA loans.
+
+### Example 4: Loan Amount Range
+
+**Scenario**: Loans between $200,000 and $500,000 earn the standard rate. Loans outside that range earn a different rate.
+
+**Special Case Group** (in range):
+| # | Filter Type | Value | Operator |
+|---|-------------|-------|----------|
+| 1 | LoanAmountMin | 200000 | -- |
+| 2 | LoanAmountMax | 500000 | AND |
+
+**Linked Rule**: 50 bps (standard rate, applied only when loan amount is $200K-$500K).
+
+A separate rule without a special case group could handle loans outside this range at a different rate.
+
+## Relationship to Commission Rules
+
+Special case groups are part of a commission template and are linked to commission rules:
+
+```
+CommissionTemplate
+  |
+  +--> CommissionSpecialCaseGroup
+  |      |
+  |      +--> CommissionSpecialCase (criterion 1)
+  |      +--> CommissionSpecialCase (criterion 2)
+  |      +--> ...
+  |
+  +--> CommissionRule (linked to the group)
+  +--> CommissionRule (not linked -- uses standard filters only)
+```
+
+A single special case group can be linked to multiple rules within the same template. When the group's criteria are met, all linked rules become eligible for matching (subject to their own filters and the rule precedence system described in [Commission Rules](/commissions/commission-rules)).

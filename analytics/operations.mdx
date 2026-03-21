@@ -1,0 +1,146 @@
+---
+title: "Operations"
+description: "The Operations module provides tools for measuring operational efficiency across your loan pipeline. It includes lender turn time analysis, SLA-based aging reports, and conversion/fallout analysis ..."
+---
+
+The Operations module provides tools for measuring operational efficiency across your loan pipeline. It includes lender turn time analysis, SLA-based aging reports, and conversion/fallout analysis to help you identify process bottlenecks and optimize throughput.
+
+## Overview
+
+Operations analytics help you answer questions about process efficiency:
+
+- Which lenders process loans fastest?
+- Which loans are overdue based on expected timelines?
+- What is your overall conversion rate from application to funding?
+- Where in the pipeline are loans falling out?
+
+> <img alt="Screenshot: Operations overview" src="screenshots/operations-overview.png" />
+
+## Lender Turn Times
+
+The lender turn time report measures how long each lender takes to move loans through key pipeline milestones. This helps you identify which lenders are fastest and which may be creating delays.
+
+> <img alt="Screenshot: Lender turn times table" src="screenshots/lender-turn-times.png" />
+
+### Metrics Per Lender
+
+| Metric | Description |
+|--------|-------------|
+| **Lender Name** | The lender's name |
+| **Avg Submission to CTC** | Average days from Submitted to Underwriting to Clear to Close. Measures underwriting speed. |
+| **Avg CTC to Funded** | Average days from Clear to Close to Funded Date. Measures closing/funding speed. |
+| **Avg App to Funded** | Average days from App Intake to Funded Date. Full lifecycle measurement. |
+| **Loan Count** | Number of funded loans used to calculate the averages. Higher counts indicate more reliable averages. |
+
+The table is sorted by loan count (highest first), so lenders with the most data appear at the top.
+
+### Using Turn Time Data
+
+- **Lender selection** -- When choosing where to submit a loan, consider which lenders historically close fastest.
+- **SLA negotiations** -- Use turn time data to set expectations with lenders and negotiate service level agreements.
+- **Process improvement** -- Identify lenders with unusually long turn times and work with them to improve.
+
+## Aging Reports
+
+The aging report identifies loans that have exceeded their expected time in a pipeline stage, based on predefined SLAs (Service Level Agreements).
+
+> <img alt="Screenshot: Aging report" src="screenshots/aging-report.png" />
+
+### Default SLAs
+
+The system defines expected timelines for key stages:
+
+| Stage | Expected Next Stage | Days Allowed |
+|-------|-------------------|--------------|
+| App Intake | Disclosed | 3 days |
+| Disclosed | Submitted to UW | 7 days |
+| Submitted to UW | Approved w/ Conditions | 14 days |
+| Approved w/ Conditions | Clear to Close | 7 days |
+| Clear to Close | Funded | 10 days |
+
+A loan is considered "overdue" when it has been in its current stage longer than the allowed number of days.
+
+### Summary Buckets
+
+The aging summary groups overdue loans into buckets:
+
+| Bucket | Description |
+|--------|-------------|
+| **1-7 days overdue** | Slightly past SLA -- may just need a follow-up |
+| **8-14 days overdue** | Noticeably delayed -- warrants investigation |
+| **15-30 days overdue** | Significantly delayed -- likely needs escalation |
+| **30+ days overdue** | Critically overdue -- immediate attention required |
+
+### Overdue Loan Details
+
+Each overdue loan shows:
+
+| Field | Description |
+|-------|-------------|
+| **Loan Number** | Broker loan number |
+| **Borrower** | Borrower's full name |
+| **Loan Officer** | Assigned LO |
+| **Status** | Current pipeline stage |
+| **Days Overdue** | How many days past the SLA the loan is |
+| **Loan Amount** | Dollar amount |
+| **Expected Days** | The SLA for this stage |
+
+The list is sorted by days overdue (most overdue first).
+
+## Conversion Analysis
+
+The conversion report measures your application-to-funding success rate and identifies where in the pipeline loans are falling out.
+
+> <img alt="Screenshot: Conversion analysis" src="screenshots/conversion-analysis.png" />
+
+### Overall Metrics
+
+| Metric | Description |
+|--------|-------------|
+| **Overall Rate** | Percentage of applications that resulted in a funded loan |
+| **Total Apps** | Number of applications received in the period |
+| **Total Funded** | Number of applications that reached funding |
+| **Comparison** | Change in overall rate versus the prior period |
+
+### Conversion Breakdowns
+
+Conversion rates are broken down across four dimensions:
+
+| Breakdown | Description |
+|-----------|-------------|
+| **By LO** | Each loan officer's conversion rate (apps, funded, rate) |
+| **By Lender** | Conversion rates per lender |
+| **By Lead Source** | Which lead sources have the best conversion rates |
+| **By Loan Type** | Conversion rates by loan product type |
+
+Each breakdown shows the number of applications, number funded, and the resulting conversion rate.
+
+### Fallout Analysis
+
+The fallout report analyzes **adverse loans** (loans that did not successfully close) and groups them by the last pipeline stage they reached before going adverse:
+
+| Fallout Stage | Description |
+|---------------|-------------|
+| **Pre-Application** | Fell out before any pipeline dates were set |
+| **App Intake** | Had an app intake date but no submission |
+| **Underwriting** | Was submitted to underwriting but never approved |
+| **Clear to Close** | Was cleared to close but never closed |
+| **Post-Closing** | Had a closing date but never funded |
+
+This helps identify where in your process the biggest drop-offs occur, so you can target improvements.
+
+### Monthly Trend
+
+A monthly trend chart tracks conversion rates over time, showing apps, funded loans, and the conversion rate for each month. This helps identify seasonal patterns or the impact of process changes.
+
+## Filtering
+
+Operations analytics support the full set of extended filters:
+
+| Filter | Description |
+|--------|-------------|
+| **Date Range** | Scope the analysis period |
+| **Loan Officer** | Filter to a specific LO |
+| **Branch** | Filter by branch |
+| **Lead Source** | Filter by lead source |
+| **Lender** | Filter by lender |
