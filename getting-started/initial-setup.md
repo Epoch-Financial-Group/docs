@@ -4,19 +4,31 @@ This guide walks company administrators through the essential configuration step
 
 ---
 
+## My Implementation (Recommended)
+
+The fastest way to set up your workspace is through the **My Implementation** module — a guided, step-by-step wizard accessible from the sidebar. It walks you through each setup phase with inline forms, contextual help, and progress tracking. Navigate to **My Implementation** in the sidebar to get started.
+
+The implementation module covers all the steps below in a streamlined flow. You can also complete setup manually using the individual pages described in the rest of this guide.
+
+> **Note:** Admins can hide or reopen the implementation guide from **Settings > General**. Super admins can reopen it for testing even after all steps are complete.
+
+---
+
 ## Suggested Order of Operations
 
-We recommend completing the setup steps in the following order, since later steps depend on earlier ones:
+If you prefer to configure things manually (or want to revisit individual settings), we recommend completing the setup steps in the following order, since later steps depend on earlier ones:
 
 1. **Configure Company Settings** -- Set your company name, NMLS number, LOS, and payroll settings.
 2. **Create Branches** -- Define your office locations or organizational units.
 3. **Add Employees** -- Add your loan officers, processors, assistants, and managers.
 4. **Add Lenders** -- Register the wholesale lenders and correspondents you work with.
 5. **Add Lead Sources** -- Define where your loans originate (referrals, web leads, etc.).
-6. **Set Up Chart of Accounts** -- Initialize your accounting structure.
+6. **Set Up Chart of Accounts** -- Initialize your accounting structure or indicate you use an external system (QuickBooks, Xero, etc.).
 7. **Create Commission Templates** -- Build the compensation plans for your team.
+8. **Upload Loans** -- Bulk upload historical or active loan data via CSV.
+9. **Connect Your LOS** -- Set up Zapier or Arive integration to sync loans automatically.
 
-> **Note:** You can revisit and modify any of these settings at any time. This order is a recommendation to make the process as smooth as possible, since later steps (like assigning employees to branches, or creating commission rules that reference lenders) depend on the foundational data being in place first.
+> **Note:** You can revisit and modify any of these settings at any time. This order is a recommendation to make the process as smooth as possible, since later steps (like assigning employees to branches, or creating commission rules that reference lenders) depend on the foundational data being in place first. Some steps (branches, lead sources, lenders, LOS integration) are optional and can be skipped.
 
 ---
 
