@@ -46,7 +46,7 @@ Fields: **item** · **name** · **status** · **evidence**. "Evidence" points at
 | 4 | Kill `Contractor` from `EmployeeRole` | ⚠️ UI only; enum value retained | v0.1.0.6 (`ccc8906`) removed from UI pickers; `scripts/backfill-contractor-to-processor.ts` is ready to migrate remaining rows. Full drop is part of the v3 Item 17 schema-push PR (separate, coordinated) |
 | 6 | Two-radio deduction disclosure | ✅ shipped | v0.1.0.5 (`4d169ff`) |
 | 7 | Role-grouped individual plans tab | ✅ shipped | Part of Item 0 / Compensation Roster work |
-| 17 | Five new `EmployeeRole` values + grouped pickers | ⚠️ scaffolding + M1 UI shipped; enum expansion deferred (requires coordinated `db:push` to shared Supabase) | **v0.2.2.0:** scaffolding (`PLAN_TYPE_OPTIONS_GROUPED`, `BACK_OFFICE_ROLES`, `ROLE_FAMILY`, `shouldShowTaxClassificationPicker`, `isBackOfficeCommissionOptIn`, `RoleFamilyChips`, 9-role `DEFAULT_PORTAL_PERMISSIONS` with Payroll restricted, full `ROLE_LABELS`). **v0.2.2.1:** 17·M1 Block 1 refresh — `commission-template-form.tsx` now uses grouped chips. **Still needed** in a separate schema-push PR: Prisma enum + 5 Zod mirrors + AI tool Zod enum + `confirm-employees` CSV branches + `api/leads` ROLE_MAP + `roster-classifier` back-office helper + `db:push` + Contractor backfill run. See `CLAUDE.md § Employee Roles / v3 scaffolding` for the exact re-enable checklist |
+| 17 | Five new `EmployeeRole` values + grouped pickers | ✅ shipped | **v0.2.2.0:** scaffolding (`PLAN_TYPE_OPTIONS_GROUPED`, `BACK_OFFICE_ROLES`, `ROLE_FAMILY`, `shouldShowTaxClassificationPicker`, `isBackOfficeCommissionOptIn`, `RoleFamilyChips`, 9-role `DEFAULT_PORTAL_PERMISSIONS` with Payroll restricted, full `ROLE_LABELS`). **v0.2.2.1:** 17·M1 Block 1 refresh — `commission-template-form.tsx` now uses grouped chips. **v0.3.1.0:** schema push — added 5 enum values to Prisma + Supabase via `npx prisma db push`, mirrored across all 5 Zod schemas + AI tool enum + `confirm-employees` mapCSVRole + `api/leads` ROLE_MAP, restored DisclosureDesk + LockDesk in `PLAN_ELIGIBLE_ROLES` and added `BACK_OFFICE_ELIGIBLE_ROLES` + `employeeHasBackOfficeRole` helper, dropped the 4 enum entries from `CHIP_DISABLED_ROLES` so admins can now select all 5 new roles. Replaced `crm-contact-people.tsx`'s narrow string-literal union with `EmployeeRole` from `@/generated/prisma`. **Follow-up:** Contractor backfill (5 employees identified, awaiting triage) + Contractor enum drop |
 | 18 | `CommissionRule.targetRole` column (dual-read/write) | ✅ shipped | v0.1.0.7, PR #52 (`955ebb6`). Backfill script: `scripts/backfill-commission-rule-target-role.ts`. Boolean-flag drop queued in TODOS behind Item 17 |
 
 ### Phase 2 — Preview + Explainability
@@ -91,22 +91,19 @@ Fields: **item** · **name** · **status** · **evidence**. "Evidence" points at
 | # | Item | Status | Notes |
 |---|---|---|---|
 | — | Drop `CommissionRule` boolean role flags | 🔴 NOT SHIPPED | Queued in `TODOS.md`; depends on Item 17 + prod backfill verification |
+| — | Contractor → Processor data backfill | 🔴 NOT SHIPPED | Script ready at `scripts/backfill-contractor-to-processor.ts`. Dry-run as of v0.3.1.0 identifies 5 production employees (one looks like a vendor — needs triage). Prereq for dropping `Contractor` from the enum. |
+| — | Drop `Contractor` from `EmployeeRole` enum | 🔴 NOT SHIPPED | Blocked by backfill above. Postgres `ALTER TYPE ... DROP VALUE` errors if any row still references the value. |
 
 ---
 
-## Next up: S2 screens for adding commission plans
+## Next up
 
-The user's focus is the **S2 "add new commission plan" family of screens**. Three locked mockups bear on this, and one enum expansion gates them all:
+Item 17 is now fully shipped — the v3 9-role model is live in production. Remaining v3 work, in dependency order:
 
-1. **Item 17** (enum + grouped pickers) — every S2 role-picker surface waits on this. Schema migration + Zod + all pickers (`commission-template-form`, `employee-form`, `candidate-form`, `individual-commission-plan-form`, roster filters).
-2. **Screen 17·M1** (`designs/new-roles-ripple-20260415/17-builder-block1/variant-M1-grouped-chips.html`) — S2 builder Block 1 refresh: 9 role chips grouped by family (Production / Support / Back office / Branch), back-office dashed + opt-in pill, tax-class conditional note.
-3. **Screen 07·N1** (`designs/form-alignment-20260415/07-individual-plan-form/variant-N1-s2-parity.html`) — individual plan form gets full S2 parity (4-block sequence, left outline rail, sticky right inspector, per-field "Override" pill for template diffs).
-
-Recommended sequencing:
-
-1. ✅ **17·M1 Block 1 refresh** — shipped in v0.2.2.1. `RoleFamilyChips` now drives Block 1 of the template builder, replacing the flat `Select`. The 5 new v3 roles render but are disabled until the schema-push PR lands.
-2. **Schema-push PR** (own branch, coordinated with DB) — re-add the 5 enum values to `prisma/schema.prisma`, mirror in Zod schemas, update AI tool + CSV parser + lead intake, extend `roster-classifier` with back-office helper, run `npx prisma db:push` to Supabase, run `npx tsx scripts/backfill-contractor-to-processor.ts --apply`, then a follow-up migration drops `Contractor` from the enum. Once shipped: drop the back-office entries from `CHIP_DISABLED_ROLES` in `commission-template-form.tsx` to unlock selection.
-3. **15·K1 starter shelf + 16·L1 roster filters** — grouped by family, back-office dashed.
-4. **Tax-class conditional note on M1** — per v3 §11.4, surface `shouldShowTaxClassificationPicker` in Block 1 when the picker's absence needs to be explained. (Deferred from this pass since most shops run a single schedule.)
+1. **Contractor cleanup follow-up** — triage the 5 production employees still on `Contractor`, run `scripts/backfill-contractor-to-processor.ts --apply`, then ship a tiny migration that drops `Contractor` from the Prisma enum. Small but highest-priority because it closes out the legacy role.
+2. **16·L1 roster People-tab filter chips** — the only Batch 2 lock not yet shipped. Grouped role-family dropdown with active filter chips on the Compensation Roster People tab. Independent of any further schema changes — fully unblocked.
+3. **Phase 2 admin/audit surfaces** — Items 27 (admin approval queue), 28 (per-loan audit timeline), 29 (finalized-period lock banner UI). Items 19/20/21 already wrote the data plumbing (createdByName, reason, reasonNotes, AdjustmentReason); these three items are the view layer.
+4. **Phase 3 ceremony + safety** — Items 9 (effective-date ceremony dialog 10·P2), 16 (individual producer override for recruiting), 22 (Arive mapper new-role fields — now unblocked by Item 17), 23 (CSV upload deltas — now unblocked), 24 (manual loan form deltas — now unblocked), plus 09·O2 assign-to-employees dialog.
+5. **Polish (low-priority)** — add the 5 new role labels to the loose `Record<string, string>` maps in `lenders/send-survey-dialog.tsx`, `lenders/review-list.tsx`, `lenders/lender-ratings-section.tsx`, `nav/profile-menu.tsx`, `commission-templates/[id]/page.tsx`, `resources/resource-permission-manager.tsx`. Build-safe today, but renders raw enum names ("DisclosureDesk") instead of friendly labels ("Disclosure Desk") in those surfaces.
 
 Keep this file synced: update status cells in the same PR as the item ships.
