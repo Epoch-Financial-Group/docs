@@ -90,20 +90,19 @@ Fields: **item** · **name** · **status** · **evidence**. "Evidence" points at
 
 | # | Item | Status | Notes |
 |---|---|---|---|
-| — | Drop `CommissionRule` boolean role flags | 🔴 NOT SHIPPED | Queued in `TODOS.md`; depends on Item 17 + prod backfill verification |
-| — | Contractor → Processor data backfill | 🔴 NOT SHIPPED | Script ready at `scripts/backfill-contractor-to-processor.ts`. Dry-run as of v0.3.1.0 identifies 5 production employees (one looks like a vendor — needs triage). Prereq for dropping `Contractor` from the enum. |
-| — | Drop `Contractor` from `EmployeeRole` enum | 🔴 NOT SHIPPED | Blocked by backfill above. Postgres `ALTER TYPE ... DROP VALUE` errors if any row still references the value. |
+| — | Drop `CommissionRule` boolean role flags | 🔴 NOT SHIPPED | Queued in `TODOS.md`; depends on Item 17 + prod backfill verification (Item 17 done as of v0.3.1.0) |
+| — | Contractor data cleanup | ✅ shipped (v0.3.1.1) | Strip-only (not migrate-to-Processor) was the correct call for these 5 rows — they were external relationships, not contract processors. 5 employees + 5 mirrored CRM contact rows stripped. Empty-roles employees stay active; admins can flag externally in the UI. |
+| — | Drop `Contractor` from `EmployeeRole` enum | ✅ shipped (v0.3.1.1) | `npx prisma db push --accept-data-loss` ran `ALTER TYPE "EmployeeRole" DROP VALUE 'Contractor'` on Supabase. Safe — strip ran first, zero rows referenced the value. |
 
 ---
 
 ## Next up
 
-Item 17 is now fully shipped — the v3 9-role model is live in production. Remaining v3 work, in dependency order:
+Item 17 is fully shipped (v0.3.1.0) and the legacy `Contractor` role has been fully retired (v0.3.1.1). The v3 9-role world is the only role world. Remaining v3 work, in dependency order:
 
-1. **Contractor cleanup follow-up** — triage the 5 production employees still on `Contractor`, run `scripts/backfill-contractor-to-processor.ts --apply`, then ship a tiny migration that drops `Contractor` from the Prisma enum. Small but highest-priority because it closes out the legacy role.
-2. **16·L1 roster People-tab filter chips** — the only Batch 2 lock not yet shipped. Grouped role-family dropdown with active filter chips on the Compensation Roster People tab. Independent of any further schema changes — fully unblocked.
-3. **Phase 2 admin/audit surfaces** — Items 27 (admin approval queue), 28 (per-loan audit timeline), 29 (finalized-period lock banner UI). Items 19/20/21 already wrote the data plumbing (createdByName, reason, reasonNotes, AdjustmentReason); these three items are the view layer.
-4. **Phase 3 ceremony + safety** — Items 9 (effective-date ceremony dialog 10·P2), 16 (individual producer override for recruiting), 22 (Arive mapper new-role fields — now unblocked by Item 17), 23 (CSV upload deltas — now unblocked), 24 (manual loan form deltas — now unblocked), plus 09·O2 assign-to-employees dialog.
-5. **Polish (low-priority)** — add the 5 new role labels to the loose `Record<string, string>` maps in `lenders/send-survey-dialog.tsx`, `lenders/review-list.tsx`, `lenders/lender-ratings-section.tsx`, `nav/profile-menu.tsx`, `commission-templates/[id]/page.tsx`, `resources/resource-permission-manager.tsx`. Build-safe today, but renders raw enum names ("DisclosureDesk") instead of friendly labels ("Disclosure Desk") in those surfaces.
+1. **16·L1 roster People-tab filter chips** — the only Batch 2 lock not yet shipped. Grouped role-family dropdown with active filter chips on the Compensation Roster People tab. Fully unblocked.
+2. **Phase 2 admin/audit surfaces** — Items 27 (admin approval queue), 28 (per-loan audit timeline), 29 (finalized-period lock banner UI). Items 19/20/21 already wrote the data plumbing (createdByName, reason, reasonNotes, AdjustmentReason); these three items are the view layer.
+3. **Phase 3 ceremony + safety** — Items 9 (effective-date ceremony dialog 10·P2), 16 (individual producer override for recruiting), 22 (Arive mapper new-role fields — now unblocked by Item 17), 23 (CSV upload deltas — now unblocked), 24 (manual loan form deltas — now unblocked), plus 09·O2 assign-to-employees dialog.
+4. **Drop `CommissionRule` boolean role flags** — `targetRole` column has been dual-read/dual-write since Item 18 shipped in v0.1.0.7. Now that Item 17 is fully done and the boolean flags are no longer needed for new roles, the dual-write scaffolding can come out. See `TODOS.md`.
 
 Keep this file synced: update status cells in the same PR as the item ships.
