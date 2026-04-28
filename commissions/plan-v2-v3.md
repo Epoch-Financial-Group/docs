@@ -57,9 +57,9 @@ Fields: **item** · **name** · **status** · **evidence**. "Evidence" points at
 | 19 | Ledger-first loan Commissions tab + scoped adjustment modal (12·A3 / 14·F2) | ✅ shipped | v0.2.1.0 (`e2ad5bd`) |
 | 20 | `CommissionExplainInline` (no drawer) | ✅ shipped | v0.2.1.0 (`750fe5b`) |
 | 21 | 5-source `PrecedenceChip` + calculator extension | ✅ shipped | v0.2.1.0 (`20aa67f`) |
-| 27 | Admin approval queue (27·H) | 🔴 NOT SHIPPED | |
-| 28 | Per-loan audit timeline (28·I) | 🔴 NOT SHIPPED | Item 19 wrote `createdByName` + `reason` + `reasonNotes` specifically for this to read. View layer still needed. |
-| 29 | Finalized-period lock banner + admin override (29·J) | ⚠️ partial | `assertLoanPayPeriodEditable()` + `useFinalizedPayPeriodGuard` shipped in v0.2.0.0; 29·J mockup UI not yet built |
+| 27 | Admin approval queue (27·H) | ✅ shipped | New `CommissionChangeRequest` model + 4 server actions in `src/lib/actions/commission-change-requests.ts`. Page at `/{companySlug}/run-commissions/pending-approvals` with sidebar `pendingApprovals` count badge. Admins skip the queue (call direct-write actions); non-admins call `submitCommissionChangeRequest` from the Finalized Guard's Request-Change form. |
+| 28 | Per-loan audit timeline (28·I) | ✅ shipped | `getLoanCommissionAudit` reads `AuditLog` rows scoped to a loan's modifiers, adjustments, revenue lines, and change requests. `<LoanCommissionAudit>` mounted at the bottom of the loan Commissions tab; `flaggedOverride` rows render amber + flag icon with a "Show flagged only" filter. `audit()` helper in `src/lib/audit.ts` extended to accept `flaggedOverride` + `overrideReason`; all 7 commission mutations now write audit rows that this timeline reads. |
+| 29 | Finalized-period lock banner + admin override (29·J) | ✅ shipped | `useFinalizedPayPeriodGuard` rewritten as a dual-modal hook: non-admins see Request-Change form (routes to Item 27); admins see Override-Lock modal with required reason + acknowledgment. `assertLoanPayPeriodEditable` returns `{ flaggedOverride, overrideReason }` so callers stamp them on the audit row. The pay-period-level `unfinalizePayPeriod` admin operation stays — only the per-loan unlock path was removed. |
 
 ### Phase 3 — Ceremony + Safety
 
@@ -98,11 +98,11 @@ Fields: **item** · **name** · **status** · **evidence**. "Evidence" points at
 
 ## Next up
 
-Item 17 is fully shipped (v0.3.1.0) and the legacy `Contractor` role has been fully retired (v0.3.1.1). The v3 9-role world is the only role world. Remaining v3 work, in dependency order:
+Phase 2 is closed out — Items 27, 28, 29 shipped together. Phase 1 (Item 17 in v0.3.1.0) and the legacy `Contractor` retirement (v0.3.1.1) are also done. Remaining v3 work, in dependency order:
 
 1. **16·L1 roster People-tab filter chips** — the only Batch 2 lock not yet shipped. Grouped role-family dropdown with active filter chips on the Compensation Roster People tab. Fully unblocked.
-2. **Phase 2 admin/audit surfaces** — Items 27 (admin approval queue), 28 (per-loan audit timeline), 29 (finalized-period lock banner UI). Items 19/20/21 already wrote the data plumbing (createdByName, reason, reasonNotes, AdjustmentReason); these three items are the view layer.
-3. **Phase 3 ceremony + safety** — Items 9 (effective-date ceremony dialog 10·P2), 16 (individual producer override for recruiting), 22 (Arive mapper new-role fields — now unblocked by Item 17), 23 (CSV upload deltas — now unblocked), 24 (manual loan form deltas — now unblocked), plus 09·O2 assign-to-employees dialog.
+2. **Phase 3 ceremony + safety** — Items 9 (effective-date ceremony dialog 10·P2), 16 (individual producer override for recruiting), 22 (Arive mapper new-role fields — now unblocked by Item 17), 23 (CSV upload deltas — now unblocked), 24 (manual loan form deltas — now unblocked), plus 09·O2 assign-to-employees dialog.
+3. **Phase 3.5 — Run Commissions loan-level parity (§9.8)** — `EarningsTab` row-level "Edit rate for this loan" / "Add adjustment" reusing the loan-detail components and the new approval-queue + override-lock substrate.
 4. **Drop `CommissionRule` boolean role flags** — `targetRole` column has been dual-read/dual-write since Item 18 shipped in v0.1.0.7. Now that Item 17 is fully done and the boolean flags are no longer needed for new roles, the dual-write scaffolding can come out. See `TODOS.md`.
 
 Keep this file synced: update status cells in the same PR as the item ships.
