@@ -67,9 +67,10 @@ Fields: **item** · **name** · **status** · **evidence**. "Evidence" points at
 |---|---|---|---|
 | 9 | Effective-date ceremony dialog (10·P2) + `ScheduledPlanChange` model | 🔴 NOT SHIPPED | `Starting soon` bar on roster uses temp `Employee.startDate > now()` query until this lands |
 | 16 | Individual producer override (recruiting) | 🔴 NOT SHIPPED | |
-| 22 | Arive mapper new-role fields | 🔴 NOT SHIPPED | Blocked by Item 17 |
-| 23 | CSV upload deltas (new roles) | 🔴 NOT SHIPPED | Blocked by Item 17 |
-| 24 | Manual loan form role-assignee section | 🔴 NOT SHIPPED | Blocked by Item 17 |
+| 3.5 | Run Commissions `EarningsTab` row-level "Edit rate" / "Add adjustment" (§9.8) | ✅ shipped | v0.4.1.0. `AdjustmentModal` extracted to `src/components/loans/adjustment-modal.tsx`; new `RateEditDialog` at `src/components/loans/rate-edit-dialog.tsx`; new `getLoanRuleAndModifier` server action seeds the rate dialog; EarningsTab adds per-recipient icon buttons that route through `useFinalizedPayPeriodGuard` (admin override-lock only — page is `requireAdmin`). `router.refresh()` after each edit. |
+| 22 | Arive mapper new-role fields | ✅ shipped | v0.4.1.0. Added `Loan.disclosureDeskId`/`lockDeskId`/`closerId`/`funderId` FK columns. Arive schema accepts `DISCLOSURE_DESK_*`/`LOCK_DESK_*` blocks. `extractBackOfficeAssignees` mapper has dedicated-block primary path + `loanTeamUser*_role` substring fallback. `resolveBackOfficeId` resolves emails → Employee FKs; unmapped emails log + null (no auto-create). |
+| 23 | CSV upload deltas (new roles) | ✅ shipped | v0.4.1.0. Pipeline CSV importer accepts 4 new column families (Closer/Funder/Disclosure Desk/Lock Desk × Name+Email). Mirrors Arive policy: email-first, name fallback, no auto-create on unmapped. |
+| 24 | Manual loan form role-assignee section | ✅ shipped | v0.4.1.0. New collapsible "Commission Assignees" Card on `/loans/add` and `/loans/[id]/edit` with 4 role-filtered Combobox pickers. New `getActiveEmployeesWithRoles` server action returns `roles[]` for client-side filtering. Loan detail Overview tab shows a read-only "Back Office" Card. |
 | — | Individual plan form (07·N1) — S2-parity layout | ⚠️ shell + blocks + inspector + diff shipped; auto-save / draft store / effective-date ceremony deferred | This PR: 3-column shell (outline / stream / inspector), 4 collapsible blocks (Who it's for / Earnings / Deductions / Special cases), override pills on diverged blocks, sticky inspector with plain-English preview + diff-from-template rows, shared `RoleFamilyChips` component (Block 1 read-only, 9 roles grouped by family), reset-to-template affordances. Deferred: auto-save drafts (Item 10), Set effective date modal (Item 9·P2), Discard draft (Item 10) |
 | — | Assign-to-employees dialog (09·O2) — two-pane picker | 🔴 NOT SHIPPED | |
 
@@ -98,11 +99,12 @@ Fields: **item** · **name** · **status** · **evidence**. "Evidence" points at
 
 ## Next up
 
-Phase 2 is closed out — Items 27, 28, 29 shipped together. Phase 1 (Item 17 in v0.3.1.0) and the legacy `Contractor` retirement (v0.3.1.1) are also done. Remaining v3 work, in dependency order:
+Phase 2 (Items 27/28/29), Phase 3.5 (EarningsTab parity), and Items 22 + 23 + 24 (new-role data plumbing across Arive, CSV, and manual loan form) all shipped in v0.4.1.0. Phase 1 (Item 17 in v0.3.1.0) and the legacy `Contractor` retirement (v0.3.1.1) are also done. Remaining v3 work, in dependency order:
 
-1. **16·L1 roster People-tab filter chips** — the only Batch 2 lock not yet shipped. Grouped role-family dropdown with active filter chips on the Compensation Roster People tab. Fully unblocked.
-2. **Phase 3 ceremony + safety** — Items 9 (effective-date ceremony dialog 10·P2), 16 (individual producer override for recruiting), 22 (Arive mapper new-role fields — now unblocked by Item 17), 23 (CSV upload deltas — now unblocked), 24 (manual loan form deltas — now unblocked), plus 09·O2 assign-to-employees dialog.
-3. **Phase 3.5 — Run Commissions loan-level parity (§9.8)** — `EarningsTab` row-level "Edit rate for this loan" / "Add adjustment" reusing the loan-detail components and the new approval-queue + override-lock substrate.
-4. **Drop `CommissionRule` boolean role flags** — `targetRole` column has been dual-read/dual-write since Item 18 shipped in v0.1.0.7. Now that Item 17 is fully done and the boolean flags are no longer needed for new roles, the dual-write scaffolding can come out. See `TODOS.md`.
+1. **16·L1 roster People-tab filter chips** — the only Batch 2 lock not yet shipped. Grouped role-family dropdown with active filter chips on the Compensation Roster People tab.
+2. **Item 9 + 09·O2 (Phase 3 ceremony)** — effective-date ceremony dialog (10·P2) + `ScheduledPlanChange` model + assign-to-employees two-pane shuttle (09·O2). Both have locked mockups.
+3. **Item 16 (individual producer override for recruiting)** — uses the existing individual plan form.
+4. **Phase 4 AI entry points** — Items 10–15, 25, 26.
+5. **Drop `CommissionRule` boolean role flags** — `targetRole` column has been dual-read/dual-write since Item 18 shipped in v0.1.0.7. Cleanup. See `TODOS.md`.
 
 Keep this file synced: update status cells in the same PR as the item ships.
