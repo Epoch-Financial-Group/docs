@@ -3,9 +3,9 @@
   "theme": "mint",
   "name": "Keystone Documentation",
   "colors": {
-    "primary": "#9E3A0A",
-    "light": "#B5420A",
-    "dark": "#7A2C07"
+    "primary": "#B5420A",
+    "light": "#C84B0F",
+    "dark": "#8A3208"
   },
   "background": {
     "color": {

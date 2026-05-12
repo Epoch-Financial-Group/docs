@@ -3,8 +3,8 @@ a[href="https://app.keystn.com"],
 a[href="https://app.keystn.com"] *,
 a[href="https://app.keystn.com"] + *,
 *:has(> a[href="https://app.keystn.com"]) {
-  background-color: #9E3A0A !important;
-  border-color: #9E3A0A !important;
+  background-color: #B5420A !important;
+  border-color: #B5420A !important;
   color: #ffffff !important;
   border-radius: 6px !important;
   box-shadow: none !important;
@@ -13,8 +13,8 @@ a[href="https://app.keystn.com"] + *,
 
 a[href="https://app.keystn.com"]:hover,
 a[href="https://app.keystn.com"]:hover * {
-  background-color: #A03A0A !important;
-  border-color: #A03A0A !important;
+  background-color: #8A3208 !important;
+  border-color: #8A3208 !important;
 }
 
 /* ── Reduce global border radius ─────────────────────────────────────────── */
