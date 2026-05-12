@@ -1,28 +1,22 @@
-/* ── CTA button: Ember brand color + reduced radius ──────────────────────── */
-#navbar a[href="https://app.keystn.com"]::before,
-#navbar a[href="https://app.keystn.com"]::after,
-#navbar *:has(> a[href="https://app.keystn.com"])::before,
-#navbar *:has(> a[href="https://app.keystn.com"])::after {
-  outline: none !important;
-  border-color: #B5420A !important;
+/* ── CTA button: Ember brand color ───────────────────────────────────────── */
+/* The button is an <a> wrapping an inner <span class="absolute inset-0 bg-primary-dark rounded-xl">.
+   overflow:hidden clips the span's larger radius to the <a>'s radius.       */
+#navbar a[href="https://app.keystn.com"] {
+  background-color: #B5420A !important;
+  border: none !important;
+  border-radius: 6px !important;
+  overflow: hidden !important;
+  box-shadow: none !important;
+  color: #ffffff !important;
 }
 
-#navbar a[href="https://app.keystn.com"],
-#navbar *:has(> a[href="https://app.keystn.com"]) {
+#navbar a[href="https://app.keystn.com"] span {
   background-color: #B5420A !important;
-  border-color: #B5420A !important;
-  outline-color: #B5420A !important;
-  box-shadow: none !important;
-  --tw-ring-color: #B5420A !important;
-  --tw-ring-shadow: none !important;
-  color: #ffffff !important;
-  border-radius: 6px !important;
 }
 
 #navbar a[href="https://app.keystn.com"]:hover,
-#navbar *:has(> a[href="https://app.keystn.com"]):hover {
+#navbar a[href="https://app.keystn.com"]:hover span {
   background-color: #8A3208 !important;
-  border-color: #8A3208 !important;
 }
 
 /* ── Reduce global border radius ─────────────────────────────────────────── */
