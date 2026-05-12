@@ -1,20 +1,17 @@
-/* ── CTA button: Ember brand color ───────────────────────────────────────── */
-#navbar a[href="https://app.keystn.com"],
-#navbar button[data-variant="primary"],
-.navbar-cta {
+/* ── CTA button: Ember brand color + reduced radius ──────────────────────── */
+a[href="https://app.keystn.com"] {
   background-color: #C84B0F !important;
   border-color: #C84B0F !important;
   color: #ffffff !important;
+  border-radius: 8px !important;
 }
 
-#navbar a[href="https://app.keystn.com"]:hover,
-#navbar button[data-variant="primary"]:hover,
-.navbar-cta:hover {
-  background-color: #a83c0b !important;
-  border-color: #a83c0b !important;
+a[href="https://app.keystn.com"]:hover {
+  background-color: #A03A0A !important;
+  border-color: #A03A0A !important;
 }
 
-/* ── Slightly reduce global border radius ───────────────────────────────── */
+/* ── Reduce global border radius ─────────────────────────────────────────── */
 :root {
   --radius: 5px;
 }
