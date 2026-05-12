@@ -46,8 +46,6 @@ Rules are created within a commission template, in the **Rules** tab.
 
 Configure the commission for this rule, which will override the template's base commission when the rule matches:
 
-<div className="table-container">
-
 | Field | Description |
 |-------|-------------|
 | **Amount Type** | Percentage (%), Flat ($), or Basis Points (bps) |
@@ -59,7 +57,6 @@ Configure the commission for this rule, which will override the template's base 
 | **Deducts From Loan Officer** | Whether this commission reduces the LO's pay |
 | **Apply File Fee First** | Whether the file fee adjusts the basis before calculation |
 
-</div>
 
 ### Step 4: Configure Filters
 
@@ -71,14 +68,11 @@ Filters determine which loans trigger this rule. A rule with no filters matches 
 
 Matches loans that originated from a specific lead source (e.g., "Zillow", "Realtor Referral", "Company Website").
 
-<div className="table-container">
-
 | Setting | Description |
 |---------|-------------|
 | **Lead Source** | Select from your configured lead sources |
 | **Invert** | When enabled, the rule matches loans that are NOT from this lead source |
 
-</div>
 
 **Example**: A rule with Lead Source = "Zillow" pays 40 bps instead of 50 bps because Zillow leads have a lower margin.
 
@@ -86,14 +80,11 @@ Matches loans that originated from a specific lead source (e.g., "Zillow", "Real
 
 Matches loans submitted to a specific lender/investor.
 
-<div className="table-container">
-
 | Setting | Description |
 |---------|-------------|
 | **Lender** | Select from your configured lenders |
 | **Invert** | When enabled, the rule matches loans NOT with this lender |
 
-</div>
 
 **Example**: A rule with Lender = "Wholesale Lender A" pays a $200 flat bonus on top of the base because this lender offers better pricing.
 
@@ -101,13 +92,10 @@ Matches loans submitted to a specific lender/investor.
 
 Matches loans originated by loan officers in a specific branch office.
 
-<div className="table-container">
-
 | Setting | Description |
 |---------|-------------|
 | **Branch** | Select from your configured branches |
 
-</div>
 
 **Example**: The downtown branch has a different cost structure, so loans from that branch earn 45 bps instead of 50 bps.
 
@@ -115,14 +103,11 @@ Matches loans originated by loan officers in a specific branch office.
 
 Matches loans with a specific purpose.
 
-<div className="table-container">
-
 | Setting | Description |
 |---------|-------------|
 | **Loan Purpose** | Purchase or Refinance |
 | **Invert** | When enabled, matches the opposite purpose |
 
-</div>
 
 **Example**: Refinance loans earn 40 bps while purchase loans earn the base 50 bps.
 
@@ -130,14 +115,11 @@ Matches loans with a specific purpose.
 
 Matches loans of a specific product type.
 
-<div className="table-container">
-
 | Setting | Description |
 |---------|-------------|
 | **Loan Type** | One of: Conventional, FHA, VA, USDA, Non-QM, Reverse Mortgage, HELOC, Commercial, HELOAN |
 | **Invert** | When enabled, matches all loan types EXCEPT the selected one |
 
-</div>
 
 **Example**: VA loans earn a flat $400 commission because the margins are typically lower.
 
@@ -145,13 +127,10 @@ Matches loans of a specific product type.
 
 Matches loans based on who is paying the broker compensation.
 
-<div className="table-container">
-
 | Setting | Description |
 |---------|-------------|
 | **Payer Type** | Lender, Borrower, Investor, or Seller |
 
-</div>
 
 **Example**: Lender-paid compensation (LPMI) loans earn 45 bps, while borrower-paid loans earn the base 50 bps.
 
@@ -159,14 +138,11 @@ Matches loans based on who is paying the broker compensation.
 
 Matches based on the employee's tax classification.
 
-<div className="table-container">
-
 | Setting | Description |
 |---------|-------------|
 | **Tax Classification** | W-2 or 1099 |
 | **Invert** | When enabled, matches the opposite classification |
 
-</div>
 
 **Example**: 1099 contractors earn a higher base rate of 75 bps to offset the lack of benefits, while W-2 employees earn 50 bps.
 
@@ -174,14 +150,11 @@ Matches based on the employee's tax classification.
 
 Matches loans where the property is located in one or more specific states.
 
-<div className="table-container">
-
 | Setting | Description |
 |---------|-------------|
 | **Property States** | Select one or more U.S. states |
 | **Invert** | When enabled, matches loans in states NOT in the list |
 
-</div>
 
 **Example**: Loans in California and New York earn 40 bps due to higher regulatory costs, while all other states earn the base 50 bps.
 
@@ -189,15 +162,12 @@ Matches loans where the property is located in one or more specific states.
 
 Matches loans where a business contact (e.g., realtor, title company, builder) matches a name or email pattern.
 
-<div className="table-container">
-
 | Setting | Description |
 |---------|-------------|
 | **Business Contact Name** | Text to match against contact names (case-insensitive, partial match) |
 | **Business Contact Email** | Text to match against contact emails (case-insensitive, partial match) |
 | **Invert** | When enabled, matches loans WITHOUT a matching business contact |
 
-</div>
 
 **Example**: Loans with a business contact from "ABC Realty" earn a $100 bonus because of a referral partnership.
 
@@ -205,15 +175,12 @@ Matches loans where a business contact (e.g., realtor, title company, builder) m
 
 Most filters support an **Invert** toggle. When inversion is enabled, the filter logic is reversed:
 
-<div className="table-container">
-
 | Normal | Inverted |
 |--------|----------|
 | Loan IS from Lender A | Loan is NOT from Lender A |
 | Loan IS a Purchase | Loan is NOT a Purchase (i.e., Refinance) |
 | Property IS in California | Property is NOT in California |
 
-</div>
 
 This is useful for creating "everything except" rules. For example, instead of creating separate rules for 49 states, you can create one rule for "NOT California" that applies to all other states.
 
@@ -234,15 +201,12 @@ When the commission engine processes a loan, it evaluates rules in a specific or
 
 Given these rules on a template:
 
-<div className="table-container">
-
 | Rule | Filters | Commission |
 |------|---------|------------|
 | Rule A | Loan Type = FHA, Payer Type = Lender | 35 bps |
 | Rule B | Loan Type = FHA | 40 bps |
 | Rule C | _(no filters)_ | 50 bps |
 
-</div>
 
 For an FHA loan with Lender-paid compensation:
 - Rule A matches (both filters pass) -- **35 bps is used**
@@ -264,15 +228,12 @@ When a template is assigned to an employee, all rules are copied into employee-b
 
 When a rule has multiple filters set, all of them must match for the rule to apply (AND logic). For example:
 
-<div className="table-container">
-
 | Filter | Value |
 |--------|-------|
 | Loan Type | FHA |
 | Property State | Texas |
 | Payer Type | Lender |
 
-</div>
 
 This rule only matches FHA loans in Texas with lender-paid compensation. A loan must satisfy all three conditions.
 
@@ -314,8 +275,6 @@ A brokerage wants to set up the following commission structure for loan officers
 
 ### Calculation Results
 
-<div className="table-container">
-
 | Loan | Type | State | Lead Source | Amount | Commission |
 |------|------|-------|------------|--------|------------|
 | Loan 1 | Conventional | Texas | Direct | $350,000 | $1,750 (50 bps) |
@@ -325,4 +284,3 @@ A brokerage wants to set up the following commission structure for loan officers
 | Loan 5 | Conventional | California | Direct | $250,000 | $1,250 (50 bps) |
 | Loan 6 | Conventional | California | Direct | $80,000 | $500 (min applied; 50 bps = $400 < $500 min) |
 
-</div>

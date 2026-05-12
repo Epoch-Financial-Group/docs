@@ -7,8 +7,6 @@ description: "Task templates are reusable blueprints for sets of tasks your comp
 
 A template consists of:
 
-<div className="table-container">
-
 | Property | Description |
 |----------|-------------|
 | **Name** | A descriptive name for the template (e.g., "New Hire Onboarding", "Quarterly HMDA Review") |
@@ -16,13 +14,10 @@ A template consists of:
 | **Category** | Optional category assignment (e.g., Onboarding, Compliance) |
 | **Items** | An ordered list of task definitions, each with a title, description, sort order, and due-date offset |
 
-</div>
 
 ### Template items
 
 Each item in a template represents a task that will be created when the template is instantiated. Items have:
-
-<div className="table-container">
 
 | Property | Description |
 |----------|-------------|
@@ -31,7 +26,6 @@ Each item in a template represents a task that will be created when the template
 | **Sort Order** | Controls the display order of items within the template |
 | **Due Days Offset** | Number of days after the checklist start date when this task is due. A value of 0 means due on the start date; a value of 7 means due one week after the start date. |
 
-</div>
 
 
 ---
@@ -59,8 +53,6 @@ Each item in a template represents a task that will be created when the template
 
 ### New hire onboarding
 
-<div className="table-container">
-
 | # | Item | Due Days Offset | Description |
 |---|------|----------------|-------------|
 | 1 | Verify NMLS license | 0 | Check NMLS Consumer Access for active license status |
@@ -72,11 +64,8 @@ Each item in a template represents a task that will be created when the template
 | 7 | First-week check-in | 7 | Manager meets with new hire to review progress |
 | 8 | 30-day review | 30 | Manager conducts 30-day performance check-in |
 
-</div>
 
 ### Quarterly compliance review
-
-<div className="table-container">
 
 | # | Item | Due Days Offset | Description |
 |---|------|----------------|-------------|
@@ -86,7 +75,6 @@ Each item in a template represents a task that will be created when the template
 | 4 | Update compliance report | 10 | Document findings in quarterly report |
 | 5 | Submit to management | 14 | Send report to compliance officer for review |
 
-</div>
 
 ---
 

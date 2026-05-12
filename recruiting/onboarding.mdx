@@ -19,8 +19,6 @@ The conversion form is pre-filled with data from the candidate record. Review an
 
 #### Employee information
 
-<div className="table-container">
-
 | Field | Required | Pre-filled from | Description |
 |-------|----------|-----------------|-------------|
 | **First Name** | Yes | Candidate first name | The employee's legal first name |
@@ -31,11 +29,8 @@ The conversion form is pre-filled with data from the candidate record. Review an
 | **Start Date** | No | -- | The employee's start date |
 | **Roles** | Yes | Candidate desired role | One or more roles for the employee. At least one role is required. |
 
-</div>
 
 Available roles:
-
-<div className="table-container">
 
 | Role |
 |------|
@@ -45,19 +40,15 @@ Available roles:
 | Contractor |
 | Branch Manager |
 
-</div>
 
 #### Onboarding checklist
 
 If your company has task templates configured, you can optionally select one to generate an onboarding checklist for the new employee.
 
-<div className="table-container">
-
 | Field | Required | Description |
 |-------|----------|-------------|
 | **Onboarding Checklist Template** | No | Select a task template to generate an onboarding checklist. Select "None" to skip. |
 
-</div>
 
 When a template is selected, the system creates a task checklist with all of the template's items. Each task's due date is calculated from the employee's start date plus the item's due-days offset defined in the template.
 
@@ -76,8 +67,6 @@ The conversion process performs the following steps in a single transaction:
 
 The following data is transferred from the candidate to the employee:
 
-<div className="table-container">
-
 | Candidate field | Employee field | Notes |
 |-----------------|----------------|-------|
 | First name | First name | Editable during conversion |
@@ -88,7 +77,6 @@ The following data is transferred from the candidate to the employee:
 | Desired role | Roles | Editable during conversion; can select multiple roles |
 | State licenses | State licenses | All licenses copied automatically with state, number, and expiration |
 
-</div>
 
 The following candidate data is **not** copied to the employee but remains on the candidate record for reference:
 
@@ -129,8 +117,6 @@ Go to **Recruiting > Onboarding** in the sidebar.
 
 For each employee in the onboarding process:
 
-<div className="table-container">
-
 | Column | Description |
 |--------|-------------|
 | **Name** | Employee first and last name |
@@ -141,7 +127,6 @@ For each employee in the onboarding process:
 | **Checklists** | Onboarding checklists assigned, with task counts |
 | **Progress** | Percentage of completed tasks across all checklists |
 
-</div>
 
 ### Tracking progress
 

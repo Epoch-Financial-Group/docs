@@ -50,14 +50,11 @@ Toggle the **Active** switch to enable the performance booster.
 
 Choose what production metric to track:
 
-<div className="table-container">
-
 | Measurement Type | Description | Example |
 |-----------------|-------------|---------|
 | **Volume ($)** | Total funded loan dollar amount | $5,000,000 in funded volume |
 | **Units (# loans)** | Count of funded loans | 10 funded loans |
 
-</div>
 
 ### Step 4: Configure the Time Window
 
@@ -65,19 +62,14 @@ The time window defines the lookback period for measuring production. It consist
 
 #### Duration Type
 
-<div className="table-container">
-
 | Duration Type | Description |
 |---------------|-------------|
 | **In the last** | A rolling window relative to the loan's funded date |
 | **Since beginning of** | From the start of the current period to the funded date |
 | **All time** | All production since the beginning of records |
 
-</div>
 
 #### Period Type
-
-<div className="table-container">
 
 | Period Type | Description |
 |-------------|-------------|
@@ -86,7 +78,6 @@ The time window defines the lookback period for measuring production. It consist
 | **Quarter** | Quarterly period (3 months) |
 | **Year** | Annual period |
 
-</div>
 
 #### Period Value
 
@@ -96,8 +87,6 @@ A multiplier for the period type (used with "In the last" duration). For example
 - "In the last **1 Quarter**" = the 3 months prior to the funded date
 
 #### Time Window Examples
-
-<div className="table-container">
 
 | Duration Type | Period Type | Period Value | Resulting Window |
 |---------------|-------------|--------------|------------------|
@@ -109,13 +98,10 @@ A multiplier for the period type (used with "In the last" duration). For example
 | Since beginning of | Year | -- | From January 1 of the current year to the funded date |
 | All time | -- | -- | From the beginning of records to the funded date |
 
-</div>
 
 ### Step 5: Add Threshold Conditions
 
 Each condition defines a production tier with a bonus amount:
-
-<div className="table-container">
 
 | Field | Description |
 |-------|-------------|
@@ -123,7 +109,6 @@ Each condition defines a production tier with a bonus amount:
 | **Bonus Amount** | The bonus to add when this threshold is met |
 | **Bonus Type** | How the bonus is expressed: Percentage (%), Flat ($), or Basis Points (bps) |
 
-</div>
 
 Add multiple conditions to create a tiered bonus structure. The engine evaluates conditions from the **highest threshold down** and uses the first one the employee qualifies for.
 
@@ -142,15 +127,12 @@ This means the highest qualifying tier always wins.
 
 Once a qualifying condition is found, the bonus is calculated based on the condition's bonus type and amount:
 
-<div className="table-container">
-
 | Bonus Type | Calculation |
 |------------|-------------|
 | **Flat ($)** | Bonus = flat amount (e.g., $200) |
 | **Percentage (%)** | Bonus = gross commission x bonus percentage / 100 |
 | **Basis Points (bps)** | Bonus = gross commission x bonus bps / 10000 |
 
-</div>
 
 The bonus is added to the loan officer's commission for that loan. It appears as a separate `performanceBonus` line item in the commission results.
 
@@ -180,15 +162,12 @@ This design allows different rules to reference different tiers of the same boos
 
 **Conditions**:
 
-<div className="table-container">
-
 | Tier | Threshold | Bonus Amount | Bonus Type |
 |------|-----------|--------------|------------|
 | Gold | $10,000,000 | 15 | Basis Points |
 | Silver | $5,000,000 | 10 | Basis Points |
 | Bronze | $2,000,000 | 5 | Basis Points |
 
-</div>
 
 **Scenario**: A loan officer closes a $400,000 loan. Their funded volume in the last month (including this loan) is $6,200,000.
 
@@ -205,22 +184,17 @@ More commonly, the bonus is a **flat amount** or a **percentage of the gross com
 
 **Alternative Conditions (Flat Bonus)**:
 
-<div className="table-container">
-
 | Tier | Threshold | Bonus Amount | Bonus Type |
 |------|-----------|--------------|------------|
 | Gold | $10,000,000 | $500 | Flat |
 | Silver | $5,000,000 | $250 | Flat |
 | Bronze | $2,000,000 | $100 | Flat |
 
-</div>
 
 With the Silver tier qualifying:
 - Bonus = **$250** added to the commission on this loan.
 
 **Alternative Conditions (Percentage of Gross)**:
-
-<div className="table-container">
 
 | Tier | Threshold | Bonus Amount | Bonus Type |
 |------|-----------|--------------|------------|
@@ -228,7 +202,6 @@ With the Silver tier qualifying:
 | Silver | $5,000,000 | 10% | Percentage |
 | Bronze | $2,000,000 | 5% | Percentage |
 
-</div>
 
 With the Silver tier qualifying and a $2,000 gross commission:
 - Bonus = $2,000 x 10 / 100 = **$200** added to the commission.
@@ -245,13 +218,10 @@ With the Silver tier qualifying and a $2,000 gross commission:
 
 **Conditions**:
 
-<div className="table-container">
-
 | Tier | Threshold | Bonus Amount | Bonus Type |
 |------|-----------|--------------|------------|
 | 1 | 15 | $300 | Flat |
 
-</div>
 
 **Scenario**: A loan officer closes their 18th loan of the quarter.
 
@@ -270,15 +240,12 @@ With the Silver tier qualifying and a $2,000 gross commission:
 
 **Conditions**:
 
-<div className="table-container">
-
 | Tier | Threshold | Bonus Amount | Bonus Type |
 |------|-----------|--------------|------------|
 | Platinum | $50,000,000 | 20% | Percentage |
 | Gold | $25,000,000 | 15% | Percentage |
 | Silver | $10,000,000 | 10% | Percentage |
 
-</div>
 
 **Scenario**: A loan officer has funded $28,000,000 year-to-date and closes a loan with a $3,000 gross commission.
 

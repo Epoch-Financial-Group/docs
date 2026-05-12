@@ -22,8 +22,6 @@ Go to **Accounting > Bank Accounts** in the sidebar.
 
 The bank accounts page displays a table with the following columns:
 
-<div className="table-container">
-
 | Column | Description |
 |--------|-------------|
 | **Name** | The name you gave the bank account (clickable link to the detail page) |
@@ -32,7 +30,6 @@ The bank accounts page displays a table with the following columns:
 | **Balance** | The current balance of the bank account, formatted as currency |
 | **Transactions** | The number of bank transactions recorded |
 
-</div>
 
 If no bank accounts have been configured, the page displays an empty state with a bank icon and a message indicating no accounts are set up yet.
 
@@ -44,8 +41,6 @@ If no bank accounts have been configured, the page displays an empty state with 
 2. Initiate the process to add a new bank account.
 3. Fill in the required fields:
 
-<div className="table-container">
-
 | Field | Required | Description |
 |-------|----------|-------------|
 | **Name** | Yes | A descriptive name (e.g., "Chase Business Checking") |
@@ -53,7 +48,6 @@ If no bank accounts have been configured, the page displays an empty state with 
 | **Institution Name** | No | The bank or financial institution name |
 | **Mask** | No | The last 4 digits of the account number (for identification) |
 
-</div>
 
 4. Save the bank account.
 5. The new bank account appears in the bank accounts table, linked to the selected chart of accounts entry.
@@ -64,8 +58,6 @@ The link between a bank account and a chart of accounts entry is one-to-one: eac
 
 Bank accounts are linked to chart of accounts entries, and the "type" of bank account is determined by the linked account's subtype. Common configurations:
 
-<div className="table-container">
-
 | Bank Account Purpose | Linked Account Subtype | Example |
 |---------------------|----------------------|---------|
 | **Checking** | Cash and Bank | "1010 - Cash - Operating" |
@@ -73,7 +65,6 @@ Bank accounts are linked to chart of accounts entries, and the "type" of bank ac
 | **Credit Card** | Credit Card | "2100 - Company Credit Card" |
 | **Other** | Other Current Asset or Other Current Liability | Varies |
 
-</div>
 
 ## Linking to the chart of accounts
 
@@ -105,8 +96,6 @@ The page header shows the linked chart of accounts entry as a badge (e.g., "1010
 
 Below the summary cards, a table lists the most recent bank transactions (up to 50):
 
-<div className="table-container">
-
 | Column | Description |
 |--------|-------------|
 | **Date** | The transaction date |
@@ -114,7 +103,6 @@ Below the summary cards, a table lists the most recent bank transactions (up to 
 | **Amount** | The transaction amount, formatted as currency |
 | **Status** | "Matched" (green badge) if the transaction has been matched to a journal entry, or "Unmatched" (gray badge) if not |
 
-</div>
 
 
 ## Viewing bank transactions

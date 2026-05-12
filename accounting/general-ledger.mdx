@@ -29,8 +29,6 @@ The report refreshes whenever you change the account or date range -- there is n
 
 Each row in the general ledger table represents a single journal entry line that affected the selected account:
 
-<div className="table-container">
-
 | Column | Description |
 |--------|-------------|
 | **Date** | The date of the journal entry |
@@ -41,15 +39,12 @@ Each row in the general ledger table represents a single journal entry line that
 | **Credit** | The credit amount, if this line was a credit to the account |
 | **Running Balance** | The cumulative balance of the account through this transaction |
 
-</div>
 
 The running balance updates with each row, giving you a clear picture of how the account balance changed over time. For debit-normal accounts (assets, expenses), debits increase the running balance and credits decrease it. For credit-normal accounts (liabilities, equity, revenue), credits increase it and debits decrease it.
 
 ### Example
 
 For the account "Cash - Operating" (an asset with debit-normal balance) over one week:
-
-<div className="table-container">
 
 | Date | Entry # | Memo | Debit | Credit | Running Balance |
 |------|---------|------|-------|--------|----------------|
@@ -58,7 +53,6 @@ For the account "Cash - Operating" (an asset with debit-normal balance) over one
 | 03/05 | JE-41 | Lender check - Loan #102 | $9,200 | | $17,700 |
 | 03/07 | JE-42 | Office rent - March | | $2,800 | $14,900 |
 
-</div>
 
 ## Relationship to journal entries
 

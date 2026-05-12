@@ -13,8 +13,6 @@ This module analyzes all loans with a funded date set, regardless of their curre
 
 The top of the dashboard displays five key metrics for the selected period, each with a percentage change compared to the prior period of equal duration:
 
-<div className="table-container">
-
 | Metric | Description |
 |--------|-------------|
 | **Total Loans** | Number of loans funded in the period |
@@ -23,7 +21,6 @@ The top of the dashboard displays five key metrics for the selected period, each
 | **Total Revenue** | Sum of broker compensation across all funded loans |
 | **Avg Revenue/Loan** | Average broker compensation per loan |
 
-</div>
 
 ### Period-over-Period Comparison
 
@@ -33,8 +30,6 @@ When you set a date range, the system automatically calculates the prior period 
 
 The funded dashboard breaks down loan data across five dimensions:
 
-<div className="table-container">
-
 | Breakdown | Description |
 |-----------|-------------|
 | **By Lender** | Volume, units, revenue, and percentage of total grouped by lender |
@@ -43,7 +38,6 @@ The funded dashboard breaks down loan data across five dimensions:
 | **By Loan Type** | Conventional, FHA, VA, USDA, etc. |
 | **By Loan Officer** | Per-LO funded production |
 
-</div>
 
 Each breakdown shows:
 - **Name** -- The category (lender name, loan type, etc.)
@@ -58,23 +52,18 @@ Multi-year monthly trend charts let you compare production across years. The sys
 
 Three chart views are available:
 
-<div className="table-container">
-
 | Chart | Description |
 |-------|-------------|
 | **Monthly Volume** | Loan volume by month, with a line for each year |
 | **Monthly Revenue** | Broker compensation by month, with a line for each year |
 | **Monthly Units** | Loan count by month, with a line for each year |
 
-</div>
 
 Each chart shows all 12 months (Jan through Dec) on the x-axis, with a separate data series for each year in your dataset.
 
 ## Quarterly Breakdown
 
 The quarterly view aggregates funded data for the most recent year into four quarters:
-
-<div className="table-container">
 
 | Column | Description |
 |--------|-------------|
@@ -83,13 +72,10 @@ The quarterly view aggregates funded data for the most recent year into four qua
 | **Revenue** | Total broker compensation |
 | **Units** | Number of funded loans |
 
-</div>
 
 ## LO Efficiency Metrics
 
 The loan officer efficiency table measures how quickly each LO moves loans through the pipeline from submission to funding.
-
-<div className="table-container">
 
 | Metric | Description |
 |--------|-------------|
@@ -99,7 +85,6 @@ The loan officer efficiency table measures how quickly each LO moves loans throu
 | **Avg App to Funded** | Average days from App Intake to Funded (full cycle time) |
 | **Total Loans** | Number of funded loans for this LO |
 
-</div>
 
 The table is sorted by total loans (most productive LOs first). Metrics that cannot be calculated (because the required date fields are not populated) show as null.
 

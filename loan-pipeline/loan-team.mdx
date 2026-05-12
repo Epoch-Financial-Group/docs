@@ -5,15 +5,12 @@ description: "Every loan has a team of a Loan Officer, optional LOAs, and option
 
 ## Team roles
 
-<div className="table-container">
-
 | Role | Assignment | Cardinality | Description |
 |------|-----------|-------------|-------------|
 | **Loan Officer** | Required | Exactly one | The originating loan officer. Set when the loan is created and can be changed via the edit form. Drives commission calculations based on the officer's commission plan. |
 | **Loan Officer Assistant (LOA)** | Optional | Multiple allowed | Assists the loan officer with file preparation, document collection, and borrower communication. Each assistant can have their own commission split. |
 | **Processor** | Optional | Multiple allowed | Handles the operational processing of the loan -- ordering appraisals, managing conditions, coordinating with the lender. Each processor can have their own commission split. |
 
-</div>
 
 
 ---

@@ -21,8 +21,6 @@ Pay periods are the core unit of the commission process. Loans are assigned to p
 
 The frequency of pay periods is configured in the company's payroll settings. Keystone supports four options:
 
-<div className="table-container">
-
 | Frequency | Description | Typical Date Ranges |
 |-----------|-------------|---------------------|
 | **Weekly** | One period per week | e.g., Mon-Sun or any 7-day span based on configured start day |
@@ -30,7 +28,6 @@ The frequency of pay periods is configured in the company's payroll settings. Ke
 | **Semi-Monthly** | Two periods per month | 1st-15th and 16th-end of month (default), or custom split dates |
 | **Monthly** | One period per month | 1st through end of month (default), or custom start date |
 
-</div>
 
 ### Semi-Monthly Options
 
@@ -211,15 +208,12 @@ The draw system ensures employees receive a minimum payment each period.
 
 Each employee has a **draw calculation type**:
 
-<div className="table-container">
-
 | Type | Description |
 |------|-------------|
 | **Hourly** | Draw = hourly rate x hours per period |
 | **Flat Amount** | Draw = a fixed dollar amount |
 | **None** | No draw; the employee receives only their commissions |
 
-</div>
 
 ### Draw Balance Flow
 
@@ -262,14 +256,11 @@ Calculation:
 
 ## Pay Period Statuses
 
-<div className="table-container">
-
 | Status | Description | Actions Available |
 |--------|-------------|-------------------|
 | **Draft** | The pay period is open for editing | Add/remove loans, adjust draws, preview, finalize |
 | **Finalized** | The pay period is locked | View, export, unfinalize |
 
-</div>
 
 ### Unfinalizing a Pay Period
 
@@ -312,8 +303,6 @@ Both detail and summary exports are available after commissions have been calcul
 
 The detail CSV contains one row per commission result:
 
-<div className="table-container">
-
 | Column | Description |
 |--------|-------------|
 | Loan ID | The loan identifier |
@@ -328,13 +317,10 @@ The detail CSV contains one row per commission result:
 | Net Commission | The final commission amount |
 | Deducts From LO | Whether this amount deducts from the loan officer |
 
-</div>
 
 ### Summary Export
 
 The summary CSV contains one row per employee:
-
-<div className="table-container">
 
 | Column | Description |
 |--------|-------------|
@@ -351,4 +337,3 @@ The summary CSV contains one row per employee:
 | Draw Balance Carried Over | Remaining draw balance |
 | Net Pay | Final payment amount |
 
-</div>

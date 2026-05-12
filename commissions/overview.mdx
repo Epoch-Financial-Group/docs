@@ -106,28 +106,22 @@ Loan (funded in pay period)
 
 All commission amounts (base, rules, file fees, performance bonuses) can be expressed as:
 
-<div className="table-container">
-
 | Type | Description | Example |
 |------|-------------|---------|
 | **Percentage** | A percentage of the basis | 1.25% of loan amount |
 | **Flat** | A fixed dollar amount | $500 per loan |
 | **Basis Points (Bps)** | Hundredths of a percent of the basis | 50 bps (= 0.50%) of loan amount |
 
-</div>
 
 ### Commission Basis
 
 The basis determines what dollar amount the percentage or bps is applied to:
-
-<div className="table-container">
 
 | Basis | Description | Typical Use |
 |-------|-------------|-------------|
 | **Loan Amount** | The total loan amount (e.g., $400,000) | LO commissions, branch manager overrides |
 | **Broker Compensation** | The brokerage fee earned on the loan (e.g., $4,000) | Processor pay, LOA pay |
 
-</div>
 
 ### File Fees
 
@@ -148,8 +142,6 @@ Both templates and rules support optional minimum and maximum commission amounts
 
 The commission engine processes each loan for multiple roles:
 
-<div className="table-container">
-
 | Role | How It Works |
 |------|-------------|
 | **Loan Officer** | Primary recipient. Matched by `loanOfficerId` on the rule. Receives the base commission minus file fees, plus bonuses, minus deductions, plus adjustments. |
@@ -157,7 +149,6 @@ The commission engine processes each loan for multiple roles:
 | **Processor** | Matched by `isForProcessor` flag. Each processor on the loan gets their own commission. Can optionally deduct from the LO. |
 | **Branch Manager** | Matched by `isBranchManagerOverride` flag. Applied when the loan's LO belongs to a branch. The branch manager receives a commission. Can optionally deduct from the LO. |
 
-</div>
 
 ## Draw Balance System
 

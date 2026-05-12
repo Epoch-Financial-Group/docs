@@ -13,15 +13,12 @@ To create a metric, navigate to **Analytics > Custom** and click the button to a
 
 ### Metric Definition Fields
 
-<div className="table-container">
-
 | Field | Description |
 |-------|-------------|
 | **Name** | A short, descriptive name for the metric (up to 100 characters). Example: "Avg Loan Size - Purchase" |
 | **Description** | Optional longer description (up to 500 characters) explaining what the metric measures and why it matters. |
 | **Pin to Dashboard** | When enabled, the metric appears at the top of the custom metrics page for quick access. |
 
-</div>
 
 ### Configuration
 
@@ -31,8 +28,6 @@ The metric configuration controls what data is queried and how it is processed.
 
 Choose how to compute the result:
 
-<div className="table-container">
-
 | Aggregation | Description |
 |-------------|-------------|
 | **Count** | Number of matching loans |
@@ -41,13 +36,10 @@ Choose how to compute the result:
 | **Min** | Minimum value of the selected field |
 | **Max** | Maximum value of the selected field |
 
-</div>
 
 #### Field
 
 Select which loan field to aggregate:
-
-<div className="table-container">
 
 | Field | Description |
 |-------|-------------|
@@ -59,15 +51,12 @@ Select which loan field to aggregate:
 | **Origination Fees** | Origination fees charged |
 | **Rate** | Interest rate |
 
-</div>
 
 Note: When using the **Count** aggregation, the field selection is less important since Count simply counts matching records.
 
 #### Date Field
 
 Choose which date field is used for date range filtering:
-
-<div className="table-container">
 
 | Date Field | Description |
 |------------|-------------|
@@ -76,15 +65,12 @@ Choose which date field is used for date range filtering:
 | **App Intake Date** | The date the application was received |
 | **Created Date** | The date the loan record was created |
 
-</div>
 
 #### Filters
 
 Add one or more filters to narrow which loans are included in the calculation. Each filter specifies a field, an operator, and a value.
 
 Available operators:
-
-<div className="table-container">
 
 | Operator | Meaning |
 |----------|---------|
@@ -96,7 +82,6 @@ Available operators:
 | **Less Than** | Numeric comparison |
 | **Less Than or Equal** | Numeric comparison |
 
-</div>
 
 Example filters:
 - Loan Purpose = Purchase -- Only purchase loans
@@ -106,8 +91,6 @@ Example filters:
 #### Group By
 
 Optionally group results to see the metric broken down by a dimension:
-
-<div className="table-container">
 
 | Group By | Description |
 |----------|-------------|
@@ -121,15 +104,12 @@ Optionally group results to see the metric broken down by a dimension:
 | **Quarter** | Group by calendar quarter |
 | **Year** | Group by year |
 
-</div>
 
 When a group-by is set, the metric returns both an overall value and a breakdown by group, sorted by value descending.
 
 #### Visualization
 
 Choose how the metric is displayed:
-
-<div className="table-container">
 
 | Visualization | Best For |
 |---------------|----------|
@@ -139,20 +119,16 @@ Choose how the metric is displayed:
 | **Pie** | Proportional breakdowns (loan type mix, purpose split) |
 | **Area** | Time-series with emphasis on cumulative volume |
 
-</div>
 
 #### Comparison Period
 
 Optionally enable a comparison to a prior time range:
-
-<div className="table-container">
 
 | Comparison | Description |
 |------------|-------------|
 | **Prior Period** | Compare against the immediately preceding period of equal duration. If you select Jan-Mar, the comparison is Oct-Dec. |
 | **Year over Year** | Compare against the same date range in the previous year. If you select Q1 2026, the comparison is Q1 2025. |
 
-</div>
 
 When enabled, the metric result includes both the comparison value and the percentage change.
 
@@ -164,15 +140,12 @@ Once created, a metric can be evaluated for any date range. The evaluation engin
 
 Each evaluation produces:
 
-<div className="table-container">
-
 | Result Field | Description |
 |-------------|-------------|
 | **Value** | The primary computed value (e.g., total volume = $15,000,000) |
 | **Grouped** | If group-by is set, an array of `{ label, value }` pairs sorted by value descending |
 | **Comparison** | If comparison is enabled, the prior period value and the percentage change |
 
-</div>
 
 ## Managing Custom Metrics
 
@@ -190,8 +163,6 @@ Deleting a metric hides it from the dashboard but retains the record.
 
 ## Example Metrics
 
-<div className="table-container">
-
 | Name | Aggregation | Field | Filters | Group By | Viz |
 |------|-------------|-------|---------|----------|-----|
 | Total Funded Volume | Sum | Loan Amount | (none) | (none) | Card |
@@ -203,4 +174,3 @@ Deleting a metric hides it from the dashboard but retains the record.
 | Revenue by Lead Source | Sum | Broker Compensation | (none) | Lead Source | Bar |
 | Avg Rate by Lender | Average | Rate | (none) | Lender | Bar |
 
-</div>

@@ -22,7 +22,7 @@ a[href="https://app.keystn.com"]:hover * {
   --radius: 5px;
 }
 
-/* ── Tables: white card with proper rounded corners ──────────────────────── */
+/* ── Tables ──────────────────────────────────────────────────────────────── */
 /* border-collapse:separate is required — collapse prevents border-radius     */
 table {
   background: #ffffff;
@@ -31,7 +31,6 @@ table {
   border-radius: 12px !important;
   border: 1px solid #E5E2DD !important;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
-  overflow: hidden;
   width: 100%;
 }
 
@@ -49,7 +48,8 @@ table tbody tr:last-child td {
 }
 
 table thead tr th {
-  background: #F6F5F2;
+  background: #292524;
+  color: #ffffff;
   font-weight: 600;
 }
 
@@ -67,15 +67,5 @@ table tbody tr:last-child td:first-child {
 
 table tbody tr:last-child td:last-child {
   border-bottom-right-radius: 11px !important;
-}
-
-/* ── Table container: outer card that wraps a table ─────────────────────── */
-.table-container {
-  background: #ffffff;
-  border: 1px solid #E5E2DD;
-  border-radius: 12px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
-  padding: 1.25rem;
-  margin: 1.25rem 0;
 }
 
