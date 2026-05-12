@@ -16,6 +16,8 @@ Go to **Quality Control > Templates** in the sidebar. The templates table shows 
 
 ### Template fields
 
+<div className="table-container">
+
 | Field | Required | Description |
 |-------|----------|-------------|
 | **Name** | Yes | A descriptive name for the template (e.g., "Standard QC Checklist", "FHA Review Template") |
@@ -23,9 +25,13 @@ Go to **Quality Control > Templates** in the sidebar. The templates table shows 
 | **Active** | -- | Whether the template is available for use in new reviews. Defaults to active. |
 | **Default** | -- | Whether this is the default template. Only one template can be the default at a time. |
 
+</div>
+
 ## Setting conditions
 
 Conditions control which loans a template applies to. When a loan is selected for QC review, the system automatically matches it to a template by checking the loan's attributes against each template's conditions. If a condition array is empty, it matches all values for that attribute.
+
+<div className="table-container">
 
 | Condition | Description | Example |
 |-----------|-------------|---------|
@@ -33,6 +39,8 @@ Conditions control which loans a template applies to. When a loan is selected fo
 | **Loan Purposes** | Which loan purposes this template applies to | Purchase, Refinance |
 | **Channels** | Which origination channels this template applies to | Broker, Non-Delegated Correspondent |
 | **Property States** | Which property states this template applies to | CA, TX, FL |
+
+</div>
 
 ### How template matching works
 
@@ -56,6 +64,8 @@ Each template contains one or more checklist items (questions). These are the sp
 
 ### Item fields
 
+<div className="table-container">
+
 | Field | Required | Description |
 |-------|----------|-------------|
 | **Category** | Yes | A grouping label (e.g., "Income & Employment", "Compliance") |
@@ -66,9 +76,13 @@ Each template contains one or more checklist items (questions). These are the sp
 | **Loan Types** | No | Item-level loan type filter. If set, the item only appears for matching loan types. |
 | **Loan Purposes** | No | Item-level loan purpose filter. If set, the item only appears for matching loan purposes. |
 
+</div>
+
 ### Standard categories
 
 Keystone includes the following standard categories for organizing QC items. You are free to create your own categories as well.
+
+<div className="table-container">
 
 | Category | Typical focus areas |
 |----------|-------------------|
@@ -83,6 +97,8 @@ Keystone includes the following standard categories for organizing QC items. You
 | Program-Specific (FHA) | CAIVRS, case number, UFMIP, FHA LTV limits |
 | Program-Specific (VA) | COE, VA funding fee, MPRs, residual income |
 | Program-Specific (USDA) | Rural eligibility, household income limits, GUS approval |
+
+</div>
 
 ### Item-level conditions
 

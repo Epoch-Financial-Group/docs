@@ -24,6 +24,8 @@ The loan creation form is organized into four sections:
 
 ### Step 1: Loan Information
 
+<div className="table-container">
+
 | Field | Required | Description |
 |-------|----------|-------------|
 | **Broker Loan Number** | Yes | Your internal loan number. Must be unique within your company. This is the primary identifier used throughout Keystone and is searchable in the pipeline. |
@@ -34,8 +36,12 @@ The loan creation form is organized into four sections:
 | **Loan Purpose** | No | The purpose of the loan. Options: **Purchase** or **Refinance**. |
 | **Loan Type** | No | The mortgage product type. Options: **Conventional**, **FHA**, **VA**, **USDA**, **Non-QM**, **Reverse Mortgage**, **HELOC**, **Commercial**, or **HELOAN**. |
 
+</div>
+
 
 ### Step 2: Financial Details
+
+<div className="table-container">
 
 | Field | Required | Description |
 |-------|----------|-------------|
@@ -43,8 +49,12 @@ The loan creation form is organized into four sections:
 | **Broker Compensation** | No | The total broker compensation amount in dollars. Defaults to `0` if not provided. This is the gross revenue from the lender and is the basis for many commission calculations. |
 | **Interest Rate** | No | The note interest rate as a percentage (e.g., `6.875`). Informational; does not affect commission calculations. |
 
+</div>
+
 
 ### Step 3: Borrower Information
+
+<div className="table-container">
 
 | Field | Required | Description |
 |-------|----------|-------------|
@@ -52,7 +62,11 @@ The loan creation form is organized into four sections:
 | **Last Name** | No | Borrower's last name. Used in the pipeline display, search, and sorting. |
 | **Credit Score** | No | Borrower's FICO score. Must be between 300 and 850. Informational field used for reporting. |
 
+</div>
+
 ### Step 4: Property Information
+
+<div className="table-container">
 
 | Field | Required | Description |
 |-------|----------|-------------|
@@ -63,6 +77,8 @@ The loan creation form is organized into four sections:
 | **State** | No | State of the subject property. Select from a dropdown of all 50 US states plus DC. |
 | **ZIP Code** | No | ZIP code of the subject property. |
 | **Occupancy Type** | No | How the borrower will use the property. Options: **Primary Residence**, **Second Home**, or **Investment**. |
+
+</div>
 
 
 ---

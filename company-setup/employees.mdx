@@ -9,6 +9,8 @@ Go to **Directories > People** in the sidebar to view the employee directory.
 
 The directory displays a searchable, filterable table with the following columns:
 
+<div className="table-container">
+
 | Column | Description |
 |--------|-------------|
 | **Name** | Full name (first + last), with custom title shown beneath if set |
@@ -17,6 +19,8 @@ The directory displays a searchable, filterable table with the following columns
 | **Email** | Email address |
 | **Phone** | Mobile number |
 | **Status** | Active or Inactive (archived) badge |
+
+</div>
 
 Clicking an employee's name takes you to their detail view.
 
@@ -44,6 +48,8 @@ The employee form is organized into three sections.
 
 ### Basic Information
 
+<div className="table-container">
+
 | Field | Required | Description |
 |-------|----------|-------------|
 | **First Name** | Yes | Employee's legal first name |
@@ -53,7 +59,11 @@ The employee form is organized into three sections.
 | **Mobile Number** | No | Mobile phone number |
 | **NMLS ID** | No | The employee's individual NMLS number (distinct from the company NMLS) |
 
+</div>
+
 ### Employment
+
+<div className="table-container">
 
 | Field | Required | Description |
 |-------|----------|-------------|
@@ -63,7 +73,11 @@ The employee form is organized into three sections.
 | **Termination Date** | No | The date the employee's employment ended. Setting this effectively marks the employee as former staff. |
 | **Roles** | Yes (at least one) | Check all roles that apply. An employee can hold multiple roles simultaneously. |
 
+</div>
+
 #### Available roles
+
+<div className="table-container">
 
 | Role | Typical responsibilities |
 |------|-------------------------|
@@ -73,9 +87,13 @@ The employee form is organized into three sections.
 | **Contractor** | External contractor, typically paid on a 1099 basis |
 | **Branch Manager** | Oversees a branch and its staff. Branch managers can be assigned as the manager for one or more branches. |
 
+</div>
+
 ### Draw and Payroll
 
 Draw settings determine whether and how much an employee receives as a guaranteed minimum payment (draw) during each pay period, before commission calculations.
+
+<div className="table-container">
 
 | Field | Required | Description |
 |-------|----------|-------------|
@@ -84,13 +102,19 @@ Draw settings determine whether and how much an employee receives as a guarantee
 | **Hourly Rate** | Conditional | Only shown when Draw Type is **Hourly**. The per-hour pay rate. |
 | **Hours Per Period** | Conditional | Only shown when Draw Type is **Hourly**. Number of hours expected per pay period. |
 
+</div>
+
 #### Draw calculation types
+
+<div className="table-container">
 
 | Type | How it works |
 |------|-------------|
 | **No Draw** | Employee receives no guaranteed draw. They are paid purely on commission. |
 | **Flat Amount** | Employee receives a fixed dollar amount as a draw each pay period (e.g., $2,000/period). |
 | **Hourly** | Employee's draw is calculated as `hourlyRate x hoursPerPeriod` (e.g., $25/hr x 80 hrs = $2,000). |
+
+</div>
 
 <Info>
 Company-wide draw defaults are configured in [Company Settings](/company-setup/company-settings). Individual employee settings override the company defaults.
@@ -101,6 +125,8 @@ Company-wide draw defaults are configured in [Company Settings](/company-setup/c
 ## Additional employee fields
 
 The following fields are available on the employee detail page:
+
+<div className="table-container">
 
 | Field | Description |
 |-------|-------------|
@@ -118,6 +144,8 @@ The following fields are available on the employee detail page:
 | **Town** | The employee's home city or town |
 | **Payroll Provider ID** | An external ID linking to a third-party payroll system |
 
+</div>
+
 ---
 
 ## State licensing
@@ -126,11 +154,15 @@ Loan officers and other NMLS-licensed employees need state-level licenses to ori
 
 Each state license record includes:
 
+<div className="table-container">
+
 | Field | Description |
 |-------|-------------|
 | **State** | The US state the license is issued in (all 50 states plus DC and territories are supported) |
 | **License Number** | The license number issued by that state |
 | **Expiration Date** | When the license expires |
+
+</div>
 
 State licenses are displayed in the **Licenses** tab on the employee detail page.
 

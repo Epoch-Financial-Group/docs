@@ -31,6 +31,8 @@ Select a start and end date to see all funded loans within that range. This is u
 
 Each loan in the ledger shows:
 
+<div className="table-container">
+
 | Column | Description |
 |--------|-------------|
 | **Loan #** | Broker loan number |
@@ -47,6 +49,8 @@ Each loan in the ledger shows:
 | **Loan Type** | Conventional, FHA, VA, etc. |
 | **Channel** | Broker or Non-Delegated Correspondent |
 
+</div>
+
 ### Included Statuses
 
 The Sales Ledger includes all loans that have completed the funding process -- Funded and all post-funding commission statuses.
@@ -55,12 +59,16 @@ The Sales Ledger includes all loans that have completed the funding process -- F
 
 At the top of the ledger (or in a summary section), the following totals are displayed for the current view:
 
+<div className="table-container">
+
 | Total | Description |
 |-------|-------------|
 | **Total Loan Amount** | Sum of all loan amounts in the view |
 | **Total Broker Comp** | Sum of all broker compensation |
 | **Total Gross Revenue** | Sum of all gross loan revenue |
 | **Total Reimbursements** | Sum of all reimbursements across loans in the view |
+
+</div>
 
 ## Pagination
 
@@ -74,6 +82,8 @@ Use the pagination controls to navigate through large result sets.
 ## CSV Export
 
 The Sales Ledger supports exporting the current view to CSV format. The export includes all matching loans (not just the current page) with the following columns:
+
+<div className="table-container">
 
 | CSV Column | Source |
 |------------|--------|
@@ -90,6 +100,8 @@ The Sales Ledger supports exporting the current view to CSV format. The export i
 | Loan Purpose | Purchase or Refinance |
 | Loan Type | Product type |
 | Channel | Broker or Non-Delegated Correspondent |
+
+</div>
 
 The exported CSV also includes the property address (address, city, state, zip) for each loan, which is not shown in the web view.
 

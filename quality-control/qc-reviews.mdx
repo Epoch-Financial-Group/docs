@@ -7,6 +7,8 @@ description: "A QC review audits a specific loan against a template checklist, t
 
 Go to **Quality Control > QC Dashboard** in the sidebar. The dashboard displays a paginated table of all reviews with the following columns:
 
+<div className="table-container">
+
 | Column | Description |
 |--------|-------------|
 | **Loan #** | The broker loan number (links to the loan detail page) |
@@ -18,14 +20,20 @@ Go to **Quality Control > QC Dashboard** in the sidebar. The dashboard displays 
 | **Pass / Fail / N/A** | Summary counts of item results |
 | **Created** | When the review was created |
 
+</div>
+
 ### Filtering reviews
 
 You can filter the review dashboard by:
+
+<div className="table-container">
 
 | Filter | Options |
 |--------|---------|
 | **Status** | Pending, In Progress, Completed, Waived |
 | **Selection Month** | Any month that has reviews (format: YYYY-MM) |
+
+</div>
 
 ### Pagination
 
@@ -85,12 +93,16 @@ The selection method is recorded on the review for audit trail purposes.
 
 Every QC review progresses through a defined set of statuses:
 
+<div className="table-container">
+
 | Status | Description |
 |--------|-------------|
 | **Pending** | Review has been created but no items have been evaluated yet |
 | **In Progress** | At least one item has been marked Pass, Fail, or N/A. Status changes automatically when the first item is reviewed. |
 | **Completed** | All items have been evaluated and the reviewer has finalized the review |
 | **Waived** | The review has been waived (skipped) with an optional reason |
+
+</div>
 
 Status transitions happen as follows:
 
@@ -116,12 +128,16 @@ Go to the QC Dashboard and click on a review row to open it.
 
 For each checklist item, the reviewer selects one of four results:
 
+<div className="table-container">
+
 | Result | Meaning | When to use |
 |--------|---------|-------------|
 | **Pass** | The item meets requirements | Documentation is present, accurate, and compliant |
 | **Fail** | The item does not meet requirements | Documentation is missing, inaccurate, or non-compliant |
 | **N/A** | The item does not apply to this loan | The question is not relevant (e.g., VA-specific question on a Conventional loan) |
 | **Pending** | The item has not been reviewed yet | Default state -- no action taken |
+
+</div>
 
 **Step by step:**
 
@@ -144,12 +160,16 @@ Notes are saved when the item result is updated.
 
 As items are marked, the review header updates with real-time counts:
 
+<div className="table-container">
+
 | Count | Description |
 |-------|-------------|
 | **Total Items** | The total number of checklist items on this review |
 | **Pass** | Number of items marked Pass |
 | **Fail** | Number of items marked Fail |
 | **N/A** | Number of items marked N/A |
+
+</div>
 
 These counts are stored on the review record for reporting purposes and do not need to be recalculated when viewing the review later.
 

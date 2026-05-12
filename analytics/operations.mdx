@@ -18,6 +18,8 @@ The lender turn time report measures how long each lender takes to move loans th
 
 ### Metrics Per Lender
 
+<div className="table-container">
+
 | Metric | Description |
 |--------|-------------|
 | **Lender Name** | The lender's name |
@@ -25,6 +27,8 @@ The lender turn time report measures how long each lender takes to move loans th
 | **Avg CTC to Funded** | Average days from Clear to Close to Funded Date. Measures closing/funding speed. |
 | **Avg App to Funded** | Average days from App Intake to Funded Date. Full lifecycle measurement. |
 | **Loan Count** | Number of funded loans used to calculate the averages. Higher counts indicate more reliable averages. |
+
+</div>
 
 The table is sorted by loan count (highest first), so lenders with the most data appear at the top.
 
@@ -42,6 +46,8 @@ The aging report identifies loans that have exceeded their expected time in a pi
 
 The system defines expected timelines for key stages:
 
+<div className="table-container">
+
 | Stage | Expected Next Stage | Days Allowed |
 |-------|-------------------|--------------|
 | App Intake | Disclosed | 3 days |
@@ -50,11 +56,15 @@ The system defines expected timelines for key stages:
 | Approved w/ Conditions | Clear to Close | 7 days |
 | Clear to Close | Funded | 10 days |
 
+</div>
+
 A loan is considered "overdue" when it has been in its current stage longer than the allowed number of days.
 
 ### Summary Buckets
 
 The aging summary groups overdue loans into buckets:
+
+<div className="table-container">
 
 | Bucket | Description |
 |--------|-------------|
@@ -63,9 +73,13 @@ The aging summary groups overdue loans into buckets:
 | **15-30 days overdue** | Significantly delayed -- likely needs escalation |
 | **30+ days overdue** | Critically overdue -- immediate attention required |
 
+</div>
+
 ### Overdue Loan Details
 
 Each overdue loan shows:
+
+<div className="table-container">
 
 | Field | Description |
 |-------|-------------|
@@ -77,6 +91,8 @@ Each overdue loan shows:
 | **Loan Amount** | Dollar amount |
 | **Expected Days** | The SLA for this stage |
 
+</div>
+
 The list is sorted by days overdue (most overdue first).
 
 ## Conversion Analysis
@@ -85,6 +101,8 @@ The conversion report measures your application-to-funding success rate and iden
 
 ### Overall Metrics
 
+<div className="table-container">
+
 | Metric | Description |
 |--------|-------------|
 | **Overall Rate** | Percentage of applications that resulted in a funded loan |
@@ -92,9 +110,13 @@ The conversion report measures your application-to-funding success rate and iden
 | **Total Funded** | Number of applications that reached funding |
 | **Comparison** | Change in overall rate versus the prior period |
 
+</div>
+
 ### Conversion Breakdowns
 
 Conversion rates are broken down across four dimensions:
+
+<div className="table-container">
 
 | Breakdown | Description |
 |-----------|-------------|
@@ -103,11 +125,15 @@ Conversion rates are broken down across four dimensions:
 | **By Lead Source** | Which lead sources have the best conversion rates |
 | **By Loan Type** | Conversion rates by loan product type |
 
+</div>
+
 Each breakdown shows the number of applications, number funded, and the resulting conversion rate.
 
 ### Fallout Analysis
 
 The fallout report analyzes **adverse loans** (loans that did not successfully close) and groups them by the last pipeline stage they reached before going adverse:
+
+<div className="table-container">
 
 | Fallout Stage | Description |
 |---------------|-------------|
@@ -116,6 +142,8 @@ The fallout report analyzes **adverse loans** (loans that did not successfully c
 | **Underwriting** | Was submitted to underwriting but never approved |
 | **Clear to Close** | Was cleared to close but never closed |
 | **Post-Closing** | Had a closing date but never funded |
+
+</div>
 
 This helps identify where in your process the biggest drop-offs occur, so you can target improvements.
 
@@ -127,6 +155,8 @@ A monthly trend chart tracks conversion rates over time, showing apps, funded lo
 
 Operations analytics support the full set of extended filters:
 
+<div className="table-container">
+
 | Filter | Description |
 |--------|-------------|
 | **Date Range** | Scope the analysis period |
@@ -134,3 +164,5 @@ Operations analytics support the full set of extended filters:
 | **Branch** | Filter by branch |
 | **Lead Source** | Filter by lead source |
 | **Lender** | Filter by lender |
+
+</div>

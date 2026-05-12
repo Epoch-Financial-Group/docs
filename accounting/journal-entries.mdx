@@ -31,6 +31,8 @@ Go to **Accounting > Journal Entries** in the sidebar.
 
 Each journal entry has the following header fields:
 
+<div className="table-container">
+
 | Field | Description |
 |-------|-------------|
 | **Entry Number** | Auto-assigned sequential number (e.g., JE-1, JE-2). Cannot be changed. |
@@ -39,9 +41,13 @@ Each journal entry has the following header fields:
 | **Status** | Draft, Posted, or Voided. |
 | **Source** | How the entry was created (Manual, LoanFunded, etc.). |
 
+</div>
+
 ### Entry line fields
 
 Each line within a journal entry has:
+
+<div className="table-container">
 
 | Field | Description |
 |-------|-------------|
@@ -49,6 +55,8 @@ Each line within a journal entry has:
 | **Description** | Optional line-level description. |
 | **Debit** | The debit amount for this line (0.00 if this is a credit line). |
 | **Credit** | The credit amount for this line (0.00 if this is a debit line). |
+
+</div>
 
 Each line can only have a debit or a credit, not both. When you enter a value in the debit field, the credit field is automatically cleared, and vice versa.
 
@@ -81,6 +89,8 @@ Journal entries move through a lifecycle of three statuses:
 
 The **source** field indicates how a journal entry was created. This helps you distinguish manual entries from system-generated ones:
 
+<div className="table-container">
+
 | Source | Description |
 |--------|-------------|
 | **Manual** | Created by a user through the journal entry form |
@@ -93,6 +103,8 @@ The **source** field indicates how a journal entry was created. This helps you d
 | **DrawPayment** | Generated when a draw payment is issued to an employee |
 | **Reversal** | Created as the opposite of an existing entry (debits and credits swapped) |
 | **BankImport** | Generated from imported bank transaction data |
+
+</div>
 
 The source badge appears on the journal entry list and detail pages, making it easy to identify the origin of each entry.
 
@@ -193,11 +205,15 @@ Only Draft entries can be deleted. Posted and Voided entries are permanent recor
 
 The journal entries list page supports filtering by:
 
+<div className="table-container">
+
 | Filter | Options |
 |--------|---------|
 | **Status** | Draft, Posted, Voided, or all |
 | **Source** | Any of the entry source types |
 | **Date Range** | Start date and end date |
+
+</div>
 
 The list is paginated (25 entries per page) and sorted by date, newest first. Use the Previous/Next buttons to navigate between pages.
 

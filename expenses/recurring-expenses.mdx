@@ -11,11 +11,15 @@ A recurring expense is a template for a repeating cost. It specifies an employee
 
 Keystone supports three recurrence patterns:
 
+<div className="table-container">
+
 | Pattern | Behavior |
 |---------|----------|
 | **One-Time** | The expense is created once on the effective date. Useful for scheduled future expenses that you want to set up in advance. |
 | **Weekly** | The expense repeats every N weeks, where N is the recurrence value. For example, a recurrence value of 2 means "every 2 weeks." |
 | **Monthly** | The expense repeats every N months. A recurrence value of 1 means every month; a value of 3 means quarterly. |
+
+</div>
 
 ### Recurrence Value
 
@@ -33,13 +37,19 @@ On the Expenses page, navigate to the **Recurring Expenses** section and click *
 
 ### Required Fields
 
+<div className="table-container">
+
 | Field | Description |
 |-------|-------------|
 | **Employee** | The employee this recurring expense is assigned to. |
 | **Amount** | The dollar amount per occurrence. |
 | **Effective Date** | The date the recurring expense begins generating expenses. |
 
+</div>
+
 ### Optional Fields
+
+<div className="table-container">
 
 | Field | Description |
 |-------|-------------|
@@ -48,6 +58,8 @@ On the Expenses page, navigate to the **Recurring Expenses** section and click *
 | **Expiration Date** | The date the recurring expense stops generating expenses. If left blank, it continues indefinitely. |
 | **Note** | A description that will be copied to each generated expense (e.g., "Office rent" or "Software license"). |
 
+</div>
+
 Click **Create** to save the recurring expense.
 
 ## Managing Recurring Expenses
@@ -55,6 +67,8 @@ Click **Create** to save the recurring expense.
 The recurring expenses table displays all defined recurring expenses for your company.
 
 ### Table Columns
+
+<div className="table-container">
 
 | Column | Description |
 |--------|-------------|
@@ -65,6 +79,8 @@ The recurring expenses table displays all defined recurring expenses for your co
 | **Expiration** | When it ends, or "Ongoing" if no expiration is set |
 | **Note** | The description |
 | **Actions** | Edit and delete buttons |
+
+</div>
 
 ### Editing a Recurring Expense
 
@@ -80,6 +96,8 @@ The system checks whether the effective date has been reached, whether the expir
 
 ## Common Use Cases
 
+<div className="table-container">
+
 | Scenario | Configuration |
 |----------|--------------|
 | Monthly office rent for an employee | Monthly, value 1, no expiration |
@@ -89,3 +107,5 @@ The system checks whether the effective date has been reached, whether the expir
 | Bi-weekly phone stipend | Weekly, value 2, no expiration |
 | Annual training fee | Monthly, value 12, no expiration |
 | Temporary contractor cost for 6 months | Monthly, value 1, with an expiration date 6 months out |
+
+</div>

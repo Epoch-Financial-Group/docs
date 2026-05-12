@@ -38,14 +38,20 @@ Account mappings are organized by type:
 
 These mappings handle financial events tied to loan-level properties:
 
+<div className="table-container">
+
 | Mapping Key | Typical Event | Example Debit Account | Example Credit Account |
 |------------|---------------|----------------------|----------------------|
 | **brokerCompensation** | Broker compensation earned on a loan | Accounts Receivable | Broker Compensation Revenue |
 | **loanAmount** | The principal loan amount (for tracking purposes) | Varies | Varies |
 
+</div>
+
 ### Revenue Line Items
 
 These mappings handle specific revenue components that may be tracked separately:
+
+<div className="table-container">
 
 | Mapping Key | Typical Event | Example Debit Account | Example Credit Account |
 |------------|---------------|----------------------|----------------------|
@@ -53,15 +59,21 @@ These mappings handle specific revenue components that may be tracked separately
 | **processingFee** | Processing fee charged | Accounts Receivable | Processing Fee Revenue |
 | **appraisalReimbursement** | Reimbursement for appraisal cost | Cash - Operating | Appraisal Expense |
 
+</div>
+
 ### Commission Roles
 
 These mappings handle commission payouts by role:
+
+<div className="table-container">
 
 | Mapping Key | Typical Event | Example Debit Account | Example Credit Account |
 |------------|---------------|----------------------|----------------------|
 | **loanOfficer** | Commission paid to a loan officer | Commission Expense - LO | Cash - Operating |
 | **processor** | Commission paid to a processor | Commission Expense - Processor | Cash - Operating |
 | **branchManager** | Commission paid to a branch manager | Commission Expense - Branch Mgr | Cash - Operating |
+
+</div>
 
 ## Setting up account mappings
 
@@ -94,21 +106,31 @@ Here is a typical set of account mappings for a mortgage brokerage:
 
 ### When a loan is funded
 
+<div className="table-container">
+
 | Mapping | Debit Account | Credit Account |
 |---------|--------------|----------------|
 | Broker Compensation | Accounts Receivable - Lender | Broker Compensation Revenue |
+
+</div>
 
 This records the revenue earned and the amount owed by the lender.
 
 ### When a lender check is received
 
+<div className="table-container">
+
 | Mapping | Debit Account | Credit Account |
 |---------|--------------|----------------|
 | Lender Check | Cash - Operating | Accounts Receivable - Lender |
 
+</div>
+
 This deposits the check and clears the receivable.
 
 ### When commissions are paid
+
+<div className="table-container">
 
 | Mapping | Debit Account | Credit Account |
 |---------|--------------|----------------|
@@ -116,21 +138,31 @@ This deposits the check and clears the receivable.
 | Processor Commission | Commission Expense - Processor | Cash - Operating |
 | Branch Manager Commission | Commission Expense - Branch Mgr | Cash - Operating |
 
+</div>
+
 These record the commission payments as expenses against cash.
 
 ### When a draw payment is issued
+
+<div className="table-container">
 
 | Mapping | Debit Account | Credit Account |
 |---------|--------------|----------------|
 | Draw Payment | Draw Advances (Asset) | Cash - Operating |
 
+</div>
+
 This records the draw advance as an asset (money owed back to the company).
 
 ### When a draw is repaid
 
+<div className="table-container">
+
 | Mapping | Debit Account | Credit Account |
 |---------|--------------|----------------|
 | Draw Repayment | Commission Expense | Draw Advances (Asset) |
+
+</div>
 
 This reduces the draw advance balance when commissions exceed the draw.
 

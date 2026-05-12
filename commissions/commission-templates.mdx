@@ -22,6 +22,8 @@ A commission template captures:
 
 Each template targets one of the following roles:
 
+<div className="table-container">
+
 | Role | Description |
 |------|-------------|
 | **Loan Officer** | The primary originator on a loan |
@@ -29,6 +31,8 @@ Each template targets one of the following roles:
 | **Processor** | Handles loan processing; commission can deduct from the LO |
 | **Branch Manager** | Receives an override commission on loans originated in their branch |
 | **Contractor** | An independent contractor with their own compensation structure |
+
+</div>
 
 ## Creating a New Commission Template
 
@@ -68,11 +72,15 @@ The base commission is the default amount paid to an employee for each loan, bef
 
 A loan officer template with **50 basis points on loan amount**:
 
+<div className="table-container">
+
 | Field | Value |
 |-------|-------|
 | Commission Basis | Loan Amount |
 | Amount Type | Basis Points (bps) |
 | Amount | 50 |
+
+</div>
 
 For a $400,000 loan:
 - Commission = $400,000 x 50 / 10,000 = **$2,000**
@@ -81,11 +89,15 @@ For a $400,000 loan:
 
 A processor template with a **flat $350 per loan**:
 
+<div className="table-container">
+
 | Field | Value |
 |-------|-------|
 | Commission Basis | Loan Amount |
 | Amount Type | Flat ($) |
 | Amount | 350 |
+
+</div>
 
 For any loan amount:
 - Commission = **$350**
@@ -94,11 +106,15 @@ For any loan amount:
 
 A loan officer assistant template with **25% of broker compensation**:
 
+<div className="table-container">
+
 | Field | Value |
 |-------|-------|
 | Commission Basis | Broker Compensation |
 | Amount Type | Percentage (%) |
 | Amount | 25 |
+
+</div>
 
 For a loan with $4,000 broker compensation:
 - Commission = $4,000 x 25 / 100 = **$1,000**
@@ -122,11 +138,15 @@ A file fee is a per-loan deduction from the commission. It is often used to cove
 
 #### Example: Flat File Fee
 
+<div className="table-container">
+
 | Field | Value |
 |-------|-------|
 | Fee Name | Admin Fee |
 | File Fee | 150 |
 | File Fee Type | Flat ($) |
+
+</div>
 
 For each loan, $150 is deducted from the commission.
 

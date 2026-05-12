@@ -18,6 +18,8 @@ The pipeline dashboard focuses on **active loans** -- loans that have not yet re
 
 The top of the pipeline dashboard displays four summary KPIs:
 
+<div className="table-container">
+
 | Metric | Description |
 |--------|-------------|
 | **Total Active Loans** | Count of all loans currently in the pipeline (excluding terminal statuses). |
@@ -25,6 +27,8 @@ The top of the pipeline dashboard displays four summary KPIs:
 | **Avg Days in Pipeline** | Average number of days active loans have been in the pipeline, measured from creation date. |
 | **New Loans This Week** | Number of loans created since the start of the current week (Sunday). |
 | **Loans Advanced This Week** | Number of loans that had any status update since the start of the current week. |
+
+</div>
 
 ## Pipeline Stages
 
@@ -55,6 +59,8 @@ The bottleneck report identifies loans that have been in their current stage for
 
 Each bottleneck entry shows:
 
+<div className="table-container">
+
 | Field | Description |
 |-------|-------------|
 | **Loan Number** | The broker loan number |
@@ -64,6 +70,8 @@ Each bottleneck entry shows:
 | **Days in Stage** | How many days the loan has been in its current stage |
 | **Loan Amount** | Dollar amount of the loan |
 
+</div>
+
 The list is sorted by days in stage (longest first), so the most critical bottlenecks appear at the top.
 
 ## Pipeline Velocity
@@ -72,11 +80,15 @@ The velocity analysis measures the average number of days it takes loans to move
 
 Each velocity measurement shows:
 
+<div className="table-container">
+
 | Field | Description |
 |-------|-------------|
 | **From** | The starting stage |
 | **To** | The next stage |
 | **Avg Days** | Average number of calendar days between the two stages |
+
+</div>
 
 Velocity is calculated by looking at loans that have date stamps for both stages and averaging the difference. Stages with no data show 0 days.
 
@@ -84,12 +96,16 @@ Velocity is calculated by looking at loans that have date stamps for both stages
 
 The per-LO breakdown shows each loan officer's pipeline activity:
 
+<div className="table-container">
+
 | Column | Description |
 |--------|-------------|
 | **Name** | Loan officer's full name |
 | **Active Loans** | Number of loans currently in their pipeline |
 | **Total Volume** | Sum of loan amounts in their pipeline |
 | **Avg Days in Pipeline** | Average age of their active loans |
+
+</div>
 
 The table is sorted by total volume (highest first).
 

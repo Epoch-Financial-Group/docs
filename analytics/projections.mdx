@@ -11,21 +11,29 @@ Projections analyze every active loan in your pipeline (excluding funded and adv
 
 Each pipeline loan is assigned a confidence level based on how far along it is in the process:
 
+<div className="table-container">
+
 | Confidence | Statuses | Rationale |
 |------------|----------|-----------|
 | **High** | Clear to Close, Docs Out, Closed | These loans are very likely to fund -- they have cleared underwriting and are in final stages. |
 | **Medium** | Approved with Conditions, Resubmitted | These loans have underwriting approval but still have conditions or are being resubmitted. |
 | **Low** | All earlier statuses (App Intake through Submitted to UW) | These loans are still early in the process and have more uncertainty. |
 
+</div>
+
 ### Estimated Funding Dates
 
 If a loan has an estimated funding date set, that date is used. Otherwise, the system assigns a default estimate based on confidence:
+
+<div className="table-container">
 
 | Confidence | Default Estimate |
 |------------|-----------------|
 | High | 1 week from today |
 | Medium | 4 weeks from today |
 | Low | 7 weeks from today |
+
+</div>
 
 If a loan's estimated date is in the past, it is shifted to today.
 
@@ -35,12 +43,16 @@ The weekly view shows funding projections for the next **8 weeks**, broken down 
 
 Each week displays:
 
+<div className="table-container">
+
 | Metric | Description |
 |--------|-------------|
 | **Week Range** | The date range for the week (e.g., "3/3 - 3/9") |
 | **High Confidence** | Units, volume, and estimated revenue from high-confidence loans |
 | **Medium Confidence** | Units, volume, and estimated revenue from medium-confidence loans |
 | **Low Confidence** | Units, volume, and estimated revenue from low-confidence loans |
+
+</div>
 
 This lets you see not just the total expected volume, but how much of it is highly likely versus speculative.
 
@@ -57,15 +69,21 @@ Each month shows:
 
 A summary card shows the total projected fundings for the next 30 days:
 
+<div className="table-container">
+
 | Metric | Description |
 |--------|-------------|
 | **Units** | Total loans expected to fund in the next 30 days |
 | **Volume** | Total dollar volume |
 | **Revenue** | Total estimated revenue |
 
+</div>
+
 ## Upcoming Loans
 
 A detailed table lists every active pipeline loan with its projected funding information.
+
+<div className="table-container">
 
 | Column | Description |
 |--------|-------------|
@@ -77,6 +95,8 @@ A detailed table lists every active pipeline loan with its projected funding inf
 | **Est. Funding Date** | The estimated funding date, if set |
 | **Status** | Current pipeline status |
 | **Confidence** | High, Medium, or Low |
+
+</div>
 
 The table is sorted by confidence level (high first), then by estimated funding date.
 

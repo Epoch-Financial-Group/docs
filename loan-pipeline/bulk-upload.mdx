@@ -14,11 +14,15 @@ In the Loan Pipeline, click **Upload CSV** in the page header.
 
 Before selecting a file, choose an upload type. There are three options:
 
+<div className="table-container">
+
 | Upload Type | Label | Description |
 |-------------|-------|-------------|
 | **pipeline** | Pipeline Report | The standard import mode. Creates new loans (matched by broker loan number) or updates existing loans. Affects commission calculations. |
 | **analyticsOnly** | Analytics Only | Imports loans for reporting and analytics purposes only. Employees auto-created during this upload are marked as analytics-only and do not affect commission calculations. |
 | **feeReport** | Fee Report | Updates fee fields on existing loans only. Does not create new loans. Used for importing fee data from lender reports. |
+
+</div>
 
 
 ---
@@ -60,12 +64,18 @@ The CSV importer uses flexible header matching. It recognizes many common header
 
 ### Loan identifiers
 
+<div className="table-container">
+
 | Recognized CSV Headers | Maps To | Notes |
 |------------------------|---------|-------|
 | `Broker Loan Number`, `Broker Loan #`, `Loan Number`, `Loan #`, `BrokerLoan#`, `BrokerLoanNo`, `Arive Loan ID` | Broker Loan # | **Required.** Used to match existing loans for updates. |
 | `Lender Loan Number`, `Lender Loan #`, `LenderLoan#` | Lender Loan # | |
 
+</div>
+
 ### Borrower
+
+<div className="table-container">
 
 | Recognized CSV Headers | Maps To | Notes |
 |------------------------|---------|-------|
@@ -74,7 +84,11 @@ The CSV importer uses flexible header matching. It recognizes many common header
 | `Primary Borrower`, `Borrower Name`, `Borrower` | Borrower Name | Full name; split into first/last automatically |
 | `Credit Score`, `Borrower Credit Score`, `FICO`, `FICO Score`, `Loan FICO` | Credit Score | Must be 300-850 |
 
+</div>
+
 ### Property
+
+<div className="table-container">
 
 | Recognized CSV Headers | Maps To |
 |------------------------|---------|
@@ -86,11 +100,15 @@ The CSV importer uses flexible header matching. It recognizes many common header
 | `Property Zip`, `Zip`, `Zip Code`, `ZipCode`, `Postal Code`, `Subject Zip` | ZIP |
 | `Occupancy Type`, `Occupancy`, `Occupancy Status` | Occupancy |
 
+</div>
+
 State values accept both full state names (e.g., "California") and abbreviations (e.g., "CA").
 
 Occupancy values are mapped flexibly: "Primary Residence", "Owner Occupied", "Second Home", "2nd Home", "Investment Property" all map correctly.
 
 ### Loan details
+
+<div className="table-container">
 
 | Recognized CSV Headers | Maps To | Accepted Values |
 |------------------------|---------|-----------------|
@@ -101,7 +119,11 @@ Occupancy values are mapped flexibly: "Primary Residence", "Owner Occupied", "Se
 | `Status`, `Loan Status`, `Milestone`, `Current Milestone` | Status | See [Loan Statuses](/loan-pipeline/loan-statuses); flexible matching |
 | `Lead Provided By`, `Lead Source` | Lead Source | Matched by name; creates new lead source if not found |
 
+</div>
+
 ### Financial
+
+<div className="table-container">
 
 | Recognized CSV Headers | Maps To |
 |------------------------|---------|
@@ -112,9 +134,13 @@ Occupancy values are mapped flexibly: "Primary Residence", "Owner Occupied", "Se
 | `Net Discount Points`, `Discount Points` | Discount Points |
 | `Amortization Term` | Amort. Term |
 
+</div>
+
 Dollar values are cleaned automatically -- currency symbols (`$`), commas, and whitespace are stripped before parsing.
 
 ### Timeline dates
+
+<div className="table-container">
 
 | Recognized CSV Headers | Maps To |
 |------------------------|---------|
@@ -136,9 +162,13 @@ Dollar values are cleaned automatically -- currency symbols (`$`), commas, and w
 | `Lock Expiration` | Lock Expiration Date |
 | `Broker Check Received Date` | Check Received Date |
 
+</div>
+
 Dates are parsed flexibly. The importer accepts US format `MM/DD/YYYY` (common in LOS exports) and falls back to standard date parsing.
 
 ### Team members
+
+<div className="table-container">
 
 | Recognized CSV Headers | Maps To |
 |------------------------|---------|
@@ -155,18 +185,26 @@ Dates are parsed flexibly. The importer accepts US format `MM/DD/YYYY` (common i
 | `Loan Processor #2 Name` / `Email` | Processor 2 |
 | `Loan Processor #3 Name` / `Email` | Processor 3 |
 
+</div>
+
 ### Agent information
+
+<div className="table-container">
 
 | Recognized CSV Headers | Maps To |
 |------------------------|---------|
 | `Buyer Agent Name`, `Buyer Agent Email` | Buyer Agent |
 | `Seller Agent Name`, `Seller Agent Email` | Seller Agent |
 
+</div>
+
 ---
 
 ## Column reference -- Fee Report uploads
 
 Fee report uploads only require the broker loan number to match existing loans. All other columns update fee fields:
+
+<div className="table-container">
 
 | Recognized CSV Headers | Maps To |
 |------------------------|---------|
@@ -177,6 +215,8 @@ Fee report uploads only require the broker loan number to match existing loans. 
 | `Holdback` | Holdback |
 | `Net Loan Revenue` | Net Loan Revenue |
 | `Gross Loan Revenue` | Gross Loan Revenue |
+
+</div>
 
 ---
 

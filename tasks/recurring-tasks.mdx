@@ -22,6 +22,8 @@ A recurring schedule is a configuration that tells Keystone to automatically cre
 1. Navigate to **Tasks > Recurring** in the sidebar and click **New Schedule**.
 3. Fill in the schedule details:
 
+<div className="table-container">
+
 | Field | Required | Description |
 |-------|----------|-------------|
 | **Title** | Yes | The title that will be used for each generated task (e.g., "Monthly BSA/AML Report") |
@@ -37,6 +39,8 @@ A recurring schedule is a configuration that tells Keystone to automatically cre
 | **Start Date** | Yes | The date from which the schedule begins generating tasks |
 | **End Date** | No | Optional date after which the schedule stops. Leave empty for indefinite recurrence. |
 | **Active** | No | Whether the schedule is active. Defaults to active. |
+
+</div>
 
 4. Click **Save**.
 
@@ -109,11 +113,15 @@ The number of days **after** the occurrence date when the task is due.
 
 For a monthly schedule set to the 1st of each month, with 7 lead days and 3 due-days-after:
 
+<div className="table-container">
+
 | Date | Event |
 |------|-------|
 | December 25 | Task is created (7 days before January 1) |
 | January 1 | Occurrence date |
 | January 4 | Task due date (3 days after January 1) |
+
+</div>
 
 ---
 

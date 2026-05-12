@@ -7,6 +7,8 @@ description: "Loan adjustments add or subtract amounts from a loan's revenue and
 
 An adjustment is a named amount attached to a loan that modifies its financial calculations. Each adjustment has:
 
+<div className="table-container">
+
 | Field | Description |
 |-------|-------------|
 | **Description** | A free-text description of the adjustment (e.g., "Processing fee credit", "Lender concession") |
@@ -15,6 +17,8 @@ An adjustment is a named amount attached to a loan that modifies its financial c
 | **Applies to Commission** | Whether this adjustment affects commission calculations |
 | **Applies to Revenue** | Whether this adjustment affects revenue calculations |
 | **Commission Basis** | (Optional) When the adjustment applies to commissions, what it is based on: **Loan Amount** or **Broker Compensation** |
+
+</div>
 
 ## Where adjustments appear
 
@@ -31,6 +35,8 @@ Adjustments are managed from the **Revenue** tab on the loan detail page, below 
 4. Click **Add Adjustment**.
 5. A dialog opens with the following fields:
 
+<div className="table-container">
+
 | Field | Required | Description |
 |-------|----------|-------------|
 | **Description** | Yes | A descriptive name for the adjustment |
@@ -39,6 +45,8 @@ Adjustments are managed from the **Revenue** tab on the loan detail page, below 
 | **Applies to Commission** | No | Check this box if the adjustment should affect commission calculations |
 | **Applies to Revenue** | No | Check this box if the adjustment should affect revenue calculations |
 | **Commission Basis** | No | If applicable, choose whether the percentage is based on **Loan Amount** or **Broker Compensation**. Leave as "None" for flat-amount adjustments or if not applicable. |
+
+</div>
 
 6. Click **Add Adjustment** to save.
 
@@ -76,6 +84,8 @@ Adjustments with **Applies to Revenue** checked modify the revenue figures visib
 
 ## Common adjustment examples
 
+<div className="table-container">
+
 | Description | Amount | Type | Commission | Revenue | Notes |
 |-------------|--------|------|------------|---------|-------|
 | Processing fee credit | -250.00 | Flat | Yes | Yes | Credit given to borrower, reduces revenue and commission base |
@@ -83,6 +93,8 @@ Adjustments with **Applies to Revenue** checked modify the revenue figures visib
 | Branch override | 0.10 | Percentage | Yes | No | Branch manager gets 10bps, deducted from LO commission |
 | Referral fee | -500.00 | Flat | Yes | Yes | Payment to a referral partner |
 | Bonus compensation | 250.00 | Flat | Yes | Yes | Additional comp for a specific deal |
+
+</div>
 
 ---
 

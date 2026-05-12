@@ -15,6 +15,8 @@ Profitability answers the fundamental question: "After paying commissions and co
 
 The top of the dashboard shows eight key financial metrics:
 
+<div className="table-container">
+
 | Metric | Description |
 |--------|-------------|
 | **Total Revenue** | Sum of broker compensation for all funded loans in the period |
@@ -25,6 +27,8 @@ The top of the dashboard shows eight key financial metrics:
 | **Revenue Per Loan** | Total Revenue / Number of Funded Loans |
 | **Cost Per Loan** | (Commissions + Expenses) / Number of Funded Loans |
 | **Net Profit Per Loan** | Net Profit / Number of Funded Loans |
+
+</div>
 
 ### Period-over-Period Comparison
 
@@ -37,6 +41,8 @@ When a date range is set, the system calculates the prior period and shows perce
 
 The LO breakdown shows each loan officer's individual profitability:
 
+<div className="table-container">
+
 | Column | Description |
 |--------|-------------|
 | **Name** | Loan officer's full name |
@@ -46,11 +52,15 @@ The LO breakdown shows each loan officer's individual profitability:
 | **Net Profit** | Revenue - Commissions - Expenses |
 | **Margin** | Net Profit / Revenue as a percentage |
 
+</div>
+
 This view is sorted by revenue (highest first) and helps identify which LOs are the most profitable -- not just the highest producing, but those who generate the best margin after accounting for their costs.
 
 ## By Branch
 
 The branch breakdown aggregates the same profitability metrics by branch location:
+
+<div className="table-container">
 
 | Column | Description |
 |--------|-------------|
@@ -61,9 +71,13 @@ The branch breakdown aggregates the same profitability metrics by branch locatio
 | **Net Profit** | Revenue - Commissions - Expenses |
 | **Margin** | Net Profit / Revenue as a percentage |
 
+</div>
+
 ## Monthly P&L
 
 The monthly profit-and-loss view breaks down financial performance by calendar month, providing a time-series view of profitability.
+
+<div className="table-container">
 
 | Column | Description |
 |--------|-------------|
@@ -72,6 +86,8 @@ The monthly profit-and-loss view breaks down financial performance by calendar m
 | **Expenses** | Expenses dated to that month |
 | **Commissions** | Wages from pay periods starting in that month |
 | **Net Profit** | Revenue - Commissions - Expenses |
+
+</div>
 
 The monthly P&L is useful for identifying seasonal trends in profitability, spotting months where costs spiked, and tracking the trajectory of margins over time.
 
@@ -97,8 +113,12 @@ This means a loan officer's profitability reflects:
 
 Profitability analytics support the following filters:
 
+<div className="table-container">
+
 | Filter | Description |
 |--------|-------------|
 | **Date Range** | Scope the analysis period. Revenue uses funded date; expenses use expense date; commissions use pay period overlap. |
 | **Loan Officer** | Filter to a specific LO's profitability |
 | **Branch** | Filter to a specific branch. Applies to loans (via LO's branch), payroll (via employee's branch), and expenses (via employee's branch). |
+
+</div>

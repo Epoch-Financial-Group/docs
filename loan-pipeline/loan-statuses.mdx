@@ -5,6 +5,8 @@ description: "Keystone uses 16 loan statuses organized across four phases — or
 
 ## Status overview
 
+<div className="table-container">
+
 | # | Status | Phase | Description |
 |---|--------|-------|-------------|
 | 1 | App Intake | Origination | The loan application has been received and initial data entry is underway. Default status for new loans. |
@@ -23,6 +25,8 @@ description: "Keystone uses 16 loan statuses organized across four phases — or
 | 14 | Approved for Payout | Post-Closing | Revenue verified and approved for commission payout. |
 | 15 | Commission Paid | Post-Closing | All commissions have been paid out. The loan is fully settled. |
 | 16 | Adverse | Terminal | The loan has been denied, withdrawn, or otherwise terminated. |
+
+</div>
 
 ## Typical lifecycle flow
 
@@ -89,6 +93,8 @@ A loan can move to Adverse from any other status.
 
 Each status is displayed with a color-coded badge throughout the application:
 
+<div className="table-container">
+
 | Color | Statuses |
 |-------|----------|
 | **Gray (muted)** | App Intake |
@@ -98,6 +104,8 @@ Each status is displayed with a color-coded badge throughout the application:
 | **Secondary** | Loan Setup, Docs Out |
 | **Green (success)** | Funded, Check Received, Approved for Payout, Commission Paid |
 | **Red (destructive)** | Adverse |
+
+</div>
 
 ## How to change a loan's status
 

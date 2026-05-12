@@ -15,6 +15,8 @@ When a pay period is selected, the report displays two main sections:
 
 The top section shows a summary row for each employee who earned commissions in the selected pay period:
 
+<div className="table-container">
+
 | Column | Description |
 |--------|-------------|
 | **Employee Name** | Full name of the employee |
@@ -26,12 +28,16 @@ The top section shows a summary row for each employee who earned commissions in 
 | **Draw Data** | Previous balance, payment, and carry-over |
 | **Net Pay** | Final payable amount after all deductions and draw adjustments |
 
+</div>
+
 Click on an employee's name to navigate to their **individual report detail** page.
 
 
 ### Loan Breakdown Table
 
 Below the employee summary, the report shows a per-loan breakdown:
+
+<div className="table-container">
 
 | Column | Description |
 |--------|-------------|
@@ -45,6 +51,8 @@ Below the employee summary, the report shows a per-loan breakdown:
 | **File Fee** | The file fee deducted |
 | **Adjustments** | Net adjustment amount from loan-level adjustments |
 | **Net Commission** | The final commission amount for the loan officer |
+
+</div>
 
 
 ## Per-Employee Report Detail
@@ -65,6 +73,8 @@ The employee report detail includes:
 
 Each line item represents a commission earned on a specific loan, grouped by the employee's role:
 
+<div className="table-container">
+
 | Column | Description |
 |--------|-------------|
 | **Role** | The capacity in which the commission was earned (Loan Officer, LOA, Processor, Branch Manager) |
@@ -84,6 +94,8 @@ Each line item represents a commission earned on a specific loan, grouped by the
 | **Adjustments** | Loan-level adjustments (for LO role only) |
 | **Net Commission** | Final commission for this line item |
 
+</div>
+
 #### Adjustment Detail
 
 For loan officer commission items, each loan's adjustments that apply to commissions are listed individually:
@@ -98,6 +110,8 @@ If the employee earns commissions in multiple roles (e.g., as a Loan Officer on 
 
 The bottom of the report shows overall totals:
 
+<div className="table-container">
+
 | Field | Description |
 |-------|-------------|
 | **Total Commission** | Sum of all net commission line items |
@@ -106,6 +120,8 @@ The bottom of the report shows overall totals:
 | **Previous Draw Balance** | Draw balance carried in from prior periods |
 | **Draw Balance Carried Over** | Draw balance going to the next period |
 | **Commission Payable** | The final amount payable to the employee (net pay) |
+
+</div>
 
 #### Expenses
 
@@ -135,12 +151,16 @@ Both exports produce CSV files that can be opened in Excel or imported into payr
 
 Reports are available for both draft and finalized pay periods:
 
+<div className="table-container">
+
 | Aspect | Draft Period | Finalized Period |
 |--------|-------------|-----------------|
 | **Data** | Calculated on-the-fly from current rules and loan data | Calculated on-the-fly but reflects the locked state |
 | **Draw balances** | Preview only; not saved to employee records | Saved and reflected in subsequent periods |
 | **Stability** | May change as loans are added/removed or rules are updated | Locked; the calculation is consistent |
 | **Use case** | Previewing upcoming commissions | Official commission records |
+
+</div>
 
 > **Note**: Draw balance data is locked at finalization. Commission line items are recalculated from the current rule set when viewed. If rules are changed and the period is unfinalized and re-finalized, results may differ.
 
