@@ -1,0 +1,20 @@
+/* ── CTA button: Ember brand color ───────────────────────────────────────── */
+#navbar a[href="https://app.keystn.com"],
+#navbar button[data-variant="primary"],
+.navbar-cta {
+  background-color: #C84B0F !important;
+  border-color: #C84B0F !important;
+  color: #ffffff !important;
+}
+
+#navbar a[href="https://app.keystn.com"]:hover,
+#navbar button[data-variant="primary"]:hover,
+.navbar-cta:hover {
+  background-color: #a83c0b !important;
+  border-color: #a83c0b !important;
+}
+
+/* ── Slightly reduce global border radius ───────────────────────────────── */
+:root {
+  --radius: 5px;
+}
