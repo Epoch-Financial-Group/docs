@@ -1,14 +1,18 @@
 /* ── CTA button: Ember brand color + reduced radius ──────────────────────── */
-#navbar a[href="https://app.keystn.com"] {
+#navbar a[href="https://app.keystn.com"],
+#navbar *:has(> a[href="https://app.keystn.com"]) {
   background-color: #B5420A !important;
   border-color: #B5420A !important;
   outline-color: #B5420A !important;
+  box-shadow: none !important;
+  --tw-ring-color: #B5420A !important;
+  --tw-ring-shadow: none !important;
   color: #ffffff !important;
   border-radius: 6px !important;
-  box-shadow: none !important;
 }
 
-#navbar a[href="https://app.keystn.com"]:hover {
+#navbar a[href="https://app.keystn.com"]:hover,
+#navbar *:has(> a[href="https://app.keystn.com"]):hover {
   background-color: #8A3208 !important;
   border-color: #8A3208 !important;
 }
