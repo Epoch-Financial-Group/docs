@@ -3,8 +3,8 @@ a[href="https://app.keystn.com"],
 a[href="https://app.keystn.com"] *,
 a[href="https://app.keystn.com"] + *,
 *:has(> a[href="https://app.keystn.com"]) {
-  background-color: #C84B0F !important;
-  border-color: #C84B0F !important;
+  background-color: #9E3A0A !important;
+  border-color: #9E3A0A !important;
   color: #ffffff !important;
   border-radius: 6px !important;
   box-shadow: none !important;
