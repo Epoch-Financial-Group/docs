@@ -22,16 +22,51 @@ a[href="https://app.keystn.com"]:hover * {
   --radius: 5px;
 }
 
-/* ── Tables: white card on parchment background ──────────────────────────── */
+/* ── Tables: white card with proper rounded corners ──────────────────────── */
+/* border-collapse:separate is required — collapse prevents border-radius     */
 table {
   background: #ffffff;
-  border-radius: 10px !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  border-radius: 12px !important;
   border: 1px solid #E5E2DD !important;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
   overflow: hidden;
+  width: 100%;
 }
 
-thead tr {
+table th,
+table td {
+  padding: 0.65rem 1rem !important;
+  border-bottom: 1px solid #E5E2DD !important;
+  border-right: none !important;
+  border-left: none !important;
+  border-top: none !important;
+}
+
+table tbody tr:last-child td {
+  border-bottom: none !important;
+}
+
+table thead tr th {
   background: #F6F5F2;
+  font-weight: 600;
+}
+
+/* ── Table container: outer card that wraps a table ─────────────────────── */
+.table-container {
+  background: #ffffff;
+  border: 1px solid #E5E2DD;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  margin: 1.25rem 0;
+}
+
+.table-container table {
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  margin: 0 !important;
 }
 
