@@ -21,3 +21,32 @@ a[href="https://app.keystn.com"]:hover * {
 :root {
   --radius: 5px;
 }
+
+/* ── Tables: white card on parchment background ──────────────────────────── */
+table {
+  background: #ffffff;
+  border-radius: 10px !important;
+  border: 1px solid #E5E2DD !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+thead tr {
+  background: #F6F5F2;
+}
+
+/* ── Example card: for inline worked examples and walkthroughs ───────────── */
+.example-card {
+  background: #ffffff;
+  border: 1px solid #E5E2DD;
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  margin: 1.25rem 0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.example-card table {
+  box-shadow: none;
+  border: none !important;
+  margin: 0;
+}
