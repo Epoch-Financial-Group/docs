@@ -7,6 +7,18 @@
     "light": "#C84B0F",
     "dark": "#15803D"
   },
+  "background": {
+    "color": {
+      "light": "#F6F5F2",
+      "dark": "#0F0F0E"
+    }
+  },
+  "fonts": {
+    "family": "DM Sans"
+  },
+  "appearance": {
+    "default": "light"
+  },
   "favicon": "/favicon.svg",
   "logo": {
     "light": "/logo/light.svg",
@@ -177,11 +189,18 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:support@epochfinancialgroup.com"
+        "href": "mailto:support@keystn.com"
       }
-    ]
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Open Keystone",
+      "href": "https://app.keystn.com"
+    }
   },
   "footer": {
-    "socials": {}
+    "socials": {
+      "website": "https://keystn.com"
+    }
   }
 }
