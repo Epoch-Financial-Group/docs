@@ -33,7 +33,7 @@
             "group": "Getting started",
             "pages": [
               "index",
-              "getting-started/first-login",
+              "getting-started/admin-first-login",
               "getting-started/initial-setup",
               "getting-started/navigation"
             ]
