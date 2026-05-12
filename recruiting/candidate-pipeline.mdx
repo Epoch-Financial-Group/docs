@@ -1,22 +1,20 @@
 ---
 title: "Candidate Pipeline"
-description: "The candidate pipeline is the heart of the Recruiting module. It tracks every prospective hire from first contact through a final hiring decision, capturing the information you need to evaluate can..."
+description: "The candidate pipeline tracks every prospective hire from first contact through a hiring decision, capturing production history, licenses, and stage."
 ---
 
-The candidate pipeline is the heart of the Recruiting module. It tracks every prospective hire from first contact through a final hiring decision, capturing the information you need to evaluate candidates and make competitive offers.
+![Candidate pipeline](/images/recruiting/candidate-pipeline.png)
 
 ## Adding a candidate
 
 To add a new candidate to the pipeline:
 
-1. Navigate to `/{company}/recruiting`.
+1. Go to **Recruiting** in the sidebar.
 2. Click **Add Candidate**.
 3. Fill in the candidate form (described below).
 4. Click **Save**.
 
 You will be redirected to the candidate's detail page after saving.
-
-> <img alt="Screenshot: Add Candidate form showing basic info, recruiting, and production history fields" src="screenshots/candidate-form.png" />
 
 ### Candidate fields
 
@@ -83,7 +81,7 @@ Every candidate moves through a series of stages that represent their position i
 
 To change a candidate's stage:
 
-1. Navigate to the candidate's detail page at `/{company}/recruiting/{id}`.
+1. Open the candidate's detail page.
 2. Use the **Stage** dropdown to select the new stage.
 3. The stage change is saved immediately.
 
@@ -99,8 +97,6 @@ Stage changes are also reflected in the candidate list view, where stage badges 
 | Hired | Green |
 | Declined | Red |
 | Withdrawn | Muted |
-
-> <img alt="Screenshot: Candidate detail page showing the stage dropdown with color-coded options" src="screenshots/candidate-stage-select.png" />
 
 ### Terminal stages
 
@@ -146,8 +142,6 @@ Notes provide a running record of interactions, observations, and decisions abou
 
 Notes are timestamped and attributed to the employee who created them. They are displayed in reverse chronological order (newest first).
 
-> <img alt="Screenshot: Candidate notes section showing timestamped notes with author names" src="screenshots/candidate-notes.png" />
-
 ### What to record in notes
 
 Common uses for candidate notes include:
@@ -167,4 +161,3 @@ The system automatically creates a note when a candidate is converted to an empl
 
 The recruiting dashboard displays counts of candidates in each active pipeline stage, giving managers a quick overview of pipeline health. These counts exclude archived candidates and are updated in real time as candidates move through stages.
 
-> <img alt="Screenshot: Pipeline stage counts showing number of candidates at each stage" src="screenshots/pipeline-stage-counts.png" />

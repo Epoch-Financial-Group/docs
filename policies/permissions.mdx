@@ -1,10 +1,6 @@
 ---
 title: "Permissions"
-description: "Keystone provides granular access controls for policies and folders. You can restrict who can view, edit, or administer specific policies or entire folders, using either individual employee assignm..."
----
-
-Keystone provides granular access controls for policies and folders. You can restrict who can view, edit, or administer specific policies or entire folders, using either individual employee assignments or role-based rules.
-
+description: "Control who can view, edit, or administer specific policies and folders using individual employee assignments or role-based access groups."
 ---
 
 ## Permission levels
@@ -72,7 +68,6 @@ A permission applied to a specific policy affects only that policy. Use policy-l
 
 A permission applied to a folder affects all policies within that folder. This is the more efficient approach when an entire category of policies should share the same access rules.
 
-> **Screenshot placeholder:** *Permission manager panel showing a mix of employee and role-based permissions with their permission levels.*
 
 ---
 
@@ -101,7 +96,6 @@ When determining a user's effective access to a policy, Keystone evaluates permi
 5. Choose the **permission level**: Viewer, Editor, or Admin.
 6. Click **Save**.
 
-> **Screenshot placeholder:** *Add permission dialog showing the target type selector, employee/role dropdown, and permission level selector.*
 
 ### Changing a permission level
 
@@ -122,7 +116,7 @@ When a permission is removed, the user's access reverts to whatever the next app
 Only users with **Admin** permission on the policy or folder can add, change, or remove permissions. This includes:
 
 - Users explicitly granted Admin permission on the resource.
-- Super admins, who have unrestricted access to all resources.
+- Company administrators, who have unrestricted access to all resources.
 
 If you do not see the Permissions panel or the Add Permission button, you do not have Admin access to the resource.
 

@@ -1,9 +1,9 @@
 ---
 title: "Running Commissions"
-description: "Running commissions is the process of grouping funded loans into pay periods, calculating each employee's compensation, reviewing the results, and finalizing the pay period. This page covers the fu..."
+description: "Running commissions covers how to group funded loans into pay periods, calculate compensation, review results, and finalize each pay period."
 ---
 
-Running commissions is the process of grouping funded loans into pay periods, calculating each employee's compensation, reviewing the results, and finalizing the pay period. This page covers the full workflow from pay period creation through finalization.
+![Run commissions pay period view](/images/commissions/run-commissions.png)
 
 ## What Is a Pay Period?
 
@@ -46,11 +46,8 @@ Monthly periods can be configured as:
 
 ### Step 1: Navigate to Run Commissions
 
-1. From the sidebar, click **Run Commissions**.
-2. The page displays a list of all pay periods, ordered by date (most recent first).
+Go to **Commission > Run Commissions** in the sidebar. The page displays all pay periods ordered by date.
 
-{/* Screenshot placeholder: Run Commissions list page */}
-> **[Screenshot]** The Run Commissions page showing pay periods with their date ranges, loan counts, and statuses (Draft or Finalized).
 
 ### Step 2: Auto-Assignment of Loans
 
@@ -72,8 +69,6 @@ Click on a pay period to view its details. The pay period detail view is organiz
 2. **Preview** -- See calculated commissions before finalizing
 3. **Finalize** -- Lock in the commissions and close the period
 
-{/* Screenshot placeholder: Pay period detail view with step indicator */}
-> **[Screenshot]** The pay period detail view showing the three-step wizard with "Review" active, and tabs for Earnings, Unassigned Loans, Expenses, and Draws.
 
 ### Step 4: Review (Step 1 of 3)
 
@@ -88,8 +83,6 @@ Displays all loans in the pay period with:
 - Loan officer name
 - Calculated commission amounts (gross, file fee, net)
 
-{/* Screenshot placeholder: Earnings tab showing loan list */}
-> **[Screenshot]** The Earnings tab with a table of loans and their commission calculations.
 
 From this tab you can:
 - **Remove a loan** from the pay period (it becomes unassigned and can be moved to a different period)
@@ -135,8 +128,6 @@ When you advance to the Preview step, the commission engine runs a full calculat
   - Draw balance changes
   - Net pay
 
-{/* Screenshot placeholder: Preview step showing employee summary cards */}
-> **[Screenshot]** The Preview step displaying summary cards for each employee with their calculated commission totals.
 
 This is a preview -- nothing is saved yet. You can go back to the Review step to make changes (add/remove loans, adjust draws) and re-preview.
 
@@ -145,17 +136,9 @@ This is a preview -- nothing is saved yet. You can go back to the Review step to
 When everything looks correct, the Finalize step presents a confirmation screen:
 
 1. Click **Finalize Pay Period**.
-2. The system:
-   - Runs the commission engine one final time
-   - Creates or updates **PayPeriodEmployee** records for each employee with their draw data
-   - Updates each employee's running **draw balance** on their employee record
-   - Records which **commission rules** were applied (PayPeriodCommissionRule snapshot)
-   - Marks the pay period as **Finalized** with a timestamp and the finalizing user's ID
-   - Generates **commission accrual journal entries** in the accounting system
+2. The system runs the commission engine one final time, locks draw balances for each employee, records which rules were applied, marks the period as **Finalized**, and generates commission accrual journal entries.
 3. The pay period is now locked.
 
-{/* Screenshot placeholder: Finalize step with confirmation and export buttons */}
-> **[Screenshot]** The Finalize step showing the "Ready to Finalize" confirmation with Finalize, Export Detail, and Export Summary buttons.
 
 After finalization, you can:
 - **Export Detail CSV** -- A line-by-line export of every commission result (loan, recipient, rule, amounts)
@@ -251,7 +234,7 @@ Previous Draw Balance (from prior periods)
 
 ### Draw Carry-Over
 
-By default, draw balances carry over between periods. If an employee's `isDrawCarryOverDisabled` flag is set, the draw balance resets to zero at the end of each period (the company absorbs the deficit).
+By default, draw balances carry over between periods. Per-employee, carry-over can be disabled so the draw balance resets to zero at the end of each period.
 
 ### Example
 
@@ -278,15 +261,7 @@ Calculation:
 
 ### Unfinalizing a Pay Period
 
-If corrections are needed after finalization, an administrator can **unfinalize** a pay period:
-
-1. On the pay period detail page, click **Unfinalize**.
-2. The system:
-   - Restores each employee's draw balance to their **previous** value (before this period)
-   - Deletes the PayPeriodCommissionRule snapshots
-   - Deletes the PayPeriodEmployee records
-   - Sets the pay period back to Draft status
-3. The pay period can now be edited and re-finalized.
+If corrections are needed after finalization, an administrator can **unfinalize** a pay period. Click **Unfinalize** on the pay period detail page. This reverses draw balance changes and returns the period to Draft status so it can be edited and re-finalized.
 
 > **Caution**: Unfinalizing a pay period reverses draw balance changes. If subsequent pay periods have already been finalized, their draw calculations may become inconsistent. Unfinalize only when necessary and consider the downstream impact.
 

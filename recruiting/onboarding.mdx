@@ -1,9 +1,7 @@
 ---
 title: "Onboarding"
-description: "Onboarding is the process of converting an accepted candidate into a fully operational employee. Keystone provides a guided conversion workflow that creates the employee record, transfers data from..."
+description: "Convert a hired candidate into an employee with a guided workflow that creates their record, transfers licenses, and assigns an onboarding checklist."
 ---
-
-Onboarding is the process of converting an accepted candidate into a fully operational employee. Keystone provides a guided conversion workflow that creates the employee record, transfers data from the candidate profile, and optionally generates an onboarding checklist with tasks to complete before the new hire is ready to work.
 
 ## The conversion workflow
 
@@ -11,11 +9,9 @@ When a candidate reaches the **Accepted** stage (or any stage prior to conversio
 
 ### Starting the conversion
 
-1. Navigate to the candidate's detail page at `/{company}/recruiting/{id}`.
+1. Open the candidate's detail page.
 2. Click **Convert to Employee**.
 3. You will be taken to the conversion form.
-
-> <img alt="Screenshot: Convert to Employee button on the candidate detail page" src="screenshots/convert-candidate-button.png" />
 
 ### Conversion form fields
 
@@ -35,15 +31,13 @@ The conversion form is pre-filled with data from the candidate record. Review an
 
 Available roles:
 
-| Role | Label |
-|------|-------|
-| LoanOfficer | Loan Officer |
-| LoanOfficerAssistant | Loan Officer Assistant |
-| Processor | Processor |
-| Contractor | Contractor |
-| BranchManager | Branch Manager |
-
-> <img alt="Screenshot: Convert to Employee form showing pre-filled fields and role checkboxes" src="screenshots/convert-candidate-form.png" />
+| Role |
+|------|
+| Loan Officer |
+| Loan Officer Assistant |
+| Processor |
+| Contractor |
+| Branch Manager |
 
 #### Onboarding checklist
 
@@ -59,13 +53,12 @@ When a template is selected, the system creates a task checklist with all of the
 
 The conversion process performs the following steps in a single transaction:
 
-1. **Employee record is created** with the information from the form. The employee's `isSetupComplete` flag is set to `false`.
-2. **State licenses are copied** from the candidate to the employee. Every state license on the candidate record is duplicated on the new employee record, preserving the state, license number, and expiration date.
+1. **Employee record is created** with the information from the form.
+2. **State licenses are copied** from the candidate to the employee, preserving state, license number, and expiration date.
 3. **Candidate stage is updated** to **Hired** automatically.
-4. **Candidate is linked** to the new employee via the `convertedEmployeeId` field.
-5. **Onboarding checklist is created** (if a template was selected) with tasks and due dates.
-6. **A note is added** to the candidate's notes timeline recording the conversion event.
-7. **You are redirected** to the new employee's detail page.
+4. **Onboarding checklist is created** (if a template was selected) with tasks and due dates.
+5. **A note is added** to the candidate's notes timeline recording the conversion event.
+6. **You are redirected** to the new employee's detail page.
 
 ## What data carries over
 
@@ -91,7 +84,7 @@ The following candidate data is **not** copied to the employee but remains on th
 
 ## Post-hire setup steps
 
-After conversion, the new employee typically needs additional setup before they are fully operational. The `isSetupComplete` flag on the employee record tracks whether this setup has been finished.
+After conversion, the new employee typically needs additional setup before they are fully operational.
 
 ### Typical post-hire tasks
 
@@ -106,7 +99,7 @@ These tasks may be included in your onboarding checklist template or handled man
 7. **State license verification** -- Verify that all state licenses are current and properly recorded.
 8. **Equipment and email setup** -- Provide necessary hardware, software, and email accounts.
 9. **Introduction** -- Introduce the new hire to the team and assign a mentor if applicable.
-10. **Mark setup complete** -- Update the employee's `isSetupComplete` flag once all steps are done.
+10. **Mark setup complete** -- Update the employee's setup status once all steps are done.
 
 ## Onboarding dashboard
 
@@ -114,7 +107,7 @@ The onboarding dashboard provides a view of all employees who have not yet compl
 
 ### Accessing the dashboard
 
-Navigate to `/{company}/recruiting/onboarding`.
+Go to **Recruiting > Onboarding** in the sidebar.
 
 ### What the dashboard shows
 
@@ -130,8 +123,6 @@ For each employee in the onboarding process:
 | **Checklists** | Onboarding checklists assigned, with task counts |
 | **Progress** | Percentage of completed tasks across all checklists |
 
-> <img alt="Screenshot: Onboarding dashboard showing new employees with progress bars for their onboarding checklists" src="screenshots/onboarding-dashboard.png" />
-
 ### Tracking progress
 
 If an onboarding checklist was created during conversion, the dashboard shows real-time progress:
@@ -144,4 +135,4 @@ Clicking on an employee's name takes you to their employee detail page, where yo
 
 ## Preventing duplicate conversions
 
-A candidate can only be converted to an employee once. If the candidate already has a `convertedEmployeeId` set, the conversion button is disabled and the system displays a link to the existing employee record. This prevents accidental duplicate employee records.
+A candidate can only be converted to an employee once. If the candidate has already been converted, the conversion button is disabled and a link to the existing employee record is shown. This prevents accidental duplicate employee records.

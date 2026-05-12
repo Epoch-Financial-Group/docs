@@ -1,10 +1,6 @@
 ---
 title: "Checklists"
-description: "Checklists are specific instances of task templates. When you instantiate a template, Keystone creates a checklist containing individual tasks for each template item, with due dates calculated from..."
----
-
-Checklists are specific instances of task templates. When you instantiate a template, Keystone creates a checklist containing individual tasks for each template item, with due dates calculated from the start date you provide. Checklists give you a structured way to track multi-step processes from start to finish.
-
+description: "Checklists are instances of task templates, created with individual tasks and due dates automatically calculated from a trigger date you specify."
 ---
 
 ## What a checklist contains
@@ -27,8 +23,7 @@ A checklist consists of:
 
 ## Creating a checklist from a template
 
-1. Navigate to **Tasks > Checklists** in the sidebar, or go to `/{company}/tasks/checklists`.
-2. Click **New Checklist**.
+1. Navigate to **Tasks > Checklists** in the sidebar and click **New Checklist**.
 3. Fill in the checklist details:
    - **Template** (required) -- Select the template to instantiate.
    - **Name** (required) -- Give this instance a descriptive name. For example, if using the "New Hire Onboarding" template for a specific employee, name it "Onboarding - Jane Smith".
@@ -39,7 +34,6 @@ A checklist consists of:
 
 Keystone creates the checklist and generates a task for each item in the template. You are redirected to the checklist detail page.
 
-> **Screenshot placeholder:** *New checklist form showing template selector, name field, subject employee dropdown, assignee dropdown, and start date picker.*
 
 ---
 
@@ -59,8 +53,7 @@ Items with a due-days offset of 0 are due on the start date itself.
 
 ## Viewing a checklist
 
-1. Navigate to **Tasks > Checklists**.
-2. The checklist list shows all checklists with:
+1. Go to **Tasks > Checklists**. The list shows all checklists with:
    - Checklist name
    - Associated template
    - Subject employee (if set)
@@ -68,7 +61,6 @@ Items with a due-days offset of 0 are due on the start date itself.
    - Progress bar (completed / total tasks)
 3. Click a checklist to open its detail view.
 
-> **Screenshot placeholder:** *Checklist list showing several checklists with progress indicators.*
 
 ### Checklist detail view
 
@@ -83,7 +75,6 @@ The detail view shows:
   - Sort order matching the template item order
 - **Completion progress** -- A count and/or progress bar showing how many tasks are completed out of the total.
 
-> **Screenshot placeholder:** *Checklist detail page showing metadata at the top and a list of tasks with status toggles and progress indicator.*
 
 ---
 

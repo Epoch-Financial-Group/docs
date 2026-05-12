@@ -1,44 +1,23 @@
 ---
 title: "Company Settings"
-description: "Company Settings is the central configuration page for your Keystone account. Here you define your company identity, select your Loan Origination System, enter your NMLS number, and configure payro..."
+description: "Company Settings is where you define your company identity, select your LOS, enter your NMLS number, and configure payroll and billing options."
 ---
 
-Company Settings is the central configuration page for your Keystone account. Here you define your company identity, select your Loan Origination System, enter your NMLS number, and configure payroll schedules that drive commission and draw calculations across the platform.
+Go to **Administration > Company Settings** in the sidebar.
 
-## Accessing Company Settings
-
-1. Open the sidebar and expand the **Administration** section.
-2. Click **Company Settings**.
-
-This takes you to the settings page at `/{your-company}/settings`.
-
-> <img alt="Screenshot: Administration section in sidebar with Company Settings highlighted" src="screenshots/company-settings-nav.png" />
+![Company Settings page](/images/company-setup/company-settings.png)
 
 ---
 
 ## Company name
 
-The company name appears throughout Keystone -- in headers, reports, and exported documents.
-
-### To change your company name
-
-1. Navigate to **Administration > Company Settings**.
-2. Locate the **Company Name** field.
-3. Enter the new name.
-4. Click **Save Changes**.
+The company name appears throughout Keystone -- in headers, reports, and exported documents. Update the **Company Name** field and click **Save Changes**.
 
 ---
 
 ## NMLS number
 
-Your company-level NMLS (Nationwide Multistate Licensing System) number is stored here. This is separate from individual employee NMLS numbers.
-
-### To set or update your NMLS number
-
-1. Navigate to **Administration > Company Settings**.
-2. Find the **NMLS** field.
-3. Enter your company NMLS number (e.g., `123456`).
-4. Click **Save Changes**.
+Your company-level NMLS (Nationwide Multistate Licensing System) number. This is separate from individual employee NMLS numbers. Enter it in the **NMLS** field and click **Save Changes**.
 
 ---
 
@@ -56,20 +35,13 @@ Keystone integrates with several popular Loan Origination Systems. Selecting you
 | **BytePro** | Byte Software BytePro Enterprise |
 | **Other** | Any LOS not listed above |
 
-### To select your LOS
-
-1. Navigate to **Administration > Company Settings**.
-2. Open the **Loan Origination System** dropdown.
-3. Select your LOS from the list. If yours is not listed, choose **Other** and fill in the **Other LOS** text field that appears.
-4. Click **Save Changes**.
-
-> <img alt="Screenshot: Loan Origination System dropdown on Company Settings page" src="screenshots/los-selection.png" />
+Open the **Loan Origination System** dropdown, select your LOS (choose **Other** if yours is not listed), and click **Save Changes**.
 
 ---
 
 ## Payroll settings
 
-Payroll settings control how Keystone calculates pay periods, commission schedules, and draws for your employees. The configuration is stored as flexible JSON, which means it can accommodate a wide range of payroll structures.
+Payroll settings control how Keystone calculates pay periods, commission schedules, and draws for your employees.
 
 ### Commission schedule
 
@@ -103,18 +75,7 @@ The payroll schedule can differ from the commission schedule. For example, commi
 | **Daily Payroll Enabled** | Enable daily payroll mode |
 | **Paycheck Date Offset** | Number of days between the end of a period and the actual paycheck date (0--31) |
 
-### To update payroll settings
-
-1. Navigate to **Administration > Company Settings**.
-2. Scroll to the **Payroll Settings** section.
-3. Adjust the fields as needed. Changes are validated before saving.
-4. Click **Save Changes**.
-
-> <img alt="Screenshot: Payroll settings form with commission and draw configuration" src="screenshots/payroll-settings.png" />
-
-<Info>
-Payroll settings are stored as a JSON object on the company record. This means they are extensible -- new settings can be added without database migrations.
-</Info>
+Scroll to the **Payroll Settings** section, adjust the fields as needed, and click **Save Changes**.
 
 ---
 

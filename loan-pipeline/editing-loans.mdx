@@ -1,15 +1,11 @@
 ---
 title: "Editing Loans"
-description: "Once a loan is created, you can update any of its details from the loan detail page. The detail page is organized into tabs, each covering a different aspect of the loan."
+description: "How to update loan details from the loan detail page, which is organized into tabs covering borrower, property, financial, and team information."
 ---
-
-Once a loan is created, you can update any of its details from the loan detail page. The detail page is organized into tabs, each covering a different aspect of the loan.
 
 ## Getting to the loan detail page
 
-- Click any loan row in the pipeline table, or
-- Click the **Loan #** link in the pipeline, or
-- Navigate directly to `/{company}/loans/{id}`
+Click any loan row in the pipeline table, or click the **Loan #** link.
 
 ## Loan detail page layout
 
@@ -28,7 +24,6 @@ The loan detail page consists of:
 | **Accounting** | Journal entries generated for this loan |
 | **Quality Control** | QC review items and checklist |
 
-> **Screenshot placeholder:** *Loan detail page showing header, summary cards, and tabbed content.*
 
 ---
 
@@ -44,7 +39,6 @@ The Overview tab has an inline editing mode that lets you update loan details wi
 4. Make your changes.
 5. Click **Save** to commit the changes, or **Cancel** to discard them.
 
-> **Screenshot placeholder:** *Overview tab in edit mode showing editable fields with Save/Cancel buttons.*
 
 ### Editable fields on the Overview tab
 
@@ -93,9 +87,8 @@ Note: **LTV** is displayed but not directly editable from this view.
 
 ## Editing from the full edit form
 
-For a more traditional form experience, click the **Edit Loan** button in the page header. This navigates to `/{company}/loans/{id}/edit`, which shows the same form layout used when creating a loan, pre-populated with the current values.
+For a more traditional form experience, click **Edit Loan** in the page header. This shows the same form used when creating a loan, pre-populated with the current values.
 
-> **Screenshot placeholder:** *Full edit form at /\{company\}/loans/\{id\}/edit.*
 
 ---
 
@@ -135,7 +128,6 @@ The Revenue tab also displays calculated summary cards:
 - **Total Adjustments** -- Sum of all flat-amount adjustments
 - **Net Revenue** -- Gross revenue + line items + adjustments
 
-> **Screenshot placeholder:** *Revenue tab showing summary cards and line items table in edit mode.*
 
 ---
 
@@ -163,7 +155,6 @@ Setting certain dates for the first time triggers automatic accounting journal e
 
 These entries are only generated once. Changing the date after the initial set does not regenerate entries.
 
-> **Screenshot placeholder:** *Dates tab showing date picker fields in two columns.*
 
 ---
 

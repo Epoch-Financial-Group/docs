@@ -1,13 +1,11 @@
 ---
 title: "Performance Boosters"
-description: "Performance boosters add bonus commissions when an employee meets production thresholds over a defined time period. They incentivize loan officers to hit volume or unit count targets by rewarding h..."
+description: "Performance boosters add bonus commissions when an employee meets volume or unit count thresholds over a defined period, with tiered reward levels."
 ---
 
-Performance boosters add bonus commissions when an employee meets production thresholds over a defined time period. They incentivize loan officers to hit volume or unit count targets by rewarding higher production with additional compensation.
+## What is a performance booster?
 
-## What Is a Performance Booster?
-
-A **CommissionPerformanceBooster** is attached to a commission template and defines:
+A performance booster is attached to a commission template and defines:
 
 - **Measurement type**: What metric to measure (dollar volume or loan count)
 - **Time window**: The period over which production is measured
@@ -43,8 +41,6 @@ Each commission template can have one performance booster (with multiple thresho
 2. Click **Edit**.
 3. Switch to the **Performance Booster** tab (or scroll to the Performance Booster section).
 
-{/* Screenshot placeholder: Performance booster section in template editor */}
-> **[Screenshot]** The Performance Booster section with measurement type, time window, and condition tiers.
 
 ### Step 2: Enable the Booster
 
@@ -111,8 +107,6 @@ Each condition defines a production tier with a bonus amount:
 
 Add multiple conditions to create a tiered bonus structure. The engine evaluates conditions from the **highest threshold down** and uses the first one the employee qualifies for.
 
-{/* Screenshot placeholder: Performance condition rows */}
-> **[Screenshot]** Threshold condition rows showing threshold value, bonus amount, and bonus type for each tier.
 
 #### How Thresholds Are Evaluated
 
@@ -252,6 +246,6 @@ With the Silver tier qualifying and a $2,000 gross commission:
 
 - Each template can have **one** performance booster, but that booster can have **many** threshold conditions (tiers).
 - The booster must be set to **Active** to be evaluated. Deactivating the booster disables all performance bonuses without deleting the configuration.
-- Production stats are calculated by querying all funded loans for the loan officer within the time window. This includes loans across all pay periods.
+- Production stats are calculated from all funded loans for the loan officer within the time window, across all pay periods.
 - The performance bonus is calculated per loan. Each loan in a pay period is independently evaluated against the booster thresholds.
 - If an employee's production does not meet any threshold, no bonus is added -- the base or rule commission stands as-is.

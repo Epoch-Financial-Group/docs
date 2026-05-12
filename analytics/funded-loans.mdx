@@ -1,15 +1,13 @@
 ---
 title: "Funded Loans"
-description: "The Funded Loans module provides a comprehensive analysis of your historical funded loan data, including summary KPIs with period-over-period comparisons, multi-year monthly trend charts, quarterly..."
+description: "Funded Loans provides historical analysis of closed production with period-over-period KPIs, multi-year trend charts, and quarterly breakdowns."
 ---
-
-The Funded Loans module provides a comprehensive analysis of your historical funded loan data, including summary KPIs with period-over-period comparisons, multi-year monthly trend charts, quarterly breakdowns, and loan officer efficiency metrics.
 
 ## Overview
 
-This module analyzes all loans that have a `fundedDate` set (regardless of their current status). It is the primary view for understanding your production history and identifying trends.
+This module analyzes all loans with a funded date set, regardless of their current status. It is the primary view for understanding your production history and identifying trends.
 
-> <img alt="Screenshot: Funded loans dashboard" src="screenshots/funded-dashboard.png" />
+![Funded loans dashboard](/images/analytics/funded-loans.png)
 
 ## Summary KPIs
 
@@ -26,8 +24,6 @@ The top of the dashboard displays five key metrics for the selected period, each
 ### Period-over-Period Comparison
 
 When you set a date range, the system automatically calculates the prior period of the same duration. For example, if you select January 1 through March 31, the comparison period is the preceding October 1 through December 31. Each KPI shows the percentage change from the prior period, making it easy to spot growth or decline.
-
-> <img alt="Screenshot: KPI cards with comparison arrows" src="screenshots/funded-kpis.png" />
 
 ## Breakdown Views
 
@@ -48,13 +44,9 @@ Each breakdown shows:
 - **Revenue** -- Total broker compensation
 - **% of Total** -- This category's share of the total loan count
 
-> <img alt="Screenshot: Funded breakdown tables" src="screenshots/funded-breakdowns.png" />
-
 ## Monthly Trend Charts
 
 Multi-year monthly trend charts let you compare production across years. The system detects all years present in your data and overlays them on the same chart, so you can spot seasonal patterns and year-over-year growth.
-
-> <img alt="Screenshot: Monthly volume trend chart" src="screenshots/funded-monthly-trends.png" />
 
 Three chart views are available:
 
@@ -70,8 +62,6 @@ Each chart shows all 12 months (Jan through Dec) on the x-axis, with a separate 
 
 The quarterly view aggregates funded data for the most recent year into four quarters:
 
-> <img alt="Screenshot: Quarterly breakdown chart" src="screenshots/funded-quarterly.png" />
-
 | Column | Description |
 |--------|-------------|
 | **Quarter** | Q1, Q2, Q3, or Q4 |
@@ -82,8 +72,6 @@ The quarterly view aggregates funded data for the most recent year into four qua
 ## LO Efficiency Metrics
 
 The loan officer efficiency table measures how quickly each LO moves loans through the pipeline from submission to funding.
-
-> <img alt="Screenshot: LO efficiency table" src="screenshots/funded-lo-efficiency.png" />
 
 | Metric | Description |
 |--------|-------------|

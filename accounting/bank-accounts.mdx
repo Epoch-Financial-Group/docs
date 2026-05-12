@@ -1,9 +1,7 @@
 ---
 title: "Bank Accounts"
-description: "The Bank Accounts section in Keystone lets you track your company's real-world bank accounts alongside your chart of accounts. Each bank account is linked to a corresponding general ledger account,..."
+description: "Bank Accounts lets you track your company's real-world bank accounts, each linked to a corresponding general ledger account for reconciliation."
 ---
-
-The Bank Accounts section in Keystone lets you track your company's real-world bank accounts alongside your chart of accounts. Each bank account is linked to a corresponding general ledger account, keeping your internal books and external bank records connected.
 
 ## What are bank accounts in Keystone?
 
@@ -17,11 +15,8 @@ A bank account in Keystone represents a real financial account at a bank or fina
 
 Bank accounts are distinct from chart of accounts entries. The chart of accounts has a general ledger account (e.g., "1010 - Cash - Operating") that tracks the balance according to your books. The bank account represents the same account from the bank's perspective. Reconciliation (see [Bank Reconciliation](/accounting/bank-reconciliation)) is the process of verifying these two views agree.
 
-## Navigating to bank accounts
+Go to **Accounting > Bank Accounts** in the sidebar.
 
-The Bank Accounts page is located at **Accounting > Bank Accounts**. You can also reach it from the Accounting dashboard by clicking the "Bank Accounts" card.
-
-> **Screenshot placeholder:** *Bank Accounts page showing a table of bank accounts with columns for name, institution, linked account, balance, and transaction count.*
 
 ## Bank account list
 
@@ -105,7 +100,6 @@ Below the summary cards, a table lists the most recent bank transactions (up to 
 | **Amount** | The transaction amount, formatted as currency |
 | **Status** | "Matched" (green badge) if the transaction has been matched to a journal entry, or "Unmatched" (gray badge) if not |
 
-> **Screenshot placeholder:** *Bank Account detail page showing the summary cards, linked account badge, and transaction table with matched/unmatched status badges.*
 
 ## Viewing bank transactions
 
@@ -118,17 +112,9 @@ Each bank transaction in the detail view shows:
 
 Matched transactions have been verified against your internal records through the reconciliation process. Unmatched transactions need to be reviewed -- they may represent transactions that have not yet been recorded as journal entries, or they may need to be excluded.
 
-## Future Plaid integration
+## Bank transaction import
 
-Keystone includes infrastructure for a future **Plaid** integration that will enable:
-
-- **Automatic bank connection** -- Link your bank accounts via Plaid's secure connection flow instead of manually entering account details
-- **Automatic transaction import** -- Bank transactions are pulled automatically from your bank, eliminating manual data entry
-- **Real-time balance updates** -- Account balances are synced periodically with your bank
-
-The data model already supports Plaid fields (`plaidItemId`, `plaidAccessToken`, `plaidAccountId`, `lastSyncedAt`) on bank accounts, and `plaidTransactionId` on bank transactions. When enabled, the Plaid integration will populate these fields automatically.
-
-Until Plaid is enabled, bank transactions can be entered manually or imported from other sources.
+Bank transactions can be entered manually or imported. A future Plaid integration will enable automatic bank connection and transaction sync.
 
 ## Tips
 

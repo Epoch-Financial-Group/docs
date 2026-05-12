@@ -1,9 +1,9 @@
 ---
 title: "Pipeline Overview"
-description: "The Loan Pipeline is Keystone's central workspace for tracking mortgage loans from application intake through funding and commission payout. It provides a real-time view of every active deal in you..."
+description: "An overview of the Loan Pipeline, Keystone's central workspace for tracking mortgage loans from application through funding and commission payout."
 ---
 
-The Loan Pipeline is Keystone's central workspace for tracking mortgage loans from application intake through funding and commission payout. It provides a real-time view of every active deal in your brokerage, along with filtering, sorting, and search tools to help you focus on what matters.
+![Loan pipeline](/images/loan-pipeline/pipeline-view.png)
 
 ## What the pipeline shows
 
@@ -21,17 +21,15 @@ The pipeline is a paginated table of all loans in your company. Each row display
 | **Type** | Loan type (Conventional, FHA, VA, etc.) |
 | **Loan Amount** | Total loan amount, formatted as currency |
 
-> **Screenshot placeholder:** *Pipeline table view showing loan rows with status badges and key columns.*
 
 ## Navigating to the pipeline
 
-The pipeline lives at `/{company}/loans`. You can reach it from the sidebar navigation by clicking **Loans**.
+Click **Loan Pipeline** in the sidebar.
 
 ## Column visibility
 
 Not every column is relevant to every user. Click the **column visibility toggle** in the toolbar to show or hide individual columns. Your preferences are saved in your browser and persist across sessions.
 
-> **Screenshot placeholder:** *Column visibility dropdown with checkboxes for each column.*
 
 ## Searching loans
 
@@ -44,7 +42,6 @@ The pipeline toolbar includes a search bar. Type a query and press Enter to sear
 
 Search is case-insensitive and matches partial text.
 
-> **Screenshot placeholder:** *Search bar in the pipeline toolbar with an active search query.*
 
 ## Filtering loans
 
@@ -60,7 +57,6 @@ Active filters appear as badge pills in the toolbar. Click the **X** on a badge 
 
 The status filter dropdown shows a count next to each status, so you can quickly see how many loans are in each stage.
 
-> **Screenshot placeholder:** *Filter panel open with Status, Loan Officer, and Lender dropdowns.*
 
 ## Sorting
 
@@ -85,11 +81,15 @@ The pipeline displays 25 loans per page by default. Navigation controls appear a
 
 ## Actions
 
-The pipeline page header provides two action buttons:
+Administrators have two additional action buttons in the pipeline header:
 
-- **Upload CSV** -- Navigate to the bulk upload page to import loans from a CSV file
-- **Add Loan** -- Navigate to the loan creation form to add a single loan manually
+- **Upload CSV** -- Import loans in bulk from a CSV file
+- **Add Loan** -- Manually create a new loan
+
+These buttons are only visible to company administrators.
+
+![Pipeline view with admin actions](/images/loan-pipeline/pipeline-view-admin.png)
 
 ## Clicking a loan row
 
-Click anywhere on a loan row to navigate to that loan's detail page, where you can view and edit all loan information, manage the team, track revenue, and more.
+Click anywhere on a loan row to navigate to that loan's detail page, where you can view loan information, the team, status history, and notes.

@@ -1,13 +1,11 @@
 ---
 title: "QC Reviews"
-description: "A QC review is the audit of a specific loan against a QC template's checklist. Each review tracks the reviewer, the review status, individual item results (Pass, Fail, N/A), notes, and summary coun..."
+description: "A QC review audits a specific loan against a template checklist, tracking Pass/Fail/N/A results, reviewer notes, and an overall review status."
 ---
-
-A QC review is the audit of a specific loan against a QC template's checklist. Each review tracks the reviewer, the review status, individual item results (Pass, Fail, N/A), notes, and summary counts. This page covers every aspect of creating, conducting, and completing QC reviews.
 
 ## QC review dashboard
 
-The QC review dashboard is located at `/{company}/qc`. It displays a paginated table of all reviews with the following columns:
+Go to **Quality Control > QC Dashboard** in the sidebar. The dashboard displays a paginated table of all reviews with the following columns:
 
 | Column | Description |
 |--------|-------------|
@@ -19,8 +17,6 @@ The QC review dashboard is located at `/{company}/qc`. It displays a paginated t
 | **Selection** | The month the loan was selected for review |
 | **Pass / Fail / N/A** | Summary counts of item results |
 | **Created** | When the review was created |
-
-> <img alt="Screenshot: QC Review dashboard table showing review rows with status badges and result counts" src="screenshots/qc-review-dashboard.png" />
 
 ### Filtering reviews
 
@@ -45,13 +41,10 @@ Random selection is the primary method for building a compliant QC sample. It us
 
 **How to run a random selection:**
 
-1. Navigate to `/{company}/qc`.
-2. Click **Run Selection** in the toolbar.
+1. Go to the QC Dashboard and click **Run Selection** in the toolbar.
 3. Select the target **month** (defaults to the current month).
 4. Optionally enter a **target count** to override the percentage-based calculation.
 5. Click **Run Selection**.
-
-> <img alt="Screenshot: QC Selection dialog with month picker, target count field, and results summary" src="screenshots/qc-selection-dialog.png" />
 
 **How random selection works:**
 
@@ -70,8 +63,7 @@ Manual selection lets you create a QC review for a specific loan.
 
 **How to manually create a review:**
 
-1. Navigate to the loan detail page at `/{company}/loans/{id}`.
-2. Click the **QC** tab.
+1. Open the loan detail page and click the **QC** tab.
 3. If no review exists, click **Create QC Review**.
 4. The system automatically matches the loan to the most appropriate active template based on the loan's type, purpose, channel, and property state.
 5. The review is created with status **Pending** and selection method **Manual**.
@@ -117,11 +109,8 @@ Once a review exists, a reviewer works through each checklist item.
 
 ### Opening a review
 
-1. Navigate to `/{company}/qc`.
-2. Click on a review row to open the review detail page.
+Go to the QC Dashboard and click on a review row to open it.
 3. The review detail page shows loan information at the top and the checklist below.
-
-> <img alt="Screenshot: QC Review detail page showing loan summary header and checklist items organized by category" src="screenshots/qc-review-detail.png" />
 
 ### Marking items
 
@@ -140,8 +129,6 @@ For each checklist item, the reviewer selects one of four results:
 2. Select the appropriate result: **Pass**, **Fail**, or **N/A**.
 3. The result is saved immediately.
 4. The review's pass, fail, and N/A counts update in real time.
-
-> <img alt="Screenshot: Individual checklist item with Pass/Fail/NA buttons and notes field" src="screenshots/qc-review-item.png" />
 
 ### Adding notes to items
 
@@ -165,8 +152,6 @@ As items are marked, the review header updates with real-time counts:
 | **N/A** | Number of items marked N/A |
 
 These counts are stored on the review record for reporting purposes and do not need to be recalculated when viewing the review later.
-
-> <img alt="Screenshot: QC Review summary showing pass/fail/NA counts in the review header" src="screenshots/qc-review-summary.png" />
 
 ## Completing a review
 
@@ -209,20 +194,8 @@ A waived review retains any item results that were recorded before the waiver. T
 
 ## Viewing QC results on a loan
 
-QC review information is also accessible from the individual loan detail page:
-
-1. Navigate to `/{company}/loans/{id}`.
-2. Click the **QC** tab.
-3. If a review exists, you will see the review status, summary counts, reviewer, and the full checklist with results.
-4. If no review exists, you will see an option to create one.
-
-> <img alt="Screenshot: QC tab on the loan detail page showing the review checklist and summary" src="screenshots/qc-loan-tab.png" />
+Open the loan detail page and click the **QC** tab. If a review exists, you will see its status, summary counts, reviewer, and the full checklist with results. If no review exists, you will see an option to create one.
 
 ## QC selection history
 
-To see which months have had QC selections run and how many loans were selected:
-
-1. Navigate to `/{company}/qc`.
-2. The selection history is available in the filter panel, showing each month with its loan count.
-
-This helps you verify that QC selections are being run consistently and that the sample sizes meet your policy requirements.
+The selection history is available in the filter panel on the QC Dashboard, showing each month with its loan count. This helps you verify that selections are being run consistently and that sample sizes meet your policy requirements.

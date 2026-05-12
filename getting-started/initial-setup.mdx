@@ -1,10 +1,6 @@
 ---
 title: "Initial Setup"
-description: "This guide walks company administrators through the essential configuration steps after your first login to Keystone. Following this sequence will ensure your team can begin using the platform effe..."
----
-
-This guide walks company administrators through the essential configuration steps after your first login to Keystone. Following this sequence will ensure your team can begin using the platform effectively.
-
+description: "A step-by-step guide for administrators to complete the essential configuration after your first Keystone login so your team can get up and running."
 ---
 
 ## Suggested Order of Operations
@@ -33,8 +29,6 @@ Company Settings is where you define core information about your organization. T
 
 - **Company Name** -- The legal or display name of your mortgage company.
 - **NMLS Number** -- Your company's Nationwide Multistate Licensing System number (optional but recommended).
-
-> <img alt="Screenshot: Company general settings form" src="screenshots/company-settings-general.png" />
 
 ### Loan Origination System (LOS)
 
@@ -79,8 +73,6 @@ Payroll settings control how commission and draw periods are calculated. Configu
 - **Daily Payroll Enabled** -- Enable or disable daily payroll processing.
 - **Paycheck Date Offset** -- Number of days between the end of a period and the paycheck date (0--31).
 
-> <img alt="Screenshot: Payroll settings form" src="screenshots/company-settings-payroll.png" />
-
 ### How to Save
 
 After making changes to any section, click the **Save** button at the bottom of that section. Changes are applied immediately.
@@ -100,8 +92,6 @@ Branches represent physical office locations or organizational units within your
    - **Branch Name** (required) -- A descriptive name for the branch (e.g., "San Diego Office", "Northeast Division").
    - **Branch Manager** -- Select an existing employee with the BranchManager role. If you have not added employees yet, you can leave this blank and assign a manager later.
 3. Click **Save** to create the branch.
-
-> <img alt="Screenshot: Create branch form" src="screenshots/create-branch.png" />
 
 ### Managing Branches
 
@@ -132,7 +122,7 @@ Employees are the core user records in Keystone. Every person in your organizati
 |-------|----------|-------------|
 | First Name | Yes | Employee's first name |
 | Last Name | Yes | Employee's last name |
-| Email | No | Work email address. This email is used to link the employee to a Supabase Auth account for login. |
+| Email | No | Work email address. Used to link the employee to a Keystone login. |
 | Mobile Number | No | Mobile phone number |
 | Custom Title | No | A custom job title (up to 100 characters), e.g., "Senior Loan Officer" |
 | NMLS Number | No | The employee's individual NMLS number |
@@ -158,18 +148,11 @@ Employees are the core user records in Keystone. Every person in your organizati
 
 3. Click **Save** to create the employee record.
 
-> <img alt="Screenshot: Add employee form" src="screenshots/add-employee.png" />
-
 ### Linking Employees to Login Accounts
 
-For an employee to log in to Keystone, two things must be true:
+For an employee to log in to Keystone, their employee record must have an **email address** that matches the email they sign up with. Keystone links accounts automatically on first login.
 
-1. The employee record must have an **email address** set.
-2. A Supabase Auth account must exist with **that exact email address**.
-
-When someone signs up for Keystone (or is invited), the system automatically links their Auth account to any employee record that shares the same email. Once linked, the employee can log in and access the company workspace.
-
-> **Note:** If an employee does not need to log in to Keystone (for example, if they are a contractor whose data you track but who does not use the platform), you can leave the email field blank or simply not create a login for them.
+If an employee does not need to log in (for example, a contractor whose data you track but who does not use the platform), you can leave the email field blank.
 
 ### State Licenses
 
@@ -183,8 +166,6 @@ From the People directory, you can:
 - **Filter** by role, branch, or active/archived status.
 - **Edit** any employee's details from their profile page.
 - **Archive** an employee instead of deleting them, which preserves their historical data while removing them from active lists.
-
-> <img alt="Screenshot: People directory with filters" src="screenshots/people-directory.png" />
 
 ---
 
@@ -245,8 +226,6 @@ Select which loan product types this lender offers. Options include:
 
 3. Click **Save** to create the lender record.
 
-> <img alt="Screenshot: Add lender form" src="screenshots/add-lender.png" />
-
 ### Lender Contacts
 
 After creating a lender, you can add contact people associated with that lender. Navigate to the lender's detail page and use the contacts section to add:
@@ -256,8 +235,6 @@ After creating a lender, you can add contact people associated with that lender.
 - **Phone** (optional)
 - **Role** (optional, e.g., "Account Executive", "Lock Desk")
 - **Primary Contact** -- Mark one contact as the primary point of contact.
-
-> <img alt="Screenshot: Lender detail page with contacts" src="screenshots/lender-contacts.png" />
 
 ### Managing Lenders
 
@@ -288,8 +265,6 @@ Lead sources track where your loans originate. Examples include "Zillow", "Realt
 
 - **Edit** -- Click on an existing lead source to rename it.
 - **Delete** -- Remove a lead source if it is no longer used. Be cautious: if any loans reference this lead source, you should reassign them first.
-
-> <img alt="Screenshot: Lead sources management" src="screenshots/lead-sources.png" />
 
 ---
 
@@ -343,8 +318,6 @@ The following sub-types are available, grouped by account type:
 
 **Expenses:** OperatingExpense, CostOfGoodsSold, PayrollExpense, OtherExpense
 
-> <img alt="Screenshot: Chart of accounts page" src="screenshots/chart-of-accounts.png" />
-
 ---
 
 ## 7. Create Commission Templates
@@ -393,8 +366,6 @@ A commission template defines:
 
 3. Click **Save** to create the template.
 
-> <img alt="Screenshot: Commission template editor" src="screenshots/commission-template-editor.png" />
-
 ### Adding Commission Rules
 
 After creating a template, you can add rules that modify the base commission under specific conditions. Each rule can filter on:
@@ -422,8 +393,6 @@ Templates can include an optional **Performance Booster** that increases compens
 ### Assigning Templates to Employees
 
 After creating commission templates, you will need to assign them to individual employees. Navigate to the employee's profile page or use the commission template assignment features to link templates to specific loan officers, processors, or other roles.
-
-> <img alt="Screenshot: Commission template list" src="screenshots/commission-templates-list.png" />
 
 ---
 

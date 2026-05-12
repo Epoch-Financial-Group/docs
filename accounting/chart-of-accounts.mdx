@@ -1,9 +1,9 @@
 ---
 title: "Chart of Accounts"
-description: "The Chart of Accounts (COA) is the foundation of your accounting system. It defines every account your company uses to classify financial transactions -- from cash and receivables to revenue and ex..."
+description: "The Chart of Accounts defines every account your company uses to classify financial transactions, from cash and receivables to revenue and expenses."
 ---
 
-The Chart of Accounts (COA) is the foundation of your accounting system. It defines every account your company uses to classify financial transactions -- from cash and receivables to revenue and expenses. Every journal entry line references an account from the chart.
+![Chart of accounts](/images/accounting/chart-of-accounts.png)
 
 ## What is the chart of accounts?
 
@@ -16,11 +16,8 @@ The chart of accounts is a structured list of all general ledger accounts in you
 
 Together, these accounts form the structure that all journal entries, the general ledger, and financial reports are built upon.
 
-## Navigating to the chart of accounts
+Go to **Accounting > Chart of Accounts** in the sidebar.
 
-The Chart of Accounts page is located at **Accounting > Chart of Accounts**. You can reach it from the sidebar navigation or from the Accounting dashboard by clicking the "Chart of Accounts" card.
-
-> **Screenshot placeholder:** *Chart of Accounts page showing accounts grouped by type (Asset, Liability, Equity, Revenue, Expense) in collapsible sections.*
 
 ## Account types
 
@@ -137,17 +134,10 @@ This is useful for:
 
 When you create or edit an account, the **Parent Account** dropdown lets you select any existing account as the parent. To make an account top-level, select "None (Top Level)."
 
-> **Screenshot placeholder:** *Account tree view showing parent accounts with indented child accounts, grouped by account type.*
 
 ## System accounts vs user-created accounts
 
-Keystone distinguishes between two kinds of accounts:
-
-- **System accounts** are created by Keystone when you initialize the default chart of accounts. They are tagged with a "System" badge in the account tree. System accounts support the built-in accounting automation (account mappings, automatic journal entries).
-
-- **User-created accounts** are accounts you add manually. They work identically to system accounts but are not tagged as system accounts.
-
-Both types can be edited, deactivated, and used in journal entries and mappings.
+Accounts initialized from the default chart are tagged with a "System" badge. User-created accounts work identically. Both types can be edited, deactivated, and used in journal entries and mappings.
 
 ## Initializing the default chart of accounts
 
@@ -160,7 +150,6 @@ If your chart of accounts is empty, the Chart of Accounts page displays an optio
 3. Click **Initialize Chart of Accounts**.
 4. Keystone creates a standard set of accounts covering the typical needs of a mortgage brokerage (cash, receivables, revenue, commission expenses, etc.).
 
-> **Screenshot placeholder:** *Empty Chart of Accounts page with the "Initialize Chart of Accounts" button.*
 
 You can always add, edit, or deactivate these accounts after initialization.
 
@@ -185,7 +174,6 @@ You can always add, edit, or deactivate these accounts after initialization.
 4. Click **Create Account**.
 5. You are redirected back to the Chart of Accounts page, where the new account appears in the appropriate type section.
 
-> **Screenshot placeholder:** *Add Account form with fields filled in for a new "Cash - Escrow" account.*
 
 ## Editing an account
 
@@ -197,7 +185,6 @@ You can always add, edit, or deactivate these accounts after initialization.
 
 You can change any field on an account, including its type, subtype, parent, and normal balance. Keep in mind that changing the account type on an account with existing journal entry lines may affect how its balance is interpreted on reports.
 
-> **Screenshot placeholder:** *Edit Account form showing an existing account with pre-filled values.*
 
 ## Deactivating an account
 

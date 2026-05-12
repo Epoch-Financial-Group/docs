@@ -1,9 +1,7 @@
 ---
 title: "Branches"
-description: "Branches represent the physical locations or organizational units within your mortgage company. Every employee can be assigned to a branch, and branch-level groupings are used throughout Keystone f..."
+description: "Branches represent the physical locations or organizational units in your company and are used for reporting, filtering, and commission grouping."
 ---
-
-Branches represent the physical locations or organizational units within your mortgage company. Every employee can be assigned to a branch, and branch-level groupings are used throughout Keystone for reporting, analytics, and commission rule scoping.
 
 ## Why branches matter
 
@@ -14,21 +12,13 @@ Branches represent the physical locations or organizational units within your mo
 
 ---
 
-## Viewing the branch list
-
-1. In the sidebar, expand **Administration**.
-2. Click **Branches**.
-
-This takes you to `/{your-company}/branches`, where you will see a list of all branches with their names and assigned managers.
-
-> <img alt="Screenshot: Branch list page showing branch names and managers" src="screenshots/branch-list.png" />
+Go to **Administration > Branches** in the sidebar to see a list of all branches with their names and assigned managers.
 
 ---
 
 ## Adding a new branch
 
-1. Navigate to **Administration > Branches**.
-2. Click the **Add Branch** button.
+1. Go to **Administration > Branches** and click **Add Branch**.
 3. Fill in the branch form:
 
 | Field | Required | Description |
@@ -40,8 +30,6 @@ This takes you to `/{your-company}/branches`, where you will see a list of all b
 
 You will be redirected to the branch list after the branch is created.
 
-> <img alt="Screenshot: Add Branch form with name and manager fields" src="screenshots/branch-add.png" />
-
 <Info>
 You can create branches before adding employees. In fact, this is recommended so that you can assign employees to branches during their initial setup.
 </Info>
@@ -50,10 +38,7 @@ You can create branches before adding employees. In fact, this is recommended so
 
 ## Editing a branch
 
-1. Navigate to **Administration > Branches**.
-2. Click the branch you want to edit, or navigate directly to `/{your-company}/branches/{branch-id}/edit`.
-3. Update the **Branch Name** or **Branch Manager** as needed.
-4. Click **Save Changes**.
+Go to **Administration > Branches**, click the branch you want to edit, update the name or manager, and click **Save Changes**.
 
 ---
 
@@ -61,7 +46,7 @@ You can create branches before adding employees. In fact, this is recommended so
 
 ### Employees
 
-Each employee has an optional `branchId` field. When you assign an employee to a branch, they appear in branch-level reports and are associated with that branch's manager.
+When you assign an employee to a branch, they appear in branch-level reports and are associated with that branch's manager.
 
 ### Loans
 
@@ -74,16 +59,6 @@ Commission rules can be scoped to specific branches. This allows you to create d
 ### Candidates (Recruiting)
 
 If you use the recruiting module, candidates can also be associated with a target branch for onboarding purposes.
-
----
-
-## Routes reference
-
-| Route | Description |
-|-------|-------------|
-| `/{company}/branches` | Branch list |
-| `/{company}/branches/add` | Add a new branch |
-| `/{company}/branches/{id}/edit` | Edit an existing branch |
 
 ---
 

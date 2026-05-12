@@ -1,13 +1,11 @@
 ---
 title: "Employees"
-description: "The employee directory is the central record of everyone involved in your lending operations -- loan officers, processors, assistants, contractors, and branch managers. Employee records drive loan ..."
+description: "The employee directory stores records for loan officers, processors, assistants, and managers, driving loan assignments and commission calculations."
 ---
-
-The employee directory is the central record of everyone involved in your lending operations -- loan officers, processors, assistants, contractors, and branch managers. Employee records drive loan assignments, commission calculations, draw payments, and reporting throughout Keystone.
 
 ## The employee directory
 
-Navigate to **Directories > People** in the sidebar (or go to `/{your-company}/employees`) to view the employee directory.
+Go to **Directories > People** in the sidebar to view the employee directory.
 
 The directory displays a searchable, filterable table with the following columns:
 
@@ -22,7 +20,7 @@ The directory displays a searchable, filterable table with the following columns
 
 Clicking an employee's name takes you to their detail view.
 
-> <img alt="Screenshot: Employee directory table with filters" src="screenshots/employee-directory.png" />
+![Employee directory](/images/company-setup/employees-list.png)
 
 ### Filtering employees
 
@@ -32,8 +30,6 @@ The filter bar above the table provides four controls:
 - **Role** -- Filter by a specific role (Loan Officer, LOA, Processor, Contractor, Branch Manager) or show all
 - **Status** -- Show Active employees, Inactive (archived) employees, or all
 - **Branch** -- Filter by a specific branch (only appears if branches exist)
-
-> <img alt="Screenshot: Employee filter bar with role and branch dropdowns" src="screenshots/employee-filters.png" />
 
 ---
 
@@ -57,8 +53,6 @@ The employee form is organized into three sections.
 | **Mobile Number** | No | Mobile phone number |
 | **NMLS ID** | No | The employee's individual NMLS number (distinct from the company NMLS) |
 
-> <img alt="Screenshot: Basic Information section of the employee form" src="screenshots/employee-form-basic.png" />
-
 ### Employment
 
 | Field | Required | Description |
@@ -79,8 +73,6 @@ The employee form is organized into three sections.
 | **Contractor** | External contractor, typically paid on a 1099 basis |
 | **Branch Manager** | Oversees a branch and its staff. Branch managers can be assigned as the manager for one or more branches. |
 
-> <img alt="Screenshot: Employment section showing role checkboxes and branch dropdown" src="screenshots/employee-form-employment.png" />
-
 ### Draw and Payroll
 
 Draw settings determine whether and how much an employee receives as a guaranteed minimum payment (draw) during each pay period, before commission calculations.
@@ -100,8 +92,6 @@ Draw settings determine whether and how much an employee receives as a guarantee
 | **Flat Amount** | Employee receives a fixed dollar amount as a draw each pay period (e.g., $2,000/period). |
 | **Hourly** | Employee's draw is calculated as `hourlyRate x hoursPerPeriod` (e.g., $25/hr x 80 hrs = $2,000). |
 
-> <img alt="Screenshot: Draw and Payroll section of employee form" src="screenshots/employee-form-draw.png" />
-
 <Info>
 Company-wide draw defaults are configured in [Company Settings](/company-setup/company-settings). Individual employee settings override the company defaults.
 </Info>
@@ -110,7 +100,7 @@ Company-wide draw defaults are configured in [Company Settings](/company-setup/c
 
 ## Additional employee fields
 
-The following fields are managed on the employee data model but may be edited through the employee detail view or administrative tools rather than the main creation form:
+The following fields are available on the employee detail page:
 
 | Field | Description |
 |-------|-------------|
@@ -144,22 +134,17 @@ Each state license record includes:
 
 State licenses are displayed in the **Licenses** tab on the employee detail page.
 
-> <img alt="Screenshot: State licenses tab on employee detail page" src="screenshots/employee-licenses.png" />
-
 ---
 
 ## Editing an employee
 
-1. Navigate to the employee's detail page at `/{your-company}/employees/{id}`.
-2. Click the **Edit** button (or navigate directly to `/{your-company}/employees/{id}/edit`).
-3. Update any fields.
-4. Click **Save Changes**.
+Open the employee's detail page, click **Edit**, update any fields, and click **Save Changes**.
 
 ---
 
 ## Employee detail view
 
-The employee detail page (`/{your-company}/employees/{id}`) shows a tabbed interface with four sections:
+The employee detail page shows a tabbed interface with four sections:
 
 ### Info tab
 
@@ -185,8 +170,6 @@ Shows all active commission rules assigned to the employee, grouped by commissio
 
 Displays the employee's state licenses with state abbreviation, license number, and expiration date.
 
-> <img alt="Screenshot: Employee detail page showing the Info tab" src="screenshots/employee-detail.png" />
-
 ---
 
 ## How employees connect to other data
@@ -200,9 +183,7 @@ Employees can be associated with loans in three capacities:
 
 ### Commissions
 
-Commission rules reference employees in two ways:
-- **As the loan officer** -- rules that fire based on who originated the loan
-- **As the recipient** -- rules can direct commission payments to a different employee (e.g., a branch manager override)
+Commission rules reference employees as the originating loan officer or as an alternative recipient (e.g., a branch manager override).
 
 ### Expenses
 
@@ -211,17 +192,6 @@ Employees can have both one-time and recurring expenses associated with them (e.
 ### Branches
 
 Each employee belongs to zero or one branch. The employee's branch assignment affects reporting roll-ups, commission rule scoping, and management hierarchy.
-
----
-
-## Routes reference
-
-| Route | Description |
-|-------|-------------|
-| `/{company}/employees` | Employee directory (list view with filters) |
-| `/{company}/employees/add` | Add a new employee |
-| `/{company}/employees/{id}` | Employee detail view (tabbed: Info, Loans, Commissions, Licenses) |
-| `/{company}/employees/{id}/edit` | Edit an existing employee |
 
 ---
 

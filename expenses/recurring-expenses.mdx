@@ -1,15 +1,11 @@
 ---
 title: "Recurring Expenses"
-description: "Recurring expenses let you define costs that repeat on a schedule, so you do not have to manually enter the same expense every week or month. The system automatically generates individual expense r..."
+description: "Recurring expenses define costs on a schedule so Keystone automatically generates individual expense records each period without manual entry."
 ---
-
-Recurring expenses let you define costs that repeat on a schedule, so you do not have to manually enter the same expense every week or month. The system automatically generates individual expense records based on the recurrence pattern you configure.
 
 ## Overview
 
-A recurring expense is a template that describes a repeating cost. It specifies an employee, an amount, a recurrence pattern, and an effective date range. The system uses this template to automatically create individual `Expense` records at the defined intervals.
-
-Each generated expense links back to its parent recurring expense via the `recurringExpenseId` field, so you can always trace where an auto-generated expense came from.
+A recurring expense is a template for a repeating cost. It specifies an employee, an amount, a recurrence pattern, and an effective date range. The system automatically creates individual expense records at the defined intervals, each linked back to its parent recurring expense so you can trace where it came from.
 
 ## Recurrence Patterns
 
@@ -35,8 +31,6 @@ The **recurrence value** controls the interval between occurrences. It defaults 
 
 On the Expenses page, navigate to the **Recurring Expenses** section and click **Add Recurring Expense**. A dialog will open with the following fields:
 
-> <img alt="Screenshot: Add recurring expense dialog" src="screenshots/add-recurring-expense.png" />
-
 ### Required Fields
 
 | Field | Description |
@@ -60,8 +54,6 @@ Click **Create** to save the recurring expense.
 
 The recurring expenses table displays all defined recurring expenses for your company.
 
-> <img alt="Screenshot: Recurring expenses table" src="screenshots/recurring-expenses-table.png" />
-
 ### Table Columns
 
 | Column | Description |
@@ -78,28 +70,13 @@ The recurring expenses table displays all defined recurring expenses for your co
 
 Click the pencil icon on any row to open the edit dialog. All fields can be modified. Changes take effect for future expense generation -- expenses already generated from the previous configuration are not retroactively changed.
 
-> <img alt="Screenshot: Edit recurring expense dialog" src="screenshots/edit-recurring-expense.png" />
-
 ### Deleting a Recurring Expense
 
 Click the trash icon on any row to delete a recurring expense. A confirmation dialog will appear. Deleting a recurring expense stops future expense generation but does not remove expenses that were already generated from it.
 
-## How Auto-Generation Works
+## How auto-generation works
 
-The system processes recurring expenses to generate individual expense records:
-
-1. **Effective date check** -- The recurring expense must have reached or passed its effective date.
-2. **Expiration date check** -- If an expiration date is set and has passed, no new expenses are generated.
-3. **Pattern application** -- Based on the recurrence pattern and value, the system determines the next occurrence date.
-4. **Expense creation** -- An individual `Expense` record is created with the amount, note, and employee from the template, linked back via `recurringExpenseId`.
-
-### Tracing Generated Expenses
-
-Every expense generated from a recurring template carries a `recurringExpenseId` that links it back to the source. This means you can:
-
-- Identify which expenses were auto-generated versus manually entered.
-- Trace a specific expense back to its recurring template.
-- See all expenses produced by a given recurring expense.
+The system checks whether the effective date has been reached, whether the expiration date has passed, and then creates the next occurrence based on the pattern. Each generated expense is linked back to the parent recurring template, so you can identify auto-generated expenses and trace them to their source.
 
 ## Common Use Cases
 

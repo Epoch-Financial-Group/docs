@@ -1,11 +1,11 @@
 ---
 title: "Commission Templates"
-description: "A commission template defines the compensation structure for a specific employee role. Templates serve as blueprints -- once created, they are assigned to individual employees to generate the commi..."
+description: "A commission template defines the compensation structure for an employee role and is assigned to individual employees to drive pay calculations."
 ---
 
-A commission template defines the compensation structure for a specific employee role. Templates serve as blueprints -- once created, they are assigned to individual employees to generate the commission rules the engine uses during pay period calculations.
+![Commission templates list](/images/commissions/templates-list.png)
 
-## What Is a Commission Template?
+## What is a commission template?
 
 A commission template captures:
 
@@ -34,11 +34,8 @@ Each template targets one of the following roles:
 
 ### Step 1: Navigate to Commission Templates
 
-1. From the sidebar, click **Commission Templates**.
-2. Click the **Add Template** button.
+Go to **Commission > Plan Templates** in the sidebar and click **Add Template**.
 
-{/* Screenshot placeholder: Commission Templates list page with Add Template button */}
-> **[Screenshot]** The Commission Templates list page showing existing templates organized by role.
 
 ### Step 2: Set Template Name and Role
 
@@ -46,8 +43,6 @@ Each template targets one of the following roles:
 2. Select the **Role Type** from the dropdown.
 3. Optionally set an **Effective Date** and **End Date** to control when the template is active.
 
-{/* Screenshot placeholder: Template name and role type fields */}
-> **[Screenshot]** The template header section with name, role, and date fields.
 
 ### Step 3: Configure the Base Commission
 
@@ -68,8 +63,6 @@ The base commission is the default amount paid to an employee for each loan, bef
 
 5. **Maximum Commission** (optional) -- The highest commission allowed per loan. If the calculated commission exceeds this, the maximum is used instead.
 
-{/* Screenshot placeholder: Base commission configuration fields */}
-> **[Screenshot]** The base commission section showing basis, amount type, amount, and min/max fields.
 
 #### Example: Percentage-Based Commission
 
@@ -126,8 +119,6 @@ A file fee is a per-loan deduction from the commission. It is often used to cove
    - **Gross Commission**
    - **Net Commission**
 
-{/* Screenshot placeholder: File fee configuration section */}
-> **[Screenshot]** The file fee section with fee name, amount, type, and applied-on fields.
 
 #### Example: Flat File Fee
 
@@ -190,18 +181,10 @@ Once a template is saved, you assign it to employees with the matching role.
 4. Set the **Effective Date** -- the date from which the commission structure takes effect for these employees.
 5. Click **Assign**.
 
-{/* Screenshot placeholder: Template detail page with assignment section */}
-> **[Screenshot]** The template detail page showing the Assignments section with a list of assigned employees and the Assign Employees button.
 
 ### What Happens During Assignment
 
-When employees are assigned to a template, Keystone creates **commission rules** bound to each employee:
-
-1. A **base rule** is created using the template's base commission settings, linked to the employee as both the loan officer (for LO templates) and the recipient.
-2. For each **override rule** on the template (rules with filters), an employee-bound copy is created with the same filters and commission settings.
-3. These rules are set to **Active** status with the specified effective date.
-
-The commission engine later uses these employee-bound rules when calculating commissions for funded loans.
+When employees are assigned to a template, Keystone creates commission rules for each employee based on the template's base commission and any override rules. These rules are set to Active with the specified effective date and are used when calculating commissions for funded loans.
 
 ### Unassigning an Employee
 

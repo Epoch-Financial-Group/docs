@@ -1,13 +1,11 @@
 ---
 title: "Candidate Management"
-description: "This page covers the day-to-day tasks of working with candidates in the recruiting module -- viewing the candidate list, filtering and searching, editing candidate information, and tracking interac..."
+description: "Day-to-day candidate management: viewing the candidate list, filtering, editing candidate information, and logging interactions and next steps."
 ---
-
-This page covers the day-to-day tasks of working with candidates in the recruiting module -- viewing the candidate list, filtering and searching, editing candidate information, and tracking interactions through notes.
 
 ## Viewing candidates
 
-The candidate list is located at `/{company}/recruiting`. It displays a paginated table of all candidates in your company.
+Go to **Recruiting** in the sidebar. The page displays a paginated table of all candidates in your company.
 
 ### Candidate table columns
 
@@ -22,8 +20,6 @@ The candidate list is located at `/{company}/recruiting`. It displays a paginate
 | **Updated** | When the candidate record was last modified |
 
 The table is sorted by most recently updated candidates first.
-
-> <img alt="Screenshot: Candidate table showing candidate rows with stage badges, roles, and sources" src="screenshots/candidate-table.png" />
 
 ### Pagination
 
@@ -54,11 +50,9 @@ Search is case-insensitive and matches partial text.
 | **Source** | All Sources, Referral, Job Board, LinkedIn, Direct Outreach, Website, Other | Filter by candidate source |
 | **Branch** | All Branches, plus each branch in your company | Filter by target branch |
 
-> <img alt="Screenshot: Candidate filter bar showing search input, stage dropdown, role dropdown, source dropdown, and branch dropdown" src="screenshots/candidate-filters.png" />
-
 ### Combining filters
 
-Filters can be combined. For example, you can filter for all **Loan Officer** candidates in the **Interview** stage who were sourced from **LinkedIn**. All active filters are reflected in the URL as query parameters, so filtered views can be bookmarked or shared.
+Filters can be combined. For example, you can filter for all **Loan Officer** candidates in the **Interview** stage who were sourced from **LinkedIn**.
 
 ### Archived candidates
 
@@ -66,7 +60,7 @@ By default, the candidate list shows only active (non-archived) candidates. To v
 
 ## Candidate detail view
 
-Clicking on a candidate's name in the table opens their detail page at `/{company}/recruiting/{id}`.
+Clicking on a candidate's name in the table opens their detail page.
 
 ### Detail page layout
 
@@ -79,8 +73,6 @@ The header shows the candidate's name, stage badge, and action buttons:
 - **Edit** -- Open the edit form
 - **Convert to Employee** -- Begin the conversion process (available when not yet converted)
 - **Archive** -- Archive the candidate
-
-> <img alt="Screenshot: Candidate detail page header showing name, stage badge, and action buttons" src="screenshots/candidate-detail-header.png" />
 
 #### Overview section
 
@@ -153,8 +145,6 @@ The candidate's stage can be updated in two ways:
 2. **From the edit form:** Change the stage field and save the form.
 
 Both methods update the candidate's stage and refresh the candidate list to reflect the change.
-
-> <img alt="Screenshot: Stage dropdown on candidate detail page showing all available stages" src="screenshots/candidate-stage-change.png" />
 
 ## Tracking interactions via notes
 

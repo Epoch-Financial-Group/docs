@@ -1,15 +1,11 @@
 ---
 title: "Projections"
-description: "The Projections module provides forward-looking funding forecasts based on your active pipeline. It estimates when loans are likely to fund, groups them by confidence level, and tracks projection a..."
+description: "The Projections module forecasts future fundings from your active pipeline, grouping loans by confidence level and tracking accuracy over time."
 ---
-
-The Projections module provides forward-looking funding forecasts based on your active pipeline. It estimates when loans are likely to fund, groups them by confidence level, and tracks projection accuracy against actual funded volume.
 
 ## Overview
 
-Projections analyze every active loan in your pipeline (excluding Funded, CommissionPaid, and Adverse statuses) and estimate when each loan will fund based on its current status. Loans are assigned a confidence level, then aggregated into weekly and monthly views.
-
-> <img alt="Screenshot: Projections overview" src="screenshots/projections-overview.png" />
+Projections analyze every active loan in your pipeline (excluding funded and adverse loans) and estimate when each loan will fund based on its current status. Loans are assigned a confidence level, then aggregated into weekly and monthly views.
 
 ## Confidence Scoring
 
@@ -23,7 +19,7 @@ Each pipeline loan is assigned a confidence level based on how far along it is i
 
 ### Estimated Funding Dates
 
-If a loan has an `estimatedFundingDate` set, that date is used. Otherwise, the system assigns a default estimate based on confidence:
+If a loan has an estimated funding date set, that date is used. Otherwise, the system assigns a default estimate based on confidence:
 
 | Confidence | Default Estimate |
 |------------|-----------------|
@@ -36,8 +32,6 @@ If a loan's estimated date is in the past, it is shifted to today.
 ## Weekly Projections
 
 The weekly view shows funding projections for the next **8 weeks**, broken down by confidence level.
-
-> <img alt="Screenshot: Weekly projections chart" src="screenshots/weekly-projections.png" />
 
 Each week displays:
 
@@ -53,8 +47,6 @@ This lets you see not just the total expected volume, but how much of it is high
 ## Monthly Projections
 
 The monthly view aggregates projected fundings by calendar month, providing a higher-level view of expected production.
-
-> <img alt="Screenshot: Monthly projections chart" src="screenshots/monthly-projections.png" />
 
 Each month shows:
 - **Units** -- Number of loans projected to fund
@@ -75,8 +67,6 @@ A summary card shows the total projected fundings for the next 30 days:
 
 A detailed table lists every active pipeline loan with its projected funding information.
 
-> <img alt="Screenshot: Upcoming loans table" src="screenshots/upcoming-loans.png" />
-
 | Column | Description |
 |--------|-------------|
 | **Loan Number** | Broker loan number |
@@ -93,8 +83,6 @@ The table is sorted by confidence level (high first), then by estimated funding 
 ## Accuracy Tracking
 
 The accuracy section compares projected volume against actual funded volume for the last 3 months. This helps you calibrate how reliable your projections are over time.
-
-> <img alt="Screenshot: Projection accuracy chart" src="screenshots/projection-accuracy.png" />
 
 Each month shows:
 - **Projected** -- What was projected for that month

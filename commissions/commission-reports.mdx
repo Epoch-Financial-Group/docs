@@ -1,18 +1,11 @@
 ---
 title: "Commission Reports"
-description: "The Reports section provides a read-only view of commission calculations for any pay period. Reports are available for both draft and finalized pay periods, though finalized periods represent the o..."
+description: "Commission reports provide a read-only view of pay period calculations, showing each employee's earnings for both draft and finalized periods."
 ---
 
-The Reports section provides a read-only view of commission calculations for any pay period. Reports are available for both draft and finalized pay periods, though finalized periods represent the official, locked-in commission data.
+Go to **Commission > Reports** in the sidebar. Select a pay period from the dropdown at the top to view its report.
 
-## Accessing Commission Reports
-
-1. From the sidebar, click **Reports**.
-2. The Reports page opens with a **pay period selector** at the top.
-3. Select a pay period from the dropdown to view its report. The most recent pay period is selected by default.
-
-{/* Screenshot placeholder: Reports page with pay period selector */}
-> **[Screenshot]** The Reports page showing the pay period selector dropdown and the report view below.
+![Commission reports](/images/commissions/commission-reports.png)
 
 ## Report Overview
 
@@ -35,8 +28,6 @@ The top section shows a summary row for each employee who earned commissions in 
 
 Click on an employee's name to navigate to their **individual report detail** page.
 
-{/* Screenshot placeholder: Employee summary table */}
-> **[Screenshot]** The employee summary table showing each employee's commission totals for the selected pay period.
 
 ### Loan Breakdown Table
 
@@ -55,8 +46,6 @@ Below the employee summary, the report shows a per-loan breakdown:
 | **Adjustments** | Net adjustment amount from loan-level adjustments |
 | **Net Commission** | The final commission amount for the loan officer |
 
-{/* Screenshot placeholder: Loan breakdown table */}
-> **[Screenshot]** The loan breakdown table showing individual loan details and their commission calculations.
 
 ## Per-Employee Report Detail
 
@@ -67,8 +56,6 @@ Clicking on an employee name in the summary table opens their individual report 
 1. From the Reports page, click on an employee's name in the summary table.
 2. The employee report detail page opens, showing the same pay period selector so you can switch periods.
 
-{/* Screenshot placeholder: Employee report detail page */}
-> **[Screenshot]** The employee report detail page with the employee's name, pay period selector, and commission line items.
 
 ### What the Employee Report Shows
 
@@ -155,7 +142,7 @@ Reports are available for both draft and finalized pay periods:
 | **Stability** | May change as loans are added/removed or rules are updated | Locked; the calculation is consistent |
 | **Use case** | Previewing upcoming commissions | Official commission records |
 
-> **Note**: Even finalized period reports re-run the commission engine when viewed. The draw balance data is snapshotted in `PayPeriodEmployee` records at finalization time, but commission line items are calculated from the current rule set. If rules are changed after finalization and the period is unfinalized/re-finalized, results may differ.
+> **Note**: Draw balance data is locked at finalization. Commission line items are recalculated from the current rule set when viewed. If rules are changed and the period is unfinalized and re-finalized, results may differ.
 
 ## Historical Pay Periods
 

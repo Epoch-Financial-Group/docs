@@ -1,13 +1,11 @@
 ---
 title: "Special Cases"
-description: "Special case groups provide an additional layer of conditional logic for commission rules. While regular commission rule filters match on a single attribute at a time (one lender, one loan type, et..."
+description: "Special case groups let you match commission rules on multiple attributes simultaneously, such as a specific lender and loan type in combination."
 ---
 
-Special case groups provide an additional layer of conditional logic for commission rules. While regular commission rule filters match on a single attribute at a time (one lender, one loan type, etc.), special case groups let you define multi-condition checks that must be satisfied before a rule applies.
+## What are special case groups?
 
-## What Are Special Case Groups?
-
-A **CommissionSpecialCaseGroup** is a named collection of criteria (conditions) attached to a commission template. Each group contains one or more **CommissionSpecialCase** items -- individual conditions that are evaluated against a loan's attributes.
+A special case group is a named collection of criteria attached to a commission template. Each group contains one or more conditions that are evaluated against a loan's attributes.
 
 When a commission rule is linked to a special case group, the rule only applies if the group's criteria evaluate to `true` for the loan being processed.
 
@@ -53,8 +51,6 @@ Special case groups are configured within a commission template.
 1. In the template editor, find the **Special Cases** section.
 2. Click **Add Special Case Group**.
 
-{/* Screenshot placeholder: Special case group section in template editor */}
-> **[Screenshot]** The Special Cases section showing an empty group ready for criteria to be added.
 
 ### Step 3: Add Criteria to the Group
 
@@ -90,8 +86,8 @@ Each special case criterion checks one of the following fields:
 
 Each criterion after the first has an **operator** that determines how it combines with the previous result:
 
-- **AND** (operator = true): Both the accumulated result and this criterion must be true.
-- **OR** (operator = false): Either the accumulated result or this criterion must be true.
+- **AND**: Both the accumulated result and this criterion must be true.
+- **OR**: Either the accumulated result or this criterion must be true.
 
 Criteria are evaluated in order, left to right, with the operator applied sequentially:
 
@@ -214,21 +210,6 @@ This can be handled with a regular rule: Loan Type = VA (no special case needed)
 
 A separate rule without a special case group could handle loans outside this range at a different rate.
 
-## Relationship to Commission Rules
-
-Special case groups are part of a commission template and are linked to commission rules:
-
-```
-CommissionTemplate
-  |
-  +--> CommissionSpecialCaseGroup
-  |      |
-  |      +--> CommissionSpecialCase (criterion 1)
-  |      +--> CommissionSpecialCase (criterion 2)
-  |      +--> ...
-  |
-  +--> CommissionRule (linked to the group)
-  +--> CommissionRule (not linked -- uses standard filters only)
-```
+## Relationship to commission rules
 
 A single special case group can be linked to multiple rules within the same template. When the group's criteria are met, all linked rules become eligible for matching (subject to their own filters and the rule precedence system described in [Commission Rules](/commissions/commission-rules)).

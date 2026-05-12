@@ -1,9 +1,7 @@
 ---
 title: "Loan Team"
-description: "Every loan in Keystone has a team responsible for originating and processing it. The team consists of a Loan Officer, optional Loan Officer Assistants (LOAs), and optional Processors. Team assignme..."
+description: "Every loan has a team of a Loan Officer, optional LOAs, and optional Processors whose assignments drive commission splits and reporting."
 ---
-
-Every loan in Keystone has a team responsible for originating and processing it. The team consists of a Loan Officer, optional Loan Officer Assistants (LOAs), and optional Processors. Team assignments are managed from the **Team** card on the loan detail page's **Overview** tab.
 
 ## Team roles
 
@@ -13,7 +11,6 @@ Every loan in Keystone has a team responsible for originating and processing it.
 | **Loan Officer Assistant (LOA)** | Optional | Multiple allowed | Assists the loan officer with file preparation, document collection, and borrower communication. Each assistant can have their own commission split. |
 | **Processor** | Optional | Multiple allowed | Handles the operational processing of the loan -- ordering appraisals, managing conditions, coordinating with the lender. Each processor can have their own commission split. |
 
-> **Screenshot placeholder:** *Team card on the Overview tab showing Loan Officer, Assistants, and Processors sections.*
 
 ---
 
@@ -28,13 +25,12 @@ The Loan Officer is set when the loan is created (it is a required field). To ch
 
 The dropdown shows all active employees in your company who have the **Loan Officer** role.
 
-> **Screenshot placeholder:** *Loan Officer dropdown on the edit form.*
 
 ---
 
 ## Adding Loan Officer Assistants
 
-A loan can have multiple LOAs. Each LOA is tracked via a bridge table (`LoanAssistant`) that links the loan to an employee.
+A loan can have multiple LOAs.
 
 ### How to add an LOA
 
@@ -47,7 +43,6 @@ A loan can have multiple LOAs. Each LOA is tracked via a bridge table (`LoanAssi
 
 The assistant appears immediately in the list below.
 
-> **Screenshot placeholder:** *Add Assistant dropdown with employee selection and Add button.*
 
 ### How to remove an LOA
 
@@ -57,7 +52,7 @@ Click the **X** button next to the assistant's name. The removal takes effect im
 
 ## Adding Processors
 
-A loan can have multiple Processors. Each processor is tracked via a bridge table (`LoanProcessor`) that links the loan to an employee.
+A loan can have multiple Processors.
 
 ### How to add a Processor
 
@@ -68,7 +63,6 @@ A loan can have multiple Processors. Each processor is tracked via a bridge tabl
 5. Select an employee from the dropdown.
 6. Click **Add**.
 
-> **Screenshot placeholder:** *Add Processor dropdown with employee selection.*
 
 ### How to remove a Processor
 
@@ -80,8 +74,8 @@ Click the **X** button next to the processor's name. The removal takes effect im
 
 Team assignments are directly tied to Keystone's commission engine. Each team member's commission is calculated based on their individual commission plan:
 
-- **Loan Officer:** Their commission plan defines their percentage or flat-rate split of the broker compensation or loan amount. Commission plans can be based on either `LoanAmount` or `BrokerCompensation`.
-- **LOAs and Processors:** Each can have their own commission deduction from the loan officer's commission. Their deduction basis can be `LoanAmount`, `LoanRevenue`, `NetCommission`, or `GrossCommission`.
+- **Loan Officer:** Their commission plan defines their percentage or flat-rate split based on the loan amount or broker compensation.
+- **LOAs and Processors:** Each can have their own commission deduction from the loan officer's commission, calculated on the loan amount, loan revenue, net commission, or gross commission.
 
 ### Important considerations
 

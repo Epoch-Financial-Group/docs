@@ -1,20 +1,18 @@
 ---
 title: "Pipeline Analytics"
-description: "Pipeline Analytics provides a real-time view of your active loan pipeline, showing where loans sit across processing stages, identifying bottlenecks, measuring stage-to-stage velocity, and breaking..."
+description: "Pipeline Analytics shows where active loans sit across processing stages, measures stage-to-stage velocity, and surfaces bottlenecks in real time."
 ---
-
-Pipeline Analytics provides a real-time view of your active loan pipeline, showing where loans sit across processing stages, identifying bottlenecks, measuring stage-to-stage velocity, and breaking down activity by loan officer.
 
 ## Overview
 
-The pipeline dashboard focuses on **active loans** -- loans that have not yet reached a terminal status (Funded, CommissionPaid, Adverse, CheckReceived, or ApprovedForPayout). It answers questions like:
+The pipeline dashboard focuses on **active loans** -- loans that have not yet reached a terminal status (Funded, Adverse, or post-funding statuses). It answers questions like:
 
 - How many loans are in each stage right now?
 - Which loans have been stuck in a stage too long?
 - How fast are loans moving through the pipeline?
 - Which loan officers have the largest active pipelines?
 
-> <img alt="Screenshot: Pipeline analytics overview" src="screenshots/pipeline-overview.png" />
+![Pipeline analytics](/images/analytics/pipeline-analytics.png)
 
 ## Key Metrics
 
@@ -31,8 +29,6 @@ The top of the pipeline dashboard displays four summary KPIs:
 ## Pipeline Stages
 
 The stage breakdown shows every processing stage with counts, total volume, and average days loans spend in that stage.
-
-> <img alt="Screenshot: Pipeline stage breakdown" src="screenshots/pipeline-stages.png" />
 
 The pipeline tracks these stages in order:
 
@@ -57,8 +53,6 @@ For each stage, the dashboard shows:
 
 The bottleneck report identifies loans that have been in their current stage for more than **14 days**. These are loans that may need attention or intervention to move forward.
 
-> <img alt="Screenshot: Bottleneck loans table" src="screenshots/pipeline-bottlenecks.png" />
-
 Each bottleneck entry shows:
 
 | Field | Description |
@@ -76,8 +70,6 @@ The list is sorted by days in stage (longest first), so the most critical bottle
 
 The velocity analysis measures the average number of days it takes loans to move between consecutive pipeline stages. This helps you understand where your process is fast and where it slows down.
 
-> <img alt="Screenshot: Pipeline velocity chart" src="screenshots/pipeline-velocity.png" />
-
 Each velocity measurement shows:
 
 | Field | Description |
@@ -91,8 +83,6 @@ Velocity is calculated by looking at loans that have date stamps for both stages
 ## By Loan Officer
 
 The per-LO breakdown shows each loan officer's pipeline activity:
-
-> <img alt="Screenshot: Pipeline by loan officer" src="screenshots/pipeline-by-lo.png" />
 
 | Column | Description |
 |--------|-------------|

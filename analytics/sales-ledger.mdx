@@ -1,17 +1,13 @@
 ---
 title: "Sales Ledger"
-description: "The Sales Ledger provides a detailed, loan-level transaction report for funded loans. It supports filtering by pay period or date range, displays summary totals, and includes CSV export for externa..."
+description: "The Sales Ledger is a loan-level transaction report for funded loans, filterable by pay period or date range with CSV export support."
 ---
-
-The Sales Ledger provides a detailed, loan-level transaction report for funded loans. It supports filtering by pay period or date range, displays summary totals, and includes CSV export for external reporting.
 
 ## Overview
 
 The Sales Ledger is your go-to view for reviewing the specific loans that make up your production. Unlike the aggregate charts in the Funded Loans module, the Sales Ledger shows individual loan records with full detail, making it ideal for reconciliation, auditing, and reporting.
 
 The Sales Ledger is accessed from the main sidebar navigation, separate from the analytics tab system.
-
-> <img alt="Screenshot: Sales Ledger overview" src="screenshots/sales-ledger-overview.png" />
 
 ## Viewing Modes
 
@@ -30,8 +26,6 @@ Select a start and end date to see all funded loans within that range. This is u
 - Monthly or quarterly production reports
 - Comparing production across arbitrary time periods
 - Ad-hoc reporting needs
-
-> <img alt="Screenshot: Sales Ledger filter controls" src="screenshots/sales-ledger-filters.png" />
 
 ## Loan Details
 
@@ -55,13 +49,7 @@ Each loan in the ledger shows:
 
 ### Included Statuses
 
-The Sales Ledger includes loans with any of these statuses:
-- Funded
-- CommissionPaid
-- CheckReceived
-- ApprovedForPayout
-
-These represent loans that have completed the funding process and are in various stages of commission processing.
+The Sales Ledger includes all loans that have completed the funding process -- Funded and all post-funding commission statuses.
 
 ## Summary Totals
 
@@ -72,9 +60,7 @@ At the top of the ledger (or in a summary section), the following totals are dis
 | **Total Loan Amount** | Sum of all loan amounts in the view |
 | **Total Broker Comp** | Sum of all broker compensation |
 | **Total Gross Revenue** | Sum of all gross loan revenue |
-| **Total Reimbursements** | Sum of all reimbursements across loans (calculated from the reimbursements JSON field on each loan) |
-
-> <img alt="Screenshot: Sales Ledger summary totals" src="screenshots/sales-ledger-totals.png" />
+| **Total Reimbursements** | Sum of all reimbursements across loans in the view |
 
 ## Pagination
 
@@ -106,8 +92,6 @@ The Sales Ledger supports exporting the current view to CSV format. The export i
 | Channel | Broker or Non-Delegated Correspondent |
 
 The exported CSV also includes the property address (address, city, state, zip) for each loan, which is not shown in the web view.
-
-> <img alt="Screenshot: CSV export button" src="screenshots/sales-ledger-export.png" />
 
 ## Pay Period Selection
 

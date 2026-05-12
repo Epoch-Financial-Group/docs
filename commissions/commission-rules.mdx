@@ -1,9 +1,7 @@
 ---
 title: "Commission Rules"
-description: "Commission rules override the base commission defined on a template when a loan matches specific criteria. Rules let you define different commission amounts for different loan scenarios -- for exam..."
+description: "Commission rules override a template's base rate when a loan matches specific criteria, such as a particular lender, loan type, or purpose."
 ---
-
-Commission rules override the base commission defined on a template when a loan matches specific criteria. Rules let you define different commission amounts for different loan scenarios -- for example, a higher rate for purchase loans, a lower rate for VA loans, or a flat fee for loans from a specific lender.
 
 ## How Rules Work
 
@@ -43,8 +41,6 @@ Rules are created within a commission template, in the **Rules** tab.
 1. Click **Add Rule**.
 2. A new rule form expands with commission settings and filter options.
 
-{/* Screenshot placeholder: Rule form within template editor */}
-> **[Screenshot]** The rule editor form showing commission settings at the top and filter sections below.
 
 ### Step 3: Set the Rule's Commission
 
@@ -183,14 +179,12 @@ When the commission engine processes a loan, it evaluates rules in a specific or
 
 ### Matching Process
 
-1. **Filter by role flags**: Only rules matching the current role context are considered (LO rules for LO calculation, processor rules for processor calculation, etc.).
-2. **Filter by employee**: If the rule is bound to a specific loan officer (via `loanOfficerId`), it must match the loan's LO. Rules with no `loanOfficerId` are template defaults.
-3. **Sort by specificity**: Rules are sorted with more specific rules first:
-   - Rules with a `loanOfficerId` set rank higher than rules without one
-   - Rules with a `recipientId` set rank higher than rules without one
-4. **Evaluate filters**: Each rule's filters are checked against the loan. All filters must match (AND logic).
-5. **Check special cases**: If the rule belongs to a special case group, the group's conditions must also be satisfied.
-6. **First match wins**: The first rule that passes all checks is used.
+1. Only rules matching the current role context are considered.
+2. Employee-specific rules are evaluated before template-level defaults.
+3. More specific rules rank higher than less specific rules.
+4. All filters on a rule must match (AND logic).
+5. If the rule is linked to a special case group, that group's conditions must also be satisfied.
+6. The first matching rule wins.
 
 ### Specificity Example
 
@@ -216,9 +210,7 @@ For a Conventional loan:
 
 ### Employee-Specific vs. Template Rules
 
-When a template is assigned to an employee, both the base commission and all rules are copied into employee-bound rules. The engine prioritizes employee-bound rules (which have `loanOfficerId` set) over template-level rules (which do not).
-
-This means if an admin creates an employee-specific override rule directly on the employee, it will take precedence over the template-generated rules.
+When a template is assigned to an employee, all rules are copied into employee-bound rules. Employee-bound rules take precedence over template-level rules. If an admin creates an employee-specific override rule directly on the employee, it will rank above the template-generated rules.
 
 ## Combining Multiple Filters
 

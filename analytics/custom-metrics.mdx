@@ -1,21 +1,15 @@
 ---
 title: "Custom Metrics"
-description: "The Custom Metrics module lets you build your own KPIs without writing code. Define what to measure, how to aggregate it, what filters to apply, how to group the results, and how to visualize them ..."
+description: "Custom Metrics lets you define your own KPIs by choosing a measure, aggregation, filters, grouping, and chart type without writing code."
 ---
-
-The Custom Metrics module lets you build your own KPIs without writing code. Define what to measure, how to aggregate it, what filters to apply, how to group the results, and how to visualize them -- then pin your most important metrics to the top of the dashboard.
 
 ## Overview
 
 While the built-in analytics modules cover common use cases, every mortgage operation has unique questions. Custom Metrics gives you a flexible query builder that lets you define, save, and evaluate metrics tailored to your specific needs.
 
-> <img alt="Screenshot: Custom metrics dashboard" src="screenshots/custom-metrics-dashboard.png" />
-
 ## Creating a Custom Metric
 
 To create a metric, navigate to **Analytics > Custom** and click the button to add a new metric.
-
-> <img alt="Screenshot: Create custom metric form" src="screenshots/create-custom-metric.png" />
 
 ### Metric Definition Fields
 
@@ -47,13 +41,13 @@ Select which loan field to aggregate:
 
 | Field | Description |
 |-------|-------------|
-| `loanAmount` | The principal loan amount |
-| `brokerCompensation` | Broker compensation / revenue |
-| `netLoanRevenue` | Net loan revenue after adjustments |
-| `grossLoanRevenue` | Gross loan revenue |
-| `companyMargin` | Company margin on the loan |
-| `originationFees` | Origination fees charged |
-| `rate` | Interest rate |
+| **Loan Amount** | The principal loan amount |
+| **Broker Compensation** | Broker compensation / revenue |
+| **Net Loan Revenue** | Net loan revenue after adjustments |
+| **Gross Loan Revenue** | Gross loan revenue |
+| **Company Margin** | Company margin on the loan |
+| **Origination Fees** | Origination fees charged |
+| **Rate** | Interest rate |
 
 Note: When using the **Count** aggregation, the field selection is less important since Count simply counts matching records.
 
@@ -63,10 +57,10 @@ Choose which date field is used for date range filtering:
 
 | Date Field | Description |
 |------------|-------------|
-| `fundedDate` | The date the loan was funded (default) |
-| `closedDate` | The date the loan closed |
-| `appIntakeDate` | The date the application was received |
-| `createdAt` | The date the loan record was created |
+| **Funded Date** | The date the loan was funded (default) |
+| **Closed Date** | The date the loan closed |
+| **App Intake Date** | The date the application was received |
+| **Created Date** | The date the loan record was created |
 
 #### Filters
 
@@ -76,18 +70,18 @@ Available operators:
 
 | Operator | Meaning |
 |----------|---------|
-| `eq` | Equals |
-| `neq` | Not equals |
-| `in` | Is one of (array of values) |
-| `gt` | Greater than |
-| `gte` | Greater than or equal to |
-| `lt` | Less than |
-| `lte` | Less than or equal to |
+| **Equals** | Exact match |
+| **Not Equals** | Excludes matching values |
+| **Is One Of** | Matches any value in a list |
+| **Greater Than** | Numeric comparison |
+| **Greater Than or Equal** | Numeric comparison |
+| **Less Than** | Numeric comparison |
+| **Less Than or Equal** | Numeric comparison |
 
 Example filters:
-- `loanPurpose eq "Purchase"` -- Only purchase loans
-- `loanType in ["FHA", "VA"]` -- Only FHA and VA loans
-- `loanAmount gte 500000` -- Only loans above $500K
+- Loan Purpose = Purchase -- Only purchase loans
+- Loan Type is one of FHA, VA -- Only FHA and VA loans
+- Loan Amount >= 500000 -- Only loans above $500K
 
 #### Group By
 
@@ -95,15 +89,15 @@ Optionally group results to see the metric broken down by a dimension:
 
 | Group By | Description |
 |----------|-------------|
-| `loanOfficer` | Group by loan officer |
-| `lender` | Group by lender |
-| `leadSource` | Group by lead source |
-| `loanPurpose` | Group by Purchase / Refinance |
-| `loanType` | Group by loan product type |
-| `channel` | Group by Broker / Non-Delegated Correspondent |
-| `month` | Group by calendar month |
-| `quarter` | Group by calendar quarter |
-| `year` | Group by year |
+| **Loan Officer** | Group by loan officer |
+| **Lender** | Group by lender |
+| **Lead Source** | Group by lead source |
+| **Loan Purpose** | Group by Purchase / Refinance |
+| **Loan Type** | Group by loan product type |
+| **Channel** | Group by Broker / Non-Delegated Correspondent |
+| **Month** | Group by calendar month |
+| **Quarter** | Group by calendar quarter |
+| **Year** | Group by year |
 
 When a group-by is set, the metric returns both an overall value and a breakdown by group, sorted by value descending.
 
@@ -132,13 +126,7 @@ When enabled, the metric result includes both the comparison value and the perce
 
 ## Evaluating a Metric
 
-Once created, a metric can be evaluated for any date range. The evaluation engine:
-
-1. Builds a query using the metric's filters and date range
-2. Fetches matching loans from the database
-3. Applies the aggregation function to the selected field
-4. Groups results if a group-by dimension is configured
-5. Calculates comparison period values if a comparison is enabled
+Once created, a metric can be evaluated for any date range. The evaluation engine applies the metric's filters, date range, and aggregation to matching loans. If a group-by is configured, results are broken down by that dimension. If a comparison period is enabled, prior-period values are calculated alongside the current period.
 
 ### Result Structure
 
@@ -162,17 +150,17 @@ Click on a metric to modify its name, description, configuration, or pinned stat
 
 ### Deleting
 
-Deleting a metric performs a soft delete (sets `isActive` to false), so the metric is hidden from the dashboard but retained in the database.
+Deleting a metric hides it from the dashboard but retains the record.
 
 ## Example Metrics
 
 | Name | Aggregation | Field | Filters | Group By | Viz |
 |------|-------------|-------|---------|----------|-----|
-| Total Funded Volume | Sum | loanAmount | (none) | (none) | Card |
-| Avg Purchase Loan Size | Average | loanAmount | loanPurpose = Purchase | (none) | Card |
-| Volume by Loan Officer | Sum | loanAmount | (none) | loanOfficer | Bar |
-| Monthly Revenue Trend | Sum | brokerCompensation | (none) | month | Line |
-| Loan Type Mix | Count | loanAmount | (none) | loanType | Pie |
-| FHA Volume by Quarter | Sum | loanAmount | loanType = FHA | quarter | Area |
-| Revenue by Lead Source | Sum | brokerCompensation | (none) | leadSource | Bar |
-| Avg Rate by Lender | Average | rate | (none) | lender | Bar |
+| Total Funded Volume | Sum | Loan Amount | (none) | (none) | Card |
+| Avg Purchase Loan Size | Average | Loan Amount | Loan Purpose = Purchase | (none) | Card |
+| Volume by Loan Officer | Sum | Loan Amount | (none) | Loan Officer | Bar |
+| Monthly Revenue Trend | Sum | Broker Compensation | (none) | Month | Line |
+| Loan Type Mix | Count | Loan Amount | (none) | Loan Type | Pie |
+| FHA Volume by Quarter | Sum | Loan Amount | Loan Type = FHA | Quarter | Area |
+| Revenue by Lead Source | Sum | Broker Compensation | (none) | Lead Source | Bar |
+| Avg Rate by Lender | Average | Rate | (none) | Lender | Bar |

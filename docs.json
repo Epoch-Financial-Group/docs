@@ -15,13 +15,12 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Documentation",
+        "tab": "Admin Guide",
         "groups": [
           {
             "group": "Getting started",
             "pages": [
               "index",
-              "getting-started/index",
               "getting-started/first-login",
               "getting-started/initial-setup",
               "getting-started/navigation"
@@ -30,7 +29,6 @@
           {
             "group": "Company setup",
             "pages": [
-              "company-setup/index",
               "company-setup/company-settings",
               "company-setup/branches",
               "company-setup/employees",
@@ -41,7 +39,6 @@
           {
             "group": "Loan pipeline",
             "pages": [
-              "loan-pipeline/index",
               "loan-pipeline/overview",
               "loan-pipeline/adding-loans",
               "loan-pipeline/loan-statuses",
@@ -55,7 +52,6 @@
           {
             "group": "Commissions",
             "pages": [
-              "commissions/index",
               "commissions/overview",
               "commissions/commission-templates",
               "commissions/commission-rules",
@@ -68,7 +64,6 @@
           {
             "group": "Accounting",
             "pages": [
-              "accounting/index",
               "accounting/overview",
               "accounting/chart-of-accounts",
               "accounting/journal-entries",
@@ -82,7 +77,6 @@
           {
             "group": "Expenses",
             "pages": [
-              "expenses/index",
               "expenses/tracking-expenses",
               "expenses/recurring-expenses"
             ]
@@ -90,7 +84,6 @@
           {
             "group": "Analytics",
             "pages": [
-              "analytics/index",
               "analytics/pipeline-analytics",
               "analytics/projections",
               "analytics/funded-loans",
@@ -105,7 +98,6 @@
           {
             "group": "Policies",
             "pages": [
-              "policies/index",
               "policies/overview",
               "policies/creating-policies",
               "policies/uploading-documents",
@@ -118,7 +110,6 @@
           {
             "group": "Tasks",
             "pages": [
-              "tasks/index",
               "tasks/overview",
               "tasks/creating-tasks",
               "tasks/templates",
@@ -129,7 +120,6 @@
           {
             "group": "Quality control",
             "pages": [
-              "quality-control/index",
               "quality-control/overview",
               "quality-control/qc-templates",
               "quality-control/qc-reviews"
@@ -138,20 +128,45 @@
           {
             "group": "Recruiting",
             "pages": [
-              "recruiting/index",
               "recruiting/overview",
               "recruiting/candidate-pipeline",
               "recruiting/comp-estimator",
               "recruiting/onboarding",
               "recruiting/candidate-management"
             ]
+          }
+        ]
+      },
+      {
+        "tab": "User Guide",
+        "groups": [
+          {
+            "group": "Getting started",
+            "pages": [
+              "getting-started/welcome",
+              "getting-started/first-login",
+              "getting-started/navigation"
+            ]
           },
           {
-            "group": "Administration",
+            "group": "Loan pipeline",
             "pages": [
-              "administration/index",
-              "administration/super-admin",
-              "administration/multi-company"
+              "loan-pipeline/overview",
+              "loan-pipeline/loan-statuses",
+              "loan-pipeline/loan-team",
+              "loan-pipeline/notes"
+            ]
+          },
+          {
+            "group": "Policies",
+            "pages": [
+              "policies/overview"
+            ]
+          },
+          {
+            "group": "Tasks",
+            "pages": [
+              "tasks/overview"
             ]
           }
         ]

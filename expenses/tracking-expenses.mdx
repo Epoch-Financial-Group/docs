@@ -3,8 +3,6 @@ title: "Tracking Expenses"
 description: "This guide covers how to add, view, filter, and manage one-time expenses in Keystone."
 ---
 
-This guide covers how to add, view, filter, and manage one-time expenses in Keystone.
-
 ## Overview
 
 Expenses represent costs associated with individual employees -- things like technology fees, marketing spend, licensing costs, or any other deduction that should be tracked against an employee's profitability. Each expense belongs to exactly one employee and carries an amount, an optional date, and an optional note.
@@ -12,8 +10,6 @@ Expenses represent costs associated with individual employees -- things like tec
 ## Adding an Expense
 
 Navigate to **Expenses** from the sidebar, then click **Add Expense** to open the expense form.
-
-> <img alt="Screenshot: Add expense form" src="screenshots/add-expense-form.png" />
 
 ### Required Fields
 
@@ -27,15 +23,13 @@ Navigate to **Expenses** from the sidebar, then click **Add Expense** to open th
 | Field | Description |
 |-------|-------------|
 | **Date** | The date the expense was incurred. If left blank, the expense will not be tied to a specific date. |
-| **Note** | A free-text description of the expense (e.g., "CRM subscription - March" or "Marketing flyers"). |
+| **Note** | A free-text description of the expense (e.g., "Software subscription - March" or "Marketing flyers"). |
 
 After filling in the fields, click **Add Expense**. You will be redirected back to the expense list.
 
 ## Viewing the Expense List
 
 The main Expenses page displays all expenses for your company in a paginated table, sorted by date in descending order (most recent first).
-
-> <img alt="Screenshot: Expense list table" src="screenshots/expense-list.png" />
 
 The table shows the following columns:
 
@@ -55,8 +49,6 @@ Results are paginated with a default page size of 25 items. The page size can ra
 
 Use the filter controls above the expense table to narrow down the list.
 
-> <img alt="Screenshot: Expense filters" src="screenshots/expense-filters.png" />
-
 ### Available Filters
 
 | Filter | Description |
@@ -65,13 +57,11 @@ Use the filter controls above the expense table to narrow down the list.
 | **Date From** | Show only expenses on or after this date. |
 | **Date To** | Show only expenses on or before this date. |
 
-Filters are applied via URL parameters, so filtered views can be bookmarked or shared. Changing any filter resets the page back to page 1. Click **Clear Filters** to remove all active filters.
+Changing any filter resets the page back to page 1. Click **Clear Filters** to remove all active filters.
 
 ## Deleting an Expense
 
 Click the trash icon on any expense row to delete it. A confirmation dialog will appear asking you to confirm, since deletion cannot be undone.
-
-> <img alt="Screenshot: Delete confirmation dialog" src="screenshots/delete-expense-confirm.png" />
 
 ## Expenses and Pay Periods
 
@@ -85,11 +75,9 @@ Expenses can be associated with pay periods, which ties them into commission run
 
 During a commission run, the Expenses tab shows all expenses assigned to that pay period in a table with columns for Date, Employee, Note, and Amount. A total row at the bottom sums all expense amounts.
 
-> <img alt="Screenshot: Expenses tab in commission run" src="screenshots/expenses-in-pay-period.png" />
-
 ### Manually Unassigning Expenses
 
-If an expense was incorrectly associated with a pay period, it can be manually unassigned. When an expense is unassigned, the `isManuallyUnassigned` flag is set to `true`, which prevents the system from automatically re-assigning it to the same pay period.
+If an expense was incorrectly associated with a pay period, it can be manually unassigned. Unassigned expenses will not be automatically re-assigned to the same pay period.
 
 ## Expenses in Analytics
 

@@ -1,22 +1,15 @@
 ---
 title: "QC Templates"
-description: "A QC template is a reusable checklist that defines the questions a reviewer will evaluate when auditing a loan. Templates are the foundation of the QC process -- they ensure every review is consist..."
+description: "A QC template is a reusable checklist of review questions that ensures every loan audit covers the same items in a consistent, repeatable way."
 ---
-
-A QC template is a reusable checklist that defines the questions a reviewer will evaluate when auditing a loan. Templates are the foundation of the QC process -- they ensure every review is consistent, thorough, and tailored to the type of loan being reviewed.
 
 ## Navigating to templates
 
-QC templates are managed at `/{company}/qc/templates`. The templates table shows each template's name, active status, number of items, number of reviews using that template, and any conditions applied.
-
-> <img alt="Screenshot: QC Templates table with columns for name, status, item count, and review count" src="screenshots/qc-templates-table.png" />
+Go to **Quality Control > Templates** in the sidebar. The templates table shows each template's name, active status, number of items, number of reviews using it, and any conditions applied.
 
 ## Creating a template
 
-To create a new QC template:
-
-1. Navigate to `/{company}/qc/templates`.
-2. Click **Add Template**.
+1. Go to **Quality Control > Templates** and click **Add Template**.
 3. Fill in the template details (described below).
 4. Add checklist items.
 5. Click **Save**.
@@ -29,8 +22,6 @@ To create a new QC template:
 | **Description** | No | An optional description explaining the template's purpose or scope |
 | **Active** | -- | Whether the template is available for use in new reviews. Defaults to active. |
 | **Default** | -- | Whether this is the default template. Only one template can be the default at a time. |
-
-> <img alt="Screenshot: QC Template form with name, description, active toggle, and default toggle" src="screenshots/qc-template-form.png" />
 
 ## Setting conditions
 
@@ -75,8 +66,6 @@ Each template contains one or more checklist items (questions). These are the sp
 | **Loan Types** | No | Item-level loan type filter. If set, the item only appears for matching loan types. |
 | **Loan Purposes** | No | Item-level loan purpose filter. If set, the item only appears for matching loan purposes. |
 
-> <img alt="Screenshot: QC Template Items editor showing category, question, sort order, and required toggle for each item" src="screenshots/qc-template-items-editor.png" />
-
 ### Standard categories
 
 Keystone includes the following standard categories for organizing QC items. You are free to create your own categories as well.
@@ -119,32 +108,18 @@ Use optional items for supplementary checks that may not apply to every loan.
 
 ## Editing a template
 
-To edit an existing template:
-
-1. Navigate to `/{company}/qc/templates`.
-2. Click on the template row to open it.
-3. Modify the template fields, conditions, or items as needed.
-4. Click **Save**.
+Go to **Quality Control > Templates**, click on the template row, make your changes, and click **Save**.
 
 When you update a template, existing reviews that were created from the template are not affected. Changes only apply to new reviews going forward.
 
 ## Deleting a template
 
-To delete a template:
-
-1. Navigate to `/{company}/qc/templates`.
-2. Open the template you want to delete.
-3. Click **Delete Template**.
-4. Confirm the deletion.
+Open the template from **Quality Control > Templates** and click **Delete Template**. Confirm the deletion.
 
 Deleting a template does not delete existing QC reviews that were created from it. The reviews retain their copied items and can still be completed.
 
 ## Using the default template
 
-Keystone can seed a **Standard QC Checklist** template with approximately 55 industry-standard items. To create it:
-
-1. Navigate to `/{company}/settings` and scroll to the Quality Control section.
-2. Click **Create Default QC Template**.
-3. The template appears in your templates list, ready to use or customize.
+Keystone can seed a **Standard QC Checklist** template with approximately 55 industry-standard items. Go to **Administration > Company Settings**, scroll to the Quality Control section, and click **Create Default QC Template**. The template appears in your templates list, ready to use or customize.
 
 The default template covers all standard categories and includes program-specific items for FHA, VA, and USDA loans with appropriate loan type filters already applied.

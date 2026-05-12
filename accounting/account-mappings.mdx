@@ -1,9 +1,7 @@
 ---
 title: "Account Mappings"
-description: "Account mappings are the configuration layer that connects your loan pipeline to your accounting system. They define which accounts should be debited and credited when specific financial events occ..."
+description: "Account mappings define which general ledger accounts are debited and credited when specific loan pipeline events occur."
 ---
-
-Account mappings are the configuration layer that connects your loan pipeline to your accounting system. They define which accounts should be debited and credited when specific financial events occur -- enabling Keystone to generate journal entries automatically instead of requiring manual data entry for every transaction.
 
 ## What are account mappings?
 
@@ -15,11 +13,8 @@ An account mapping is a rule that says: "When *this event* happens, debit *this 
 
 When the mapped event occurs (for example, a loan is funded), Keystone looks up the corresponding mapping and creates a journal entry using the specified debit and credit accounts.
 
-## Navigating to account mappings
+Account mappings are configured in **Accounting > Account Mappings**. Mappings are grouped by type, with dropdowns to select the debit and credit accounts for each.
 
-Account mappings are typically configured in the **Settings** area or within the Accounting section. The mappings configuration page shows all mappings grouped by type, with dropdowns to select the debit and credit accounts for each.
-
-> **Screenshot placeholder:** *Account Mappings configuration page showing mappings grouped by type (Loan Properties, Revenue Line Items, Commission Roles) with debit and credit account selectors.*
 
 ## How account mappings automate journal entries
 
@@ -81,7 +76,6 @@ These mappings handle commission payouts by role:
 4. Click the **Save** button (disk icon) on each row after making changes. The button is only enabled when you have unsaved changes.
 5. A success notification confirms the mapping was saved.
 
-> **Screenshot placeholder:** *A single mapping row showing "Broker Compensation" with debit account set to "1200 - Accounts Receivable" and credit account set to "4000 - Broker Compensation Revenue," with a save button on the right.*
 
 ## Debit and credit account selection
 

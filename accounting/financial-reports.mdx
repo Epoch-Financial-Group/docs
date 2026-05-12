@@ -1,13 +1,9 @@
 ---
 title: "Financial Reports"
-description: "Keystone provides three standard financial reports that summarize your company's financial position and performance: the Trial Balance, Balance Sheet, and Income Statement. All reports are generate..."
+description: "Keystone provides three standard financial reports: Trial Balance, Balance Sheet, and Income Statement, all generated from your journal entries."
 ---
 
-Keystone provides three standard financial reports that summarize your company's financial position and performance: the Trial Balance, Balance Sheet, and Income Statement. All reports are generated on demand from posted journal entries and can be exported to CSV and PDF.
-
-## Navigating to reports
-
-The Reports page is located at **Accounting > Reports**. It presents three report cards:
+Go to **Accounting > Reports** in the sidebar. It presents three report cards:
 
 | Report | Description |
 |--------|-------------|
@@ -17,7 +13,6 @@ The Reports page is located at **Accounting > Reports**. It presents three repor
 
 Click any card to navigate to that report.
 
-> **Screenshot placeholder:** *Reports landing page showing three cards for Trial Balance, Balance Sheet, and Income Statement.*
 
 ## Fiscal year configuration
 
@@ -26,13 +21,7 @@ Before generating reports, you may want to verify your fiscal year configuration
 - **Default**: January 1 (calendar year)
 - **Custom**: Set any start month and day in the Settings area
 
-To configure the fiscal year:
-
-1. Navigate to **Settings** (or the Fiscal Year configuration area).
-2. Set the **Fiscal Year Start Month** (1-12) and **Fiscal Year Start Day** (1-31).
-3. Save the configuration.
-
-Most mortgage companies use a calendar fiscal year (January 1 - December 31), but if your company uses a different fiscal year, configure it before generating reports so that period-based reports (like the Income Statement) align with your reporting cycle.
+Go to **Administration > Company Settings** and set the **Fiscal Year Start Month** and **Fiscal Year Start Day**. Most mortgage companies use a calendar year (January 1), but configure this before generating reports if your fiscal year differs.
 
 ---
 
@@ -50,7 +39,6 @@ The Trial Balance is not a report you would show to external stakeholders. It is
 2. Select an **As Of Date** using the date picker. This determines the point in time for the balance calculation.
 3. The report generates automatically when you select a date.
 
-> **Screenshot placeholder:** *Trial Balance report showing a date picker, an "As of" date label, and a table of accounts with debit and credit balance columns and totals in the footer.*
 
 ### Reading the trial balance
 
@@ -72,13 +60,7 @@ If the totals are equal, your books are in balance. If they are not equal, a war
 
 ### What to do if the trial balance is out of balance
 
-An out-of-balance trial balance means that somewhere in your journal entries, debits do not equal credits. This should not happen if all entries were created through Keystone (which enforces balance), but can occur if:
-
-- Data was imported incorrectly
-- A database-level change was made outside the application
-- A bug caused an unbalanced entry
-
-To investigate, review recent journal entries for irregularities and check the general ledger for accounts with unexpected balances.
+An out-of-balance trial balance means debits do not equal credits somewhere in your journal entries. To investigate, review recent journal entries and check the general ledger for accounts with unexpected balances. Contact support if you cannot identify the cause.
 
 ---
 
@@ -102,7 +84,6 @@ If your books are correct, total assets will always equal total liabilities plus
 2. Select an **As Of Date** using the date picker.
 3. The report generates automatically.
 
-> **Screenshot placeholder:** *Balance Sheet report showing three sections (Assets, Liabilities, Equity) with account balances grouped by subtype, subtotals, and a grand total comparison at the bottom.*
 
 ### Reading the balance sheet
 
@@ -184,7 +165,6 @@ Net Income = Total Revenue - Total Expenses
 2. Select a **date range** using the Start Date and End Date pickers.
 3. The report generates automatically when both dates are set.
 
-> **Screenshot placeholder:** *Income Statement report showing Revenue and Expense sections with account balances, section totals, and a bold Net Income line at the bottom.*
 
 ### Reading the income statement
 
@@ -247,7 +227,6 @@ Click the **CSV** button in the export bar to download the report data as a comm
 
 Click the **PDF** button in the export bar to generate a printable PDF version of the report. The PDF includes the report title, date range, and the full report content formatted for printing.
 
-> **Screenshot placeholder:** *Export bar showing CSV and PDF buttons in the report header area.*
 
 ## How reports are calculated
 

@@ -1,17 +1,12 @@
 ---
 title: "Bulk Upload"
-description: "Keystone supports importing loans in bulk via CSV file upload. This is the fastest way to onboard an existing pipeline, sync data from your Loan Origination System (LOS), or do periodic pipeline up..."
+description: "Import loans in bulk via CSV to onboard an existing pipeline, sync from your LOS, or do periodic pipeline updates without manual data entry."
 ---
-
-Keystone supports importing loans in bulk via CSV file upload. This is the fastest way to onboard an existing pipeline, sync data from your Loan Origination System (LOS), or do periodic pipeline updates.
 
 ## Getting to the upload page
 
-1. Navigate to the pipeline at `/{company}/loans`.
-2. Click the **Upload CSV** button in the page header.
-3. You will land on `/{company}/loans/upload`.
+In the Loan Pipeline, click **Upload CSV** in the page header.
 
-> **Screenshot placeholder:** *Upload CSV button in the pipeline header.*
 
 ---
 
@@ -25,7 +20,6 @@ Before selecting a file, choose an upload type. There are three options:
 | **analyticsOnly** | Analytics Only | Imports loans for reporting and analytics purposes only. Employees auto-created during this upload are marked as analytics-only and do not affect commission calculations. |
 | **feeReport** | Fee Report | Updates fee fields on existing loans only. Does not create new loans. Used for importing fee data from lender reports. |
 
-> **Screenshot placeholder:** *Upload type selection showing three radio cards.*
 
 ---
 
@@ -41,7 +35,6 @@ After choosing an upload type, select your CSV file by either:
 - Maximum file size: 10 MB
 - Must have a header row
 
-> **Screenshot placeholder:** *File drop zone with drag-and-drop area.*
 
 ---
 
@@ -54,7 +47,6 @@ After selecting a file, Keystone parses it and shows a preview:
 3. **Data preview table** -- Shows the first several rows of mapped data so you can verify the mapping is correct.
 4. **Validation errors** -- Any parsing issues found during preview.
 
-> **Screenshot placeholder:** *Column mapping preview showing recognized columns as pills and a data preview table.*
 
 ### Replacing a file
 
@@ -237,7 +229,6 @@ After reviewing the preview:
 3. If there are no errors, you are automatically redirected to the pipeline.
 4. If there are errors, you remain on the upload page to review them.
 
-> **Screenshot placeholder:** *Upload results showing success count, errors, warnings, and auto-created entities.*
 
 ---
 
