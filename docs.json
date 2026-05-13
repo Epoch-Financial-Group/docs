@@ -49,6 +49,12 @@
             ]
           },
           {
+            "group": "Keystone AI",
+            "pages": [
+              "ai/overview"
+            ]
+          },
+          {
             "group": "Loan pipeline",
             "pages": [
               "loan-pipeline/overview",
@@ -83,7 +89,8 @@
               "accounting/account-mappings",
               "accounting/bank-accounts",
               "accounting/bank-reconciliation",
-              "accounting/financial-reports"
+              "accounting/financial-reports",
+              "accounting/sales-ledger"
             ]
           },
           {
@@ -103,8 +110,7 @@
               "analytics/operations",
               "analytics/planning",
               "analytics/profitability",
-              "analytics/custom-metrics",
-              "analytics/sales-ledger"
+              "analytics/custom-metrics"
             ]
           },
           {
@@ -179,6 +185,12 @@
             "group": "Tasks",
             "pages": [
               "tasks/overview"
+            ]
+          },
+          {
+            "group": "Keystone AI",
+            "pages": [
+              "ai/overview"
             ]
           }
         ]
