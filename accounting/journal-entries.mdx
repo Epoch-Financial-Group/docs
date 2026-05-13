@@ -34,7 +34,7 @@ Each journal entry has the following header fields:
 | **Date** | The date of the transaction. Required. |
 | **Memo** | An optional description of the transaction. |
 | **Status** | Draft, Posted, or Voided. |
-| **Source** | How the entry was created (Manual, LoanFunded, etc.). |
+| **Source** | How the entry was created (Manual, Loan Funded, etc.). |
 
 
 ### Entry line fields
@@ -83,15 +83,15 @@ The **source** field indicates how a journal entry was created. This helps you d
 | Source | Description |
 |--------|-------------|
 | **Manual** | Created by a user through the journal entry form |
-| **LoanFunded** | Automatically generated when a loan reaches the "Funded" status |
-| **LoanCheckReceived** | Automatically generated when a lender check is recorded |
-| **LoanAdjustment** | Generated for loan-level adjustments (reimbursements, fee corrections) |
-| **RevenueLineItem** | Generated for revenue line items on a loan |
-| **CommissionAccrual** | Generated when commissions are calculated and accrued |
-| **CommissionPayment** | Generated when commissions are paid out |
-| **DrawPayment** | Generated when a draw payment is issued to an employee |
+| **Loan Funded** | Automatically generated when a loan reaches the "Funded" status |
+| **Check Received** | Automatically generated when a lender check is recorded |
+| **Loan Adjustment** | Generated for loan-level adjustments (reimbursements, fee corrections) |
+| **Revenue Line Item** | Generated for revenue line items on a loan |
+| **Commission Accrual** | Generated when commissions are calculated and accrued |
+| **Commission Payment** | Generated when commissions are paid out |
+| **Draw Payment** | Generated when a draw payment is issued to an employee |
 | **Reversal** | Created as the opposite of an existing entry (debits and credits swapped) |
-| **BankImport** | Generated from imported bank transaction data |
+| **Bank Import** | Generated from imported bank transaction data |
 
 
 The source badge appears on the journal entry list and detail pages, making it easy to identify the origin of each entry.
@@ -105,7 +105,7 @@ When account mappings are configured (see [Account Mappings](/accounting/account
 - Follow the debit/credit accounts specified in the mapping configuration
 - Are created as **Drafts** by default, so you can review them before posting
 
-For example, when a loan is funded and an account mapping exists for the "LoanFunded" event, the system creates a journal entry debiting and crediting the mapped accounts for the loan amount or broker compensation.
+For example, when a loan is funded and an account mapping exists for the "Loan Funded" event, the system creates a journal entry debiting and crediting the mapped accounts for the loan amount or broker compensation.
 
 ## Creating a manual journal entry
 

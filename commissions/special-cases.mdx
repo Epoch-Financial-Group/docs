@@ -72,14 +72,14 @@ Each special case criterion checks one of the following fields:
 
 | Filter Type | Description | Value Type |
 |-------------|-------------|------------|
-| **LoanType** | The loan product type | Text (e.g., "FHA", "VA", "Conventional") |
-| **LoanPurpose** | Purchase or Refinance | Text ("Purchase" or "Refinance") |
-| **PayerType** | Who pays the broker compensation | Text ("Lender", "Borrower", "Investor", "Seller") |
-| **PropertyState** | The state where the property is located | Text (state code, e.g., "TX", "CA") |
+| **Loan Type** | The loan product type | Text (e.g., "FHA", "VA", "Conventional") |
+| **Loan Purpose** | Purchase or Refinance | Text ("Purchase" or "Refinance") |
+| **Payer Type** | Who pays the broker compensation | Text ("Lender", "Borrower", "Investor", "Seller") |
+| **Property State** | The state where the property is located | Text (state code, e.g., "TX", "CA") |
 | **Lender** | The lender/investor on the loan | Text (lender ID) |
-| **LeadSource** | Where the loan originated from | Text (lead source ID) |
-| **LoanAmountMin** | Loan amount is at or above a threshold | Number (e.g., 300000) |
-| **LoanAmountMax** | Loan amount is at or below a threshold | Number (e.g., 500000) |
+| **Lead Source** | Where the loan originated from | Text (lead source ID) |
+| **Loan Amount Min** | Loan amount is at or above a threshold | Number (e.g., 300000) |
+| **Loan Amount Max** | Loan amount is at or below a threshold | Number (e.g., 500000) |
 | **BrokerCompMin** | Broker compensation is at or above a threshold | Number (e.g., 3000) |
 | **BrokerCompMax** | Broker compensation is at or below a threshold | Number (e.g., 10000) |
 
@@ -105,26 +105,26 @@ Result = Result AND/OR Criterion3
 ### Example: AND Logic
 
 A group with criteria:
-1. LoanType = FHA
-2. AND LoanAmountMin = 300000
-3. AND PropertyState = TX
+1. Loan Type = FHA
+2. AND Loan Amount Min = 300000
+3. AND Property State = TX
 
 This matches FHA loans in Texas with a loan amount of \$300,000 or more. All three must be true.
 
 ### Example: OR Logic
 
 A group with criteria:
-1. LoanType = FHA
-2. OR LoanType = VA
+1. Loan Type = FHA
+2. OR Loan Type = VA
 
 This matches either FHA or VA loans.
 
 ### Example: Mixed Logic
 
 A group with criteria:
-1. LoanType = FHA
-2. AND LoanAmountMin = 300000
-3. OR PropertyState = CA
+1. Loan Type = FHA
+2. AND Loan Amount Min = 300000
+3. OR Property State = CA
 
 Evaluated as:
 ```
@@ -157,8 +157,8 @@ If a special case group has **no criteria**, it always evaluates to `true` (the 
 **Special Case Group**:
 | # | Filter Type | Value | Operator |
 |---|-------------|-------|----------|
-| 1 | LoanType | FHA | -- |
-| 2 | LoanAmountMin | 400000 | AND |
+| 1 | Loan Type | FHA | -- |
+| 2 | Loan Amount Min | 400000 | AND |
 
 
 **Linked Rule**:
@@ -192,8 +192,8 @@ If a special case group has **no criteria**, it always evaluates to `true` (the 
 **Special Case Group A** (VA in Texas):
 | # | Filter Type | Value | Operator |
 |---|-------------|-------|----------|
-| 1 | LoanType | VA | -- |
-| 2 | PropertyState | TX | AND |
+| 1 | Loan Type | VA | -- |
+| 2 | Property State | TX | AND |
 
 
 **Linked Rule A**: 45 bps
@@ -208,8 +208,8 @@ This can be handled with a regular rule: Loan Type = VA (no special case needed)
 **Special Case Group** (in range):
 | # | Filter Type | Value | Operator |
 |---|-------------|-------|----------|
-| 1 | LoanAmountMin | 200000 | -- |
-| 2 | LoanAmountMax | 500000 | AND |
+| 1 | Loan Amount Min | 200000 | -- |
+| 2 | Loan Amount Max | 500000 | AND |
 
 
 **Linked Rule**: 50 bps (standard rate, applied only when loan amount is \$200K-\$500K).

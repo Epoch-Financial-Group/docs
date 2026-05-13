@@ -80,7 +80,7 @@ Branches represent physical office locations or organizational units within your
 1. On the Branches page, click the **Add Branch** button (or equivalent).
 2. Fill in the branch details:
    - **Branch Name** (required) -- A descriptive name for the branch (e.g., "San Diego Office", "Northeast Division").
-   - **Branch Manager** -- Select an existing employee with the BranchManager role. If you have not added employees yet, you can leave this blank and assign a manager later.
+   - **Branch Manager** -- Select an existing employee with the Branch Manager role. If you have not added employees yet, you can leave this blank and assign a manager later.
 3. Click **Save** to create the branch.
 
 ### Managing Branches
@@ -122,7 +122,7 @@ Employees are the core user records in Keystone. Every person in your organizati
 
 | Field | Description |
 |-------|-------------|
-| Roles | One or more roles from: **LoanOfficer**, **LoanOfficerAssistant**, **Processor**, **Contractor**, **BranchManager**. An employee can hold multiple roles simultaneously. |
+| Roles | One or more roles from: **Loan Officer**, **Loan Officer Assistant**, **Processor**, **Contractor**, **Branch Manager**. An employee can hold multiple roles simultaneously. |
 | Tax Classification | **W2** (employee) or **1099** (independent contractor). Affects how commissions and draws are calculated and reported. |
 | Branch | Assign the employee to one of your branches (optional). |
 | Start Date | The date the employee started (optional). |
@@ -133,8 +133,8 @@ Employees are the core user records in Keystone. Every person in your organizati
 
 | Field | Description |
 |-------|-------------|
-| Draw Calculation Type | **None** (no draw), **Hourly** (based on hours worked), or **FlatAmount** (fixed draw amount per period). |
-| Draw Amount | For FlatAmount draws, the dollar amount per period. |
+| Draw Calculation Type | **None** (no draw), **Hourly** (based on hours worked), or **Flat Amount** (fixed draw amount per period). |
+| Draw Amount | For Flat Amount draws, the dollar amount per period. |
 | Hourly Rate | For Hourly draws, the rate per hour. |
 | Hours Per Period | For Hourly draws, the number of hours per pay period. |
 
@@ -214,7 +214,7 @@ Select which loan product types this lender offers. Options include:
 - FHA
 - VA
 - USDA
-- NonQM
+- Non-QM
 - Reverse Mortgage
 - HELOC
 - Commercial
@@ -360,7 +360,7 @@ A commission template defines:
 | Fee Name | A label for the file fee (e.g., "Processing Fee", "Admin Fee") |
 | File Fee | The file fee amount |
 | File Fee Type | Flat, Percentage, or Bps |
-| File Fee Applied On | What the fee is calculated against: LoanAmount, LoanRevenue, NetCommission, or GrossCommission |
+| File Fee Applied On | What the fee is calculated against: Loan Amount, Loan Revenue, Net Commission, or Gross Commission |
 
 
 3. Click **Save** to create the template.
@@ -373,7 +373,7 @@ After creating a template, you can add rules that modify the base commission und
 - **Lead Source** -- Apply only to loans from a specific source.
 - **Branch** -- Apply only to loans from a specific branch.
 - **Loan Purpose** -- Purchase or Refinance.
-- **Loan Type** -- Conventional, FHA, VA, USDA, NonQM, etc.
+- **Loan Type** -- Conventional, FHA, VA, USDA, Non-QM, etc.
 - **Payer Type** -- Lender, Borrower, Investor, or Seller.
 - **Tax Classification** -- W2 or 1099 employees.
 - **Property States** -- Apply only to loans in specific states.
