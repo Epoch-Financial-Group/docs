@@ -31,7 +31,7 @@ Commission Rule
 |----------|-----|
 | Different commission for FHA loans | Regular rule with Loan Type filter |
 | Different commission for a specific lender | Regular rule with Lender filter |
-| Different commission for FHA loans over $300,000 in Texas | Special case group (multiple conditions on different attributes) |
+| Different commission for FHA loans over \$300,000 in Texas | Special case group (multiple conditions on different attributes) |
 | Different commission when broker comp is below a threshold | Special case group (supports numeric comparisons) |
 | Different commission when loan amount is in a specific range | Special case group (min/max numeric conditions) |
 
@@ -109,7 +109,7 @@ A group with criteria:
 2. AND LoanAmountMin = 300000
 3. AND PropertyState = TX
 
-This matches FHA loans in Texas with a loan amount of $300,000 or more. All three must be true.
+This matches FHA loans in Texas with a loan amount of \$300,000 or more. All three must be true.
 
 ### Example: OR Logic
 
@@ -133,7 +133,7 @@ Step 2: result = result AND (Amount >= 300k)  --> true/false
 Step 3: result = result OR (State == CA)      --> true/false
 ```
 
-This matches: (FHA loans over $300k) OR (any loan in California).
+This matches: (FHA loans over \$300k) OR (any loan in California).
 
 ## How Special Cases Are Evaluated
 
@@ -152,7 +152,7 @@ If a special case group has **no criteria**, it always evaluates to `true` (the 
 
 ### Example 1: High-Value FHA Bonus
 
-**Scenario**: Pay an extra 10 bps on FHA loans with a loan amount of $400,000 or more.
+**Scenario**: Pay an extra 10 bps on FHA loans with a loan amount of \$400,000 or more.
 
 **Special Case Group**:
 | # | Filter Type | Value | Operator |
@@ -166,11 +166,11 @@ If a special case group has **no criteria**, it always evaluates to `true` (the 
 - Amount: 60 (instead of the base 50)
 - Commission Basis: Loan Amount
 
-**Result**: A $450,000 FHA loan earns 60 bps ($2,700) instead of the base 50 bps ($2,250).
+**Result**: A \$450,000 FHA loan earns 60 bps (\$2,700) instead of the base 50 bps (\$2,250).
 
 ### Example 2: Low Broker Comp Override
 
-**Scenario**: On loans where broker compensation is less than $2,500, pay a flat $500 minimum to ensure the employee still earns a reasonable commission.
+**Scenario**: On loans where broker compensation is less than \$2,500, pay a flat \$500 minimum to ensure the employee still earns a reasonable commission.
 
 **Special Case Group**:
 | # | Filter Type | Value | Operator |
@@ -183,7 +183,7 @@ If a special case group has **no criteria**, it always evaluates to `true` (the 
 - Amount: 500
 - Commission Basis: Loan Amount
 
-**Result**: A loan with $2,000 broker compensation earns a flat $500 instead of the percentage-based commission.
+**Result**: A loan with \$2,000 broker compensation earns a flat \$500 instead of the percentage-based commission.
 
 ### Example 3: State-Specific Loan Type Override
 
@@ -203,7 +203,7 @@ This can be handled with a regular rule: Loan Type = VA (no special case needed)
 
 ### Example 4: Loan Amount Range
 
-**Scenario**: Loans between $200,000 and $500,000 earn the standard rate. Loans outside that range earn a different rate.
+**Scenario**: Loans between \$200,000 and \$500,000 earn the standard rate. Loans outside that range earn a different rate.
 
 **Special Case Group** (in range):
 | # | Filter Type | Value | Operator |
@@ -212,7 +212,7 @@ This can be handled with a regular rule: Loan Type = VA (no special case needed)
 | 2 | LoanAmountMax | 500000 | AND |
 
 
-**Linked Rule**: 50 bps (standard rate, applied only when loan amount is $200K-$500K).
+**Linked Rule**: 50 bps (standard rate, applied only when loan amount is \$200K-\$500K).
 
 A separate rule without a special case group could handle loans outside this range at a different rate.
 
